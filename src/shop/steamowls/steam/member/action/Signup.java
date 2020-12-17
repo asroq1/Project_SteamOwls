@@ -14,9 +14,9 @@ public class Signup implements Action{
 		HttpSession session = request.getSession();
 		
 		LoginManager lm = LoginManager.getInstance();
-		String id = lm.getMemberSq(session);
+		String sq = lm.getMemberSq(session);
 		
-		if(id != null) {
+		if(sq != null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);

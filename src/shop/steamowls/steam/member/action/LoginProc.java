@@ -37,10 +37,18 @@ public class LoginProc implements Action {
 		memberVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
 		
 		MemberVo vo = svc.logIn(memberVo);
-		if(memberVo == null || !BCrypt.checkpw(pw, vo.getPw())) {
+		if(vo.getId() == null || vo.getPw() == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('로그인 정보를 입력하세요'); history.back();</script>");
+			out.close();
+			return null;
+		}
+		
+		if(!BCrypt.checkpw(pw, vo.getPw())) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('로그인 정보를 재입력하세요'); history.back();</script>");
 			out.close();
 			return null;
 		}

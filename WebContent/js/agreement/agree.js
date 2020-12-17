@@ -19,7 +19,6 @@ function createFeed() {
     del.addEventListener('click',()=>{
         feed.removeChild(content);
         body.removeChild(feed);
-        
     });
 
     feed.appendChild(content);

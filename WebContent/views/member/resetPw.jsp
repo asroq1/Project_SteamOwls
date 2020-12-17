@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	MemberVo memberVo = (MemberVo) request.getAttribute("memberVo");
+	MemberVo vo = (MemberVo) request.getAttribute("vo");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -26,7 +26,7 @@
 	</header>
 	<section>
 		<div class="checkPw__form">
-			<form action="/member/resetPw?sq=<%=memberVo.getSq()%>" method="post"
+			<form action="/member/resetPw?sq=<%=vo.getSq()%>" method="post"
 				id="ckpoint">
 				<h3>비밀번호 재설정</h3>
 				<div>

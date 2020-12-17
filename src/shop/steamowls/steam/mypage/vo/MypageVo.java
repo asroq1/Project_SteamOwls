@@ -2,7 +2,7 @@ package shop.steamowls.steam.mypage.vo;
 
 public class MypageVo {
 
-	private String sq;
+	private int sq;
 	private String id;
 	private String pw;
 	private String name;
@@ -19,11 +19,11 @@ public class MypageVo {
 	}
 
 
-	public String getSq() {
+	public int getSq() {
 		return sq;
 	}
 
-	public void setSq(String sq) {
+	public void setSq(int sq) {
 		this.sq = sq;
 	}
 
@@ -106,5 +106,4 @@ public class MypageVo {
 	public void setAdmin_fl(boolean admin_fl) {
 		this.admin_fl = admin_fl;
 	}
-
 }

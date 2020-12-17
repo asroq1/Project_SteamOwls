@@ -80,7 +80,7 @@ public class MemberDao {
 		MemberVo vo = null;
 
 		try {
-			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and admin_fl = 0");
+			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ?");
 			pstmt.setString(1, memberVo.getId());
 
 			rs = pstmt.executeQuery();
@@ -106,9 +106,8 @@ public class MemberDao {
 		MemberVo vo = null;
 
 		try {
-			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and pw = ? and del_fl = 0 and admin_fl = 1");
+			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and del_fl = 0 and admin_fl = 1");
 			pstmt.setString(1, memberVo.getId());
-			pstmt.setString(2, memberVo.getPw());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -226,24 +225,6 @@ public class MemberDao {
 		return vo;
 	}
 	
-	public int modify(MemberVo memberVo) {
-		PreparedStatement pstmt = null;
-		int count = 0;
-		try {
-			pstmt = con.prepareStatement("update owls_mber_tb set name = ?, pw = ?, tel = ? where sq = ? and del_fl = 0");
-			pstmt.setString(1, memberVo.getName());
-			pstmt.setString(2, memberVo.getPw());
-			pstmt.setString(3, memberVo.getTel());
-			pstmt.setInt(4, memberVo.getSq());
-
-			count = pstmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		return count;
-	}
+	
 
 }
