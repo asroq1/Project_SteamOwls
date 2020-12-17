@@ -63,25 +63,26 @@ HttpSession session = request.getSession()%>
  
  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-   function submit() {
-      saveContent();
-   }
+
+
+
 </script>
 </head>
 <body>
-   글수정 게시판입니다.
-   <form action="/admin/produtAddProc" id="editorForm" name = "content" id="content">
-      <div>
-         <jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
-      </div>
-   </form>
-   <button onclick="submit()">저장</button>
+상품추가화면
+상품상세란에 정보 기입
+<form>
+	<div>상품</div>
+	<jsp:includ page="/editor/editorSkinForRegister.jsp" flush="false"/>
+</form>
+<a href="/admin/productManage">상품추가</a>
+
 </body>
 </html>
