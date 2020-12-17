@@ -23,7 +23,7 @@
                 <img src="/mypage/css/owls.PNG" alt="로고사진">
             </a>
             <div class="header__signForm">
-                <a href="/member/logout">로그아웃</a>
+                <a href="#">로그아웃</a>
             </div>
         </div>
     </header>

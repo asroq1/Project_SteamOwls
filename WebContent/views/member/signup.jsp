@@ -19,9 +19,11 @@
 
 <body>
 	<header>
+
 		<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
 			alt="로고사진">
 		</a>
+
 	</header>
 	<section>
 		<div class="signup__form">
@@ -91,7 +93,7 @@
 				class="agreement">개인정보 보호정책</a>에 동의하시는 것으로 간주됩니다.
 		</div>
 	</footer>
-	<script src="/js/agreement/agree.js" type="text/javascript"></script>
+		<script src="/js/agreement/agree.js" type="text/javascript"></script>
 	<script src="/js/member/signup.js" type="text/javascript"></script>
 	<script src="/js/member/ajax.js" type="text/javascript"></script>
 

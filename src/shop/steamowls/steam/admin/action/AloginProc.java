@@ -21,7 +21,7 @@ public class AloginProc implements Action {
 //		if (RegExp.isEmpty(id) || RegExp.isEmpty(pw)) {
 //			response.setContentType("text/html; charset=UTF-8");
 //			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù..'); location.href='/';</script>");
+//			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤..'); location.href='/';</script>");
 //			out.close();
 //			return null;
 //		}
@@ -34,10 +34,10 @@ public class AloginProc implements Action {
 		
 		
 		MemberVo vo = svc.adminLogIn(memberVo);
-		if(memberVo == null || !BCrypt.checkpw(pw, vo.getPw())) {
+		if(vo == null || !BCrypt.checkpw(pw, vo.getPw())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('·Î±×ÀÎ Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä'); history.back();</script>");
+			out.print("<script>alert('ë¡œê·¸ì¸ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”'); history.back();</script>");
 			out.close();
 			return null;
 		}

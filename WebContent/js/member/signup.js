@@ -69,8 +69,7 @@ function initCheckPwd() {
         isPwdChecked = false;
         return;
     } else {
-        pw__text.innerText = "훌륭한 비밀번호네요 ! ";
-        pw__text.innerText = "";
+        text.innerText = "";
         isPwdChecked = true;
     }
 }

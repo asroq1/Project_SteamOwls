@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	MemberVo memberVo = (MemberVo) request.getAttribute("memberVo");
+	MemberVo vo = (MemberVo) request.getAttribute("vo");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -36,7 +36,7 @@
 		<div class="checkId__form">
 			<h1>찾으시는 고객님의 아이디는</h1>
 			<div class="checkId__name">
-				<p>아이디는 <span id="myId"><%=memberVo.getId() %></span> 입니다.</p>
+				<p>아이디는 <span id="myId"><%=vo.getId() %></span> 입니다.</p>
 			</div>
 			<div>
 				<button id="checkId__btn">
