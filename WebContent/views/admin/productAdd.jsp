@@ -80,7 +80,7 @@ HttpSession session = request.getSession()%>
 상품상세란에 정보 기입
 <form>
 	<div>상품</div>
-	<jsp:includ page="/editor/editorSkinForRegister.jsp" flush="false"/>
+	<%-- <jsp:includ page="/editor/editorSkinForRegister.jsp" flush="false"/> --%>
 </form>
 <a href="/admin/productManage">상품추가</a>
 
