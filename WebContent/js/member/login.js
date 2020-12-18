@@ -22,6 +22,9 @@ function  validateCheck() {
     
     ckpoint.submit();
 
-  
 }
-
+document.addEventListener('keydown', (e)=>{
+    if(e.key == "Enter"){
+       validateCheck();
+    }
+});
