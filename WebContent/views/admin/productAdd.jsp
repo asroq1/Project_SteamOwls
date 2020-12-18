@@ -82,6 +82,7 @@ HttpSession session = request.getSession()%>
 	<div>상품</div>
 	<!-- 이거되면 그냥 창문에 뛰어내린다 얏호 -->
 	<!-- 탈출은 능지순 -->
+	<!-- 가자아 제발 가자 동준샘부르자 -->
 	<%-- <jsp:includ page="/editor/editorSkinForRegister.jsp" flush="false"/> --%>
 </form>
 <a href="/admin/productManage">상품추가</a>
