@@ -1,10 +1,14 @@
+<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%
+	MemberVo memberVo = (MemberVo) request.getAttribute("memberVo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 페이지</title>
 </head>
 <body>
 

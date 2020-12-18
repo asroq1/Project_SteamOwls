@@ -22,11 +22,12 @@
 
 <body>
 	<header>
-		<span class="header__logo">
-			<a href="/views/home/index.jsp">
-                <img src="/css/picture/owls.PNG" alt="로고사진">
-            </a>
-		</span> <span class="header__hambuger">
+		<span class="header__logo"> 
+		<a href="/views/home/index.jsp">
+	  		<img src="/css/picture/owls.PNG" alt="로고사진">
+		</a>
+		</span>
+		 <span class="header__hambuger">
 			<button>
 				<i class="fas fa-bars"></i>
 			</button>
@@ -36,7 +37,9 @@
 		<div class="checkId__form">
 			<h1>찾으시는 고객님의 아이디는</h1>
 			<div class="checkId__name">
-				<p>아이디는 <span id="myId"><%=vo.getId() %></span> 입니다.</p>
+				<p>
+					아이디는 <span id="myId"><%=vo.getId()%></span> 입니다.
+				</p>
 			</div>
 			<div>
 				<button id="checkId__btn">
@@ -45,13 +48,13 @@
 					</p>
 				</button>
 			</div>
-			<span id="login__line">또는 다른 것이 필요하신가요?
-			</span>
+			<span id="login__line">
+				또는 다른 것이 필요하신가요?
+			 </span>
 			<div class="chekcPw__others">
-
 				<button id="checkPw__btn">
 					<p>
-						<a href="/member/forgotPw">비밀번호 찾기</a>
+					  <a href="/member/forgotPw">비밀번호 찾기</a>
 					</p>
 				</button>
 				<div class="sign__up__kakao">
@@ -61,11 +64,10 @@
 					<a href="#">네이버로 로그인</a>
 				</div>
 			</div>
-
-
 		</div>
 	</section>
-	<script defer="defer" src="/js/member/checkId.js" type="text/javascript"></script>
+	<script defer="defer" src="/js/member/checkId.js"
+		type="text/javascript"></script>
 </body>
 
 </html>
