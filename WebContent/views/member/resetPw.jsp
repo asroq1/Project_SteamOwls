@@ -30,10 +30,10 @@
 				id="ckpoint">
 				<h3>비밀번호 재설정</h3>
 				<div>
-					<input type="text" placeholder="신규 비밀번호" id="pw" name="pw">
+					<input type="password" placeholder="신규 비밀번호" id="pw" name="pw">
 				</div>
 				<div>
-					<input type="text" placeholder="비밀번호 재확인" id="cpw" name="cpw">
+					<input type="password" placeholder="비밀번호 재확인" id="cpw" name="cpw">
 				</div>
 				<div class="btn__color">
 					<button id="findPw__btn" value="변경하기">변경하기</button>

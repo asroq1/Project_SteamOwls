@@ -8,9 +8,10 @@ import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
+import shop.steamowls.common.BCrypt;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.steam.member.service.MemberService;
-import shop.steamowls.steam.member.vo.MemberVo;
+import shop.steamowls.steam.mypage.service.MypageService;
+import shop.steamowls.steam.mypage.vo.MypageVo;
 
 public class Mmodify implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -34,15 +35,23 @@ public class Mmodify implements Action {
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");
 		
-		MemberVo memberVo = new MemberVo();
-		memberVo.setSq(Integer.parseInt(sq));
-		memberVo.setName(name);
-		memberVo.setPw(pw);
-		memberVo.setTel(tel);
+		if(name == null || tel == null|| pw == null) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('정보를 입력해주세요.'); location.href='/mypage/Mmodify';</script>");
+			out.close();
+			return null;
+		}
 		
-		MemberService svc = new MemberService();
+		MypageVo mypageVo = new MypageVo();
+		mypageVo.setSq(Integer.parseInt(sq));
+		mypageVo.setName(name);
+		mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
+		mypageVo.setTel(tel);
 		
-		if(!svc.modify(memberVo)) {
+		MypageService svc = new MypageService();
+		
+		if(!svc.modify(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('회원정보수정에 실패하였습니다.'); history.back();</script>");
@@ -50,10 +59,9 @@ public class Mmodify implements Action {
 			return null;
 		}
 		
-		lm.removeSession(sq);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/Mmodify.jsp");
+		forward.setPath("/views/mypage/Mdetail.jsp");
 		return forward;
 	}
 }
