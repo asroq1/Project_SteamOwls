@@ -8,15 +8,16 @@ import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
+import shop.steamowls.common.BCrypt;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.steam.member.service.MemberService;
-import shop.steamowls.steam.member.vo.MemberVo;
+import shop.steamowls.steam.mypage.service.MypageService;
+import shop.steamowls.steam.mypage.vo.MypageVo;
 
 public class Mmodify implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// ·Î±×ÀÎ¿©ºÎ ¹× Àß¸øµÈ Á¢±Ù
-		// ¼¼¼Ç¿¡ sq °¡Áö°í ÀÖ±â
+		// ë¡œê·¸ì¸ì—¬ë¶€ ë° ì˜ëª»ëœ ì ‘ê·¼
+		// ì„¸ì…˜ì— sq ê°€ì§€ê³  ìˆê¸°
 		HttpSession session = request.getSession();
 
 		LoginManager lm = LoginManager.getInstance();
@@ -28,32 +29,44 @@ public class Mmodify implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-		
-		//jsp¿¡¼­ µ¥ÀÌÅÍ ¹Ş±â
+
+		// jspì—ì„œ ë°ì´í„° ë°›ê¸°
 		String name = request.getParameter("name");
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");
-		
-		MemberVo memberVo = new MemberVo();
-		memberVo.setSq(Integer.parseInt(sq));
-		memberVo.setName(name);
-		memberVo.setPw(pw);
-		memberVo.setTel(tel);
-		
-		MemberService svc = new MemberService();
-		
-		if(!svc.modify(memberVo)) {
+
+		if (name == null || tel == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('È¸¿øÁ¤º¸¼öÁ¤¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì •ë³´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.'); location.href='/mypage/Mmodify';</script>");
 			out.close();
 			return null;
 		}
-		
-		lm.removeSession(sq);
-		
+
+		MypageVo mypageVo = new MypageVo();
+		if (pw == null) {
+			mypageVo.setSq(Integer.parseInt(sq));
+			mypageVo.setName(name);
+			mypageVo.setTel(tel);
+		} else {
+			mypageVo.setSq(Integer.parseInt(sq));
+			mypageVo.setName(name);
+			mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
+			mypageVo.setTel(tel);
+		}
+
+		MypageService svc = new MypageService();
+
+		if (!svc.modify(mypageVo)) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('íšŒì›ì •ë³´ìˆ˜ì •ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.'); history.back();</script>");
+			out.close();
+			return null;
+		}
+
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/Mmodify.jsp");
+		forward.setPath("/views/mypage/Mdetail.jsp");
 		return forward;
 	}
 }

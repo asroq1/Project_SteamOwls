@@ -19,18 +19,7 @@ import shop.steamowls.steam.member.vo.MemberVo;
 public class ForgotIdProc implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session = request.getSession();
-
-		LoginManager lm = LoginManager.getInstance();
-		String id = lm.getMemberSq(session);
-
-		if (id != null) {
-			ActionForward forward = new ActionForward();
-			forward.setPath("/");
-			forward.setRedirect(true);
-			return forward;
-		}
-
+		
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
 
@@ -43,7 +32,7 @@ public class ForgotIdProc implements Action {
 		
 		//DB에서 받아오는 값
 		MemberVo vo = svc.forgotId(memberVo);
-		if (vo.getId() == null) {
+		if (vo == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('이름, 전화번호를 확인하시오.'); history.back();</script>");

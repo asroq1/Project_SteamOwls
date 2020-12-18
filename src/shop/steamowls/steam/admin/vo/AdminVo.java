@@ -1,6 +1,6 @@
-package shop.steamowls.steam.mypage.vo;
+package shop.steamowls.steam.admin.vo;
 
-public class MypageVo {
+public class AdminVo {
 
 	private int sq;
 	private String id;
@@ -14,7 +14,7 @@ public class MypageVo {
 	private boolean del_fl;
 	private boolean admin_fl;
 
-	public MypageVo() {
+	public AdminVo() {
 
 	}
 
@@ -106,4 +106,5 @@ public class MypageVo {
 	public void setAdmin_fl(boolean admin_fl) {
 		this.admin_fl = admin_fl;
 	}
+
 }

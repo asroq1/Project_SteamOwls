@@ -1,8 +1,9 @@
-<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	MemberVo memberVo = (MemberVo) request.getAttribute("memberVo");
+	LoginManager lm = LoginManager.getInstance();
+	String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,7 +24,7 @@
                 <img src="/mypage/css/owls.PNG" alt="로고사진">
             </a>
             <div class="header__signForm">
-                <a href="/member/logout">로그아웃</a>
+                <a href="#">로그아웃</a>
             </div>
         </div>
     </header>
