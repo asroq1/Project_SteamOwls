@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.BCrypt;
-import shop.steamowls.steam.member.service.MemberService;
-import shop.steamowls.steam.member.vo.MemberVo;
+import shop.steamowls.steam.admin.service.AdminService;
+import shop.steamowls.steam.admin.vo.AdminVo;
 
 public class AloginProc implements Action {
 	@Override
@@ -26,14 +26,14 @@ public class AloginProc implements Action {
 //			return null;
 //		}
 		
-		MemberService svc = new MemberService();
+		AdminService svc = new AdminService();
 
-		MemberVo memberVo = new MemberVo();
-		memberVo.setId(id);
-		memberVo.setPw(BCrypt.hashpw(pw,  BCrypt.gensalt(10)));
+		AdminVo adminVo = new AdminVo();
+		adminVo.setId(id);
+		adminVo.setPw(BCrypt.hashpw(pw,  BCrypt.gensalt(10)));
 		
 		
-		MemberVo vo = svc.adminLogIn(memberVo);
+		AdminVo vo = svc.adminLogIn(adminVo);
 		if(vo == null || !BCrypt.checkpw(pw, vo.getPw())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();

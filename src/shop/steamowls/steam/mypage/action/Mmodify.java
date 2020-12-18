@@ -29,37 +29,42 @@ public class Mmodify implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-		
-		//jsp에서 데이터 받기
+
+		// jsp에서 데이터 받기
 		String name = request.getParameter("name");
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");
-		
-		if(name == null || tel == null|| pw == null) {
+
+		if (name == null || tel == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('정보를 입력해주세요.'); location.href='/mypage/Mmodify';</script>");
 			out.close();
 			return null;
 		}
-		
+
 		MypageVo mypageVo = new MypageVo();
-		mypageVo.setSq(Integer.parseInt(sq));
-		mypageVo.setName(name);
-		mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
-		mypageVo.setTel(tel);
-		
+		if (pw == null) {
+			mypageVo.setSq(Integer.parseInt(sq));
+			mypageVo.setName(name);
+			mypageVo.setTel(tel);
+		} else {
+			mypageVo.setSq(Integer.parseInt(sq));
+			mypageVo.setName(name);
+			mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
+			mypageVo.setTel(tel);
+		}
+
 		MypageService svc = new MypageService();
-		
-		if(!svc.modify(mypageVo)) {
+
+		if (!svc.modify(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('회원정보수정에 실패하였습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
-		
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Mdetail.jsp");
 		return forward;
