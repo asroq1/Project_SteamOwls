@@ -80,7 +80,7 @@ public class MemberDao {
 		MemberVo vo = null;
 
 		try {
-			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and del_fl = 0");
+			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ?");
 			pstmt.setString(1, memberVo.getId());
 
 			rs = pstmt.executeQuery();
@@ -99,7 +99,32 @@ public class MemberDao {
 		return vo;
 	}
 	
-	
+	public MemberVo adminLogIn(MemberVo memberVo) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MemberVo vo = null;
+
+		try {
+			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and del_fl = 0 and admin_fl = 1");
+			pstmt.setString(1, memberVo.getId());
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new MemberVo();
+				vo.setSq(rs.getInt("sq"));
+				vo.setId(rs.getString("id"));
+				vo.setPw(rs.getString("pw"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return vo;
+	}
+
 	public MemberVo forgotId(MemberVo memberVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -134,7 +159,7 @@ public class MemberDao {
 
 		try {
 			pstmt = con.prepareStatement(
-					"select sq, pw  from owls_mber_tb where id = ? and name = ? and tel = ? and del_fl = 0 ");
+					"select sq, pw  from owls_mber_tb " + "where id = ? and name = ? and tel = ? and del_fl = 0 ");
 			pstmt.setString(1, memberVo.getId());
 			pstmt.setString(2, memberVo.getName());
 			pstmt.setString(3, memberVo.getTel());

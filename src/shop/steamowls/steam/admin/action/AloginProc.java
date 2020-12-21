@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.BCrypt;
-import shop.steamowls.steam.admin.service.AdminService;
-import shop.steamowls.steam.admin.vo.AdminVo;
+import shop.steamowls.steam.member.service.MemberService;
+import shop.steamowls.steam.member.vo.MemberVo;
 
 public class AloginProc implements Action {
 	@Override
@@ -21,23 +21,23 @@ public class AloginProc implements Action {
 //		if (RegExp.isEmpty(id) || RegExp.isEmpty(pw)) {
 //			response.setContentType("text/html; charset=UTF-8");
 //			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤..'); location.href='/';</script>");
+//			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù..'); location.href='/';</script>");
 //			out.close();
 //			return null;
 //		}
 		
-		AdminService svc = new AdminService();
+		MemberService svc = new MemberService();
 
-		AdminVo adminVo = new AdminVo();
-		adminVo.setId(id);
-		adminVo.setPw(BCrypt.hashpw(pw,  BCrypt.gensalt(10)));
+		MemberVo memberVo = new MemberVo();
+		memberVo.setId(id);
+		memberVo.setPw(BCrypt.hashpw(pw,  BCrypt.gensalt(10)));
 		
 		
-		AdminVo vo = svc.adminLogIn(adminVo);
+		MemberVo vo = svc.adminLogIn(memberVo);
 		if(vo == null || !BCrypt.checkpw(pw, vo.getPw())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('ë¡œê·¸ì¸ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”'); history.back();</script>");
+			out.print("<script>alert('·Î±×ÀÎ Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä'); history.back();</script>");
 			out.close();
 			return null;
 		}

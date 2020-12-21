@@ -1,33 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
 	LoginManager lm = LoginManager.getInstance();
-String sq = lm.getMemberSq(session);
+	String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>관리자 메인화면</title>
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
-<script src="/js/admin/gotoAdmin.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>상품등록화면</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+	<link rel="stylesheet" href="/css/admin/productAdd.css">
 </head>
-
+<header>
+	<div class="header__logo">
+		<img src="/css/picture/owls.PNG" alt="로고사진">
+	</div>
+	<div class="header__signForm">
+		<a href="/member/logout">로그아웃</a>
+	</div>
+</header>
 <body>
-	<header>
-		<div class="header__logo">
-			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-				alt="로고사진">
-			</a>
-		</div>
-		<div class="header__signForm">
-			<a href="/member/logout">로그아웃</a>
-		</div>
-	</header>
 	<nav>
 		<div class="nav__container">
             <a href="/admin/productManage">상품관리</a> 
@@ -39,7 +36,7 @@ String sq = lm.getMemberSq(session);
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
 				<ul>
-					<li><a href="#">상품추가</a></li>
+					<li><a href="#">상품등록</a></li>
 					<li><a href="#">상품삭제</a></li>
 					<li><a href="#">상품내역</a></li>
 				</ul>
@@ -71,7 +68,16 @@ String sq = lm.getMemberSq(session);
 		</div>
 	</nav>
 	<section>
-		<h1>관리자 메인</h1>
+		<h1>상품등록화면</h1>
+		<form class="add__form">
+			<input type="file" name="img" id="img">
+			<div class="text__form">
+				<input type="text" placeholder="상품제목">
+				<input type="text" placeholder="상품내용">				
+			</div>
+			<input type="text" name="price" id="price" placeholder="가격">
+		</form>
+		<button href="/admin/product/PaddProc">상품추가</button>
 	</section>
 </body>
 

@@ -45,7 +45,7 @@
 	            <p class="tel__text"></p>
 	            <button type="submit">수정하기</button>
 	        </form>
-	        <form action="/mypage/Mwithdraw" onsubmit="return">
+	        <form action="/views/mypage/Mwithdraw.jsp">
 	            <button type="submit">회원탈퇴</button>
 	        </form>
 	        <footer>

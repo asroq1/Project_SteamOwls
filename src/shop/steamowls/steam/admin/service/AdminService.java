@@ -2,19 +2,19 @@ package shop.steamowls.steam.admin.service;
 
 import java.sql.Connection;
 
-import shop.steamowls.steam.admin.dao.AdminDao;
-import shop.steamowls.steam.admin.vo.AdminVo;
+import shop.steamowls.steam.member.dao.MemberDao;
+import shop.steamowls.steam.member.vo.MemberVo;
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class AdminService {
 	
 	
-	public AdminVo adminLogIn(AdminVo adminVo) {
-		AdminDao adminDao = AdminDao.getInstance();
+	public MemberVo adminLogIn(MemberVo memberVo) {
+		MemberDao memberDao = MemberDao.getInstance();
 		Connection con = getConnection();
-		adminDao.setConnection(con);
+		memberDao.setConnection(con);
 
-		AdminVo vo = adminDao.adminLogIn(adminVo);
+		MemberVo vo = memberDao.adminLogIn(memberVo);
 
 		close(con);
 		return vo;

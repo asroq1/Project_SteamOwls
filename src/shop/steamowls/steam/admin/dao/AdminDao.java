@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import shop.steamowls.steam.admin.vo.AdminVo;
+import shop.steamowls.steam.member.vo.MemberVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
 
@@ -28,19 +28,19 @@ public class AdminDao {
 	}
 
 	
-	public AdminVo adminLogIn(AdminVo adminVo) {
+	public MemberVo adminLogIn(MemberVo memberVo) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		AdminVo vo = null;
+		MemberVo vo = null;
 
 		try {
 			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and del_fl = 0 and admin_fl = 1");
-			pstmt.setString(1, adminVo.getId());
+			pstmt.setString(1, memberVo.getId());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				vo = new AdminVo();
+				vo = new MemberVo();
 				vo.setSq(rs.getInt("sq"));
 				vo.setId(rs.getString("id"));
 				vo.setPw(rs.getString("pw"));

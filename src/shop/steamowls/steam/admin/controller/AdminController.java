@@ -245,10 +245,10 @@ public class AdminController extends HttpServlet {
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
-				// �����̷�Ʈ
+				// ¸®´ÙÀÌ·ºÆ®
 				response.sendRedirect(forward.getPath());
 			} else {
-				// ����ġ
+				// µð½ºÆÐÄ¡
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}

@@ -16,8 +16,8 @@ import shop.steamowls.steam.mypage.vo.MypageVo;
 public class Mmodify implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// ë¡œê·¸ì¸ì—¬ë¶€ ë° ì˜ëª»ëœ ì ‘ê·¼
-		// ì„¸ì…˜ì— sq ê°€ì§€ê³  ìˆê¸°
+		// ·Î±×ÀÎ¿©ºÎ ¹× Àß¸øµÈ Á¢±Ù
+		// ¼¼¼Ç¿¡ sq °¡Áö°í ÀÖ±â
 		HttpSession session = request.getSession();
 
 		LoginManager lm = LoginManager.getInstance();
@@ -29,42 +29,37 @@ public class Mmodify implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-
-		// jspì—ì„œ ë°ì´í„° ë°›ê¸°
+		
+		//jsp¿¡¼­ µ¥ÀÌÅÍ ¹Ş±â
 		String name = request.getParameter("name");
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");
-
-		if (name == null || tel == null) {
+		
+		if(name == null || tel == null|| pw == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('ì •ë³´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.'); location.href='/mypage/Mmodify';</script>");
+			out.print("<script>alert('Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.'); location.href='/mypage/Mmodify';</script>");
 			out.close();
 			return null;
 		}
-
+		
 		MypageVo mypageVo = new MypageVo();
-		if (pw == null) {
-			mypageVo.setSq(Integer.parseInt(sq));
-			mypageVo.setName(name);
-			mypageVo.setTel(tel);
-		} else {
-			mypageVo.setSq(Integer.parseInt(sq));
-			mypageVo.setName(name);
-			mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
-			mypageVo.setTel(tel);
-		}
-
+		mypageVo.setSq(Integer.parseInt(sq));
+		mypageVo.setName(name);
+		mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
+		mypageVo.setTel(tel);
+		
 		MypageService svc = new MypageService();
-
-		if (!svc.modify(mypageVo)) {
+		
+		if(!svc.modify(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('íšŒì›ì •ë³´ìˆ˜ì •ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.'); history.back();</script>");
+			out.print("<script>alert('È¸¿øÁ¤º¸¼öÁ¤¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-
+		
+		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Mdetail.jsp");
 		return forward;
