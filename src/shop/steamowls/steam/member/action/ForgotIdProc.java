@@ -22,6 +22,22 @@ public class ForgotIdProc implements Action {
 		
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
+		
+		if(name == null || name.equals("")) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('이름 정보를 입력해주세요'); history.back();</script>");
+			out.close();
+			return null;
+		}
+		
+		if(tel == null || tel.equals("")) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('전화번호 정보를 입력해주세요'); history.back();</script>");
+			out.close();
+			return null;
+		}
 
 		//jsp에서 받아오는 값
 		MemberVo memberVo = new MemberVo();

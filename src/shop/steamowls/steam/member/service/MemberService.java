@@ -4,8 +4,6 @@ import java.sql.Connection;
 
 import shop.steamowls.steam.member.dao.MemberDao;
 import shop.steamowls.steam.member.vo.MemberVo;
-import shop.steamowls.steam.mypage.vo.MypageVo;
-
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class MemberService {
@@ -108,8 +106,5 @@ public class MemberService {
 		return vo;
 	}
 
-	public boolean withdraw(MypageVo mypageVo) {
-		return false;
-	}
 	
 }
