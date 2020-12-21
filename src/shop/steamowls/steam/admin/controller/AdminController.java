@@ -13,30 +13,28 @@ import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.steam.admin.action.Alogin;
 import shop.steamowls.steam.admin.action.AloginProc;
-import shop.steamowls.steam.admin.action.Answer;
-import shop.steamowls.steam.admin.action.AnswerProc;
-import shop.steamowls.steam.admin.action.BookingCancel;
-import shop.steamowls.steam.admin.action.BookingManage;
-import shop.steamowls.steam.admin.action.BookingManageProc;
+import shop.steamowls.steam.admin.action.Qanswer;
+import shop.steamowls.steam.admin.action.QanswerProc;
+import shop.steamowls.steam.admin.action.Bcancel;
+import shop.steamowls.steam.admin.action.Bmanage;
+import shop.steamowls.steam.admin.action.BmanageProc;
 import shop.steamowls.steam.admin.action.GotoAdmin;
-import shop.steamowls.steam.admin.action.GotoAdminProc;
-import shop.steamowls.steam.admin.action.MemberManage;
-import shop.steamowls.steam.admin.action.MemberManageProc;
-import shop.steamowls.steam.admin.action.MemberModify;
-import shop.steamowls.steam.admin.action.MemberModifyProc;
-import shop.steamowls.steam.admin.action.ProductAdd;
-import shop.steamowls.steam.admin.action.ProductAddProc;
-import shop.steamowls.steam.admin.action.ProductDelete;
-import shop.steamowls.steam.admin.action.ProductDeleteProc;
-import shop.steamowls.steam.admin.action.ProductManage;
-import shop.steamowls.steam.admin.action.ProductManageProc;
-import shop.steamowls.steam.admin.action.ProductModify;
-import shop.steamowls.steam.admin.action.ProductModifyProc;
-import shop.steamowls.steam.admin.action.QuestionManage;
-import shop.steamowls.steam.admin.action.QuestionManageProc;
-import shop.steamowls.steam.admin.action.SalesManageProc;
-import shop.steamowls.steam.admin.action.memberWithdraw;
-import shop.steamowls.steam.admin.action.memberWithdrawProc;
+import shop.steamowls.steam.admin.action.Mmanage;
+import shop.steamowls.steam.admin.action.MmanageProc;
+import shop.steamowls.steam.admin.action.Padd;
+import shop.steamowls.steam.admin.action.PaddProc;
+import shop.steamowls.steam.admin.action.Pdelete;
+import shop.steamowls.steam.admin.action.PdeleteProc;
+import shop.steamowls.steam.admin.action.Plist;
+import shop.steamowls.steam.admin.action.PlistProc;
+import shop.steamowls.steam.admin.action.Pmanage;
+import shop.steamowls.steam.admin.action.PmanageProc;
+import shop.steamowls.steam.admin.action.PsellingButton;
+import shop.steamowls.steam.admin.action.PstopButton;
+import shop.steamowls.steam.admin.action.Qmanage;
+import shop.steamowls.steam.admin.action.QmanageProc;
+import shop.steamowls.steam.admin.action.Smanage;
+import shop.steamowls.steam.admin.action.SmanageProc;
 
 @WebServlet("/admin/*")
 public class AdminController extends HttpServlet {
@@ -73,182 +71,160 @@ public class AdminController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/gotoAdminProc")) {
-			Action action = new GotoAdminProc();
+		} else if (command.equals("/Pmanage")) {
+			Action action = new Pmanage();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productManage")) {
-			Action action = new ProductManage();
+		} else if (command.equals("/PmanageProc")) {
+			Action action = new PmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productManageProc")) {
-			Action action = new ProductManageProc();
+		} else if (command.equals("/Padd")) {
+			Action action = new Padd();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productModify")) {
-			Action action = new ProductModify();
+		} else if (command.equals("/PaddProc")) {
+			Action action = new PaddProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productModifyProc")) {
-			Action action = new ProductModifyProc();
+		} else if (command.equals("/Pdelete")) {
+			Action action = new Pdelete();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productDelete")) {
-			Action action = new ProductDelete();
+		} else if (command.equals("/PdeleteProc")) {
+			Action action = new PdeleteProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/producDeleteProc")) {
-			Action action = new ProductDeleteProc();
+		} else if (command.equals("/Plist")) {
+			Action action = new Plist();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productAdd")) {
-			Action action = new ProductAdd();
+		} else if (command.equals("/PlistProc")) {
+			Action action = new PlistProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/producAddProc")) {
-			Action action = new ProductAddProc();
+		}  else if (command.equals("/PsellingButton")) {
+			Action action = new PsellingButton();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/bookingManage")) {
-			Action action = new BookingManage();
+		}   else if (command.equals("/PstopButton")) {
+			Action action = new PstopButton();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/bookingManageProc")) {
-			Action action = new BookingManageProc();
+		} else if (command.equals("/Bmanage")) {
+			Action action = new Bmanage();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/bookingCancel")) {
-			Action action = new BookingCancel();
+		} else if (command.equals("/BmanageProc")) {
+			Action action = new BmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/salesMange")) {
-			Action action = new SalesManageProc();
+		} else if (command.equals("/Bcancel")) {
+			Action action = new Bcancel();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/salesMangeProc")) {
-			Action action = new SalesManageProc();
+		} else if (command.equals("/Smanage")) {
+			Action action = new Smanage();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/questionManage")) {
-			Action action = new QuestionManage();
+		} else if (command.equals("/SmanageProc")) {
+			Action action = new SmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/questionManageProc")) {
-			Action action = new QuestionManageProc();
+		} else if (command.equals("/QManage")) {
+			Action action = new Qmanage();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/answer")) {
-			Action action = new Answer();
+		} else if (command.equals("/QmanageProc")) {
+			Action action = new QmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/answerProc")) {
-			Action action = new AnswerProc();
+		} else if (command.equals("/Qanswer")) {
+			Action action = new Qanswer();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/memberManage")) {
-			Action action = new MemberManage();
+		} else if (command.equals("/QanswerProc")) {
+			Action action = new QanswerProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/memberManageProc")) {
-			Action action = new MemberManageProc();
+		} else if (command.equals("/Mmanage")) {
+			Action action = new Mmanage();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/memberModify")) {
-			Action action = new MemberModify();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/memberModifyProc")) {
-			Action action = new MemberModifyProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/memberWithdraw")) {
-			Action action = new memberWithdraw();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/memberWithdrawProc")) {
-			Action action = new memberWithdrawProc();
+		} else if (command.equals("/MmanageProc")) {
+			Action action = new MmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
-				// 리다이렉트
 				response.sendRedirect(forward.getPath());
 			} else {
-				// 디스패치
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}

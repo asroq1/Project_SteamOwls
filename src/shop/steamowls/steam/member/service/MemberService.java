@@ -109,7 +109,6 @@ public class MemberService {
 	}
 
 	public boolean withdraw(MypageVo mypageVo) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	
