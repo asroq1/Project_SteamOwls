@@ -1,8 +1,13 @@
 <%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
+%>
+<%
+	LoginManager lm = LoginManager.getInstance();
+	String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
 <html lang="ko">

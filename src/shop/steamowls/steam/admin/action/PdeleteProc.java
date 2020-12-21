@@ -1,4 +1,4 @@
-package shop.steamowls.steam.mypage.action;
+package shop.steamowls.steam.admin.action;
 
 import java.io.PrintWriter;
 
@@ -8,65 +8,55 @@ import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
-import shop.steamowls.common.BCrypt;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.steam.admin.service.AdminService;
+import shop.steamowls.steam.admin.vo.AdminVo;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
-public class Mmodify implements Action {
+public class PdeleteProc implements Action {
+	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		// ·Î±×ÀÎ¿©ºÎ ¹× Àß¸øµÈ Á¢±Ù
-		// ¼¼¼Ç¿¡ sq °¡Áö°í ÀÖ±â
 		HttpSession session = request.getSession();
-
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq == null) {
+		if (sq != null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
-
-		// jsp¿¡¼­ µ¥ÀÌÅÍ ¹Ş±â
-		String name = request.getParameter("name");
-		String pw = request.getParameter("pw");
-		String tel = request.getParameter("tel");
-
-		if (name == null || tel == null) {
+		
+		sq = request.getParameter("sq");
+		String product_sq = request.getParameter("product_sq");
+		
+		if(product_sq == null){
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.'); location.href='/mypage/Mmodify';</script>");
+			out.print("<script>alert('ê²Œì‹œë¬¼ì´ ì—†ìŠµë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-
-		MypageVo mypageVo = new MypageVo();
-		if (pw == null) {
-			mypageVo.setSq(Integer.parseInt(sq));
-			mypageVo.setName(name);
-			mypageVo.setTel(tel);
+		
+		AdminVo adminVo = new AdminVo();
+		adminVo.setSq(Integer.parseInt(sq));
+		adminVo.setProduct_sq(Integer.parseInt(product_sq));
+		
+		AdminService svc = new AdminService();
+		if (!svc.pDelete(adminVo)) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('ê²Œì‹œê¸€ ì‚­ì œê°€ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.'); history.back();</script>");
+			out.close();
+			return null;
 		} else {
-			mypageVo.setSq(Integer.parseInt(sq));
-			mypageVo.setName(name);
-			mypageVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
-			mypageVo.setTel(tel);
+			lm.removeSession(product_sq);
 		}
-
-		MypageService svc = new MypageService();
-
-		if (!svc.modify(mypageVo)) {
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.print("<script>alert('È¸¿øÁ¤º¸¼öÁ¤¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
-			out.close();
-			return null;
-		}
-
+		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/Mdetail.jsp");
+		forward.setPath("/");
+		forward.setRedirect(true);
 		return forward;
 	}
 }

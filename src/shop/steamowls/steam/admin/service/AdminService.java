@@ -19,6 +19,24 @@ public class AdminService {
 		close(con);
 		return vo;
 	}
+	
+	public boolean pDelete(AdminVo adminVo) {
+		AdminDao adminDao = AdminDao.getInstance();
+		Connection con = getConnection();
+		adminDao.setConnection(con);
+
+		int count = adminDao.pDelete(adminVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
 
 	
 }

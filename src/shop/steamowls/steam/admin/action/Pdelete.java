@@ -8,21 +8,22 @@ import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
 
-public class Alogin implements Action{
+public class Pdelete implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
-		
-		if(sq != null) {
+
+		if (sq != null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
 		
+		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Alogin.jsp");
+		forward.setPath("/views/admin/Pdelete.jsp");
 		return forward;
 	}
 }

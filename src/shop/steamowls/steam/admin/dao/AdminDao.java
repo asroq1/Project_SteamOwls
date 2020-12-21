@@ -54,6 +54,21 @@ public class AdminDao {
 		return vo;
 	}
 
+	public int pDelete(AdminVo adminVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_product_tb set product_del_fl = 1 where product_sq = ? and product_del_fl = 0");
+			pstmt.setInt(1, adminVo.getProduct_sq());
+
+			count = pstmt.executeUpdate();
 	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
 
 }

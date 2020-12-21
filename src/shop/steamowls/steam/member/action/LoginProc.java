@@ -22,13 +22,13 @@ public class LoginProc implements Action {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-//		if (RegExp.isEmpty(id) || RegExp.isEmpty(pw)) {
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('잘못된 접근입니다..'); location.href='/';</script>");
-//			out.close();
-//			return null;
-//		}
+		/*
+		 * if (RegExp.isEmpty(id) || RegExp.isEmpty(pw)) {
+		 * response.setContentType("text/html; charset=UTF-8"); PrintWriter out =
+		 * response.getWriter();
+		 * out.print("<script>alert('잘못된 접근입니다..'); location.href='/';</script>");
+		 * out.close(); return null; }
+		 */
 		
 		MemberService svc = new MemberService();
 
@@ -40,7 +40,7 @@ public class LoginProc implements Action {
 		if(vo == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('로그인 정보를 입력하세요'); history.back();</script>");
+			out.print("<script>alert('로그인 정보를 확인하세요'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -48,15 +48,15 @@ public class LoginProc implements Action {
 		if(!id.equals(vo.getId())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('로그인 정보를 재입력하세요'); history.back();</script>");
+			out.print("<script>alert('로그인 정보를 확인하세요'); history.back();</script>");
 			out.close();
-			return null;
+			return null;	
 		}
 		
 		if(!BCrypt.checkpw(pw, vo.getPw())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('로그인 정보를 재입력하세요'); history.back();</script>");
+			out.print("<script>alert('로그인 정보를 확인하세요'); history.back();</script>");
 			out.close();
 			return null;
 		}
