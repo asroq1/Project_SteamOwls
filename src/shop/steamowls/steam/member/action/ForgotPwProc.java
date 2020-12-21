@@ -41,7 +41,7 @@ public class ForgotPwProc implements Action {
 		memberVo.setTel(tel);
 		
 		//존재하지 않는 아이디 회원정보 확인
-		if(svc.forgotPw(memberVo).getPw() == null) {
+		if(svc.forgotPw(memberVo) == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('회원정보가 없습니다.'); history.back();</script>");

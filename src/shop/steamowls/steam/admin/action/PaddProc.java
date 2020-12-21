@@ -6,10 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 
-public class ProductManage implements Action{
+public class PaddProc implements Action {
+	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/productManage.jsp");
+		forward.setPath("/");
+		forward.setRedirect(true);
 		return forward;
 	}
 }

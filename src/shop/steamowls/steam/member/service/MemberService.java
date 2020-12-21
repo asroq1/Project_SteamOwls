@@ -58,17 +58,6 @@ public class MemberService {
 		return vo;
 	}
 	
-	public MemberVo adminLogIn(MemberVo memberVo) {
-		MemberDao memberDao = MemberDao.getInstance();
-		Connection con = getConnection();
-		memberDao.setConnection(con);
-
-		MemberVo vo = memberDao.adminLogIn(memberVo);
-
-		close(con);
-		return vo;
-	}
-
 	public MemberVo forgotId(MemberVo memberVo) {
 		MemberDao memberDao = MemberDao.getInstance();
 		Connection con = getConnection();
@@ -120,7 +109,6 @@ public class MemberService {
 	}
 
 	public boolean withdraw(MypageVo mypageVo) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	

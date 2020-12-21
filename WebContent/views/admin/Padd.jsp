@@ -27,11 +27,11 @@
 <body>
 	<nav>
 		<div class="nav__container">
-            <a href="/admin/productManage">상품관리</a> 
-            <a href="/admin/bookingManage">예약관리</a> 
-            <a href="/admin/salesManage">매출관리</a>
-            <a href="/admin/memberManage">회원관리</a> 
-            <a href="/admin/questionManage">문의관리</a>
+           <a href="/admin/Pmanage">상품관리</a> 
+            <a href="/admin/Bmanage">예약관리</a> 
+            <a href="/admin/Smanage">매출관리</a>
+            <a href="/admin/Mmanage">회원관리</a> 
+            <a href="/admin/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -77,7 +77,7 @@
 			</div>
 			<input type="text" name="price" id="price" placeholder="가격">
 		</form>
-		<button href="/admin/product/PaddProc">상품추가</button>
+		<button  onclick="location.href='/admin/PaddProc'">상품추가</button>
 	</section>
 </body>
 

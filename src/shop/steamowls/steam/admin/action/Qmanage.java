@@ -6,13 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 
-public class MemberManageProc implements Action {
-	@Override
+public class Qmanage implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
 		ActionForward forward = new ActionForward();
-		forward.setPath("/");
-		forward.setRedirect(true);
+		forward.setPath("/views/admin/Qmanage.jsp");
 		return forward;
 	}
 }

@@ -32,11 +32,11 @@
 	</header>
 	<nav>
 		<div class="nav__container">
-            <a href="/admin/productManage">상품관리</a> 
-            <a href="/admin/bookingManage">예약관리</a> 
-            <a href="/admin/salesManage">매출관리</a>
-            <a href="/admin/memberManage">회원관리</a> 
-            <a href="/admin/questionManage">문의관리</a>
+            <a href="/admin/Pmanage">상품관리</a> 
+            <a href="/admin/Bmanage">예약관리</a> 
+            <a href="/admin/Smanage">매출관리</a>
+            <a href="/admin/Mmanage">회원관리</a> 
+            <a href="/admin/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -74,8 +74,8 @@
 	</nav>
 	<section>
 		<div class="update__container">
-			<a href="/admin/productAdd">상품추가</a>
-			<a href="/admin/productDelete">상품삭제</a>
+			<a href="/admin/Padd">상품추가</a>
+			<a href="/admin/Pdelete">상품삭제</a>
 		</div>
 	</section>
 	<section>
@@ -110,8 +110,8 @@
 		</div>
 		</div>
 		<div class="booking__confirm">
-				<button class="confirm__add" onclick="location.href='/admin/product/PsellingButton' ">판매등록</button>
-				<button class="confirm__delete" onclick="location.href='/admin/product/PstopButton' ">판매중지</button>
+				<button class="confirm__add" onclick="location.href='/admin/PsellingButton' ">판매등록</button>
+				<button class="confirm__delete" onclick="location.href='/admin/PstopButton' ">판매중지</button>
 		</div>
 	</section>
 </body>

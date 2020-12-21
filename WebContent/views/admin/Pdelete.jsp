@@ -29,11 +29,11 @@
     </header>
     <nav>
 		<div class="nav__container">
-            <a href="/admin/productManage">상품관리</a> 
-            <a href="/admin/bookingManage">예약관리</a> 
-            <a href="/admin/salesManage">매출관리</a>
-            <a href="/admin/memberManage">회원관리</a> 
-            <a href="/admin/questionManage">문의관리</a>
+              <a href="/admin/Pmanage">상품관리</a> 
+            <a href="/admin/Bmanage">예약관리</a> 
+            <a href="/admin/Smanage">매출관리</a>
+            <a href="/admin/Mmanage">회원관리</a> 
+            <a href="/admin/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -101,7 +101,7 @@
 		</div>
 		</div>
 		<div class="booking__confirm">
-				<button class="confirm__add">상품삭제</button>
+				<button class="confirm__add" onclick="location.href='/admin/product/PdeleteProc'">상품삭제</button>
 		</div>
 	</section>
 </body>

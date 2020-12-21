@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 
-public class ProductManageProc implements Action {
+public class QanswerProc implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 
-public class BookingCancel implements Action{
+public class Mmanage implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/bookingManage.jsp");
+		forward.setPath("/views/admin/Mmanage.jsp");
 		return forward;
 	}
 }

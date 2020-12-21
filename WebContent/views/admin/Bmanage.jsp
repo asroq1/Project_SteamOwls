@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-회원수정페이지
-회원 1 <a href="/admin/memberManage">수정완료</a>
+예약관리화면
+list1 <a href="/admin/Bcancel">예약취소</a>
+<br>
+list2
 </body>
 </html>
