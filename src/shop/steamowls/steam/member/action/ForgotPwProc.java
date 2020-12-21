@@ -26,7 +26,7 @@ public class ForgotPwProc implements Action {
 		if (RegExp.isEmpty(id) || RegExp.isEmpty(name) || RegExp.isEmpty(tel)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('잘못된 접근입니다..'); location.href='/';</script>");
+			out.print("<script>alert('정보를 다시 입력해주세요..'); location.href='/';</script>");
 			out.close();
 			return null;
 		}
@@ -41,10 +41,10 @@ public class ForgotPwProc implements Action {
 		memberVo.setTel(tel);
 		
 		//존재하지 않는 아이디 회원정보 확인
-		if(svc.forgotPw(memberVo).getPw() == null) {
+		if(svc.forgotPw(memberVo) == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('회원정보가 없습니다.'); history.back();</script>");
+			out.print("<script>alert('회원정보를 확인해주세요.'); history.back();</script>");
 			out.close();
 			return null;
 		}

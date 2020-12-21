@@ -13,6 +13,7 @@ function join() {
     }
   
 }
+
 function initCheckPwd() {
     const regExp = new RegExp("^[a-zA-Z0-9!@#$%^&*]{4,10}$", "g");
     const text = document.querySelector(".pw__text");
@@ -24,3 +25,8 @@ function initCheckPwd() {
         isPwdChecked = true;
     }
 }
+document.addEventListener('keydown', (e)=>{
+    if(e.key == "Enter"){
+        join();
+    }
+});

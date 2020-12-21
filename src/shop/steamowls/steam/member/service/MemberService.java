@@ -4,8 +4,6 @@ import java.sql.Connection;
 
 import shop.steamowls.steam.member.dao.MemberDao;
 import shop.steamowls.steam.member.vo.MemberVo;
-import shop.steamowls.steam.mypage.vo.MypageVo;
-
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class MemberService {
@@ -58,17 +56,6 @@ public class MemberService {
 		return vo;
 	}
 	
-	public MemberVo adminLogIn(MemberVo memberVo) {
-		MemberDao memberDao = MemberDao.getInstance();
-		Connection con = getConnection();
-		memberDao.setConnection(con);
-
-		MemberVo vo = memberDao.adminLogIn(memberVo);
-
-		close(con);
-		return vo;
-	}
-
 	public MemberVo forgotId(MemberVo memberVo) {
 		MemberDao memberDao = MemberDao.getInstance();
 		Connection con = getConnection();
@@ -119,9 +106,5 @@ public class MemberService {
 		return vo;
 	}
 
-	public boolean withdraw(MypageVo mypageVo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 }

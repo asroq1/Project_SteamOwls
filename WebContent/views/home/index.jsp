@@ -16,17 +16,18 @@
 	<%
 		if(sq == null) {
 	%>
-	
+	<a href="/">Owls</a>
 	<a href="/member/login">로그인</a>
 	<a href="/member/signup">회원가입</a>
+	<a href="/admin/gotoAdmin">admin</a>
 	<%
 		}else{
 	%>
 		<a href="/">Owls</a>	
 		<a href="/booking/book">예약하기</a> 
-		<a href="/mypage/gotoMypage">마이페이지</a>
-		<a href="/admin">admin</a>	
+		<a href="/mypage/gotoMypage">마이페이지</a>	
 		<a href="/member/logout">로그아웃</a>
+		<a href="/admin/gotoAdmin">admin</a>
 	<%
 		}
 	%>

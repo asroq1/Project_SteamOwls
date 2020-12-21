@@ -11,8 +11,8 @@ import shop.steamowls.common.LoginManager;
 public class ForgotPw implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		//ë¡œê·¸ì¸ì—¬ë¶€ ë° ì˜ëª»ëœ ì ‘ê·¼
-		//ì„¸ì…˜ì— sq ê°€ì§€ê³  ìˆê¸°
+		//·Î±×ÀÎ¿©ºÎ ¹× Àß¸øµÈ Á¢±Ù
+		//¼¼¼Ç¿¡ sq °¡Áö°í ÀÖ±â
 		HttpSession session = request.getSession();
 		
 		LoginManager lm = LoginManager.getInstance();

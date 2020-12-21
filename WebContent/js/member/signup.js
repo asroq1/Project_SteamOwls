@@ -8,7 +8,7 @@ const cpw__text = document.querySelector(".cpw__text");
 const text = document.querySelector(".name__text");
 const tel__text = document.querySelector(".tel__text");
 const name__text = document.querySelector(".name__text");
-
+const signup__btn = document.querySelector("#signup__button");
 //정규표현식을 위한 변수 선언
 let isTelChecked = false;
 let isNameChecked = false;
@@ -44,6 +44,7 @@ function join() {
     }
     if (pw.value != cpw.value) {
         cpw__text.innerHTML = '비밀번호가 일치하지 않습니다.';
+        cpw__text.style.color = "red";
         return;
     }
 
@@ -51,8 +52,7 @@ function join() {
         tel__text.innerHTML = '전화번호를 입력해주세요';
         return;
     }
-    if (info_fl.checked != true) {
-
+    if (!info_fl.checked) {
         alert("개인정보약관에 동의하세요.");
         return;
     }
@@ -121,4 +121,10 @@ name.addEventListener('keyup', () => {
 
 tel.addEventListener('keyup', () => {
     initCheckTel();
+});
+
+document.addEventListener('keydown', (e)=>{
+    if(e.key == "Enter"){
+        join();
+    }
 });

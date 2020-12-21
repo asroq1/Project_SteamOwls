@@ -1,5 +1,10 @@
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%
+	LoginManager lm = LoginManager.getInstance();
+	String sq = lm.getMemberSq(session);
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -12,11 +17,10 @@
 </head>
 
 <body>
-	<header> 
-			<a href="/views/home/index.jsp">
-                <img src="/css/picture/owls.PNG" alt="로고사진">
-            </a>
-			<a href="/member/login" class="signForm">로그인</a>
+	<header>
+		<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
+			alt="로고사진">
+		</a> <a href="/member/login" class="signForm">로그인</a>
 	</header>
 	<section>
 		<div class="findId__form">
@@ -35,9 +39,10 @@
 				</div>
 			</form>
 
-        </div>
-    </section>
-    <script defer="defer" src="/js/member/forgotId.js" type="text/javascript"></script>
+		</div>
+	</section>
+	<script defer="defer" src="/js/member/forgotId.js"
+		type="text/javascript"></script>
 </body>
 
 </html>
