@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,6 @@
 </head>
 <body>
 문의관리화면
-회원 1의 문의글 <a href="/admin/answer">답변</a>
+회원 1의 문의글 <a href="/admin/question/Qanswer">답변</a>
 </body>
 </html>

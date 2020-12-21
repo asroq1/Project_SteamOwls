@@ -30,11 +30,11 @@ String sq = lm.getMemberSq(session);
 	</header>
 	<nav>
 		<div class="nav__container">
-            <a href="/admin/Pmanage">상품관리</a> 
-            <a href="/admin/Bmanage">예약관리</a> 
-            <a href="/admin/Smanage">매출관리</a>
-            <a href="/admin/Mmanage">회원관리</a> 
-            <a href="/admin/QManage">문의관리</a>
+            <a href="/admin/product/Pmanage">상품관리</a> 
+            <a href="/admin/booking/Bmanage">예약관리</a> 
+            <a href="/admin/sales/Smanage">매출관리</a>
+            <a href="/admin/member/Mmanage">회원관리</a> 
+            <a href="/admin/question/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">

@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
+<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+
 <%
+	MemberVo vo = (MemberVo) request.getAttribute("vo");
 	LoginManager lm = LoginManager.getInstance();
 	String sq = lm.getMemberSq(session);
+/* 	ProductVo  productVo = (ProductVo) request.getAttribute("productVo"); */
 %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>상품등록화면</title>
-	<link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
-	<link rel="stylesheet" href="/css/admin/productAdd.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상품등록화면</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+<link rel="stylesheet" href="/css/admin/productAdd.css">
+<script src="/js/admin/Padd.js" defer></script>
 </head>
 <header>
 	<div class="header__logo">
@@ -27,11 +32,9 @@
 <body>
 	<nav>
 		<div class="nav__container">
-           <a href="/admin/Pmanage">상품관리</a> 
-            <a href="/admin/Bmanage">예약관리</a> 
-            <a href="/admin/Smanage">매출관리</a>
-            <a href="/admin/Mmanage">회원관리</a> 
-            <a href="/admin/QManage">문의관리</a>
+			<a href="/admin/product/Pmanage">상품관리</a> <a href="/admin/booking/Bmanage">예약관리</a> <a
+				href="/admin/sales/Smanage">매출관리</a> <a href="/admin/member/Mmanage">회원관리</a> <a
+				href="/admin/question/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -69,15 +72,21 @@
 	</nav>
 	<section>
 		<h1>상품등록화면</h1>
-		<form class="add__form">
-			<input type="file" name="img" id="img">
-			<div class="text__form">
-				<input type="text" placeholder="상품제목">
-				<input type="text" placeholder="상품내용">				
+		<form class="add__form" action="/admin/product/PaddProc<%-- /<%=?productVo=getSq()%> --%> " id="ckpoint" method="post">
+			<div>
+				<label for="product_image">이미지</label>
+				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">
 			</div>
-			<input type="text" name="price" id="price" placeholder="가격">
+			<div class="text__form">
+				<label for="product_name">상품이름</label>
+				<input type="text" placeholder="상품이름" name="product_name" id="product_name">
+				<label for="product_detail">설명</label>
+				<input type="text" placeholder="상품설명" name="product_detail" id="product_detail">
+			</div>
+			<label for="product_price">가격</label>
+			<input type="text" name="product_price" id="product_price" placeholder="가격">
 		</form>
-		<button  onclick="location.href='/admin/PaddProc'">상품추가</button>
+		<button onclick="Padd()">상품추가</button>
 	</section>
 </body>
 

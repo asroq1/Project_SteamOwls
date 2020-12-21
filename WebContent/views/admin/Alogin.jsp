@@ -19,7 +19,7 @@
 	<section>
 		<div class="login__form">
 			<h1>관리자 페이지</h1>
-			<form action="/admin/AloginProc" method="POST" id="ckpoint">
+			<form action="/admin/admin/AloginProc" method="POST" id="ckpoint">
 				<div class="login__id">
 					<input type="text" placeholder="아이디" id="id" name="id" maxlength="10">
 					<p class="id__text"></p>

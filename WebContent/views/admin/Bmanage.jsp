@@ -8,7 +8,7 @@
 </head>
 <body>
 예약관리화면
-list1 <a href="/admin/Bcancel">예약취소</a>
+list1 <a href="/admin/booking/Bcancel">예약취소</a>
 <br>
 list2
 </body>

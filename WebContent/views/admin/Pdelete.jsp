@@ -1,39 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
+<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+
 <%
-            LoginManager lm = LoginManager.getInstance();
-            String sq = lm.getMemberSq(session);
-    %>
+	MemberVo vo = (MemberVo) request.getAttribute("vo");
+	LoginManager lm = LoginManager.getInstance();
+	 String sq = lm.getMemberSq(session);
+	/* ProductVo  productVo = (ProductVo) request.getAttribute("productVo"); */
+%> 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>상품삭제</title>
-    <link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
-	<link rel="stylesheet" href="/css/admin/productManage.css">
+<meta charset="UTF-8">
+<title>상품삭제</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+<link rel="stylesheet" href="/css/admin/productManage.css">
+<script src="/js/admin/Pdelete.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="header__logo">
-            <a href="/views/home/index.jsp">
-              <img src="/css/picture/owls.PNG"alt="로고사진">
-            </a>
-        </div>
-        <div class="header__signForm">
-            <a href="/member/logout">로그아웃</a>
-        </div>
-    </header>
-    <nav>
+	<header>
+		<div class="header__logo">
+			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
+				alt="로고사진">
+			</a>
+		</div>
+		<div class="header__signForm">
+			<a href="/member/logout">로그아웃</a>
+		</div>
+	</header>
+	<nav>
 		<div class="nav__container">
-              <a href="/admin/Pmanage">상품관리</a> 
-            <a href="/admin/Bmanage">예약관리</a> 
-            <a href="/admin/Smanage">매출관리</a>
-            <a href="/admin/Mmanage">회원관리</a> 
-            <a href="/admin/QManage">문의관리</a>
+			<a href="/admin/product/Pmanage">상품관리</a> <a href="/admin/booking/Bmanage">예약관리</a> <a
+				href="/admin/sales/Smanage">매출관리</a> <a href="/admin/member/Mmanage">회원관리</a> <a
+				href="/admin/question/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -69,39 +72,38 @@
 			</div>
 		</div>
 	</nav>
-    <section>
+	<section>
 		<h1>상품삭제</h1>
-		<div class="form__container">
+		<form action="/admin/product/PdeleteProc<%-- ?sq=<%=vo.getSq()%>&<%= %> --%>" class="form__container" method="post" id="ckpoint">
 			<div class="booking__Form">
-			
-			<div class="booking_img">
-				<img src="/css/picture/owls.PNG" alt="">
-				<%-- <%=vo.getProduct_image()%> --%>
-			</div>
-			<div class="title__intro__container">
-				<div class="booking__title">
-					<h3>
-						벚꽃잎이 피어나듯이 그때 그 벤치에 앉아, 
-						<%-- <%=vo.getProduct_name()%> --%>
-					</h3>
+				
+				<div class="booking_img">
+					<img src="/css/picture/owls.PNG" alt="">
+					<%-- <%=vo.getProduct_image()%> --%>
 				</div>
-				<div class="booking__intro">
+				<div class="title__intro__container">
+					<div class="booking__title">
+						<h3>
+							<%-- <%=vo.getProduct_name()%> --%>
+						</h3>
+					</div>
+					<div class="booking__intro">
+						<p>
+							<%-- <%=vo.getProduct_detail()%> --%>
+						</p>
+					</div>
+				</div>
+				<div class="booking__price">
 					<p>
-						봄바람 휘날리며 ~ 흩날리는 벚꽃잎이 ~ 흩날리는 우우우우우우 둘이 걸어요
-						<%-- <%=vo.getProduct_detail()%> --%>
+						<%-- <%=vo.getProduct_price()%> --%>
 					</p>
 				</div>
 			</div>
-			<div class="booking__price">
-				<p>
-					120,000원
-					<%-- <%=vo.getProduct_price()%> --%>
-				</p>
-			</div>
-		</div>
-		</div>
+		</form>
 		<div class="booking__confirm">
-				<button class="confirm__add" onclick="location.href='/admin/product/PdeleteProc'">상품삭제</button>
+			<button class="confirm__add" onclick="Pdelete()">
+				상품삭제
+			</button>
 		</div>
 	</section>
 </body>

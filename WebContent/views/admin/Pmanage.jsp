@@ -22,21 +22,21 @@
 <body>
 	<header>
 		<div class="header__logo">
-            <a href="/views/home/index.jsp">
-              <img src="/css/picture/owls.PNG"alt="로고사진">
-            </a>
-        </div>
+			<a href="/views/home/index.jsp">
+				<img src="/css/picture/owls.PNG" alt="로고사진">
+			</a>
+		</div>
 		<div class="header__signForm">
-            <a href="/member/logout">로그아웃</a>
-        </div>
+			<a href="/member/logout">로그아웃</a>
+		</div>
 	</header>
 	<nav>
 		<div class="nav__container">
-            <a href="/admin/Pmanage">상품관리</a> 
-            <a href="/admin/Bmanage">예약관리</a> 
-            <a href="/admin/Smanage">매출관리</a>
-            <a href="/admin/Mmanage">회원관리</a> 
-            <a href="/admin/QManage">문의관리</a>
+			<a href="/admin/product/Pmanage">상품관리</a>
+			<a href="/admin/booking/Bmanage">예약관리</a>
+			<a href="/admin/sales/Smanage">매출관리</a>
+			<a href="/admin/member/Mmanage">회원관리</a>
+			<a href="/admin/question/QManage">문의관리</a>
 		</div>
 		<div class="sub__wrapper">
 			<div class="nav__sub pm">
@@ -74,44 +74,41 @@
 	</nav>
 	<section>
 		<div class="update__container">
-			<a href="/admin/Padd">상품추가</a>
-			<a href="/admin/Pdelete">상품삭제</a>
+			<a href="/admin/product/Padd">상품추가</a>
+			<a href="/admin/product/Pdelete">상품삭제</a>
 		</div>
 	</section>
 	<section>
 		<h1>판매상품내역</h1>
 		<div class="form__container">
-			<div class="booking__Form">
-			
-			<div class="booking_img">
-				<img src="/css/picture/owls.PNG" alt="">
-				<%-- <%=vo.getProduct_image()%> --%>
-			</div>
-			<div class="title__intro__container">
-				<div class="booking__title">
-					<h3>
-						벚꽃잎이 피어나듯이 그때 그 벤치에 앉아, 
-						<%-- <%=vo.getProduct_name()%> --%>
-					</h3>
+			<form action="/admin/product." class="booking__Form">
+				<div class="booking_img">
+					<img src="/css/picture/owls.PNG" alt="">
+					<%-- <%=vo.getProduct_image()%> --%>
 				</div>
-				<div class="booking__intro">
+				<div class="title__intro__container">
+					<div class="booking__title">
+						<h3>
+							<%-- <%=vo.getProduct_name()%> --%>
+						</h3>
+					</div>
+					<div class="booking__intro">
+						<p>
+							
+							<%-- <%=vo.getProduct_detail()%> --%>
+						</p>
+					</div>
+				</div>
+				<div class="booking__price">
 					<p>
-						봄바람 휘날리며 ~ 흩날리는 벚꽃잎이 ~ 흩날리는 우우우우우우 둘이 걸어요
-						<%-- <%=vo.getProduct_detail()%> --%>
+						<%-- <%=vo.getProduct_price()%> --%>
 					</p>
 				</div>
 			</div>
-			<div class="booking__price">
-				<p>
-					120,000원
-					<%-- <%=vo.getProduct_price()%> --%>
-				</p>
-			</div>
-		</div>
 		</div>
 		<div class="booking__confirm">
-				<button class="confirm__add" onclick="location.href='/admin/PsellingButton' ">판매등록</button>
-				<button class="confirm__delete" onclick="location.href='/admin/PstopButton' ">판매중지</button>
+			<button class="confirm__add" onclick="location.href='/admin/product/PsellingButton' ">판매시작</button>
+			<button class="confirm__delete" onclick="location.href='/admin/product/PstopButton' ">판매중지</button>
 		</div>
 	</section>
 </body>
