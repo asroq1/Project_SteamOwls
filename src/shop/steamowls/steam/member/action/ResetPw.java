@@ -26,11 +26,22 @@ public class ResetPw implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+		HttpSession session = request.getSession();
+		LoginManager lm = LoginManager.getInstance();
+		String sq = lm.getMemberSq(session);
+
+		if (sq != null) {
+			ActionForward forward = new ActionForward();
+			forward.setPath("/");
+			forward.setRedirect(true);
+			return forward;
+		}
+
 		String pw = request.getParameter("pw");
 		String cpw = request.getParameter("cpw");
-		String sq = request.getParameter("sq");
-		
-		if (RegExp.isValidExp(pw, REGEXP_PW)) {
+		sq = request.getParameter("sq");
+
+		if (RegExp.isValidExp(pw, REGEXP_PW) || RegExp.isValidExp(cpw, REGEXP_PW)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('정보를 올바르게 입력해 주세요.'); location.href='/';</script>");
