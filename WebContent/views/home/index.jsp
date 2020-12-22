@@ -20,6 +20,7 @@
 	<a href="/member/login">로그인</a>
 	<a href="/member/signup">회원가입</a>
 	<a href="/admin/gotoAdmin">admin</a>
+	<a href="/booking/book">예약하기</a> 
 	<%
 		}else{
 	%>

@@ -33,7 +33,7 @@ public class MwithdrawProc implements Action {
 		if (sq == null || pw == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -46,7 +46,7 @@ public class MwithdrawProc implements Action {
 		if (!svc.withdraw(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		} else {

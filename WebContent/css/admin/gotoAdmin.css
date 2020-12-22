@@ -25,69 +25,72 @@
 
 }
 a{
-    text-decoration: none;
-   
+	text-decoration: none;
 }
-li{
-	list-style: none; 
-}
-
 header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
-body{
-    width: 85%;
-    margin: 0 auto;
-}
-
-.header__signForm a{
-    color: var(--black--color);
-    font-weight: bold;
-}
-.nav__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 3.750em;
-    align-items: center;
-    background: var(--theme-color);
-}
-.nav__container a{
-	width:20%;
-	text-align : center;
-	color: var(--white--color);
-	font-weight: bold;
-	padding: 1.5em;
-}
-.nav__container a:hover{
-	background-color: var(--white--color);
-	color: var(--grey--dark--color);
-}
-.sub__wrapper{
 	display: flex;
-    justify-content: space-evenly;
+	align-items: center;
+    justify-content: space-around;
 }
-.nav__sub{
-	display: none;
-    width: 20%;
-    background: var(--grey--light--color);
-}
-.nav__sub ul{
+  
+  nav {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-color: var(--theme-color);
+  }
+  
+  ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  #main-menu > li {
+	float: left;
+	position: relative;
+  }
+  
+  #main-menu > li > a {
+	font-size: 0.85rem;
+	color: rgba(255,255,255,0.85);
 	text-align: center;
-}
-.nav__sub li{
-	padding: 6px;
-	
-}
-.nav__sub li:hover{
-	transform: scale(1.2);
-}
-.nav__sub a{
-    color: var(--grey-light--color);
-    display: block;
-}
-
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	display: block;
+	padding: 14px 36px;
+	border-right: 1px solid rgba(0,0,0,0.15);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  }
+  
+  #main-menu > li:nth-child(1) > a {
+	border-left: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  #sub-menu {
+	position: absolute;
+	background-color: var(--grey--dark--color);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.15s ease-in;
+  }
+  
+  #sub-menu > li {
+	padding: 16px 28px;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  #sub-menu > li >  a {
+	color: var(--white--color);
+	text-decoration: none;
+  }
+  
+  #main-menu > li:hover #sub-menu {
+	opacity: 1;
+	visibility: visible;
+  }
+  
+  #sub-menu > li >  a:hover {
+   text-decoration: underline;
+  }

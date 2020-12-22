@@ -247,10 +247,10 @@ public class MypageController extends HttpServlet {
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
-				// ¸®´ÙÀÌ·ºÆ®
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Ì·ï¿½Æ®
 				response.sendRedirect(forward.getPath());
 			} else {
-				// µð½ºÆÐÄ¡
+				// ï¿½ï¿½ï¿½ï¿½Ä¡
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}

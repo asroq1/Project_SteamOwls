@@ -65,8 +65,7 @@ public class PaddProc implements Action {
 		adminVo.setFile_path(file_path);
 		adminVo.setThumbnail_path(thumbnail_path);
 		
-		if(!svc.)
-		
+//		if(!svc.)
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/");

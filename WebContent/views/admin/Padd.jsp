@@ -5,8 +5,8 @@
 
 <%
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
-	LoginManager lm = LoginManager.getInstance();
-	String sq = lm.getMemberSq(session);
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
 /* 	ProductVo  productVo = (ProductVo) request.getAttribute("productVo"); */
 %>
 <!DOCTYPE html>
@@ -23,70 +23,70 @@
 </head>
 <header>
 	<div class="header__logo">
-		<img src="/css/picture/owls.PNG" alt="로고사진">
+		<a href="/views/home/index.jsp">
+			<img src="/css/picture/owls.PNG" alt="로고사진">
+		</a>
 	</div>
 	<div class="header__signForm">
 		<a href="/member/logout">로그아웃</a>
 	</div>
 </header>
 <body>
-	<nav>
-		<div class="nav__container">
-			<a href="/admin/product/Pmanage">상품관리</a> <a href="/admin/booking/Bmanage">예약관리</a> <a
-				href="/admin/sales/Smanage">매출관리</a> <a href="/admin/member/Mmanage">회원관리</a> <a
-				href="/admin/question/QManage">문의관리</a>
-		</div>
-		<div class="sub__wrapper">
-			<div class="nav__sub pm">
-				<ul>
-					<li><a href="#">상품등록</a></li>
-					<li><a href="#">상품삭제</a></li>
-					<li><a href="#">상품내역</a></li>
+	<nav role="navigation">
+		<ul id="main-menu">
+			<li><a href="#">상품관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Padd.jsp" aria-label="subemnu">상품추가</a></li>
+					<li><a href="/views/admin/Pdelete.jsp" aria-label="subemnu">상품삭제</a></li>
+					<li><a href="/views/admin/Pmanage.jsp" aria-label="subemnu">상품관리</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub bm">
-				<ul>
-					<li><a href="#">예약관리</a></li>
-					<li><a href="#">예약취소</a></li>
+			</li>
+			<li><a href="#">예약관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Bmanage.jsp" aria-label="subemnu">예약내역</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약완료</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약수정</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약취소</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub pm">
-				<ul>
-					<li><a href="#">매출관리</a></li>
+			</li>
+			<li><a href="#">매출관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Smanage.jsp" aria-label="subemnu">매출내역</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub um">
-				<ul>
-					<li><a href="#">회원수정</a></li>
-					<li><a href="#">회원탈퇴</a></li>
-					<li><a href="#">회원내역</a></li>
+			</li>
+			<li><a href="#">회원관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/" aria-label="subemnu">회원수정</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">회원탈퇴</a></li>
+					<li><a href="/views/admin/Mmanage.jsp" aria-label="subemnu">회원내역</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub qm">
-				<ul>
-					<li><a href="#">문의내역</a></li>
-					<li><a href="#">답변하기</a></li>
+			</li>
+			<li><a href="#">문의관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Qmanage.jsp" aria-label="subemnu">문의내역</a></li>
+					<li><a href="/views/admin/Qanswer.jsp" aria-label="subemnu">답변하기</a></li>
 				</ul>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</nav>
 	<section>
-		<h1>상품등록화면</h1>
-		<form class="add__form" action="/admin/product/PaddProc<%-- /<%=?productVo=getSq()%> --%> " id="ckpoint" method="post">
+		
+		<form  action="/admin/product/PaddProc<%-- /<%=?productVo=getSq()%> --%> "
+			id="ckpoint" method="post">
 			<div>
-				<label for="product_image">이미지</label>
+				<label for="product_image">이미지</label> 
 				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">
 			</div>
 			<div class="text__form">
-				<label for="product_name">상품이름</label>
-				<input type="text" placeholder="상품이름" name="product_name" id="product_name">
-				<label for="product_detail">설명</label>
-				<input type="text" placeholder="상품설명" name="product_detail" id="product_detail">
+				<label for="product_name">상품이름</label> <input type="text"
+					placeholder="상품이름" name="product_name" id="product_name"> <label
+					for="product_detail">설명</label> <input type="text"
+					placeholder="상품설명" name="product_detail" id="product_detail">
 			</div>
-			<label for="product_price">가격</label>
-			<input type="text" name="product_price" id="product_price" placeholder="가격">
+			<label for="product_price">가격</label><input type="text"
+				name="product_price" id="product_price" placeholder="가격">
 		</form>
-		<button onclick="Padd()">상품추가</button>
+		<button id="Padd" onclick="Padd()">상품추가</button>
 	</section>
 </body>
 
