@@ -23,22 +23,32 @@
     --font-micro: 10px;
 
 }
-
-input{
-	display:block;
-	border: 1px solid black;
-}
-label{
-    display: block;
-}
-.add__form{
-    display: inline-flex;
-    width: 80%;
-    height: 10em;
-}
-#img{
-	width: 10%;
-}
-.text__form{
+section{
+	margin: 0 auto;
 	width: 50%;
+	margin-top: 10%;
+}
+input{
+	display: block;
+	width: 100%;
+	margin: 0;
+	border: 1px solid var(--black--color);
+	border-radius: 5px;
+	padding : 10px;
+ }
+#product_image{
+	border: 0;	
+}
+#ckpoint{
+	display: flex;
+    flex-direction: column;
+}
+#Padd{
+	display: flex;
+	margin: 0 auto;
+	margin-top : 1em; 
+	padding: 15px;
+	border-radius : 5px;
+	background-color: var(--theme-color);
+	color: var(--white--color);
 }

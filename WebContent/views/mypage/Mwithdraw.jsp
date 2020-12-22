@@ -1,7 +1,9 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
+<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	MemberVo vo = (MemberVo) request.getAttribute("vo");
 	LoginManager lm = LoginManager.getInstance();
 	String sq = lm.getMemberSq(session);
 %>
@@ -30,7 +32,8 @@
     </header>
 
     <body>
-        <form action="/mypage/Mwithdraw" method="POST" id="checkPoint">
+    	
+        <form action="/mypage/Mwithdraw?sq=<%=vo.getSq()%>" method="POST" id="checkPoint">
             <input type="password" name="pw" id="pw" placeholder="비밀번호" maxlength="10">
             <input type="password" name="pw" id="cpw" placeholder="비밀번호 재확인" maxlength="10">
         </form>

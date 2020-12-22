@@ -5,6 +5,7 @@
 <%
 	LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -25,50 +26,45 @@ String sq = lm.getMemberSq(session);
 			</a>
 		</div>
 		<div class="header__signForm">
-			<a href="/member/logout">로그아웃</a>
+			<a href="/admin/Alogout">로그아웃</a>
 		</div>
 	</header>
-	<nav>
-		<div class="nav__container">
-            <a href="/admin/Pmanage">상품관리</a> 
-            <a href="/admin/Bmanage">예약관리</a> 
-            <a href="/admin/Smanage">매출관리</a>
-            <a href="/admin/Mmanage">회원관리</a> 
-            <a href="/admin/QManage">문의관리</a>
-		</div>
-		<div class="sub__wrapper">
-			<div class="nav__sub pm">
-				<ul>
-					<li><a href="#">상품추가</a></li>
-					<li><a href="#">상품삭제</a></li>
-					<li><a href="#">상품내역</a></li>
+	<nav role="navigation">
+		<ul id="main-menu">
+			<li><a href="#">상품관리</a>
+				<ul id="sub-menu">
+					<li><a href="/admin/Padd" aria-label="subemnu">상품추가</a></li>
+					<li><a href="/admin/Pdelete" aria-label="subemnu">상품삭제</a></li>
+					<li><a href="/views/admin/Pmanage.jsp" aria-label="subemnu">상품관리</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub bm">
-				<ul>
-					<li><a href="#">예약관리</a></li>
-					<li><a href="#">예약취소</a></li>
+			</li>
+			<li><a href="#">예약관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Bmanage.jsp" aria-label="subemnu">예약내역</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약완료</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약수정</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">예약취소</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub pm">
-				<ul>
-					<li><a href="#">매출관리</a></li>
+			</li>
+			<li><a href="#">매출관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Smanage.jsp" aria-label="subemnu">매출내역</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub um">
-				<ul>
-					<li><a href="#">회원수정</a></li>
-					<li><a href="#">회원탈퇴</a></li>
-					<li><a href="#">회원내역</a></li>
+			</li>
+			<li><a href="#">회원관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/" aria-label="subemnu">회원수정</a></li>
+					<li><a href="/views/admin/" aria-label="subemnu">회원탈퇴</a></li>
+					<li><a href="/views/admin/Mmanage.jsp" aria-label="subemnu">회원내역</a></li>
 				</ul>
-			</div>
-			<div class="nav__sub qm">
-				<ul>
-					<li><a href="#">문의내역</a></li>
-					<li><a href="#">답변하기</a></li>
+			</li>
+			<li><a href="#">문의관리</a>
+				<ul id="sub-menu">
+					<li><a href="/views/admin/Qmanage.jsp" aria-label="subemnu">문의내역</a></li>
+					<li><a href="/views/admin/Qanswer.jsp" aria-label="subemnu">답변하기</a></li>
 				</ul>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</nav>
 	<section>
 		<h1>관리자 메인</h1>
