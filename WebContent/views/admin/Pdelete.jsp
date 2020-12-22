@@ -72,12 +72,14 @@ ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 			</li>
 		</ul>
 	</nav>
-	<section>
-		<h1>상품삭제</h1>
-		<%
+	<%
 			for(int i = 0; i < list.size(); i++) {
 		%>
-		<form action="/admin/product/PdeleteProc" class="form__container" method="post" id="ckpoint">
+	<section>
+		<h1>상품삭제</h1>
+		
+		<form action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>" class="form__container" method="post" id="ckpoint">
+		
 			<div class="booking__Form">
 				
 				<div class="booking_img">
@@ -107,11 +109,11 @@ ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 			<button class="confirm__add" onclick="Pdelete()">
 				상품삭제
 			</button>
-			<%
-			}
-			%>
 		</div>
 	</section>
+		<%
+			}
+			%>
 </body>
 
 </html>

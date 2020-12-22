@@ -7,14 +7,14 @@ const sub__wrapper = document.querySelectorAll('.sub__wrapper');
 
 add_btn.addEventListener('click',()=>{
     if(confirm('판매를 시작하시겠습니까?')== true){
-        add_btn.setAttribute('action', '/admin/product/PsellingButton');
+        add_btn.setAttribute('action', '/admin/PsellingButton?product_sq=<%=list.get(i).getProduct_sq()%>');
         ckpoint.submit();
     }
 });
 
 delete_btn.addEventListener('click',()=>{
     if(confirm('판매를 중지하시겠습니까?')== true){
-        add_btn.setAttribute('action', '/admin/product/PstopButton');
+        add_btn.setAttribute('action', '/admin/PstopButton?product_sq=<%=list.get(i).getProduct_sq()%>');
         ckpoint.submit();
     }
 });

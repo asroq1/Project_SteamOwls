@@ -1,3 +1,5 @@
+<%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
@@ -7,6 +9,7 @@
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
 	LoginManager lm = LoginManager.getInstance();
 	String sq = lm.getMemberSq(session);
+	ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
@@ -68,6 +71,9 @@
 			</li>
 		</ul>
 	</nav>
+	<%
+		for(int i = 0; i < list.size(); i++) {
+	%>
 	<section>
 		<h1>판매상품내역</h1>
 		<div class="form__container">
@@ -79,18 +85,18 @@
 				<div class="title__intro__container">
 					<div class="booking__title">
 						<h3>
-							<%-- <%=vo.getProduct_name()%> --%>
+							<%=list.get(i).getProduct_name()%>
 						</h3>
 					</div>
 					<div class="booking__intro">
 						<p>
-							<%-- <%=vo.getProduct_detail()%> --%>
+							<%=list.get(i).getProduct_detail()%>
 						</p>
 					</div>
 				</div>
 				<div class="booking__price">
 					<p>
-						<%-- <%=vo.getProduct_price()%> --%>
+						<%=list.get(i).getProduct_price()%>
 					</p>
 				</div>
 			</form>
@@ -101,6 +107,9 @@
 			<button class="confirm__delete">판매중지</button>
 		</div>
 	</section>
+	<%
+		}
+	%>
 </body>
 
 </html>

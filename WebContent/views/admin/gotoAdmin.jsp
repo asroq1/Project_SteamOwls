@@ -35,7 +35,7 @@ String sq = lm.getMemberSq(session);
 				<ul id="sub-menu">
 					<li><a href="/admin/Padd" aria-label="subemnu">상품추가</a></li>
 					<li><a href="/admin/Pdelete" aria-label="subemnu">상품삭제</a></li>
-					<li><a href="/views/admin/Pmanage.jsp" aria-label="subemnu">상품관리</a></li>
+					<li><a href="/admin/Pmanage" aria-label="subemnu">상품관리</a></li>
 				</ul>
 			</li>
 			<li><a href="#">예약관리</a>

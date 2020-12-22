@@ -77,7 +77,7 @@ public class PaddProc implements Action {
 		
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Plist.jsp");
+		forward.setPath("/admin/gotoAdmin");
 		forward.setRedirect(true);
 		return forward;
 
