@@ -30,7 +30,7 @@ public class PsellingButton implements Action{
 		if(product_sq == null){
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('상품이 없습니다.'); history.back();</script>");
+			out.print("<script>alert('판매할 상품이 없습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}

@@ -11,6 +11,8 @@ public class ProductVo {
 	private int product_sell_count;
 	private int product_qna_count;
 	private int product_people;
+	private String fileName;
+	private String fileRealName;
 
 	/**
 	 * @return the product_people
@@ -198,5 +200,35 @@ public class ProductVo {
 	public void setThumbnail_path(String thumbnail_path) {
 		this.thumbnail_path = thumbnail_path;
 	}
+
+	/**
+	 * @return the fileName
+	 */
+	public String getFileName() {
+		return fileName;
+	}
+
+	/**
+	 * @param fileName the fileName to set
+	 */
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	/**
+	 * @return the fileRealName
+	 */
+	public String getFileRealName() {
+		return fileRealName;
+	}
+
+	/**
+	 * @param fileRealName the fileRealName to set
+	 */
+	public void setFileRealName(String fileRealName) {
+		this.fileRealName = fileRealName;
+	}
+	
+	
 
 }

@@ -79,7 +79,7 @@ ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 		<h1>상품삭제</h1>
 		
 		<form action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>" class="form__container" method="post" id="ckpoint">
-		
+					
 			<div class="booking__Form">
 				
 				<div class="booking_img">
