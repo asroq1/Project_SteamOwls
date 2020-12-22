@@ -19,7 +19,7 @@ public class PdeleteProc implements Action {
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq != null) {
+		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -38,7 +38,6 @@ public class PdeleteProc implements Action {
 		}
 		
 		ProductVo productVo = new ProductVo();
-		productVo.setSq(Integer.parseInt(sq));
 		productVo.setProduct_sq(Integer.parseInt(product_sq));
 		
 		ProductService svc = new ProductService();
@@ -53,7 +52,7 @@ public class PdeleteProc implements Action {
 		}
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/");
+		forward.setPath("/admin/gotoAdmin");
 		forward.setRedirect(true);
 		return forward;
 	}

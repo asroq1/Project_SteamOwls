@@ -1,10 +1,14 @@
 package shop.steamowls.steam.admin.product.action;
 
 import java.io.PrintWriter;
+import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
@@ -31,9 +35,15 @@ public class PaddProc implements Action {
 		String product_detail = request.getParameter("product_detail");
 		String product_price = request.getParameter("product_price");
 		String product_people = request.getParameter("product_people");
-		String file_path = request.getParameter("file_path");
-		String thumbnail_path = request.getParameter("thumbnail_path");
-
+		
+		String uploadDir = this.getClass().getResource("").getPath();
+		uploadDir = uploadDir.substring(1, uploadDir.indexOf(".metadata")) + "uploadTest/WebContent/uploadImage";
+		int maxSize = 350 * 200 * 100;
+		String encoding = "UTF-8";
+		MultipartRequest multipartRequest = new MultipartRequest(request, uploadDir, maxSize, encoding, new DefaultFileRenamePolicy());
+		String fileName = multipartRequest.getOriginalFileName("file");
+		String fileRealName = multipartRequest.getFilesystemName("file");
+		
 		if (product_name == null || product_name.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -64,8 +74,9 @@ public class PaddProc implements Action {
 		productVo.setProduct_detail(product_detail);
 		productVo.setProduct_price(Integer.parseInt(product_price));
 		productVo.setProduct_people(Integer.parseInt(product_people));
-		productVo.setFile_path(file_path);
-		productVo.setThumbnail_path(thumbnail_path);
+		productVo.setFileName(fileName);
+		productVo.setFileRealName(fileRealName);
+		
 
 		if (!svc.pAdd(productVo)) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -77,7 +88,7 @@ public class PaddProc implements Action {
 		
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Plist.jsp");
+		forward.setPath("/admin/gotoAdmin");
 		forward.setRedirect(true);
 		return forward;
 

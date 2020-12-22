@@ -35,7 +35,7 @@ public class ProductDao {
 		int count = 0;
 		
 		try {
-			pstmt = con.prepareStatement("insert into owls_product_tb(product_name, product_detail, product_people, product_price) values(?, ?, ?, ?)");
+			pstmt = con.prepareStatement("insert into owls_product_tb(product_name, product_detail, product_people, product_price, fileName, filrRealName) values(?, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, productVo.getProduct_name());
 			pstmt.setString(2, productVo.getProduct_detail());
 			pstmt.setInt(3, productVo.getProduct_people());
@@ -93,7 +93,39 @@ public class ProductDao {
 		}
 		return count;
 	}
-
 	
+	public int pSellingButton(ProductVo productVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_product_tb set product_status_fl = 0 where product_sq = ? and product_del_fl = 0");
+			pstmt.setInt(1, productVo.getProduct_sq());
+
+			count = pstmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+
+	public int pStopButton(ProductVo productVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_product_tb set product_status_fl = 1 where product_sq = ? and product_del_fl = 0");
+			pstmt.setInt(1, productVo.getProduct_sq());
+
+			count = pstmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
 
 }
