@@ -1,21 +1,35 @@
 package shop.steamowls.steam.admin.product.vo;
 
 public class ProductVo {
-	
-	private int sq;		//이 세개는 member관련 vo
-	private String id;	//
-	private String pw;	//
-	private int product_sq;				// 이밑의 나머지는 상품관련 vo
+
+	private int sq; // 이 세개는 member관련 vo
+	private String id; //
+	private String pw; //
+	private int product_sq; // 이밑의 나머지는 상품관련 vo
 	private boolean status_fl;
 	private int product_price;
 	private int product_sell_count;
 	private int product_qna_count;
+	private int product_people;
+
+	/**
+	 * @return the product_people
+	 */
+	public int getProduct_people() {
+		return product_people;
+	}
+
+	/**
+	 * @param product_people the product_people to set
+	 */
+	public void setProduct_people(int product_people) {
+		this.product_people = product_people;
+	}
+
 	private String product_name;
 	private String product_detail;
 	private String file_path;
 	private String thumbnail_path;
-	
-	
 
 	/**
 	 * @return the sq

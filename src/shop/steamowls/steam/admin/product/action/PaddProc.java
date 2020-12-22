@@ -9,8 +9,6 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.steam.admin.booking.service.BookingService;
-import shop.steamowls.steam.admin.booking.vo.BookingVo;
 import shop.steamowls.steam.admin.product.service.ProductService;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 
@@ -22,7 +20,7 @@ public class PaddProc implements Action {
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq != null) {
+		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -32,6 +30,7 @@ public class PaddProc implements Action {
 		String product_name = request.getParameter("product_name");
 		String product_detail = request.getParameter("product_detail");
 		String product_price = request.getParameter("product_price");
+		String product_people = request.getParameter("product_people");
 		String file_path = request.getParameter("file_path");
 		String thumbnail_path = request.getParameter("thumbnail_path");
 
@@ -64,6 +63,7 @@ public class PaddProc implements Action {
 		productVo.setProduct_name(product_name);
 		productVo.setProduct_detail(product_detail);
 		productVo.setProduct_price(Integer.parseInt(product_price));
+		productVo.setProduct_people(Integer.parseInt(product_people));
 		productVo.setFile_path(file_path);
 		productVo.setThumbnail_path(thumbnail_path);
 
@@ -77,7 +77,7 @@ public class PaddProc implements Action {
 		
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Padd.jsp");
+		forward.setPath("/views/admin/Plist.jsp");
 		forward.setRedirect(true);
 		return forward;
 

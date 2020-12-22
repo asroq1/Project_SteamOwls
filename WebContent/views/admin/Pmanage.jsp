@@ -28,7 +28,7 @@
 			</a>
 		</div>
 		<div class="header__signForm">
-			<a href="/member/logout">로그아웃</a>
+			<a href="/admin/Alogout">로그아웃</a>
 		</div>
 	</header>
 	<nav role="navigation">

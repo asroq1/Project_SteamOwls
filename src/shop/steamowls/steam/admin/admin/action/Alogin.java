@@ -16,7 +16,7 @@ public class Alogin implements Action{
 		
 		if(sq != null) {
 			ActionForward forward = new ActionForward();
-			forward.setPath("/");
+			forward.setPath("/admin");
 			forward.setRedirect(true);
 			return forward;
 		}

@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
 
 <%
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
+ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 	LoginManager lm = LoginManager.getInstance();
 	 String sq = lm.getMemberSq(session);
+	 ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 	/* ProductVo  productVo = (ProductVo) request.getAttribute("productVo"); */
 %> 
 <!DOCTYPE html>
@@ -29,7 +32,7 @@
 			</a>
 		</div>
 		<div class="header__signForm">
-			<a href="/member/logout">로그아웃</a>
+			<a href="/admin/Alogout">로그아웃</a>
 		</div>
 	</header>
 	<nav role="navigation">
@@ -71,28 +74,31 @@
 	</nav>
 	<section>
 		<h1>상품삭제</h1>
-		<form action="/admin/product/PdeleteProc<%-- ?sq=<%=vo.getSq()%>&<%= %> --%>" class="form__container" method="post" id="ckpoint">
+		<%
+			for(int i = 0; i < list.size(); i++) {
+		%>
+		<form action="/admin/product/PdeleteProc" class="form__container" method="post" id="ckpoint">
 			<div class="booking__Form">
 				
 				<div class="booking_img">
 					<img src="/css/picture/owls.PNG" alt="">
-					<%-- <%=vo.getProduct_image()%> --%>
+					<%-- <%-<%=list.get(i).getProduct_image()%>  --%>
 				</div>
 				<div class="title__intro__container">
 					<div class="booking__title">
 						<h3>
-							<%-- <%=vo.getProduct_name()%> --%>
+							<%=list.get(i).getProduct_name()%> 
 						</h3>
 					</div>
 					<div class="booking__intro">
 						<p>
-							<%-- <%=vo.getProduct_detail()%> --%>
+							<%=list.get(i).getProduct_detail()%>
 						</p>
 					</div>
 				</div>
 				<div class="booking__price">
 					<p>
-						<%-- <%=vo.getProduct_price()%> --%>
+						<%=list.get(i).getProduct_price()%>
 					</p>
 				</div>
 			</div>
@@ -101,6 +107,9 @@
 			<button class="confirm__add" onclick="Pdelete()">
 				상품삭제
 			</button>
+			<%
+			}
+			%>
 		</div>
 	</section>
 </body>

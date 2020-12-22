@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page import="shop.steamowls.steam.admin.admin.vo.AdminVo"%>
+<%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
-<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
 
 <%
-	MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 /* 	ProductVo  productVo = (ProductVo) request.getAttribute("productVo"); */
@@ -28,7 +28,7 @@ String sq = lm.getMemberSq(session);
 		</a>
 	</div>
 	<div class="header__signForm">
-		<a href="/member/logout">로그아웃</a>
+		<a href="/admin/Alogout">로그아웃</a>
 	</div>
 </header>
 <body>
@@ -71,8 +71,7 @@ String sq = lm.getMemberSq(session);
 	</nav>
 	<section>
 		
-		<form  action="/admin/product/PaddProc<%-- /<%=?productVo=getSq()%> --%> "
-			id="ckpoint" method="post">
+		<form  action="/admin/PaddProc" id="ckpoint" method="post">
 			<div>
 				<label for="product_image">이미지</label> 
 				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">
@@ -85,6 +84,8 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<label for="product_price">가격</label><input type="text"
 				name="product_price" id="product_price" placeholder="가격">
+				<label for="product_people">인원수</label><input type="text"
+				name="product_people" id="product_people" placeholder="인원수">
 		</form>
 		<button id="Padd" onclick="Padd()">상품추가</button>
 	</section>

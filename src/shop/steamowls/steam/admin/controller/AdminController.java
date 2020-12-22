@@ -13,6 +13,7 @@ import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.steam.admin.admin.action.Alogin;
 import shop.steamowls.steam.admin.admin.action.AloginProc;
+import shop.steamowls.steam.admin.admin.action.Alogout;
 import shop.steamowls.steam.admin.admin.action.GotoAdmin;
 import shop.steamowls.steam.admin.booking.action.Bcancel;
 import shop.steamowls.steam.admin.booking.action.Bmanage;
@@ -212,6 +213,13 @@ public class AdminController extends HttpServlet {
 			}
 		} else if (command.equals("/SmanageProc")) {
 			Action action = new SmanageProc();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/Alogout")) {
+			Action action = new Alogout();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
