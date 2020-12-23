@@ -71,15 +71,15 @@ String sq = lm.getMemberSq(session);
 	</nav>
 	<section>
 		
-		<form  action="/admin/PaddProc" id="ckpoint" method="post">
+		<form  action="/admin/PaddProc" id="ckpoint" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="product_image">이미지</label> 
 				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">
 			</div>
 			<div class="text__form">
-				<label for="product_name">상품이름</label> <input type="text"
-					placeholder="상품이름" name="product_name" id="product_name"> <label
-					for="product_detail">설명</label> <input type="text"
+				<label for="product_name">상품이름</label> 
+				<input type="text" placeholder="상품이름" name="product_name" id="product_name"> 
+					<label for="product_detail">설명</label> <input type="text"
 					placeholder="상품설명" name="product_detail" id="product_detail">
 			</div>
 			<label for="product_price">가격</label><input type="text"
