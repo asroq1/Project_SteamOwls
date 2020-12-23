@@ -11,8 +11,53 @@ public class ProductVo {
 	private int product_sell_count;
 	private int product_qna_count;
 	private int product_people;
-	private String fileName;
-	private String fileRealName;
+	private String product_name;
+	private String product_detail;
+	private String product_image;
+	private String product_originalImage;
+	private String product_imagePath;
+
+	/**
+	 * @return the file
+	 */
+	public String getProduct_image() {
+		return product_image;
+	}
+
+	/**
+	 * @param file the file to set
+	 */
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
+	}
+
+	/**
+	 * @return the originalFile
+	 */
+	public String getProduct_originalImage() {
+		return product_originalImage;
+	}
+
+	/**
+	 * @param originalFile the originalFile to set
+	 */
+	public void setProduct_originalImage(String product_originalImage) {
+		this.product_originalImage = product_originalImage;
+	}
+
+	/**
+	 * @return the path
+	 */
+	public String getProduct_imagePath() {
+		return product_imagePath;
+	}
+
+	/**
+	 * @param path the path to set
+	 */
+	public void setProduct_imagePath(String product_imagePath) {
+		this.product_imagePath = product_imagePath;
+	}
 
 	/**
 	 * @return the product_people
@@ -27,11 +72,6 @@ public class ProductVo {
 	public void setProduct_people(int product_people) {
 		this.product_people = product_people;
 	}
-
-	private String product_name;
-	private String product_detail;
-	private String file_path;
-	private String thumbnail_path;
 
 	/**
 	 * @return the sq
@@ -172,63 +212,5 @@ public class ProductVo {
 	public void setProduct_detail(String product_detail) {
 		this.product_detail = product_detail;
 	}
-
-	/**
-	 * @return the file_path
-	 */
-	public String getFile_path() {
-		return file_path;
-	}
-
-	/**
-	 * @param file_path the file_path to set
-	 */
-	public void setFile_path(String file_path) {
-		this.file_path = file_path;
-	}
-
-	/**
-	 * @return the thumbnail_path
-	 */
-	public String getThumbnail_path() {
-		return thumbnail_path;
-	}
-
-	/**
-	 * @param thumbnail_path the thumbnail_path to set
-	 */
-	public void setThumbnail_path(String thumbnail_path) {
-		this.thumbnail_path = thumbnail_path;
-	}
-
-	/**
-	 * @return the fileName
-	 */
-	public String getFileName() {
-		return fileName;
-	}
-
-	/**
-	 * @param fileName the fileName to set
-	 */
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-
-	/**
-	 * @return the fileRealName
-	 */
-	public String getFileRealName() {
-		return fileRealName;
-	}
-
-	/**
-	 * @param fileRealName the fileRealName to set
-	 */
-	public void setFileRealName(String fileRealName) {
-		this.fileRealName = fileRealName;
-	}
-	
-	
 
 }
