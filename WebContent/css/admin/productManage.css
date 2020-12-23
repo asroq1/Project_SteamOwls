@@ -28,8 +28,12 @@
 a{
     color: var(--black--color);
 }
+section{
+    margin: auto;
+    width: 70%;
+}
 .form__container{
-	display:inline-block;
+display:inline-block;
 width : 70%;
 height : 15em;
 border-top: 1px solid var(--grey--light--color);
@@ -37,8 +41,8 @@ border-bottom: 1px solid var(--grey--light--color);
 }
 .booking__Form{
     display: inline-flex;
-    width : 100%;
-    height : 90%; 
+    width : 80%;
+    height : 100%; 
     justify-content: space-around;
 }
 .booking__confirm{
@@ -62,22 +66,27 @@ border-bottom: 1px solid var(--grey--light--color);
 	font-weight: bold;
 }
 .booking_img{
+    position: relative;
     width: 30%;
     height: 100%;
 }
 .booking_img img{
+    position: absolute;
 	width: 100%;
-	height:80%;
+	height:90%;
+	/* margin-top: 1em; */
 	align-items: center;
 	border-radius: 5px;
 }
-.title__intro__container{
+.title__top{
     display: flex;
     flex-direction : column;
     justify-content: space-evenly;
 }
-.booking__price{
-	position: relative;
-	top:30%;
-	font-weight: bold;
+.booking_bottom{
+    display: flex;
+	
+}
+.booking_info{
+    margin-left: 3em;
 }
