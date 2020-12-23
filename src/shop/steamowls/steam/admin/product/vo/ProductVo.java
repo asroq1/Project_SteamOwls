@@ -1,21 +1,77 @@
 package shop.steamowls.steam.admin.product.vo;
 
 public class ProductVo {
-	
-	private int sq;		//이 세개는 member관련 vo
-	private String id;	//
-	private String pw;	//
-	private int product_sq;				// 이밑의 나머지는 상품관련 vo
+
+	private int sq; // 이 세개는 member관련 vo
+	private String id; //
+	private String pw; //
+	private int product_sq; // 이밑의 나머지는 상품관련 vo
 	private boolean status_fl;
 	private int product_price;
 	private int product_sell_count;
 	private int product_qna_count;
+	private int product_people;
 	private String product_name;
 	private String product_detail;
-	private String file_path;
-	private String thumbnail_path;
-	
-	
+	private String product_image;
+	private String product_originalImage;
+	private String product_imagePath;
+
+	/**
+	 * @return the file
+	 */
+	public String getProduct_image() {
+		return product_image;
+	}
+
+	/**
+	 * @param file the file to set
+	 */
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
+	}
+
+	/**
+	 * @return the originalFile
+	 */
+	public String getProduct_originalImage() {
+		return product_originalImage;
+	}
+
+	/**
+	 * @param originalFile the originalFile to set
+	 */
+	public void setProduct_originalImage(String product_originalImage) {
+		this.product_originalImage = product_originalImage;
+	}
+
+	/**
+	 * @return the path
+	 */
+	public String getProduct_imagePath() {
+		return product_imagePath;
+	}
+
+	/**
+	 * @param path the path to set
+	 */
+	public void setProduct_imagePath(String product_imagePath) {
+		this.product_imagePath = product_imagePath;
+	}
+
+	/**
+	 * @return the product_people
+	 */
+	public int getProduct_people() {
+		return product_people;
+	}
+
+	/**
+	 * @param product_people the product_people to set
+	 */
+	public void setProduct_people(int product_people) {
+		this.product_people = product_people;
+	}
 
 	/**
 	 * @return the sq
@@ -155,34 +211,6 @@ public class ProductVo {
 	 */
 	public void setProduct_detail(String product_detail) {
 		this.product_detail = product_detail;
-	}
-
-	/**
-	 * @return the file_path
-	 */
-	public String getFile_path() {
-		return file_path;
-	}
-
-	/**
-	 * @param file_path the file_path to set
-	 */
-	public void setFile_path(String file_path) {
-		this.file_path = file_path;
-	}
-
-	/**
-	 * @return the thumbnail_path
-	 */
-	public String getThumbnail_path() {
-		return thumbnail_path;
-	}
-
-	/**
-	 * @param thumbnail_path the thumbnail_path to set
-	 */
-	public void setThumbnail_path(String thumbnail_path) {
-		this.thumbnail_path = thumbnail_path;
 	}
 
 }

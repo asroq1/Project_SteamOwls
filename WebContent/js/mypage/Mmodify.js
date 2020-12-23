@@ -20,6 +20,17 @@ function join() {
         id.focus();
         return false;
     }
+    if(!pw.value){
+        alert("비밀번호를 입력하세요.");
+        pw.focus();
+        return false;
+    }
+    
+    if(!cpw.value){
+        alert("비밀번호를 재확인을 확인하세요.");
+        cpw.focus();
+        return false;
+    }
   
    if (pw.value != cpw.value) {
 			alert("비밀번호를 다시 재확인 하세요.");

@@ -1,8 +1,12 @@
 <%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
+	LoginManager lm = LoginManager.getInstance();
+	String sq = lm.getMemberSq(session);
+	
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,10 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>아이디 결과</title>
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
+
 <link rel="stylesheet" href="/css/base.css" type="text/css"></link>
 <link rel="stylesheet" href="/css/member/checkId.css" type="text/css"></link>
 
@@ -26,11 +27,6 @@
 		<a href="/views/home/index.jsp">
 	  		<img src="/css/picture/owls.PNG" alt="로고사진">
 		</a>
-		</span>
-		 <span class="header__hambuger">
-			<button>
-				<i class="fas fa-bars"></i>
-			</button>
 		</span>
 	</header>
 	<section>

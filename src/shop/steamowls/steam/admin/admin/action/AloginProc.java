@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.BCrypt;
+import shop.steamowls.common.LoginManager;
 import shop.steamowls.steam.admin.admin.service.AdminService;
 import shop.steamowls.steam.admin.admin.vo.AdminVo;
 
@@ -40,7 +41,10 @@ public class AloginProc implements Action {
 			out.close();
 			return null;
 		}
-
+		
+		LoginManager lm = LoginManager.getInstance();
+		lm.setSession(request.getSession(), Integer.toString(adminVo.getSq()));
+		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/admin/gotoAdmin.jsp");
 		forward.setRedirect(true);

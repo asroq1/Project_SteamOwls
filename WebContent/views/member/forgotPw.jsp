@@ -1,5 +1,10 @@
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	LoginManager lm = LoginManager.getInstance();
+	String sq = lm.getMemberSq(session);
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,13 +19,9 @@
 
 <body>
 	<header>
-		<a href="/views/home/index.jsp">
-			<img src="/css/picture/owls.PNG"
-		alt="로고사진">
-		</a>
-		 <a href="/member/login" class="signForm">
-			 로그인
-		 </a>
+		<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
+			alt="로고사진">
+		</a> <a href="/member/login" class="signForm"> 로그인 </a>
 	</header>
 	<section>
 		<div class="forgotpw__form">
