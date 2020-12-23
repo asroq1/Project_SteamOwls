@@ -81,37 +81,36 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 
 	<section>
 		<h1>상품삭제</h1>
-
 		<form
 			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
 			class="form__container" method="post" id="ckpoint">
 			<div class="booking__Form">
 
-		<div class="booking_img">
-					<%-- <%-<%=list.get(i).getProduct_image()%>  --%>
-			</div>
+				<div class="booking_img">
+					<%=list.get(i).getProduct_image()%>
+				</div>
 				<div class="title__top">
 					<div class="booking__title">
 						<h3>
 							<%=list.get(i).getProduct_name()%>
 						</h3>
-				</div>
+					</div>
 					<div class="booking_bottom">
 						<div class="booking__intro">
 							<p>
 								<%=list.get(i).getProduct_detail()%>
 							</p>
-					</div>
-					<div class="booking_info">
-						<p>
-							<%=list.get(i).getProduct_people()%>명
-						</p>
-						<p>
-							₩<%=list.get(i).getProduct_price()%>
-						</p>
+						</div>
+						<div class="booking_info">
+							<p>
+								<%=list.get(i).getProduct_people()%>명
+							</p>
+							<p>
+								₩<%=list.get(i).getProduct_price()%>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
 			</div>
 		</form>

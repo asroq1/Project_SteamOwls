@@ -7,9 +7,9 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
 	ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
-	MemberVo vo = (MemberVo) request.getAttribute("vo");
-	LoginManager lm = LoginManager.getInstance();
-	String sq = lm.getMemberSq(session);
+MemberVo vo = (MemberVo) request.getAttribute("vo");
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
 <html>
@@ -42,32 +42,35 @@
 		for (int i = 0; i < list.size(); i++) {
 	%> --%>
 	<section>
-		<form action="/admin/bookProc" class="form__container"
-			method="post" id="ckpoint">
+		<form action="/admin/bookProc" class="form__container" method="post"
+			id="ckpoint">
 			<div class="booking__Form">
 
 				<div class="booking_img">
-					<img src="/css/picture/owls.PNG" alt="">
-					<%--  <%=list.get(i).getProduct_image()%>  --%>
+					<%-- <%-<%=list.get(i).getProduct_image()%>  --%>
 				</div>
-				<div class="title__intro__container">
+				<div class="title__top">
 					<div class="booking__title">
 						<h3>
 							<%-- <%=list.get(i).getProduct_name()%> --%>
 						</h3>
 					</div>
-					<div class="booking__intro">
-						<p>
-							<%-- <%=list.get(i).getProduct_detail()%> --%>
-						</p>
+					<div class="booking_bottom">
+						<div class="booking__intro">
+							<p>
+								<%-- <%=list.get(i).getProduct_detail()%> --%>
+							</p>
+						</div>
+						<div class="booking_info">
+							<p>
+								<%-- <%=list.get(i).getProduct_people()%>명 --%>
+							</p>
+							<p>
+							<%-- 	₩<%=list.get(i).getProduct_price()%> --%>
+							</p>
+						</div>
 					</div>
 				</div>
-				<div class="booking__price">
-					<p>
-					<%-- 	<%=list.get(i).getProduct_price()%> --%>
-					</p>
-				</div>
-			</div>
 		</form>
 		<div class="booking__confirm">
 			<button class="confirm__add" onclick="Pdelete()">예약하기</button>
