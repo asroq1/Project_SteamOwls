@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+
+@charset "UTF-8";
+:root {
+    /* Color */
+    --white--color: #fff;
+    --black--color: #140a00;
+    --blue--color: #045fd4;
+    --red--color: #ff0000;
+    --grey--dark--color: #909090;
+    --grey--light--color: #e0e0e0;
+    --green--deep--color: #439889;
+    --green--light--color: #e0f2f1;
+    --green--hard-color: #003d33;
+    --theme-color: #ed6174;
+    --background-color:#e9ecea;
+   
+    /* Size */
+    --padding: 12px;
+    --avatar--size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+
+}
+header{
+    width: 300px;
+    margin: 0 auto;
+}
+body{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.form_img img{
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+}
+.booking_container{
+    display: inline-flex;
+   	width: 1080px;
+    margin-top: 48px;
+    border-top: 1px solid var(--grey--dark--color);
+    border-bottom: 1px solid var(--grey--dark--color);
+    padding: 1em;
+}
+.form_top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 16px;
+}
+.form_bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 16px;
+}
+.bottom_text{
+    display: flex;
+    flex-direction: column;
+}
+.booking_btn{
+    padding: 0.8em;
+    background-color: var(--theme-color);
+    color: var(--white--color);
+    border-radius: 3px;
+}
+.form_intro{
+    color: var( --grey--dark--color);
+}
+.form_price{
+	font-weight: bold;
+}

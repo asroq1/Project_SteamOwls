@@ -69,6 +69,7 @@ public class ProductDao {
 				vo.setProduct_detail(rs.getString("product_detail"));
 				vo.setProduct_people(rs.getInt("product_people"));
 				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setProduct_imagePath(rs.getString("product_imagePath"));
 				list.add(vo);
 			}
 		} catch (Exception e) {

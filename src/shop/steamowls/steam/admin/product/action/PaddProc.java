@@ -31,21 +31,25 @@ public class PaddProc implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-
+		
+		String domain = request.getServerName();
+		String path = "/fileFolder";
+		long fileSize = 0;
+		String fileType = "";
 		String product_name = "";
 		String product_detail = "";
 		String product_price = "";
 		String product_people = "";
 
 		// 파일이 저장되는 경로
-		String product_imagePath = request.getSession().getServletContext().getRealPath("fileFolder");
+		String image_path = request.getSession().getServletContext().getRealPath("fileFolder");
 
 		int size = 1024 * 1024 * 10;// 저장가능한 파일 크기
 		String product_image = "";// 업로드한 파일의 이름(이름이 변경될 수 있음)
 		String product_originalImage = "";// 이름이 변경되기 전 실제 파일 이름
 
 		try {
-			MultipartRequest multi = new MultipartRequest(request, product_imagePath, size, "UTF-8", new DefaultFileRenamePolicy());
+			MultipartRequest multi = new MultipartRequest(request, image_path, size, "UTF-8", new DefaultFileRenamePolicy());
 
 			product_name = multi.getParameter("product_name");
 			product_detail = multi.getParameter("product_detail");
@@ -57,9 +61,12 @@ public class PaddProc implements Action {
 
 			product_image = multi.getFilesystemName(str);// 업로드 된 파일 이름 가져옴
 			product_originalImage = multi.getOriginalFileName(str);// 원래의 파일이름 가져옴
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		String product_imagePath = "http://" + domain + path + "/" + product_image;
 
 		if (product_name == null || product_name.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
