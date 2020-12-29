@@ -78,14 +78,14 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="text__form">
 				<label for="product_name">상품이름</label> <input type="text"
-					placeholder="상품이름" name="product_name" id="product_name"> <label
-					for="product_detail">설명</label> <input type="text"
-					placeholder="상품설명" name="product_detail" id="product_detail">
+					placeholder="상품이름" name="product_name" id="product_name">
+					 <label	for="product_detail">설명</label> 
+					 <input type="text"	placeholder="상품설명" name="product_detail" id="product_detail">
 			</div>
-			<label for="product_price">가격</label><input type="text"
-				name="product_price" id="product_price" placeholder="가격">
-				<label for="product_people">인원수</label><input type="text"
-				name="product_people" id="product_people" placeholder="인원수">
+			<label for="product_price">가격</label>
+			<input type="text" name="product_price" id="product_price" placeholder="가격">
+			<label for="product_people">인원수</label>
+			<input type="text" name="product_people" id="product_people" placeholder="인원수">
 		</form>
 		<button id="Padd" onclick="Padd()">상품추가</button>
 	</section>

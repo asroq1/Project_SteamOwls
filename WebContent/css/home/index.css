@@ -1,0 +1,137 @@
+
+@charset "UTF-8";
+:root {
+    /* Color */
+    --white--color: #fff;
+    --black--color: #140a00;
+    --blue--color: #045fd4;
+    --red--color: #ff0000;
+    --grey--dark--color: #909090;
+    --grey--light--color: #e0e0e0;
+    --green--deep--color: #439889;
+    --green--light--color: #e0f2f1;
+    --green--hard-color: #003d33;
+    --theme-color: #ed6174;
+    --background-color:#e9ecea;
+   
+    /* Size */
+    --padding: 12px;
+    --avatar--size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+
+}
+a{
+    color: var(--black--color);
+    text-decoration: none;
+    pad: 0.8em;
+}
+ul,li{
+	list-style: none;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    position : sticky;
+    top: 0; 
+    background-color : var(--white--color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10),
+     0 2px 2px rgba(0, 0, 0, 0.10);
+    align-items: center; 
+}
+
+
+input:focus,
+select:focus,
+button:focus
+{
+    outline: none;
+}
+.signForm a{
+    padding: 10px;
+}
+.toggle_btn i{
+    font-size: 1.5em;
+    color: var(--theme-color);
+}
+.toggle_bar{
+    visibility: hidden;
+	position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+	margin-top: 2em;
+	background-color: var(--background-color);
+	border-radius: 1.6em; 
+}
+.toggle_bar.active{
+	visibility: unset;
+	position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+	margin-top: 2em;
+	background-color: var(--background-color);
+	border-radius: 1.6em; 
+}
+.bar_flex{
+	display: flex;
+}
+.toggle_bar li{
+	padding: 12px;
+}
+.toggle_bar a{
+	font-weight: bold;
+}
+
+.fir_container{
+    height: 600px;
+    background: url(/css/picture/massage-1017255_640.png);
+	background-repeat: inherit;
+    background-position: center;
+}
+.test{
+	display: none;
+}
+
+#ckpoint{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 3em;
+    background-color: var(--theme-color);
+    border-radius: 1.5em;
+}
+#ckpoint input,
+#ckpoint select
+{
+
+}
+.form_input{
+    padding: 0.7em;
+}
+#ckpoint input{
+	border-right: 1px solid var(--white--color);
+}
+.form_input:hover{
+    border-radius: 0.8em;
+}
+.form_submit{
+    font-size: 1.5em;
+    color: var(--white--color);
+}
+::placeholder{
+    color: var(--white--color);
+    font-weight: bold;
+    text-align: center;
+}
+.form_input{
+    color: var(--white--color);
+    background-color: var(--theme-color);
+    cursor: pointer;
+}

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+:root {
+    /* Color */
+    --white--color: #fff;
+    --black--color: #140a00;
+    --blue--color: #045fd4;
+    --red--color: #ff0000;
+    --grey--dark--color: #909090;
+    --grey--light--color: #e0e0e0;
+    --green--deep--color: #439889;
+    --green--light--color: #e0f2f1;
+    --green--hard-color: #003d33;
+    --theme-color: #ed6174;
+    --background-color:#e9ecea;
+   
+    /* Size */
+    --padding: 12px;
+    --avatar--size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+
+}
+header{
+    width: 100%;
+    margin: 0 auto;
+}
+header img{
+    width: 200px;
+    height: 60px;
+}
+p{
+}
+img{
+    width: 300px;
+    height: 200px;
+}
+.info_title{
+    font-size: 2.4em; 
+}
+.pay_form{
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.pay_way{
+    display: block;
+}
+.intro_sub{
+    font-size: 1.2em;
+    color: var(--grey--dark--color);
+}
+.detail_img img{
+    width: 90%;
+    border-radius: 1em;
+}
+.pay_detail_container{
+    position: absolute;
+    width: 30%;
+    right: 5px;
+    padding: 1.5em;
+    border: 1px solid var(--grey--dark--color);
+    border-radius: 1em;
+    margin-top: 10em;
+}
+
+.pay_info_container{
+    position: absolute;
+    width: 50%;
+    left: 5px;
+    margin-top: 10em;
+}
+
+.cut_line{
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid var(--grey--light--color);
+}

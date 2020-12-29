@@ -105,9 +105,9 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 				</div>
 				<div class="btn_container">
 					<input class="confirm__add" type="submit" value="상품판매"
-					formaction="/admin/PsellingButton?product_sq=<%=list.get(i).getProduct_sq()%>">
-				<input class="confirm__delete" type="submit" value="판매정지"
-					formaction="/admin/PstopButton?product_sq=<%=list.get(i).getProduct_sq()%>">
+						formaction="/admin/PsellingButton?product_sq=<%=list.get(i).getProduct_sq()%>">
+					<input class="confirm__delete" type="submit" value="판매정지"
+						formaction="/admin/PstopButton?product_sq=<%=list.get(i).getProduct_sq()%>">
 				</div>
 			</form>
 		</div>
