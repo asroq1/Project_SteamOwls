@@ -17,7 +17,6 @@ import shop.steamowls.steam.mypage.action.BhistoryProc;
 import shop.steamowls.steam.mypage.action.McheckPw;
 import shop.steamowls.steam.mypage.action.McheckPwProc;
 import shop.steamowls.steam.mypage.action.Mmodify;
-import shop.steamowls.steam.mypage.action.MdetailProc;
 import shop.steamowls.steam.mypage.action.Mdetail;
 import shop.steamowls.steam.mypage.action.QDetail;
 import shop.steamowls.steam.mypage.action.QDetailProc;
