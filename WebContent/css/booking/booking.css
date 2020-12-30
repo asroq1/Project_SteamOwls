@@ -70,6 +70,10 @@ section{
     color: var(--white--color);
     border-radius: 3px;
 }
+.booking_btn:hover{
+    background-color: #ec407a;
+    font-weight: bold;
+}
 .form_intro{
     color: var( --grey--dark--color);
 }

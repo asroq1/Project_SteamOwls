@@ -54,6 +54,7 @@ button:focus
 .toggle_btn i{
     font-size: 1.5em;
     color: var(--theme-color);
+    cursor: pointer;
 }
 .toggle_bar{
     visibility: hidden;

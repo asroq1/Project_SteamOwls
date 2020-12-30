@@ -101,7 +101,7 @@ button:focus
 #ckpoint{
     display: flex;
     justify-content: space-evenly;
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
     margin-top: 3em;
     background-color: var(--theme-color);
@@ -124,6 +124,9 @@ button:focus
 .form_submit{
     font-size: 1.5em;
     color: var(--white--color);
+}
+.form_input i{
+	color: var(--white--color);
 }
 ::placeholder{
     color: var(--white--color);
