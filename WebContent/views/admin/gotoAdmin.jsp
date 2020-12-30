@@ -40,10 +40,10 @@ String sq = lm.getMemberSq(session);
 			</li>
 			<li><a href="#">예약관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/Bmanage.jsp" aria-label="subemnu">예약내역</a></li>
-					<li><a href="/views/admin/" aria-label="subemnu">예약완료</a></li>
-					<li><a href="/views/admin/" aria-label="subemnu">예약수정</a></li>
-					<li><a href="/views/admin/" aria-label="subemnu">예약취소</a></li>
+					<li><a href="/admin/Bmanage.jsp" aria-label="subemnu">예약내역</a></li>
+					<li><a href="/admin/" aria-label="subemnu">예약완료</a></li>
+					<li><a href="/admin/" aria-label="subemnu">예약수정</a></li>
+					<li><a href="/admin/" aria-label="subemnu">예약취소</a></li>
 				</ul>
 			</li>
 			<li><a href="#">매출관리</a>

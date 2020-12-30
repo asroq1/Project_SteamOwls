@@ -1,3 +1,4 @@
+<%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,10 +7,14 @@
 
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
-	ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
+ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("BproductList");
+BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+/* String date = 
+String time = 
+String people = */
 %>
 <!DOCTYPE html>
 <html>
@@ -44,7 +49,6 @@ String sq = lm.getMemberSq(session);
 					</ul>
 				</ul>
 			</header>
-	
 	<%
 		} else {
 	%>
@@ -118,13 +122,71 @@ String sq = lm.getMemberSq(session);
 					<span class="form_intro">성인 기준</span>
 					<span class="form_price">$90,000</span>
 				</div>
+				<form action="/booking/Binfo">
+					<input type="submit" class="booking_btn" name="product_sq" value="예약" placeholder="예약">
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- <section>
+		<div class="booking_container">
+			<div class="form_img">
+				<img src="/css/picture/massage-1017255_640.png" alt="A코스">
+			</div>
+			<div class="form_top">
+				<h3>A- 최상급 코스</h3>
+				<p class="form_intro">이 코스는 인도에서 부터 유래되어 아주 영국으로 저기로 아무튼 프리미엄 입니다. </p>
+			</div>
+			<div class="form_bottom">
+				<div class="bottom_text">
+					<span class="form_intro">1인,</span>
+					<span class="form_intro">성인 기준</span>
+					<span class="form_price">$90,000</span>
+				</div>
 				<button class="booking_btn" onclick="book()">예약</button>
 			</div>
 		</div>
 	</section>
+	<section>
+		<div class="booking_container">
+			<div class="form_img">
+				<img src="/css/picture/massage-1017255_640.png" alt="A코스">
+			</div>
+			<div class="form_top">
+				<h3>A- 최상급 코스</h3>
+				<p class="form_intro">이 코스는 인도에서 부터 유래되어 아주 영국으로 저기로 아무튼 프리미엄 입니다. </p>
+			</div>
+			<div class="form_bottom">
+				<div class="bottom_text">
+					<span class="form_intro">1인,</span>
+					<span class="form_intro">성인 기준</span>
+					<span class="form_price">$90,000</span>
+				</div>
+				<button class="booking_btn" onclick="book()">예약</button>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="booking_container">
+			<div class="form_img">
+				<img src="/css/picture/massage-1017255_640.png" alt="A코스">
+			</div>
+			<div class="form_top">
+				<h3>A- 최상급 코스</h3>
+				<p class="form_intro">이 코스는 인도에서 부터 유래되어 아주 영국으로 저기로 아무튼 프리미엄 입니다. </p>
+			</div>
+			<div class="form_bottom">
+				<div class="bottom_text">
+					<span class="form_intro">1인,</span>
+					<span class="form_intro">성인 기준</span>
+					<span class="form_price">$90,000</span>
+				</div>
+				<button class="booking_btn" onclick="book()">예약</button>
+			</div>
+		</div>
+	</section> -->
 	<%-- <%
 		}
 	%> --%>
 </body>
-
 </html>

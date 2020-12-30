@@ -7,20 +7,20 @@ String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>결제완료</title>
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/booking/payment.css">
-<link rel="stylesheet" href="/css/c_header.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
-<script src="/js/common/c_header.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>결제완료</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/booking/payment.css">
+	<link rel="stylesheet" href="/css/c_header.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+		integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+	<script src="/js/common/c_header.js" defer></script>
 
 </head>
+
 <body>
 	<%
 	 if (sq == null) {
@@ -36,7 +36,7 @@ String sq = lm.getMemberSq(session);
 			</ul>
 		</ul>
 	</header>
-	
+
 	<%
 		} else {
 	%>
@@ -68,7 +68,7 @@ String sq = lm.getMemberSq(session);
 						<p class="intro_sub cut_line">인원 2명</p>
 					</div>
 				</div>
-				<div class="pay_way cut_line">
+				<!-- <div class="pay_way cut_line">
 					<h2>결제 수단</h2>
 					<select value="way">
 						<option name="네이버페이" id="">네이버페이</option>
@@ -80,18 +80,20 @@ String sq = lm.getMemberSq(session);
 				<div class="pay_agree">
 					<label for="agreement">결제약관에 동의하신다면 확인해주세요.</label>
 					 <input type="checkbox" name="agreement" id="agreement">
-				</div>
+				</div> -->
 				<!-- <a href="/views/booking/bookingSuccess.jsp">결제완료</a> -->
-				<button type="submit" id="ckpoint">
+				<!-- <button type="submit" id="ckpoint">
 					결제하기
-				</button>
+				</button> -->
+			 <a href="/views/booking/Pinfo.jsp">결제</a>		
 			</div>
-			<div class="pay_detail_container">
+			<!-- <div class="pay_detail_container">
 				<div class="detail_img_container">
 					<div class="detail_img">
 						<img src="/css/picture/massage-1017255_640.png" alt="상품사진">
 						<div class="intro_sub cut_line">우리의 떙떙쓰 파리투나잇 와우 언빌리버블
-							마사즤입니다.</div>
+							마사즤입니다.
+						</div>
 					</div>
 				</div>
 				<div class="detail_info_container">
@@ -100,7 +102,7 @@ String sq = lm.getMemberSq(session);
 					<p class="intro_sub">인원 2명</p>
 					<p>총 합계 (KRW) 32,000</p>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<footer>
@@ -110,4 +112,3 @@ String sq = lm.getMemberSq(session);
 </body>
 
 </html>
-

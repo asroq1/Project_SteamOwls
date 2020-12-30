@@ -58,6 +58,7 @@ public class ProductDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<ProductVo> list = new ArrayList<>();
+		
 		try {
 			pstmt = con.prepareStatement("select * from owls_product_tb where product_del_fl = 0");
 
@@ -69,6 +70,7 @@ public class ProductDao {
 				vo.setProduct_detail(rs.getString("product_detail"));
 				vo.setProduct_people(rs.getInt("product_people"));
 				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setProduct_imagePath(rs.getString("product_imagePath"));
 				list.add(vo);
 			}
 		} catch (Exception e) {
