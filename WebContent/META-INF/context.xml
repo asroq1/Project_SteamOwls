@@ -7,7 +7,7 @@
 		driverClassName="org.mariadb.jdbc.Driver"
 		type="javax.sql.DataSource"
 		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-		url="jdbc:mariadb://steamowls.shop:3306/steamowls?serverTimezone=UTC"
+		url="jdbc:mariadb://bzu.co.kr:3306/steamowls?serverTimezone=UTC"
 		username="steamowls"
 		password="1111"
 		/>

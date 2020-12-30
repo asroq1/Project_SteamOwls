@@ -6,10 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 
-public class Payment implements Action{
+public class Pinfo implements Action {
+	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/booking/payment.jsp");
+		forward.setPath("/");
+		forward.setRedirect(true);
 		return forward;
 	}
 }
