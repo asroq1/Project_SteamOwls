@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-LoginManager lm = LoginManager.getInstance();
+LoginManager lm = LoginManager.getInstance();q11
 String sq = lm.getMemberSq(session);
 /* String booking_date = 
 String booking_start = 

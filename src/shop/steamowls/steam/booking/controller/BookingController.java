@@ -13,6 +13,9 @@ import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.steam.booking.action.Blist;
 import shop.steamowls.steam.booking.action.Bbooking;
+import shop.steamowls.steam.booking.action.BpayResult;
+import shop.steamowls.steam.booking.action.Pinfo;
+import shop.steamowls.steam.booking.action.Binfo;
 import shop.steamowls.steam.home.action.HomeAction;
 
 @WebServlet("/booking/*")
@@ -45,6 +48,27 @@ public class BookingController extends HttpServlet {
 			}
 		} else if (command.equals("/Blist")) {
 			Action action = new Blist();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/Binfo")) {
+			Action action = new Binfo();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/Pinfo")) {
+			Action action = new Pinfo();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/BpayResult")) {
+			Action action = new BpayResult();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
