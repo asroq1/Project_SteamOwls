@@ -48,8 +48,9 @@
 
 			<div class="forgot__container">
 				<div class=forgot__form>
-					<a href="/member/forgotId">아이디 찾기</a> <a href="/member/forgotPw">비밀번호
-						찾기</a>
+					<a href="/member/forgotId">아이디 찾기</a> 
+					<a href="/member/forgotPw">비밀번호 찾기</a>
+					<a href="/views/member/signup.jsp">회원가입</a>
 				</div>
 			</div>
 			<div class="information__bar">

@@ -15,6 +15,7 @@ import shop.steamowls.steam.booking.service.BookingService;
 import shop.steamowls.steam.booking.vo.BookingVo;
 
 public class Bbooking implements Action {
+	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		HttpSession session = request.getSession();
@@ -63,21 +64,40 @@ public class Bbooking implements Action {
 		bookingVo.setBooking_people(Integer.parseInt(booking_people));
 		
 		BookingService svc = new BookingService();
-		ArrayList<BookingVo> list = new ArrayList<BookingVo>();
-		list = svc.findProduct();
-		if(list == null) {
+		
+		int left_people = 0;
+		
+		
+		// 상품들 보여주기
+		ArrayList<BookingVo> list1 = new ArrayList<>();
+		list1 = svc.findProduct(bookingVo);
+		if (list1 == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('잘못된 접근입니다.'); history.back();</script>");
+			out.print("<script>alert('잘못된 접근입니다.1'); history.back();</script>");
 			out.close();
 			return null;
+
+		} 
+		
+		ArrayList<BookingVo> list2 = new ArrayList<>();
+		list2 = svc.getProduct(bookingVo);
+		if (list2 == null) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('잘못된 접근입니다.2'); history.back();</script>");
+			out.close();
+			return null;
+
 		}
 		
-		request.setAttribute("list", list);
+
+		request.setAttribute("list1", list1);
+		request.setAttribute("list2", list2);
 		
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/Blist.jsp");
 		return forward;
-		
 	}
 }

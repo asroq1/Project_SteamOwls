@@ -3,51 +3,51 @@ package shop.steamowls.steam.booking.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.dao.ProductDao;
-import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.dao.BookingDao;
 import shop.steamowls.steam.booking.vo.BookingVo;
+import shop.steamowls.steam.member.dao.MemberDao;
+import shop.steamowls.steam.member.vo.MemberVo;
 
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class BookingService {
-	public boolean bBooking(BookingVo bookingVo) {
+	
+	public ArrayList<BookingVo> getProduct(BookingVo bookingVo) {
 
 		BookingDao bookingDao = BookingDao.getInstance();
 		Connection con = getConnection();
 		bookingDao.setConnection(con);
 
-		int count = bookingDao.bBooking(bookingVo);
-		boolean isSuccess = false;
-		if (count > 0) {
-			commit(con);
-			isSuccess = true;
-		} else {
-			rollback(con);
-			isSuccess = false;
-		}
+		ArrayList<BookingVo> list2 = bookingDao.getProduct(bookingVo);
+		
 		close(con);
-		return isSuccess;
+		return list2;
 	}
 	
-	public BookingVo bBookingCheck(int member_sq) {
+	public ArrayList<BookingVo> findProduct(BookingVo bookingVo) {
+
 		BookingDao bookingDao = BookingDao.getInstance();
 		Connection con = getConnection();
 		bookingDao.setConnection(con);
 
-		BookingVo vo = bookingDao.bBookingCheck(member_sq);
+		ArrayList<BookingVo> list1 = bookingDao.findProduct(bookingVo);
 
 		close(con);
-		return vo;
+		return list1;
 	}
 	
-	public ArrayList<BookingVo> findProduct() {
-		BookingDao dao = BookingDao.getInstance();
-		Connection con = getConnection();
-		dao.setConnection(con);
-		ArrayList<BookingVo> list = dao.findProduct();
-		close(con);
-		return list;
-	}
+	
+
+	/*
+	 * public BookingVo findBookingSq(BookingVo bookingVo) {
+	 * 
+	 * BookingDao bookingDao = BookingDao.getInstance(); Connection con =
+	 * getConnection(); bookingDao.setConnection(con);
+	 * 
+	 * BookingVo vo = bookingDao.findBookingSq(bookingVo);
+	 * 
+	 * close(con); return vo; }
+	 */
+
 	
 }
