@@ -18,10 +18,12 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
 		integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/home/index.css">
+	<link rel="stylesheet" href="/css/agreement.css">
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/c_header.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 	<script src="/js/common/calendar.js" defer></script>
+	<script src="/js/agreement/agree.js" defer></script>
 	<script src="/js/common/c_header.js" type="text/javascript" defer></script>
 	<script>
 		function log() {
@@ -99,7 +101,7 @@
 				<i class="fas fa-bars"></i>
 			</li>
 			<ul class="toggle_bar">
-				<li><a href="/mypage/gotoMypage">마이페이지</a></li>
+				<li><a href="//mypage/gotoMypage">마이페이지</a></li>
 				<li><a href="/member/logout">로그아웃</a></li>
 				<li><a href="/admin">관리자</a></li>
 			</ul>
@@ -110,11 +112,11 @@
 			<form action="/booking/Bbooking" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input>
 				<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
-				<select class="form_input" id="" name="booking_people">
+				<select  class="form_input" id=""  name="booking_people">
 					<option class="form_input" value="1">1명</option>
 					<option class="form_input" value="2">2명</option>
 					<option class="form_input" value="3">3명</option>
-					<option class="form_input" value="4">4명</option>
+					<option class="form_input" value="4">4명</option> 
 				</select>
 				<button type="submit" class="form_input form_submit">
 					<i class="fas fa-search"></i>
@@ -122,10 +124,11 @@
 			</form>
 		</div>
 	</section>
-
+	
 	<%
 		}
 	%>
+	
 	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 </body>

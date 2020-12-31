@@ -71,7 +71,7 @@ String sq = lm.getMemberSq(session);
 	</nav>
 	<section>
 		
-		<form  action="/admin/PaddProc" id="ckpoint" method="post">
+		<form  action="/admin/PaddProc" id="ckpoint" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="product_image">이미지</label> 
 				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">

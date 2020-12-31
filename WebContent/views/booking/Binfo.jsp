@@ -4,7 +4,16 @@
 <%
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+/* String booking_date = 
+String booking_start = 
+String booking_people =
+String product_sq =
+여기서 날짜, 시간, 인원, 상품정보 들고 같이 결제확인까지 들고가기
+post방식 이용
+*/
 %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -15,10 +24,11 @@ String sq = lm.getMemberSq(session);
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/booking/payment.css">
 	<link rel="stylesheet" href="/css/c_header.css">
+	<link rel="stylesheet" href="/css/agreement.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
 		integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 	<script src="/js/common/c_header.js" defer></script>
-
+	<script src="/js/agreement/agree.js" defer></script>
 </head>
 
 <body>
@@ -54,61 +64,44 @@ String sq = lm.getMemberSq(session);
 	<%
 		}
 	%>
-	<section>
-		<div class="pay_form">
-			<div class="pay_info_container">
-				<div class="pay_info">
-					<h1 class="info_title cut_line">예약 정보</h1>
-					<div class="info_date">
-						<h3>날짜</h3>
-						<p class="intro_sub">2020-12-25</p>
-					</div>
-					<div class="info_people">
-						<h3>인원</h3>
-						<p class="intro_sub cut_line">인원 2명</p>
-					</div>
-				</div>
-				<!-- <div class="pay_way cut_line">
-					<h2>결제 수단</h2>
-					<select value="way">
-						<option name="네이버페이" id="">네이버페이</option>
-						<option name="카카오페이" id="">카카오페이</option>
-						<option name="신용 카드" id="">신용 카드</option>
-						<option name="계좌이체" id="">계좌이체</option>
-					</select>
-				</div>
-				<div class="pay_agree">
-					<label for="agreement">결제약관에 동의하신다면 확인해주세요.</label>
-					 <input type="checkbox" name="agreement" id="agreement">
-				</div> -->
-				<!-- <a href="/views/booking/bookingSuccess.jsp">결제완료</a> -->
-				<!-- <button type="submit" id="ckpoint">
-					결제하기
-				</button> -->
-			 <a href="/views/booking/Pinfo.jsp">결제</a>		
-			</div>
-			<!-- <div class="pay_detail_container">
-				<div class="detail_img_container">
-					<div class="detail_img">
-						<img src="/css/picture/massage-1017255_640.png" alt="상품사진">
-						<div class="intro_sub cut_line">우리의 떙떙쓰 파리투나잇 와우 언빌리버블
-							마사즤입니다.
-						</div>
-					</div>
-				</div>
-				<div class="detail_info_container">
-					<h1>요금 세부정보</h1>
-					<p class="intro_sub">가격 16,000</p>
-					<p class="intro_sub">인원 2명</p>
-					<p>총 합계 (KRW) 32,000</p>
-				</div>
-			</div> -->
-		</div>
-	</section>
+	  <section>
+        <div class="Binfo_container">
+            <div class="Binfo">
+                <div class="Binfo_date">
+                    <h3>예약날짜</h3>
+                    <p>2000-01-01</p>
+                </div>
+                <div class="Binfo_time">
+                    <h3>시간</h3>
+                    <p>00 : 00 </p>
+                </div>
+                <div class="Binfo_people">
+                    <h3>인원</h3>
+                    <p>4명</p>
+                </div>
+                <div class="Binfo_info">
+                    <h3>예약상품</h3>
+                    <p>매우 좋은 아울스의 대표 코스입니다 ! 어쩌고 저쩌고 쌀롸쌀롸</p>
+                </div>
+                <div class="Binfo_submit">
+                    <!-- 액션에 데이터값 입력 필요 -->
+                    <form action="/pay/Pinfo">
+                        <button class="booking_btn">결제하기</button>
+                    </form>
+                </div>
+            </div>
+            <div class="Binfo_img">
+                <img src="/css/picture/owls.PNG" alt="상품사진">
+            </div>
+        </div>
+    </section>
 	<footer>
-		<!-- 추후에 작성해야함. -->
+        <div class="signup__form">
+            <a href="#" class="agreement" onclick="createFeed()">이용약관</a>
+            <a href="#"  class="agreement" onclick="createFeed()">개인정보 보호정책</a>
+        </div>
 	</footer>
-	<script src="/js/booking/payment.js" defer></script>
+
 </body>
 
 </html>
