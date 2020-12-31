@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
 import shop.steamowls.steam.booking.vo.BookingVo;
 
@@ -64,8 +63,6 @@ public class Bbooking implements Action {
 		bookingVo.setBooking_people(Integer.parseInt(booking_people));
 		
 		BookingService svc = new BookingService();
-		
-		int left_people = 0;
 		
 		
 		// 상품들 보여주기
