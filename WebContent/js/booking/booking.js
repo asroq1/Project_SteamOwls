@@ -1,6 +1,5 @@
 const booking_btn = document.querySelector(".booking_btn");
-
+const ckpoint = document.querySelector('#ckpoint');
 booking_btn.addEventListener('click', ( )=>{
-    // location.href = '/views/booking/payment.jsp';
-    // alert('hello');
+  ckpoint.submit();
 });

@@ -6,7 +6,7 @@
 <%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
-	ProductVo productVo = (ProductVo) request.getAttribute("productVo");
+ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
@@ -71,7 +71,7 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 		for (int i = 0; i < list.size(); i++) {
 	%>
 	<section>
-		<h1>판매상품내역</h1>
+		
 		<div class="form__container">
 			<form class="form__container" method="post" id="ckpoint">
 				<div class="booking__Form">
