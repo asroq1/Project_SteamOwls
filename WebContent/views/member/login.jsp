@@ -48,15 +48,17 @@
 
 			<div class="forgot__container">
 				<div class=forgot__form>
-					<a href="/member/forgotId">아이디 찾기</a> <a href="/member/forgotPw">비밀번호
-						찾기</a>
+					<a href="/member/forgotId">아이디 찾기</a> 
+					<a href="/member/forgotPw">비밀번호 찾기</a>
+					<a href="/views/member/signup.jsp">회원가입</a>
 				</div>
 			</div>
 			<div class="information__bar">
-				로그인하거나 회원으로 가입하시면 당사<a href="#" class="agreement"
-					onclick="createFeed()">이용약관</a> 및 &nbsp; <a href="#"
-					class="agreement" onclick="createFeed()">개인정보 보호정책</a>에 동의하시는 것으로
-				간주됩니다.
+				로그인하거나 회원으로 가입하시면 당사
+				<a href="#" class="agreement" onclick="createFeed()">이용약관</a> 및 
+				<br>
+				<a href="#" class="agreement" onclick="createFeed()">개인정보 보호정책</a>
+				에 동의하시는 것으로 간주됩니다.
 			</div>
 		</div>
 	</section>

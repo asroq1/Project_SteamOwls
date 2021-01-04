@@ -3,7 +3,10 @@ package shop.steamowls.steam.mypage.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import shop.steamowls.steam.admin.product.vo.ProductVo;
+import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -72,6 +75,23 @@ public class MypageDao {
 
 			count = pstmt.executeUpdate();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+
+	public int Bcancel (BookingVo bookingVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_booking_tb set booking_f1 = 1 where member_sq = ? and product_del_fl = 0");
+			pstmt.setInt(1, bookingVo.getBooking_sq());
+
+			count = pstmt.executeUpdate();
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

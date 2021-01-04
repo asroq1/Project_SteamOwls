@@ -1,7 +1,11 @@
 package shop.steamowls.steam.mypage.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
+import shop.steamowls.steam.admin.product.dao.ProductDao;
+import shop.steamowls.steam.admin.product.vo.ProductVo;
+import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.mypage.dao.MypageDao;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -42,4 +46,23 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
+	
+	public boolean Bcancel (BookingVo bookingVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.Bcancel(bookingVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+	
 }

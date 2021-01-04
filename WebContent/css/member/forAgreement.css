@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@charset "UTF-8";
 :root {
     /* Color */
     --white--color: #fff;
@@ -24,13 +25,7 @@
     --font-micro: 10px;
 
 }
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4em;
-    background-color: var(--grey--light--color);
-}
+
 .feed{
   position: fixed; 
   top: 0; left: 0;
@@ -64,11 +59,5 @@ footer{
     display: flex;
     justify-content: center;
     margin-top: 1.5em;
-}
-.signup__form a{
-	color: var(--grey--dark--color);
-    font-size: 0.8em;
-    margin-left: 1em;
-    margin-right: 1em;
 }
 

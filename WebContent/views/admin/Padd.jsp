@@ -36,9 +36,9 @@ String sq = lm.getMemberSq(session);
 		<ul id="main-menu">
 			<li><a href="#">상품관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/Padd.jsp" aria-label="subemnu">상품추가</a></li>
-					<li><a href="/views/admin/Pdelete.jsp" aria-label="subemnu">상품삭제</a></li>
-					<li><a href="/views/admin/Pmanage.jsp" aria-label="subemnu">상품관리</a></li>
+					<li><a href="/admin/Padd" aria-label="subemnu">상품추가</a></li>
+					<li><a href="/admin/Pdelete" aria-label="subemnu">상품삭제</a></li>
+					<li><a href="/admin/Pmanage" aria-label="subemnu">상품관리</a></li>
 				</ul>
 			</li>
 			<li><a href="#">예약관리</a>
@@ -71,21 +71,21 @@ String sq = lm.getMemberSq(session);
 	</nav>
 	<section>
 		
-		<form  action="/admin/PaddProc" id="ckpoint" method="post">
+		<form  action="/admin/PaddProc" id="ckpoint" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="product_image">이미지</label> 
 				<input type="file" name="product_image" id="product_image" multiple="multiple" max="5">
 			</div>
 			<div class="text__form">
 				<label for="product_name">상품이름</label> <input type="text"
-					placeholder="상품이름" name="product_name" id="product_name"> <label
-					for="product_detail">설명</label> <input type="text"
-					placeholder="상품설명" name="product_detail" id="product_detail">
+					placeholder="상품이름" name="product_name" id="product_name">
+					 <label	for="product_detail">설명</label> 
+					 <input type="text"	placeholder="상품설명" name="product_detail" id="product_detail">
 			</div>
-			<label for="product_price">가격</label><input type="text"
-				name="product_price" id="product_price" placeholder="가격">
-				<label for="product_people">인원수</label><input type="text"
-				name="product_people" id="product_people" placeholder="인원수">
+			<label for="product_price">가격</label>
+			<input type="text" name="product_price" id="product_price" placeholder="가격">
+			<label for="product_people">인원수</label>
+			<input type="text" name="product_people" id="product_people" placeholder="인원수">
 		</form>
 		<button id="Padd" onclick="Padd()">상품추가</button>
 	</section>

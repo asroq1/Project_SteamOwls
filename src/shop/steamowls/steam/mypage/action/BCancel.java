@@ -15,7 +15,7 @@ public class BCancel implements Action{
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq != null) {
+		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
