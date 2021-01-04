@@ -6,29 +6,16 @@
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>결제화면</title>
-<link rel="stylesheet" href="/css/c_header.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/agreement.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/booking/payment.css">
-<script src="/js/common/c_header.js" defer></script>
 <script src="/js/booking/payment.js" defer></script>
 <script src="/js/agreement/agree.js" defer></script>
 </head>
 <body>
 	<header>
-		<a href="/"> <img src="/css/picture/owls.PNG" alt="로고사진">
-		</a>
-		<ul class="signForm">
-			<li class="toggle_btn"><i class="fas fa-bars"></i></li>
-			<ul class="toggle_bar">
-				<li><a href="/mypage/gotoMypage">마이페이지</a></li>
-				<li><a href="/member/logout">로그아웃</a></li>
-			</ul>
-		</ul>
+		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>
 		<form action="/pay/Pinfo" id="ckpoint">
@@ -54,10 +41,7 @@
 		</form>
 	</section>
 	<footer>
-        <div class="signup__form">
-            <a href="#" class="agreement" onclick="createFeed()">이용약관</a>
-            <a href="#"  class="agreement" onclick="createFeed()">개인정보 보호정책</a>
-        </div>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>
 </body>
 </html>

@@ -28,7 +28,7 @@
 					id.focus();
 					isChecked = false; //사용할수 없는것이니 false
 				} else {
-					$('.id__text').text('사용할 수 있는 아이디 입니다.');
+					$('.id__text').text('사용가능한 아이디 입니다.');
 					$('.id__text').css('color', 'blue');
 					isChecked = true;
 				}

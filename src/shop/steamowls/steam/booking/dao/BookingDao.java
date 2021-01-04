@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.vo.ProductVo;
+
 import shop.steamowls.steam.booking.vo.BookingVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -51,7 +51,6 @@ public class BookingDao {
 	
 
 	public BookingVo bBookingCheck(int member_sq) {
-		// TODO Auto-generated method stub
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BookingVo vo = null;
@@ -104,6 +103,55 @@ public class BookingDao {
 			close(rs);
 		}
 		return list;
+	}
+	
+	public int bList(BookingVo bookingVo) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int people_count = 0;
+
+		try {
+			pstmt = con.prepareStatement("select count(*) from (owls_booking_tb a, owls_product_tb b) where booking_date = ? and booking_start = ? and b.product_sq = ?");
+			pstmt.setString(1, bookingVo.getBooking_date());
+			pstmt.setString(2, bookingVo.getBooking_start());
+			pstmt.setInt(3, bookingVo.getProduct_sq());
+			
+			people_count = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return people_count;
+	}
+	
+	public BookingVo bListFindProduct(int product_sq) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookingVo vo = null;
+		
+		try {
+			pstmt = con.prepareStatement("select * from owls_product_tb where product_sq = ? and product_del_fl = 0");
+			pstmt.setInt(1, product_sq);
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new BookingVo();
+				vo.setProduct_name(rs.getString("product_name"));
+				vo.setProduct_detail(rs.getString("product_detail"));
+				vo.setProduct_people(rs.getInt("product_people"));
+				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setProduct_imagePath(rs.getString("product_imagePath"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return vo;
 	}
 
 }
