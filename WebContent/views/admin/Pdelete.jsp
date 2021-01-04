@@ -17,12 +17,14 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품삭제</title>
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 <link rel="stylesheet" href="/css/admin/productManage.css">
 <script src="/js/admin/Pdelete.js" defer></script>
 </head>
+
 
 <body>
 	<header>

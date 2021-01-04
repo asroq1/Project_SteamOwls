@@ -25,7 +25,9 @@
     --font-medium: 14px;
     --font-small: 12px;
     --font-micro: 10px;
-
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
 }
 header{
     width: 100%;
@@ -49,12 +51,14 @@ section{
     padding: 1em;
 }
 .form_top{
+	width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding-left: 16px;
 }
 .form_bottom{
+	width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

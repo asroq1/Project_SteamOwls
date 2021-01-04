@@ -27,7 +27,7 @@
 	</header>
 	<section>
 		<div class="signup__form">
-			<h3>회원가입</h3>
+			<h2>회원가입</h2>
 			<form action="/member/signupProc" method="post" id="ckpoint">
 				<div class="signup__id">
 					<input type="text" placeholder="아이디" name="id" id="id"
@@ -87,18 +87,16 @@
 			</div>
 	</section>
 	<footer>
-		<div class="signup__form">
-			<p>로그인하거나 회원으로 가입하시면 당사</p>
-			 <a href="#" class="agreement"onclick="createFeed()">이용약관</a>
-			 	<p> 및</p>
-			 	   <a href="#" onclick="createFeed()"class="agreement">개인정보 보호정책</a>
+		<span class="signup__form">
+			로그인하거나 회원으로 가입하시면 당사<a href="#" class="agreement"onclick="createFeed()">이용약관</a>및
+			 <a href="#" onclick="createFeed()"class="agreement">개인정보 보호정책</a>
 			 <p>에 동의하시는 것으로 간주됩니다.</p>
-		</div>
+		</span>
 	</footer>
 	<script src="/js/agreement/agree.js" type="text/javascript"></script>
 	<script src="/js/member/signup.js" type="text/javascript"></script>
 	<script src="/js/member/ajax.js" type="text/javascript"></script>
-
+	
 </body>
 
 </html>

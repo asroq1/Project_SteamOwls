@@ -9,7 +9,7 @@ import shop.steamowls.common.ActionForward;
 public class Bhistory implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/BHistory.jsp");
+		forward.setPath("/views/mypage/Bhistory.jsp");
 		return forward;
 	}
 }

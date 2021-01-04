@@ -1,9 +1,9 @@
-<%@page import="shop.steamowls.steam.member.vo.MemberVo"%>
+<%@page import="shop.steamowls.steam.mypage.vo.MypageVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	MemberVo vo = (MemberVo) request.getAttribute("vo");
+	MypageVo vo = (MypageVo) request.getAttribute("vo");
 	LoginManager lm = LoginManager.getInstance();
 	String sq = lm.getMemberSq(session);
 	
@@ -45,7 +45,7 @@
 	            <p class="tel__text"></p>
 	            <button type="submit">수정하기</button>
 	        </form>
-	        <form action="/views/mypage/Mwithdraw.jsp">
+	        <form action="/mypage/MwithdrawProc?sq=<%=vo.getSq() %>">
 	            <button type="submit">회원탈퇴</button>
 	        </form>
 	        <footer>

@@ -158,16 +158,11 @@ a {
 .agreement{
     color: #0071c2;
 }
-.signup__button{
-    height: 45px;
-    margin-bottom : 10px;
-    background-color:var(--theme-color); 
-    color:var(--white--color);
-    border-radius: 10px;
-    cursor : pointer;
-}
 .signup__agree .agree__text{
     color: #000000;
+}
+.agree__text{
+	font-weight: bold;
 }
 .signup__agree .agree__container{
  	display: flex;
@@ -179,11 +174,12 @@ a {
 .signup__agree .agree__container input{
 	width:20px
 
-}
+}s
 #signup__button{
 	width:100%;
 	height:45px;
 	background-color:var(--theme-color); 
 	border-radius:10px;
+	font-weight:bold;
 	 color:var(--white--color);
 }

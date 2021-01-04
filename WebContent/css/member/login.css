@@ -74,8 +74,8 @@ header i{
     font-size: 1.5em;
 }
 
-.login__form h1 {
-    color: var(--black--color);
+.login__form h2{
+    color: var(--grey--dark--color);
 }
 
 .id__text,
@@ -109,7 +109,8 @@ text-weight:bold;
 	height:2.813em;
 	color: var(--white--color);
 	background-color: var(--theme-color);
-    border-radius: 5px
+    border-radius: 5px;
+    font-weight: bold;
 }
 .forgot__container{
     position: relative;
@@ -120,6 +121,18 @@ text-weight:bold;
     top: 0;
     right: 0;
     font-size:0.750em;
+}
+.forgot__form a{
+    color: var(--grey--dark--color);
+}
+.forgot__form a:nth-child(1){
+    border-right: 1px solid var(--grey--dark--color);
+    padding-right: 5px;
+}
+
+.forgot__form a:nth-child(2){
+    border-right: 1px solid var(--grey--dark--color);
+    padding-right: 5px;
 }
 
 .information__bar {

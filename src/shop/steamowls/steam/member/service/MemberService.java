@@ -97,16 +97,6 @@ public class MemberService {
 		close(con);
 		return isSuccess;
 	}
-	public MemberVo mCheckPw(MemberVo memberVo) {
-		MemberDao memberDao = MemberDao.getInstance();
-		Connection con = getConnection();
-		memberDao.setConnection(con);
-		MemberVo vo = new MemberVo();
-		vo = memberDao.mCheckPw(memberVo);
-		
-		close(con);
-		return vo;
-	}
 
 	public boolean withdraw(MypageVo mypageVo) {
 		return false;

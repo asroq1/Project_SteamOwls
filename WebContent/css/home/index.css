@@ -25,6 +25,9 @@
     --font-micro: 10px;
 
 }
+html{
+    font-family: 'Noto Sans KR', sans-serif;
+}
 a{
     color: var(--black--color);
     text-decoration: none;
@@ -116,7 +119,8 @@ button:focus
     padding: 0.7em;
 }
 #ckpoint input{
-	border-right: 1px solid var(--white--color);
+    border-right: 1px solid var(--white--color);
+    border-radius: 0.8em;
 }
 .form_input:hover{
     border-radius: 0.8em;
@@ -136,5 +140,6 @@ button:focus
 .form_input{
     color: var(--white--color);
     background-color: var(--theme-color);
+    border-radius: 0.8em;
     cursor: pointer;
 }

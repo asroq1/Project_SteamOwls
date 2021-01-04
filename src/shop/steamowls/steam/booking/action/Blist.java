@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
-import shop.steamowls.common.CommonVo;
 import shop.steamowls.common.LoginManager;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
@@ -94,11 +93,11 @@ public class Blist implements Action {
 		
 		BookingVo productInfoVo = svc.bListFindProduct(Integer.parseInt(product_sq));
 		
-		CommonVo commonVo = new CommonVo();
+//		CommonVo commonVo = new CommonVo();
 		
 		request.setAttribute("bookingVo", bookingVo);
 		request.setAttribute("productInfoVo", productInfoVo);
-		request.setAttribute("commonVo", commonVo);
+//		request.setAttribute("commonVo", commonVo);
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/Binfo.jsp");

@@ -21,7 +21,7 @@ public class MwithdrawProc implements Action {
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq != null) {
+		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -30,17 +30,8 @@ public class MwithdrawProc implements Action {
 
 		String pw = request.getParameter("pw");
 
-		if (sq == null || pw == null) {
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.print("<script>alert('잘못된 접근입니다.'); history.back();</script>");
-			out.close();
-			return null;
-		}
-
 		MypageVo mypageVo = new MypageVo();
 		mypageVo.setSq(Integer.parseInt(sq));
-		mypageVo.setPw(pw);
 
 		MypageService svc = new MypageService();
 		if (!svc.withdraw(mypageVo)) {

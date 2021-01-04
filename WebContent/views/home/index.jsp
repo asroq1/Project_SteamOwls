@@ -1,6 +1,5 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
 	LoginManager lm = LoginManager.getInstance();
@@ -12,6 +11,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<title>메인화면</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
 	<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
@@ -21,16 +21,12 @@
 	<link rel="stylesheet" href="/css/agreement.css">
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/c_header.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 	<script src="/js/common/calendar.js" defer></script>
 	<script src="/js/agreement/agree.js" defer></script>
 	<script src="/js/common/c_header.js" type="text/javascript" defer></script>
-	<script>
-		function log() {
-			var basicDate = document.getElemnetById('basicDate');
-			console.log(basicDate);
-// 		}
-	</script>
 </head>
 
 <body>
@@ -38,19 +34,7 @@
 		if (sq == null) {
 	%>
 	<header>
-		<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
-		</a>
-		<ul class="signForm">
-			<li class="toggle_btn">
-				<i class="fas fa-bars"></i>
-			</li>
-			<ul class="toggle_bar">
-				<li><a href="/member/login">로그인</a></li>
-				<li><a href="/member/signup">회원가입 </a></li>
-				<li><a href="/admin">관리자</a></li>
-			</ul>
-		</ul>
+		   <jsp:include page="/views/common/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="fir_container">
@@ -93,19 +77,7 @@
 		} else {
 	%>
 	<header>
-		<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
-		</a>
-		<ul class="signForm">
-			<li class="toggle_btn">
-				<i class="fas fa-bars"></i>
-			</li>
-			<ul class="toggle_bar">
-				<li><a href="//mypage/gotoMypage">마이페이지</a></li>
-				<li><a href="/member/logout">로그아웃</a></li>
-				<li><a href="/admin">관리자</a></li>
-			</ul>
-		</ul>
+		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="fir_container">
@@ -124,7 +96,6 @@
 			</form>
 		</div>
 	</section>
-	
 	<%
 		}
 	%>

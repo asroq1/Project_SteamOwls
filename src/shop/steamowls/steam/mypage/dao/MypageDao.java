@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -66,9 +67,8 @@ public class MypageDao {
 		try {
 
 			pstmt = con
-					.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and pw = ? and del_fl = 0");
+					.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and del_fl = 0");
 			pstmt.setInt(1, mypageVo.getSq());
-			pstmt.setString(2, mypageVo.getPw());
 
 			count = pstmt.executeUpdate();
 
@@ -78,6 +78,32 @@ public class MypageDao {
 			close(pstmt);
 		}
 		return count;
+	}
+	
+	public MypageVo mCheckPw(MypageVo mypageVo) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MypageVo vo = null;
+		try {
+			pstmt = con.prepareStatement("select sq, name, pw, tel from owls_mber_tb " 
+						+ "where sq = ? and del_fl = 0 ");
+			pstmt.setInt(1, mypageVo.getSq());
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new MypageVo();
+				vo.setSq(rs.getInt("sq"));
+				vo.setName(rs.getString("name"));
+				vo.setPw(rs.getString("pw"));
+				vo.setTel(rs.getString("tel"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return vo;
 	}
 
 }
