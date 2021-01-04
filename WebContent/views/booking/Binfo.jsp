@@ -1,8 +1,13 @@
+<%@page import="shop.steamowls.common.CommonVo"%>
+<%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-LoginManager lm = LoginManager.getInstance();q11
+BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
+BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
+CommonVo commonVo = (CommonVo) request.getAttribute("commonVo");
+LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 /* String booking_date = 
 String booking_start = 
@@ -69,19 +74,19 @@ post방식 이용
             <div class="Binfo">
                 <div class="Binfo_date">
                     <h3>예약날짜</h3>
-                    <p>2000-01-01</p>
+                    <p><%=bookingVo.getBooking_date() %></p>
                 </div>
                 <div class="Binfo_time">
                     <h3>시간</h3>
-                    <p>00 : 00 </p>
+                    <p><%=bookingVo.getBooking_start() %></p>
                 </div>
                 <div class="Binfo_people">
                     <h3>인원</h3>
-                    <p>4명</p>
+                    <p><%=bookingVo.getBooking_people() %></p>
                 </div>
                 <div class="Binfo_info">
                     <h3>예약상품</h3>
-                    <p>매우 좋은 아울스의 대표 코스입니다 ! 어쩌고 저쩌고 쌀롸쌀롸</p>
+                    <p><%=productInfoVo.getProduct_name() %></p>
                 </div>
                 <div class="Binfo_submit">
                     <!-- 액션에 데이터값 입력 필요 -->

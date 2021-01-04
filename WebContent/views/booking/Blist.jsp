@@ -7,8 +7,8 @@
 
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
-ArrayList<BookingVo> list1 = (ArrayList<BookingVo>) request.getAttribute("list1");
-ArrayList<BookingVo> list2 = (ArrayList<BookingVo>) request.getAttribute("list2");
+ArrayList<BookingVo> list = (ArrayList<BookingVo>) request.getAttribute("list");
+BookingVo bookingInfoVo = (BookingVo) request.getAttribute("bookingInfoVo");
 BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
@@ -46,30 +46,30 @@ String sq = lm.getMemberSq(session);
 		</ul>
 	</header>
 	<%
-		for (int i = 0; i < list1.size(); i++) {
+		for (int i = 0; i < list.size(); i++) {
 	%> 
 	<section>
 		<div class="booking_container">
 			<div class="form_img">
-				<%=list1.get(i). getProduct_imagePath()%>
+				<%=list.get(i). getProduct_imagePath()%>
 			</div>
 			<div class="form_top">
-				<h3><%=list1.get(i).getProduct_name()%></h3>
+				<h3><%=list.get(i).getProduct_name()%></h3>
 				<p class="form_intro">
-					<%=list1.get(i).getProduct_detail()%>
+					<%=list.get(i).getProduct_detail()%>
 				</p>
 			</div>
 			<div class="form_bottom">
 				<div class="bottom_text">
-					<span class="form_intro"><%=list1.get(i).getProduct_people()%></span> 
+					<span class="form_intro"><%=list.get(i).getProduct_people()%></span> 
 
-					<span class="form_price"><%=list1.get(i).getProduct_price()%></span>
+					<span class="form_price"><%=list.get(i).getProduct_price()%></span>
 				</div>
 				<!-- 여기에다가 불러온 자바 데이터 폼에 함께 실어서 보냄 -->
-				<form method="post" id="ckpoint" action="/booking/Binfo?=booking_date<%=list1.get(i).getBooking_date()%>
-				&booking_start=<%=list1.get(i).getBooking_start()%>
-				&booking_people=<%=list1.get(i).getBooking_people()%>
-				&product_sq=<%=list1.get(i).getProduct_sq()%>
+				<form method="post" id="ckpoint" action="/booking/Blist?booking_date=<%=bookingInfoVo.getBooking_date()%>
+				&booking_start=<%=bookingInfoVo.getBooking_start()%>
+				&booking_people=<%=bookingInfoVo.getBooking_people()%>
+				&product_sq=<%=list.get(i).getProduct_sq()%>
 				">
 					<button class="booking_btn">예약</button>
 				</form>
