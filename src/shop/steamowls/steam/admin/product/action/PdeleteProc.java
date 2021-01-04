@@ -19,7 +19,7 @@ public class PdeleteProc implements Action {
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq != null) {
+		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -28,6 +28,7 @@ public class PdeleteProc implements Action {
 		
 		sq = request.getParameter("sq");
 		String product_sq = request.getParameter("product_sq");
+		System.out.println(product_sq);
 		
 		if(product_sq == null){
 			response.setContentType("text/html; charset=UTF-8");
@@ -38,14 +39,13 @@ public class PdeleteProc implements Action {
 		}
 		
 		ProductVo productVo = new ProductVo();
-		productVo.setSq(Integer.parseInt(sq));
 		productVo.setProduct_sq(Integer.parseInt(product_sq));
 		
 		ProductService svc = new ProductService();
 		if (!svc.pDelete(productVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('게시글 삭제가 실패했습니다.'); history.back();</script>");
+			out.print("<script>alert('게시글 삭제에 실패했습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		} else {
@@ -53,7 +53,7 @@ public class PdeleteProc implements Action {
 		}
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/");
+		forward.setPath("/admin/Pdelete");
 		forward.setRedirect(true);
 		return forward;
 	}

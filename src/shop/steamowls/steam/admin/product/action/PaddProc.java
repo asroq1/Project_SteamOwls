@@ -1,10 +1,15 @@
 package shop.steamowls.steam.admin.product.action;
 
 import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
@@ -26,13 +31,42 @@ public class PaddProc implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
+		
+		String domain = request.getServerName();
+		String path = "/fileFolder";
+		long fileSize = 0;
+		String fileType = "";
+		String product_name = "";
+		String product_detail = "";
+		String product_price = "";
+		String product_people = "";
 
-		String product_name = request.getParameter("product_name");
-		String product_detail = request.getParameter("product_detail");
-		String product_price = request.getParameter("product_price");
-		String product_people = request.getParameter("product_people");
-		String file_path = request.getParameter("file_path");
-		String thumbnail_path = request.getParameter("thumbnail_path");
+		// 파일이 저장되는 경로
+		String image_path = request.getSession().getServletContext().getRealPath("fileFolder");
+
+		int size = 1024 * 1024 * 10;// 저장가능한 파일 크기
+		String product_image = "";// 업로드한 파일의 이름(이름이 변경될 수 있음)
+		String product_originalImage = "";// 이름이 변경되기 전 실제 파일 이름
+
+		try {
+			MultipartRequest multi = new MultipartRequest(request, image_path, size, "UTF-8", new DefaultFileRenamePolicy());
+
+			product_name = multi.getParameter("product_name");
+			product_detail = multi.getParameter("product_detail");
+			product_price = multi.getParameter("product_price");
+			product_people = multi.getParameter("product_people");
+			
+			Enumeration files = multi.getFileNames();
+			String str = (String) files.nextElement();// 파일 이름을 받아와 string으로 저장
+
+			product_image = multi.getFilesystemName(str);// 업로드 된 파일 이름 가져옴
+			product_originalImage = multi.getOriginalFileName(str);// 원래의 파일이름 가져옴
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String product_imagePath = "http://" + domain + path + "/" + product_image;
 
 		if (product_name == null || product_name.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -64,20 +98,20 @@ public class PaddProc implements Action {
 		productVo.setProduct_detail(product_detail);
 		productVo.setProduct_price(Integer.parseInt(product_price));
 		productVo.setProduct_people(Integer.parseInt(product_people));
-		productVo.setFile_path(file_path);
-		productVo.setThumbnail_path(thumbnail_path);
+		productVo.setProduct_image(product_image);
+		productVo.setProduct_originalImage(product_originalImage);
+		productVo.setProduct_imagePath(product_imagePath);
 
 		if (!svc.pAdd(productVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('잘못된 접근입니다.'); history.back();</script>");
+			out.print("<script>alert('잘못된 접근입니다.11'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
-		
+
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Plist.jsp");
+		forward.setPath("/admin/gotoAdmin");
 		forward.setRedirect(true);
 		return forward;
 

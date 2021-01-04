@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
-import shop.steamowls.steam.booking.action.Book;
-import shop.steamowls.steam.booking.action.BookProc;
-import shop.steamowls.steam.booking.action.Payment;
-import shop.steamowls.steam.booking.action.PaymentProc;
+import shop.steamowls.steam.booking.action.Blist;
+import shop.steamowls.steam.booking.action.Bbooking;
+import shop.steamowls.steam.booking.action.BpayResult;
+import shop.steamowls.steam.booking.action.Pinfo;
+import shop.steamowls.steam.booking.action.Binfo;
 import shop.steamowls.steam.home.action.HomeAction;
 
 @WebServlet("/booking/*")
@@ -38,29 +39,36 @@ public class BookingController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/book")) {
-			Action action = new Book();
+		} else if (command.equals("/Bbooking")) {
+			Action action = new Bbooking();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/bookProc")) {
-			Action action = new BookProc();
+		} else if (command.equals("/Blist")) {
+			Action action = new Blist();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/payment")) {
-			Action action = new Payment();
+		} else if (command.equals("/Binfo")) {
+			Action action = new Binfo();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/paymentProc")) {
-			Action action = new PaymentProc();
+		} else if (command.equals("/Pinfo")) {
+			Action action = new Pinfo();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/BpayResult")) {
+			Action action = new BpayResult();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -70,10 +78,10 @@ public class BookingController extends HttpServlet {
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
-				// ¸®´ÙÀÌ·ºÆ®
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Ì·ï¿½Æ®
 				response.sendRedirect(forward.getPath());
 			} else {
-				// µð½ºÆÐÄ¡
+				// ï¿½ï¿½ï¿½ï¿½Ä¡
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
