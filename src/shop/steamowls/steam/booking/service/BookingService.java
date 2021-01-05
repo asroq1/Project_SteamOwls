@@ -3,7 +3,6 @@ package shop.steamowls.steam.booking.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.dao.ProductDao;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.dao.BookingDao;
 import shop.steamowls.steam.booking.vo.BookingVo;
@@ -69,7 +68,8 @@ public class BookingService {
 		close(con);
 		return vo;
 	}
-		public boolean pInfo(BookingVo bookingVo) {
+	
+	public boolean pInfo(BookingVo bookingVo) {
 
 		BookingDao bookingDao = BookingDao.getInstance();
 		Connection con = getConnection();
@@ -87,29 +87,5 @@ public class BookingService {
 		close(con);
 		return isSuccess;
 	}
-	public ArrayList<BookingVo> bDetail(String sq) {
-		BookingDao dao = BookingDao.getInstance();
-		Connection con = getConnection();
-		dao.setConnection(con);
-		ArrayList<BookingVo> list = dao.bDetail(sq);
-		close(con);
-		return list;
-	}
-	public boolean bCancel(String booking_sq) {
-		BookingDao dao = BookingDao.getInstance();
-		Connection con = getConnection();
-		dao.setConnection(con);
-
-		int count = dao.bCancel(booking_sq);
-		boolean isSuccess = false;
-		if (count > 0) {
-			commit(con);
-			isSuccess = true;
-		} else {
-			rollback(con);
-			isSuccess = false;
-		}
-		close(con);
-		return isSuccess;
-	}
+	
 }

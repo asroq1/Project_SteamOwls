@@ -13,6 +13,7 @@ import shop.steamowls.steam.admin.product.service.ProductService;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
 import shop.steamowls.steam.booking.vo.BookingVo;
+import shop.steamowls.steam.mypage.service.MypageService;
 
 public class Bhistory implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -29,7 +30,7 @@ public class Bhistory implements Action{
 		}
 		
 		
-		BookingService svc = new BookingService();
+		MypageService svc = new MypageService();
 		ArrayList<BookingVo> list = svc.bDetail(sq);
 		request.setAttribute("list", list);
 		

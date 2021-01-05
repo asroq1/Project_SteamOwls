@@ -12,6 +12,7 @@ import shop.steamowls.common.LoginManager;
 import shop.steamowls.steam.admin.product.service.ProductService;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
+import shop.steamowls.steam.mypage.service.MypageService;
 
 public class BCancel implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -27,7 +28,7 @@ public class BCancel implements Action {
 			return forward;
 		}
 
-		String booking_sq = request.getParameter("product_sq");
+		String booking_sq = request.getParameter("booking_sq");
 
 		if (booking_sq == null) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -37,8 +38,8 @@ public class BCancel implements Action {
 			return null;
 		}
 
-		BookingService svc = new BookingService();
-		if (!svc.bCancel(booking_sq)) {
+		MypageService svc = new MypageService();
+		if (!svc.bCancel(Integer.parseInt(booking_sq))) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('예약취소를 실패했습니다.'); history.back();</script>");

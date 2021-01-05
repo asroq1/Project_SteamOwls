@@ -3,7 +3,9 @@ package shop.steamowls.steam.mypage.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -104,6 +106,54 @@ public class MypageDao {
 			close(pstmt);
 		}
 		return vo;
+	}
+	
+	public ArrayList<BookingVo> bDetail(String sq) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BookingVo> list = new ArrayList<>();
+		
+		try {
+			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) where A.product_sq = B.product_sq and A.member_sq = ? and A.booking_fl = 1");
+			pstmt.setInt(1, Integer.parseInt(sq));
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BookingVo vo = new BookingVo();
+				vo = new BookingVo();
+				vo.setBooking_sq(rs.getInt("booking_sq"));
+				vo.setProduct_name(rs.getString("product_name"));
+				vo.setProduct_detail(rs.getString("product_detail"));
+				vo.setBooking_people(rs.getInt("booking_people"));
+				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setProduct_imagePath(rs.getString("product_imagePath"));
+				vo.setBooking_date(rs.getString("Booking_date"));
+				vo.setBooking_start(rs.getString("Booking_start"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return list;
+	}
+	public int bCancel(int booking_sq) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_booking_tb set booking_fl = 0 where booking_sq = ?");
+			pstmt.setInt(1, booking_sq);
+
+			count = pstmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
 	}
 
 }

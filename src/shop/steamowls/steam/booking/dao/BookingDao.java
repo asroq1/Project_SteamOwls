@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.vo.BookingVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -48,7 +47,6 @@ public class BookingDao {
 		}
 		return count;
 	}
-	
 
 	public BookingVo bBookingCheck(int member_sq) {
 		PreparedStatement pstmt = null;
@@ -58,7 +56,7 @@ public class BookingDao {
 		try {
 			pstmt = con.prepareStatement("select * from owls_booking_tb where member_sq = ?");
 			pstmt.setInt(1, member_sq);
-			
+
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -76,12 +74,12 @@ public class BookingDao {
 		}
 		return vo;
 	}
-	
+
 	public ArrayList<BookingVo> findProduct() {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
-		
+
 		try {
 			pstmt = con.prepareStatement("select * from owls_product_tb where product_del_fl = 0");
 
@@ -104,18 +102,19 @@ public class BookingDao {
 		}
 		return list;
 	}
-	
+
 	public int bList(BookingVo bookingVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int people_count = 0;
 
 		try {
-			pstmt = con.prepareStatement("select count(*) from (owls_booking_tb a, owls_product_tb b) where booking_date = ? and booking_start = ? and b.product_sq = ?");
+			pstmt = con.prepareStatement(
+					"select count(*) from (owls_booking_tb a, owls_product_tb b) where booking_date = ? and booking_start = ? and b.product_sq = ?");
 			pstmt.setString(1, bookingVo.getBooking_date());
 			pstmt.setString(2, bookingVo.getBooking_start());
 			pstmt.setInt(3, bookingVo.getProduct_sq());
-			
+
 			people_count = pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -126,12 +125,12 @@ public class BookingDao {
 		}
 		return people_count;
 	}
-	
+
 	public BookingVo bListFindProduct(int product_sq) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BookingVo vo = null;
-		
+
 		try {
 			pstmt = con.prepareStatement("select * from owls_product_tb where product_sq = ? and product_del_fl = 0");
 			pstmt.setInt(1, product_sq);
@@ -153,7 +152,8 @@ public class BookingDao {
 		}
 		return vo;
 	}
-		public int pInfo(BookingVo bookingVo) {
+
+	public int pInfo(BookingVo bookingVo) {
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
@@ -166,53 +166,6 @@ public class BookingDao {
 			pstmt.setInt(5, bookingVo.getBooking_people());
 
 			count = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		return count;
-	}
-	
-	public ArrayList<BookingVo> bDetail(String sq) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ArrayList<BookingVo> list = new ArrayList<>();
-		
-		try {
-			pstmt = con.prepareStatement("select * from owls_booking_tb where member_sq = ?");
-			pstmt.setInt(1, Integer.parseInt(sq));
-
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				BookingVo vo = new BookingVo();
-				vo = new BookingVo();
-				vo.setProduct_name(rs.getString("product_name"));
-				vo.setProduct_detail(rs.getString("product_detail"));
-				vo.setProduct_people(rs.getInt("product_people"));
-				vo.setProduct_price(rs.getInt("product_price"));
-				vo.setProduct_imagePath(rs.getString("product_imagePath"));
-				vo.setBooking_date(rs.getString("getBooking_date"));
-				vo.setBooking_start(rs.getString("getBooking_start"));
-				list.add(vo);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-			close(rs);
-		}
-		return list;
-	}
-	public int bCancel(String booking_sq) {
-		PreparedStatement pstmt = null;
-		int count = 0;
-		try {
-			pstmt = con.prepareStatement("Update owls_product_tb set booking_fl = 1 where booking_sq = ? and product_del_fl = 0");
-			pstmt.setInt(1, Integer.parseInt("booking_sq"));
-
-			count = pstmt.executeUpdate();
-	
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
