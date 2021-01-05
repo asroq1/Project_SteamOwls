@@ -69,4 +69,23 @@ public class BookingService {
 		return vo;
 	}
 	
+	public boolean pInfo(BookingVo bookingVo) {
+
+		BookingDao bookingDao = BookingDao.getInstance();
+		Connection con = getConnection();
+		bookingDao.setConnection(con);
+
+		int count = bookingDao.pInfo(bookingVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+	
 }

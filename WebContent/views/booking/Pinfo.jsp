@@ -32,7 +32,7 @@
 				<input type="checkbox" name="agreement" id="agreement" class="pay_form">
 				<label for="agreement" class="pay_form">결제약관에 동의해주세요.</label> 
 			</div>
-			<form action="/booking/Pinfo" method="GET">
+			<form action="/booking/BpayResult" method="post">
 				<button type="submit" id="Pinfo_submit">
 					결제하기
 				</button>
