@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
+import shop.steamowls.steam.booking.action.Binfo;
 import shop.steamowls.steam.booking.action.Blist;
-import shop.steamowls.steam.booking.action.Bbooking;
 import shop.steamowls.steam.booking.action.BpayResult;
 import shop.steamowls.steam.booking.action.Pinfo;
 import shop.steamowls.steam.booking.action.Binfo;
@@ -34,13 +34,6 @@ public class BookingController extends HttpServlet {
 
 		if (command.equals("/")) {
 			Action action = new HomeAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/Bbooking")) {
-			Action action = new Bbooking();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

@@ -48,7 +48,7 @@
                     </li>
                 </ul>
            </div>           
-           <div class="info-box">
+           <div class="info-box box-blur">
             <h1>포인트</h1>
             <ul>
                 <li>

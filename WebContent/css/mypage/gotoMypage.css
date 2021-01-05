@@ -49,6 +49,10 @@
     border-radius: 0.8em;
     box-shadow: 10px 10px 20px var(--grey--light--color);
 }
+.box-blur{
+	filter: blur(12px);
+    pointer-events: none;
+}
 .info-box>h1{
    color: #484848;
 }
