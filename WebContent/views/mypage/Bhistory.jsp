@@ -3,8 +3,10 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
 <%
-	BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
+ArrayList<BookingVo> list = (ArrayList<BookingVo>) request.getAttribute("list");
+BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
@@ -22,50 +24,47 @@ String sq = lm.getMemberSq(session);
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
+	<%
+		for (int i = 0; i < list.size(); i++) {
+	%>
 	<section>
 		<div class="booking_container">
 			<div class="booking_img">
-				<%-- <!-- <%=list.get(i).getProduct_image()%> --> --%>
-				<img src="/css/picture/massage-1017255_640.png" alt="">
+					<%=list.get(i).getProduct_imagePath()%>
 			</div>
 			<div class="booking__top">
 				<div class="booking__title">
 					<h3>
 						<h3>예약상품</h3>
-						<p>A-초특급 코오스</p>
-						<%-- <p><%=bookingVo.getProduct_name()%></p> --%>
+						<%=list.get(i).getProduct_name()%>
 					</h3>
 				</div>
 				<div class="booking__intro">
 					<h3>상품내역</h3>
-					<p>수비상황에서 집중해야 합니다
-					아! 이게 뭔가요!
-					자! 끊어내고 올라갑니다
-					제라드! 골키퍼와 일대일 기회 제라드!</p>
-					<%-- <p><%=bookingVo.getProduct_detail()%></p> --%>
+						<%=list.get(i).getProduct_detail()%>
 				</div>
 			</div>
 			<div class="booking_bottom">
 				<div class="booking_people">
 					<h3>인원</h3>
-					<p>4명</p>
-					<%-- <p><%=bookingVo.getBooking_people()%></p> --%>
+						<%=list.get(i).getBooking_people()%>
 					<p>
 				</div>
 				<div class="booking_price">
 					<h3>금액</h3>
 					<p>
-						30000원
-						<%-- <p><%=bookingVo.getProduct_price()%></p> --%>
+						<%=list.get(i).getProduct_price()%>원
 					</p>
 				</div>
 			</div>
 			<div class="btn-container">
-				<a href="/mypage/BChange">예약변경</a>
-				<a href="/mypage/BCancel">예약취소</a>
+				<a href="/mypage/BCancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
 	</section>
+	<%
+		}
+	%>
 	<footer>
 		  <jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

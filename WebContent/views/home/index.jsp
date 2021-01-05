@@ -53,30 +53,10 @@
 			</form>
 		</div>
 	</section>
-
-	<section>
-		<div class="fir_container">
-			<!-- 테스트용 -->
-			<h1>테스트</h1>
-		</div>
-	</section>
-	<section>
-		<div class="fir_container">
-			<!-- 테스트용 -->
-			<h1>테스트</h1>
-			</form>
-		</div>
-	</section>
-	<section>
-		<div class="fir_container">
-			<!-- 테스트용 -->
-			<h1>테스트</h1>
-		</div>
-	</section>
 	<%
 		} else {
 	%>
-	<header>
+	<header>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>

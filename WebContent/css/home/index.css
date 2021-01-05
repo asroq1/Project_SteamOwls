@@ -93,7 +93,7 @@ button:focus
 
 .fir_container{
     height: 600px;
-    background: url(/css/picture/massage-1017255_640.png);
+    background: url(/css/picture/Spa.png);
 	background-repeat: inherit;
     background-position: center;
 }
@@ -109,6 +109,7 @@ button:focus
     margin-top: 3em;
     background-color: var(--theme-color);
     border-radius: 1.5em;
+    box-shadow: 0 8px 6px -6px black;
 }
 #ckpoint input,
 #ckpoint select

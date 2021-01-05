@@ -73,8 +73,13 @@ button:focus
     flex-direction: column;
     width: 20em;
 	margin-top: 2em;
-	background-color: var(--background-color);
+	background-color: var(--theme-color);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.10),
+     0 2px 2px rgba(0, 0, 0, 0.10);
 	border-radius: 1.6em; 
+}
+.toggle_bar.active a{
+	color: var(--white--color);
 }
 .toggle_bar.active li{
 	text-align: left;

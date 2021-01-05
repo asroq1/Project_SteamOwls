@@ -24,7 +24,6 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 	<link rel="stylesheet" href="/css/admin/productManage.css">
-	<!-- <script src="/js/admin/Pmamage.js" defer></script> -->
 </head>
 
 <body>
