@@ -32,11 +32,6 @@ public class Blist implements Action {
 		String booking_people = request.getParameter("booking_people");
 		String product_sq = request.getParameter("product_sq");
 		
-		System.out.println(booking_date);
-		System.out.println(booking_start);
-		System.out.println(booking_people);
-		System.out.println(product_sq);
-		
 		if(booking_date == null || booking_date.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -93,11 +88,8 @@ public class Blist implements Action {
 		
 		BookingVo productInfoVo = svc.bListFindProduct(Integer.parseInt(product_sq));
 		
-//		CommonVo commonVo = new CommonVo();
-		
 		request.setAttribute("bookingVo", bookingVo);
 		request.setAttribute("productInfoVo", productInfoVo);
-//		request.setAttribute("commonVo", commonVo);
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/Binfo.jsp");

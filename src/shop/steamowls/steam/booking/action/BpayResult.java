@@ -8,6 +8,8 @@ import shop.steamowls.common.ActionForward;
 
 public class BpayResult implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/payment.jsp");
 		return forward;
