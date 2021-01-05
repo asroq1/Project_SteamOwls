@@ -57,7 +57,7 @@ String sq = lm.getMemberSq(session);
 						&product_name=<%=productInfoVo.getProduct_name()%>
 						&product_price=<%=productInfoVo.getProduct_price()%>
 						">
-						<button class="booking_btn">결제하기</button>
+						<button type="submit" class="booking_btn">결제하기</button>
 					</form>
 				</div>
 			</div>

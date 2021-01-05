@@ -58,7 +58,7 @@ String sq = lm.getMemberSq(session);
 					<span class="form_price"><%=list.get(i).getProduct_price()%></span>
 				</div>
 			
-				<form method="post" id="ckpoint" action="/booking/Blist?booking_date=<%=bookingInfoVo.getBooking_date()%>
+				<form method="post" id="ckpoint" action="/booking/Binfo?booking_date=<%=bookingInfoVo.getBooking_date()%>
 				&booking_start=<%=bookingInfoVo.getBooking_start()%>
 				&booking_people=<%=bookingInfoVo.getBooking_people()%>
 				&product_sq=<%=list.get(i).getProduct_sq()%>

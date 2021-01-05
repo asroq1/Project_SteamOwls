@@ -34,6 +34,14 @@ public class Pinfo implements Action {
 		String product_name = request.getParameter("product_name");
 		String product_price = request.getParameter("product_price");
 
+		System.out.println(sq);
+		System.out.println(booking_date);
+		System.out.println(booking_start);
+		System.out.println(booking_people);
+		System.out.println(product_sq);
+		System.out.println(product_name);
+		System.out.println(product_price);
+
 		if (booking_date == null || booking_date.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -92,14 +100,16 @@ public class Pinfo implements Action {
 		bookingVo.setProduct_price(Integer.parseInt(product_price));
 
 		BookingService svc = new BookingService();
-		
-		if(!svc.pInfo(bookingVo)) {
+
+		if (!svc.pInfo(bookingVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('잘못된 접근입니다..'); history.back();</script>");
 			out.close();
 			return null;
 		}
+
+		request.setAttribute("bookingVo", bookingVo);
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/Pinfo.jsp");

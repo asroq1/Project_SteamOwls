@@ -38,7 +38,7 @@
 	</header>
 	<section>
 		<div class="fir_container">
-			<form action="/booking/Bbooking" id="ckpoint" method="get">
+			<form action="/booking/Blist" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input>
 				<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
 				<select class="form_input" id="" name="booking_people">
@@ -81,7 +81,7 @@
 	</header>
 	<section>
 		<div class="fir_container">
-			<form action="/booking/Bbooking" id="ckpoint" method="get">
+			<form action="/booking/Blist" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input>
 				<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
 				<select  class="form_input" id=""  name="booking_people">

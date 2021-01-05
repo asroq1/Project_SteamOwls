@@ -1,12 +1,24 @@
+<%@page import="shop.steamowls.steam.admin.member.vo.MemberVo"%>
+<%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
+MemberVo vo = (MemberVo) request.getAttribute("vo");
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
+%>
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>결제화면</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="/css/agreement.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/booking/payment.css">
@@ -15,7 +27,7 @@
 </head>
 <body>
 	<header>
-		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>
 		<form action="/booking/Pinfo" id="ckpoint">
@@ -29,14 +41,18 @@
 				</select>
 			</div>
 			<div class="pay_agree">
-				<input type="checkbox" name="agreement" id="agreement" class="pay_form">
-				<label for="agreement" class="pay_form">결제약관에 동의해주세요.</label> 
+				<input type="checkbox" name="agreement" id="agreement"
+					class="pay_form"> <label for="agreement" class="pay_form">결제약관에
+					동의해주세요.</label>
 			</div>
-			<form action="/booking/BpayResult" method="post">
-				<button type="submit" id="Pinfo_submit">
-					결제하기
-				</button>
-			</form> 
+			<div>
+				<form method="post" action="/booking/BpayResult?booking_date=<%=bookingVo.getBooking_date()%>
+				&booking_start=<%=bookingVo.getBooking_start()%>
+				&booking_people=<%=bookingVo.getBooking_people()%>
+				&product_price=<%=bookingVo.getProduct_price()%>
+				&product_name=<%=bookingVo.getProduct_name()%>">
+					<button type="submit" id="Pinfo_submit">결제하기</button>
+				</form>
 			</div>
 		</form>
 	</section>
