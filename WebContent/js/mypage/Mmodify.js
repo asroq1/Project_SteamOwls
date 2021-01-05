@@ -4,7 +4,6 @@
  	const tel = document.querySelector("#tel");
     const cpw = document.querySelector("#cpw");
  	const checkPoint = document.querySelector("#checkPoint");
-
 	let isTelChecked = false;
 	let isNameChecked = false;
 	let isPwdChecked = false;
@@ -97,6 +96,15 @@ tel.addEventListener('keyup',()=>{
     initCheckTel();
 });
 
+const deleteBtn = document.querySelector('#delete-btn');
+deleteBtn.addEventListener('click', (e)=>{
+    let confirmBtn = confirm('정말로 탈퇴하시겠습니까?');
+    if(confirmBtn == false){
+       e.preventDefault();
+    }else{
+        alert('이용해 주셔서 감사합니다');
+    }
+});
 
 
 

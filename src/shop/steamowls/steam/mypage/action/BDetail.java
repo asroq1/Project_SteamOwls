@@ -9,7 +9,7 @@ import shop.steamowls.common.ActionForward;
 public class BDetail implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/BDetail.jsp");
+		forward.setPath("/views/mypage/Bdetail.jsp");
 		return forward;
 	}
 }

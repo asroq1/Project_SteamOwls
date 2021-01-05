@@ -105,18 +105,18 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 								<%=list.get(i).getProduct_people()%>명
 							</p>
 							<p>
-								₩<%=list.get(i).getProduct_price()%>
+								<%=list.get(i).getProduct_price()%>
 							</p>
 						</div>
 					</div>
 				</div>
 
 			</div>
-		</form>
-		<div class="booking__confirm">
+			<div class="booking__confirm">
 				<input class="confirm__add" type="submit" value="상품판매" formaction="/admin/PsellingButton?product_sq=<%=list.get(i).getProduct_sq()%>">
 				<input class="confirm__delete" type="submit" value="판매정지" formaction="/admin/PstopButton?product_sq=<%=list.get(i).getProduct_sq()%>">
 		</div>
+		</form>
 	</section>
 	<%
 		}

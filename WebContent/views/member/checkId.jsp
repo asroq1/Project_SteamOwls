@@ -23,11 +23,7 @@
 
 <body>
 	<header>
-		<span class="header__logo"> 
-		<a href="/views/home/index.jsp">
-	  		<img src="/css/picture/owls.PNG" alt="로고사진">
-		</a>
-		</span>
+		 <jsp:include page="/views/common/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="checkId__form">

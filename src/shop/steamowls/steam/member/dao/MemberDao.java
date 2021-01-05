@@ -174,32 +174,4 @@ public class MemberDao {
 		return count;
 	}
 
-	public MemberVo mCheckPw(MemberVo memberVo) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		MemberVo vo = null;
-		try {
-			pstmt = con.prepareStatement("select sq, name, pw, tel from owls_mber_tb " 
-						+ "where sq = ? and del_fl = 0 ");
-			pstmt.setInt(1, memberVo.getSq());
-
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new MemberVo();
-				vo.setSq(rs.getInt("sq"));
-				vo.setName(rs.getString("name"));
-				vo.setPw(rs.getString("pw"));
-				vo.setTel(rs.getString("tel"));
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		return vo;
-	}
-	
-	
-
 }

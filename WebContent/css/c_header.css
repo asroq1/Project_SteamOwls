@@ -76,6 +76,9 @@ button:focus
 	background-color: var(--background-color);
 	border-radius: 1.6em; 
 }
+.toggle_bar.active li{
+	text-align: left;
+}
 .bar_flex{
 	display: flex;
 }

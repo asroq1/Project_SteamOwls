@@ -2,6 +2,8 @@ package shop.steamowls.steam.mypage.service;
 
 import java.sql.Connection;
 
+import shop.steamowls.steam.member.dao.MemberDao;
+import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.dao.MypageDao;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -41,5 +43,16 @@ public class MypageService {
 		}
 		close(con);
 		return isSuccess;
+	}
+	
+	public MypageVo mCheckPw(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		MypageVo vo = new MypageVo();
+		vo = mypageDao.mCheckPw(mypageVo);
+
+		close(con);
+		return vo;
 	}
 }

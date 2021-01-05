@@ -57,7 +57,7 @@ String sq = lm.getMemberSq(session);
                 </div>
             </div>
             <div class="Binfo_img">
-                <img src="/css/picture/owls.PNG" alt="상품사진">
+               <%=productInfoVo.getProduct_imagePath()%>
             </div>
         </div>
     </section>
