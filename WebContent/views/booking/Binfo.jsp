@@ -47,20 +47,23 @@ String sq = lm.getMemberSq(session);
                     <p><%=productInfoVo.getProduct_name() %></p>
                 </div>
                 <div class="Binfo_submit">
-                    <form action="/pay/Pinfo?=
-           <%-- booking_date<%=list.get(i).getBooking_date()%>
-				&booking_start=<%=list.get(i).getBooking_start()%>
-				&booking_people=<%=list.get(i).getBooking_people()%>
-				&product_sq=<%=list.get(i).getProduct_sq()%> --%>">
-                        <button class="booking_btn">결제하기</button>
-                    </form>
-                </div>
-            </div>
-            <div class="Binfo_img">
-                <img src="/css/picture/owls.PNG" alt="상품사진">
-            </div>
-        </div>
-    </section>
+					<form method="POST"
+						action="/booking/Pinfo?booking_date=<%=bookingVo.getBooking_date()%>
+						&booking_start=<%=bookingVo.getBooking_start()%>
+						&booking_people=<%=bookingVo.getBooking_people()%>
+						&product_sq=<%=bookingVo.getProduct_sq()%>
+						&product_name=<%=productInfoVo.getProduct_name()%>
+						&product_price=<%=productInfoVo.getProduct_price()%>
+						">
+						<button class="booking_btn">결제하기</button>
+					</form>
+				</div>
+			</div>
+			<div class="Binfo_img">
+				<img src="/css/picture/owls.PNG" alt="상품사진">
+			</div>
+		</div>
+	</section>
 	<footer>
         <jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

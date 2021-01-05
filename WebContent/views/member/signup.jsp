@@ -7,11 +7,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원가입</title>
-<link rel="stylesheet" href="/css/base.css" type="text/css">
-</link>
-<link rel="stylesheet" href="/css/member/signup.css" type="text/css">
-</link>
-<link rel="stylesheet" href="/css/member/forAgreement.css" type="text/css"></link>
+<link rel="stylesheet" href="/css/base.css" type="text/css"></link>
+<link rel="stylesheet" href="/css/member/signup.css" type="text/css"></link>
+<link rel="stylesheet" href="/css/agreement-middle.css" type="text/css"></link>
 <script src="/js/ajax/ajaxID.js" type="text/javascript" defer></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -75,21 +73,23 @@
 					</div>
 				</div>
 			</form>
-			<div>
+			<div class="btn-container">
 				<button id="signup__button" onclick="join()">가입하기</button>
 			</div>
-			<div class=" signup__line">또는 다른 것이 필요하신가요?</div>
+			<div class="signup__line">또는 다른 것이 필요하신가요?</div>
 			<div class="sign__up__kakao">
-				<a href="#">카카오톡으로 회원가입</a>
+				<a id="kakao-text" href="#">카카오톡으로 회원가입</a>
 			</div>
 			<div class="sign__up__naver">
-				<a href="#">네이버로 회원가입</a>
+				<a id="naver-text" href="#">네이버로 회원가입</a>
 			</div>
 	</section>
 	<footer>
 		<span class="signup__form">
-			로그인하거나 회원으로 가입하시면 당사<a href="#" class="agreement"onclick="createFeed()">이용약관</a>및
-			 <a href="#" onclick="createFeed()"class="agreement">개인정보 보호정책</a>
+			로그인하거나 회원으로 가입하시면 당사
+			<a href="#" class="agreement"onclick="createFeed()">이용약관</a>
+			 및
+			<a href="#" onclick="createFeed()"class="agreement">개인정보 보호정책</a>
 			 <p>에 동의하시는 것으로 간주됩니다.</p>
 		</span>
 	</footer>

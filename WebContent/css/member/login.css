@@ -136,6 +136,7 @@ text-weight:bold;
 }
 
 .information__bar {
+    margin-top: 1.5em;
     font-size: 1.000em;
 }
 .information__bar a{

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import shop.steamowls.steam.admin.product.dao.ProductDao;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.vo.BookingVo;
+import shop.steamowls.steam.member.dao.MemberDao;
+import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.dao.MypageDao;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -64,5 +66,13 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-	
+	public ArrayList<BookingVo> Bhistory(int sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		ArrayList<BookingVo> list = mypageDao.Bhistory(sq);
+		close(con);
+		return list;
+	}
 }

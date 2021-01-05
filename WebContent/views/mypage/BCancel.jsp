@@ -8,7 +8,6 @@
 </head>
 <body>
 예약취소화면
-여기까지 와보라 이거야!!
 <a href="/mypage/Bhistory">확인</a>
 </body>
 </html>
