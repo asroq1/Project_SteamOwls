@@ -18,7 +18,7 @@
 		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>
-		<form action="/pay/Pinfo" id="ckpoint">
+		<form action="/booking/Pinfo" id="ckpoint">
 			<div class="pay_way">
 				<h2 class="pay_form">결제 수단</h2>
 				<select value="way" class="pay_form">
@@ -32,7 +32,7 @@
 				<input type="checkbox" name="agreement" id="agreement" class="pay_form">
 				<label for="agreement" class="pay_form">결제약관에 동의해주세요.</label> 
 			</div>
-			<form action="/pay/Pinfo" method="GET">
+			<form action="/booking/Pinfo" method="GET">
 				<button type="submit" id="Pinfo_submit">
 					결제하기
 				</button>

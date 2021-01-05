@@ -13,7 +13,7 @@
 </head>
 <body>
 	<a href="/mypage/Bhistory">예약내역</a>
-	<a href="mypage/McheckPw">회원정보</a>
+	<a href="/mypage/McheckPw">회원정보</a>
 	<a href="/mypage/question">문의</a>
 </body>
 </html>

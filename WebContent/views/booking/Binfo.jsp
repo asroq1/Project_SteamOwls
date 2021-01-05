@@ -13,56 +13,59 @@ String sq = lm.getMemberSq(session);
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>결제완료</title>
-	<link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/booking/payment.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-		integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>결제완료</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/booking/payment.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+	crossorigin="anonymous">
 </head>
 
 <body>
 	<header>
-	  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 
-	  <section>
-        <div class="Binfo_container">
-            <div class="Binfo">
-                <div class="Binfo_date">
-                    <h3>예약날짜</h3>
-                    <p><%=bookingVo.getBooking_date() %></p>
-                </div>
-                <div class="Binfo_time">
-                    <h3>시간</h3>
-                    <p><%=bookingVo.getBooking_start() %></p>
-                </div>
-                <div class="Binfo_people">
-                    <h3>인원</h3>
-                    <p><%=bookingVo.getBooking_people() %></p>
-                </div>
-                <div class="Binfo_info">
-                    <h3>예약상품</h3>
-                    <p><%=productInfoVo.getProduct_name() %></p>
-                </div>
-                <div class="Binfo_submit">
-                    <form action="/pay/Pinfo?=
-           <%-- booking_date<%=list.get(i).getBooking_date()%>
-				&booking_start=<%=list.get(i).getBooking_start()%>
-				&booking_people=<%=list.get(i).getBooking_people()%>
-				&product_sq=<%=list.get(i).getProduct_sq()%> --%>">
-                        <button class="booking_btn">결제하기</button>
-                    </form>
-                </div>
-            </div>
-            <div class="Binfo_img">
-                <img src="/css/picture/owls.PNG" alt="상품사진">
-            </div>
-        </div>
-    </section>
+	<section>
+		<div class="Binfo_container">
+			<div class="Binfo">
+				<div class="Binfo_date">
+					<h3>예약날짜</h3>
+					<p><%=bookingVo.getBooking_date()%></p>
+				</div>
+				<div class="Binfo_time">
+					<h3>시간</h3>
+					<p><%=bookingVo.getBooking_start()%></p>
+				</div>
+				<div class="Binfo_people">
+					<h3>인원</h3>
+					<p><%=bookingVo.getBooking_people()%></p>
+				</div>
+				<div class="Binfo_info">
+					<h3>예약상품</h3>
+					<p><%=productInfoVo.getProduct_name()%></p>
+				</div>
+				<div class="Binfo_submit">
+					<form
+						action="/booking/Pinfo?booking_date=<%-- <%=list.get(i).getBooking_date()%>
+						&booking_start=<%=list.get(i).getBooking_start()%>
+						&booking_people=<%=list.get(i).getBooking_people()%>
+						&product_sq=<%=list.get(i).getProduct_sq()%> --%>
+						">
+						<button class="booking_btn">결제하기</button>
+					</form>
+				</div>
+			</div>
+			<div class="Binfo_img">
+				<img src="/css/picture/owls.PNG" alt="상품사진">
+			</div>
+		</div>
+	</section>
 	<footer>
-        <jsp:include page="/views/common/footer.jsp"></jsp:include>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>
 </body>
 
