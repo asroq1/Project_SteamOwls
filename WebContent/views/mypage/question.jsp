@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
+<header>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+</header>
 문의목록화면<br>
 <a href="QDetail">글1 상세보기</a>
 <br>
