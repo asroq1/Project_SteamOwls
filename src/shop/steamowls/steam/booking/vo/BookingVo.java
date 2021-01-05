@@ -12,11 +12,11 @@ public class BookingVo {
 	private String product_name;
 	private String product_time;
 	private String product_detail;
-	private String product_image;
 	private int product_people;
 	private int booked_people;
 	private int left_people;
-	
+	private String product_imagePath;
+
 	public BookingVo() {
 
 	}
@@ -101,12 +101,12 @@ public class BookingVo {
 		this.product_detail = product_detail;
 	}
 
-	public String getProduct_image() {
-		return product_image;
+	public String getProduct_imagePath() {
+		return product_imagePath;
 	}
 
-	public void setProduct_image(String product_image) {
-		this.product_image = product_image;
+	public void setProduct_imagePath(String product_imagePath) {
+		this.product_imagePath = product_imagePath;
 	}
 
 	public int getProduct_people() {
@@ -132,7 +132,5 @@ public class BookingVo {
 	public void setLeft_people(int left_people) {
 		this.left_people = left_people;
 	}
-
-
 
 }

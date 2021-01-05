@@ -12,6 +12,8 @@ import shop.steamowls.common.BCrypt;
 import shop.steamowls.common.LoginManager;
 import shop.steamowls.steam.member.service.MemberService;
 import shop.steamowls.steam.member.vo.MemberVo;
+import shop.steamowls.steam.mypage.service.MypageService;
+import shop.steamowls.steam.mypage.vo.MypageVo;
 
 public class McheckPwProc implements Action {
 	@SuppressWarnings("unlikely-arg-type")
@@ -33,17 +35,17 @@ public class McheckPwProc implements Action {
 		
 		//jsp에서 입력한 비밀번호 부르기
 		String pw = request.getParameter("pw");
-		
-		MemberVo memberVo = new MemberVo();
-		memberVo.setSq(Integer.parseInt(sq));
-		//memberVo.setPw(BCrypt.hashpw(pw,  BCrypt.gensalt(10)));
-		
-		
-		//비밀번호 확인
-		//기존 회원정보 불러오기
-		MemberService svc = new MemberService();
-		MemberVo vo = svc.mCheckPw(memberVo);
-		if(vo==null) {
+
+		MypageVo mypageVo = new MypageVo();
+		mypageVo.setSq(Integer.parseInt(sq));
+		// memberVo.setPw(BCrypt.hashpw(pw, BCrypt.gensalt(10)));
+
+		// 비밀번호 확인
+		// 기존 회원정보 불러오기
+		MypageService svc = new MypageService();
+		MypageVo vo = svc.mCheckPw(mypageVo);
+
+		if (vo == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('정보를 가져오지 못했습니다.'); history.back();</script>");

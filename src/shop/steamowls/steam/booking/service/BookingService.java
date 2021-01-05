@@ -3,51 +3,113 @@ package shop.steamowls.steam.booking.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import shop.steamowls.steam.admin.product.dao.ProductDao;
+import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.dao.BookingDao;
 import shop.steamowls.steam.booking.vo.BookingVo;
-import shop.steamowls.steam.member.dao.MemberDao;
-import shop.steamowls.steam.member.vo.MemberVo;
 
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class BookingService {
-	
-	public ArrayList<BookingVo> getProduct(BookingVo bookingVo) {
+	public boolean bBooking(BookingVo bookingVo) {
 
 		BookingDao bookingDao = BookingDao.getInstance();
 		Connection con = getConnection();
 		bookingDao.setConnection(con);
 
-		ArrayList<BookingVo> list2 = bookingDao.getProduct(bookingVo);
-		
+		int count = bookingDao.bBooking(bookingVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
 		close(con);
-		return list2;
+		return isSuccess;
 	}
 	
-	public ArrayList<BookingVo> findProduct(BookingVo bookingVo) {
+	public BookingVo bBookingCheck(int member_sq) {
+		BookingDao bookingDao = BookingDao.getInstance();
+		Connection con = getConnection();
+		bookingDao.setConnection(con);
+
+		BookingVo vo = bookingDao.bBookingCheck(member_sq);
+
+		close(con);
+		return vo;
+	}
+	
+	public ArrayList<BookingVo> findProduct() {
+		BookingDao dao = BookingDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		ArrayList<BookingVo> list = dao.findProduct();
+		close(con);
+		return list;
+	}
+	
+	public int bList(BookingVo bookingVo) {
+		BookingDao bookingDao = BookingDao.getInstance();
+		Connection con = getConnection();
+		bookingDao.setConnection(con);
+
+		int people_count = bookingDao.bList(bookingVo);
+
+		close(con);
+		return people_count;
+	}
+	
+	public BookingVo bListFindProduct(int product_sq) {
+		BookingDao dao = BookingDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		BookingVo vo = dao.bListFindProduct(product_sq);
+		close(con);
+		return vo;
+	}
+		public boolean pInfo(BookingVo bookingVo) {
 
 		BookingDao bookingDao = BookingDao.getInstance();
 		Connection con = getConnection();
 		bookingDao.setConnection(con);
 
-		ArrayList<BookingVo> list1 = bookingDao.findProduct(bookingVo);
-
+		int count = bookingDao.pInfo(bookingVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
 		close(con);
-		return list1;
+		return isSuccess;
 	}
-	
-	
+	public ArrayList<BookingVo> bDetail(String sq) {
+		BookingDao dao = BookingDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		ArrayList<BookingVo> list = dao.bDetail(sq);
+		close(con);
+		return list;
+	}
+	public boolean bCancel(String booking_sq) {
+		BookingDao dao = BookingDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
 
-	/*
-	 * public BookingVo findBookingSq(BookingVo bookingVo) {
-	 * 
-	 * BookingDao bookingDao = BookingDao.getInstance(); Connection con =
-	 * getConnection(); bookingDao.setConnection(con);
-	 * 
-	 * BookingVo vo = bookingDao.findBookingSq(bookingVo);
-	 * 
-	 * close(con); return vo; }
-	 */
-
-	
+		int count = dao.bCancel(booking_sq);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
 }
