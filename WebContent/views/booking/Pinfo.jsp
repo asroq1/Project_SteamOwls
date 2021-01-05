@@ -30,7 +30,13 @@ String sq = lm.getMemberSq(session);
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<section>
-		<form action="/booking/Pinfo" id="ckpoint">
+		<form method="post"
+			action="/booking/BpayResult?booking_date=<%=bookingVo.getBooking_date()%>
+				&booking_start=<%=bookingVo.getBooking_start()%>
+				&booking_people=<%=bookingVo.getBooking_people()%>
+				&product_price=<%=bookingVo.getProduct_price()%>
+				&product_name=<%=bookingVo.getProduct_name()%>"
+			 id="ckpoint">
 			<div class="pay_way">
 				<h2 class="pay_form">결제 수단</h2>
 				<select value="way" class="pay_form">
@@ -46,13 +52,7 @@ String sq = lm.getMemberSq(session);
 					동의해주세요.</label>
 			</div>
 			<div>
-				<form method="post" action="/booking/BpayResult?booking_date=<%=bookingVo.getBooking_date()%>
-				&booking_start=<%=bookingVo.getBooking_start()%>
-				&booking_people=<%=bookingVo.getBooking_people()%>
-				&product_price=<%=bookingVo.getProduct_price()%>
-				&product_name=<%=bookingVo.getProduct_name()%>">
-					<button type="submit" id="Pinfo_submit">결제하기</button>
-				</form>
+				<button type="submit" id="Pinfo_submit">결제하기</button>
 			</div>
 		</form>
 	</section>
