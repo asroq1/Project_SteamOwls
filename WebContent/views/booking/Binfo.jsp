@@ -38,11 +38,11 @@ String sq = lm.getMemberSq(session);
 				</div>
 				<div class="Binfo_time">
 					<h3>시간</h3>
-					<p><%=bookingVo.getBooking_start()%></p>
+					<p><%=bookingVo.getBooking_start()%>시</p>
 				</div>
 				<div class="Binfo_people">
 					<h3>인원</h3>
-					<p><%=bookingVo.getBooking_people()%></p>
+					<p><%=bookingVo.getBooking_people()%>명</p>
 				</div>
 				<div class="Binfo_info">
 					<h3>예약상품</h3>
@@ -62,7 +62,7 @@ String sq = lm.getMemberSq(session);
 				</div>
 			</div>
 			<div class="Binfo_img">
-				<img src="/css/picture/owls.PNG" alt="상품사진">
+				<%=productInfoVo.getProduct_imagePath()%>
 			</div>
 		</div>
 	</section>

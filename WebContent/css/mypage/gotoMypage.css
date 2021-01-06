@@ -45,19 +45,30 @@
 .info-box{
     width: 40%;
     padding: 1.5em;
-    border: 1px solid var(--grey--dark--color);
-    border-radius: 0.8em;
+    border-radius: 0.5em;
+    background-color: #f7f7f7;
     box-shadow: 10px 10px 20px var(--grey--light--color);
 }
 .box-blur{
 	filter: blur(12px);
     pointer-events: none;
 }
-.info-box>h1{
+.info-box h1{
+   display: inline;
+   padding-left: 0.5em;
    color: #484848;
 }
 .info-box li{
     padding: 0.5em;
+}
+
+.info-box a{
+    padding: 0.5em;
+}
+
+.info-box i{
+    font-size: 2em;
+    color: #484848;
 }
 .info-box ul{
 	margin-top: 1em;

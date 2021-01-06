@@ -34,25 +34,29 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="booking__top">
 				<div class="booking__title">
-					<h3>
-						<h3>예약상품</h3>
-						<%=list.get(i).getProduct_name()%>
-					</h3>
+						<h3 class="booking__title">예약상품</h3>
+						<p class="booking__text">
+							<%=list.get(i).getProduct_name()%>
+						</p>
 				</div>
 				<div class="booking__intro">
-					<h3>상품내역</h3>
-						<%=list.get(i).getProduct_detail()%>
+					<h3 class="booking__title">예약일자</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_date()%>
+						<%=list.get(i).getBooking_start()%>시
+					</p>					
 				</div>
 			</div>
 			<div class="booking_bottom">
 				<div class="booking_people">
-					<h3>인원</h3>
-						<%=list.get(i).getBooking_people()%>
-					<p>
+					<h3 class="booking__title">인원</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_people()%>명
+					</p>
 				</div>
 				<div class="booking_price">
-					<h3>금액</h3>
-					<p>
+					<h3 class="booking__title">금액</h3>
+					<p class="booking__text">
 						<%=list.get(i).getProduct_price()%>원
 					</p>
 				</div>

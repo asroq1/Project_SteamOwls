@@ -30,7 +30,8 @@ section{
 }
 .booking_container{
 	display: inline-flex;
-	width: 100%;
+    width: 100%;
+    height: 14em;
 	margin: 2em;
 	margin-top : 2em;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.20),
@@ -42,7 +43,7 @@ section{
 }
 .booking__top{
     display: flex;
-    width: 40%;
+    width: 50%;
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -52,7 +53,6 @@ section{
 	display: flex;
     flex-direction: column;
     justify-content: space-evenly;	
-    text-align: center;
 }
 .btn-container{
 	width: 10%;
@@ -60,13 +60,18 @@ section{
 	flex-direction: column; 
 	justify-content: space-evenly; 
     text-align: center;
-    
-		
 }
 .btn-container a{
-	padding: 1.2em;
+	padding: 0.8em;
 	background-color: var(--theme-color);	
 	color: var(--white--color);
 	font-weight: bold;
 	border-radius: 12px;
+}
+
+.booking__title{
+    color: #484848;
+}
+.booking__text{
+    margin-top: 0.5em;
 }

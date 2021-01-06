@@ -20,6 +20,7 @@
 	<section>
         <div class="info-container1">
             <div class="info-box">
+                <i class="far fa-calendar-alt"></i>
                 <h1>예약내역</h1>
                 <ul>
                     <li>
@@ -28,6 +29,7 @@
                 </ul>
             </div>
             <div class="info-box">
+                <i class="fas fa-user"></i>
                  <h1>회원정보</h1>
                  <ul>
                     <li>
@@ -41,6 +43,7 @@
         </div>
         <div class="info-container2">
             <div class="info-box">
+                <i class="far fa-question-circle"></i>
                 <h1>문의내역</h1>
                 <ul>
                     <li>
