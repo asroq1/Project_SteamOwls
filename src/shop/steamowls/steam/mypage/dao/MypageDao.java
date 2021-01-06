@@ -88,7 +88,7 @@ public class MypageDao {
 		int count = 0;
 		try {
 			pstmt = con.prepareStatement(
-					"Update owls_booking_tb set booking_f1 = 1 where member_sq = ? and product_del_fl = 0");
+					"Update owls_booking_tb set booking_fl = 0 where booking_sq = ?");
 			pstmt.setInt(1, bookingVo.getBooking_sq());
 
 			count = pstmt.executeUpdate();
@@ -114,7 +114,7 @@ public class MypageDao {
 					+ "	on a.member_sq = b.sq"
 					+ "	inner join owls_product_tb c"
 					+ "	on a.product_sq = c.product_sq"
-					+ "	where a.member_sq = ?");
+					+ "	where a.member_sq = ? and booking_fl = 1");
 			pstmt.setInt(1, sq);
 
 			rs = pstmt.executeQuery();

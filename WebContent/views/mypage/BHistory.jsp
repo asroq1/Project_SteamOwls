@@ -56,7 +56,7 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="btn-container">
 				<a href="/mypage/BChange=<%=list.get(i).getProduct_sq()%>">예약변경</a>
-				<a href="/mypage/BCancel=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+				<a href="/mypage/BCancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
 	</section>
