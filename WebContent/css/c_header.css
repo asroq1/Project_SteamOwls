@@ -24,6 +24,9 @@
     --font-micro: 10px;
 
 }
+body{
+ 	font-family: 'Nanum Gothic', sans-serif;
+}
 a{
     color: var(--black--color);
     text-decoration: none;
@@ -78,9 +81,7 @@ button:focus
      0 2px 2px rgba(0, 0, 0, 0.10);
 	border-radius: 1.6em; 
 }
-.toggle_bar.active a{
-	color: var(--white--color);
-}
+
 .toggle_bar.active li{
 	text-align: left;
 }
@@ -93,3 +94,11 @@ button:focus
 .toggle_bar a{
 	font-weight: bold;
 }
+.bar_btn{
+	color:var(--white--color);
+}
+
+/* button:focus{
+	border: 1px solid red !important;
+}
+ */

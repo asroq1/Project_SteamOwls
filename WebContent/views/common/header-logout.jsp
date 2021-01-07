@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>헤더</title>
-<script src="/js/common/c_header.js" type="text/javascript" defer></script>
+<script src="/js/common/logout_header.js" type="text/javascript" defer></script>
 <link rel="stylesheet" href="/css/c_header.css">
 <link rel="stylesheet"
 href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -17,15 +17,15 @@ href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
 			<img src="/css/picture/owls.PNG" alt="로고사진">
 		</a>
 		<ul class="signForm">
-			<li class="toggle_btn">
+			<button class="toggle_btn">
 				<i class="fas fa-bars"></i>
-			</li>
+			</button>
 			<ul class="toggle_bar">
 				<li>
-					<a href="/member/logout">로그아웃</a>
+				<button class="bar_btn" onclick="location.href='/member/logout'">로그아웃</button>
 				</li>
 				<li>
-					<a href="/mypage/gotoMypage">마이페이지</a>
+					<button class="bar_btn" onclick="location.href='/mypage/gotoMypage'">마이페이지</button>
 				</li>
 				
 			</ul>

@@ -1,9 +1,8 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-	LoginManager lm = LoginManager.getInstance();
+LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
@@ -14,32 +13,22 @@ String sq = lm.getMemberSq(session);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>메인화면</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-<link rel="stylesheet" type="text/css"
-	href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
 <link rel="stylesheet" href="/css/home/index.css">
 <link rel="stylesheet" href="/css/agreement.css">
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/c_header.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
-	rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 <script src="/js/common/calendar.js" defer></script>
 <script src="/js/agreement/agree.js" defer></script>
-<script src="/js/common/c_header.js" type="text/javascript" defer></script>
 </head>
 
 <body>
 	<%
-		if (sq == null) {
+		if(sq == null){
 	%>
 	<header>
 		<jsp:include page="/views/common/header.jsp"></jsp:include>
@@ -50,8 +39,7 @@ String sq = lm.getMemberSq(session);
 				<input type="text" class="form_input" id="basicDate"
 					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
 					type="text" class="form_input" id="basicTime" placeholder="예약시간"
-					name="booking_start" data-input> <select class="form_input"
-					id="" name="booking_people">
+					name="booking_start" data-input> <select class="form_input" name="booking_people">					
 					<option class="form_input" value="1">1명</option>
 					<option class="form_input" value="2">2명</option>
 					<option class="form_input" value="3">3명</option>
