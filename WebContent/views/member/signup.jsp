@@ -25,11 +25,9 @@
 	</header>
 	<section>
 		<div class="signup__form">
-			<h2>회원가입</h2>
 			<form action="/member/signupProc" method="post" id="ckpoint">
 				<div class="signup__id">
-					<input type="text" placeholder="아이디" name="id" id="id"
-						oninput="checkId()" maxlength="10">
+					<input type="text" placeholder="아이디" name="id" id="id" oninput="checkId()" maxlength="10">
 					<p class="id__text"></p>
 				</div>
 				<div class="signup__pwd">

@@ -5,7 +5,6 @@
 <%
 	LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
-
 %>
 <!DOCTYPE html>
 <html>
@@ -21,8 +20,8 @@ String sq = lm.getMemberSq(session);
 <body>
 	<header>
 		<div class="header__logo">
-			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-				alt="로고사진">
+			<a href="/views/home/index.jsp">
+			 	<img src="/css/picture/owls.PNG"alt="로고사진">
 			</a>
 		</div>
 		<div class="header__signForm">
@@ -30,7 +29,7 @@ String sq = lm.getMemberSq(session);
 		</div>
 	</header>
 	<nav role="navigation">
-		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
+		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<section>
 		<h1>관리자 메인</h1>

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-
 import shop.steamowls.steam.booking.vo.BookingVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -115,7 +114,7 @@ public class BookingDao {
 			pstmt.setString(1, bookingVo.getBooking_date());
 			pstmt.setString(2, bookingVo.getBooking_start());
 			pstmt.setInt(3, bookingVo.getProduct_sq());
-			
+
 			people_count = pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -126,12 +125,12 @@ public class BookingDao {
 		}
 		return people_count;
 	}
-	
+
 	public BookingVo bListFindProduct(int product_sq) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BookingVo vo = null;
-		
+
 		try {
 			pstmt = con.prepareStatement("select * from owls_product_tb where product_sq = ? and product_del_fl = 0");
 			pstmt.setInt(1, product_sq);

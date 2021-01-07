@@ -9,13 +9,15 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.steam.booking.vo.BookingVo;
+import shop.steamowls.steam.admin.product.service.ProductService;
+import shop.steamowls.steam.admin.product.vo.ProductVo;
+import shop.steamowls.steam.booking.service.BookingService;
 import shop.steamowls.steam.mypage.service.MypageService;
 
-public class BCancel implements Action{
+public class BCancel implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session = request.getSession();
 
+		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
@@ -25,29 +27,26 @@ public class BCancel implements Action{
 			forward.setRedirect(true);
 			return forward;
 		}
-		
+
 		String booking_sq = request.getParameter("booking_sq");
-		
-		if(booking_sq == null || booking_sq.equals("")){
+
+		if (booking_sq == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('ì˜ˆì•½ì·¨ì†Œ í•˜ì‹¤ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.1111'); history.back();</script>");
+			out.print("<script>alert('Ãë¼ÒÇÒ ¿¹¾àÀÌ ¾ø½À´Ï´Ù.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
-		BookingVo bookingVo = new BookingVo();
-		bookingVo.setBooking_sq(Integer.parseInt(booking_sq));
-		
+
 		MypageService svc = new MypageService();
-		if (!svc.Bcancel(bookingVo)) {
+		if (!svc.bCancel(Integer.parseInt(booking_sq))) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('ì˜ˆì•½ì·¨ì†Œë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.2222'); history.back();</script>");
+			out.print("<script>alert('¿¹¾àÃë¼Ò¸¦ ½ÇÆĞÇß½À´Ï´Ù.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Bcancel.jsp");
 		return forward;

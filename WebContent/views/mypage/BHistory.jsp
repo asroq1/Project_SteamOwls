@@ -6,6 +6,8 @@
 <%@page import="java.util.ArrayList"%>
 <%
 ArrayList<BookingVo> list = (ArrayList<BookingVo>) request.getAttribute("list");
+BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
+BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 %>
@@ -18,6 +20,7 @@ String sq = lm.getMemberSq(session);
 <link rel="stylesheet" href="/css/mypage/Bhistory.css">
 </head>
 <body>
+
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
@@ -31,31 +34,34 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="booking__top">
 				<div class="booking__title">
-					<h3>
-						<h3>예약상품</h3>
-						<%=list.get(i).getProduct_name()%>
-					</h3>
+						<h3 class="booking__title">예약상품</h3>
+						<p class="booking__text">
+							<%=list.get(i).getProduct_name()%>
+						</p>
 				</div>
 				<div class="booking__intro">
-					<h3>상품내역</h3>
-						<%=list.get(i).getProduct_detail()%>
+					<h3 class="booking__title">예약일자</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_date()%>
+						<%=list.get(i).getBooking_start()%>시
+					</p>					
 				</div>
 			</div>
 			<div class="booking_bottom">
 				<div class="booking_people">
-					<h3>인원</h3>
-						<%=list.get(i).getBooking_people()%>
-					<p>
+					<h3 class="booking__title">인원</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_people()%>명
+					</p>
 				</div>
 				<div class="booking_price">
-					<h3>금액</h3>
-					<p>
+					<h3 class="booking__title">금액</h3>
+					<p class="booking__text">
 						<%=list.get(i).getProduct_price()%>원
 					</p>
 				</div>
 			</div>
 			<div class="btn-container">
-				<a href="/mypage/BChange=<%=list.get(i).getProduct_sq()%>">예약변경</a>
 				<a href="/mypage/BCancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
@@ -66,7 +72,7 @@ String sq = lm.getMemberSq(session);
 	<footer>
 		  <jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>
-	<!--
+	<!-- 
 <a href="/mypage/BCancel">예약취소</a>
 <a href="/mypage/BChange">예약변경</a>
 <a href="/mypage/BDetail">예약확인</a>

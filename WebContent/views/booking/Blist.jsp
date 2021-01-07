@@ -53,12 +53,12 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="form_bottom">
 				<div class="bottom_text">
-					<span class="form_intro"><%=list.get(i).getProduct_people()%></span> 
+					<span class="form_intro"><%=list.get(i).getProduct_people()%>명</span> 
 
-					<span class="form_price"><%=list.get(i).getProduct_price()%></span>
+					<span class="form_price">1인당 <%=list.get(i).getProduct_price()%>원</span>
 				</div>
 			
-				<form method="post" id="ckpoint" action="/booking/Blist?booking_date=<%=bookingInfoVo.getBooking_date()%>
+				<form method="post" id="ckpoint" action="/booking/Binfo?booking_date=<%=bookingInfoVo.getBooking_date()%>
 				&booking_start=<%=bookingInfoVo.getBooking_start()%>
 				&booking_people=<%=bookingInfoVo.getBooking_people()%>
 				&product_sq=<%=list.get(i).getProduct_sq()%>

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
@@ -69,9 +68,9 @@ public class MypageDao {
 		int count = 0;
 		try {
 
-			pstmt = con.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and pw = ? and del_fl = 0");
+			pstmt = con
+					.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and del_fl = 0");
 			pstmt.setInt(1, mypageVo.getSq());
-			pstmt.setString(2, mypageVo.getPw());
 
 			count = pstmt.executeUpdate();
 
@@ -82,62 +81,79 @@ public class MypageDao {
 		}
 		return count;
 	}
-
-	public int Bcancel(BookingVo bookingVo) {
+	
+	public MypageVo mCheckPw(MypageVo mypageVo) {
 		PreparedStatement pstmt = null;
-		int count = 0;
+		ResultSet rs = null;
+		MypageVo vo = null;
 		try {
-			pstmt = con.prepareStatement(
-					"Update owls_booking_tb set booking_fl = 0 where booking_sq = ?");
-			pstmt.setInt(1, bookingVo.getBooking_sq());
+			pstmt = con.prepareStatement("select sq, name, pw, tel from owls_mber_tb " 
+						+ "where sq = ? and del_fl = 0 ");
+			pstmt.setInt(1, mypageVo.getSq());
 
-			count = pstmt.executeUpdate();
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new MypageVo();
+				vo.setSq(rs.getInt("sq"));
+				vo.setName(rs.getString("name"));
+				vo.setPw(rs.getString("pw"));
+				vo.setTel(rs.getString("tel"));
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
 		}
-		return count;
+		return vo;
 	}
-
-	public ArrayList<BookingVo> Bhistory(int sq) {
-
+	
+	public ArrayList<BookingVo> bDetail(String sq) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
+		
 		try {
-			pstmt = con.prepareStatement(
-					"select a.booking_sq, a.member_sq, a.product_sq, c.product_imagePath, c.product_name, c.product_detail, c.product_price, a.booking_date, a.booking_people, a.booking_start"
-					+ "	from owls_booking_tb a"
-					+ "	inner join owls_mber_tb b"
-					+ "	on a.member_sq = b.sq"
-					+ "	inner join owls_product_tb c"
-					+ "	on a.product_sq = c.product_sq"
-					+ "	where a.member_sq = ? and booking_fl = 1");
-			pstmt.setInt(1, sq);
+			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) where A.product_sq = B.product_sq and A.member_sq = ? and A.booking_fl = 1");
+			pstmt.setInt(1, Integer.parseInt(sq));
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BookingVo vo = new BookingVo();
+				vo = new BookingVo();
 				vo.setBooking_sq(rs.getInt("booking_sq"));
-				vo.setMember_sq(rs.getInt("member_sq"));
-				vo.setProduct_sq(rs.getInt("product_sq"));
-				vo.setProduct_imagePath(rs.getString("product_imagePath"));
 				vo.setProduct_name(rs.getString("product_name"));
 				vo.setProduct_detail(rs.getString("product_detail"));
 				vo.setBooking_people(rs.getInt("booking_people"));
 				vo.setProduct_price(rs.getInt("product_price"));
-				vo.setBooking_date(rs.getString("booking_date"));
-				vo.setBooking_start(rs.getString("booking_start"));
+				vo.setProduct_imagePath(rs.getString("product_imagePath"));
+				vo.setBooking_date(rs.getString("Booking_date"));
+				vo.setBooking_start(rs.getString("Booking_start"));
 				list.add(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
+			close(rs);
 		}
 		return list;
+	}
+	public int bCancel(int booking_sq) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("Update owls_booking_tb set booking_fl = 0 where booking_sq = ?");
+			pstmt.setInt(1, booking_sq);
+
+			count = pstmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
 	}
 
 }

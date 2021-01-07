@@ -1,6 +1,7 @@
 package shop.steamowls.steam.booking.action;
 
 import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,10 +34,18 @@ public class Pinfo implements Action {
 		String product_name = request.getParameter("product_name");
 		String product_price = request.getParameter("product_price");
 
+		System.out.println(sq);
+		System.out.println(booking_date);
+		System.out.println(booking_start);
+		System.out.println(booking_people);
+		System.out.println(product_sq);
+		System.out.println(product_name);
+		System.out.println(product_price);
+
 		if (booking_date == null || booking_date.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('¿¹¾à³¯Â¥ ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ì˜ˆì•½ë‚ ì§œ ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -44,7 +53,7 @@ public class Pinfo implements Action {
 		if (booking_start == null || booking_start.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('¿¹¾à½Ã°£ ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ì˜ˆì•½ì‹œê°„ ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -52,7 +61,7 @@ public class Pinfo implements Action {
 		if (product_name == null || product_name.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('»óÇ°ÀÌ¸§ ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ìƒí’ˆì´ë¦„ ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -60,7 +69,7 @@ public class Pinfo implements Action {
 		if (booking_people == null || booking_people.equals("") || Integer.parseInt(booking_people) == 0) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('¿¹¾àÀÎ¿ø ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ì˜ˆì•½ì¸ì› ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -68,7 +77,7 @@ public class Pinfo implements Action {
 		if (product_sq == null || product_sq.equals("") || Integer.parseInt(product_sq) == 0) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('»óÇ°½ÃÄö½º ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ìƒí’ˆì‹œí€€ìŠ¤ ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -76,7 +85,7 @@ public class Pinfo implements Action {
 		if (product_price == null || product_price.equals("") || Integer.parseInt(product_price) == 0) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('»óÇ°°¡°İ ¿À·ù'); history.back();</script>");
+			out.print("<script>alert('ìƒí’ˆê°€ê²© ì˜¤ë¥˜'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -91,14 +100,16 @@ public class Pinfo implements Action {
 		bookingVo.setProduct_price(Integer.parseInt(product_price));
 
 		BookingService svc = new BookingService();
-		
-		if(!svc.pInfo(bookingVo)) {
+
+		if (!svc.pInfo(bookingVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù..'); history.back();</script>");
+			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤..'); history.back();</script>");
 			out.close();
 			return null;
 		}
+
+		request.setAttribute("bookingVo", bookingVo);
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/booking/Pinfo.jsp");

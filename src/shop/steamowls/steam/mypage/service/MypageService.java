@@ -3,8 +3,7 @@ package shop.steamowls.steam.mypage.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import shop.steamowls.steam.admin.product.dao.ProductDao;
-import shop.steamowls.steam.admin.product.vo.ProductVo;
+import shop.steamowls.steam.booking.dao.BookingDao;
 import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.dao.MemberDao;
 import shop.steamowls.steam.member.vo.MemberVo;
@@ -49,12 +48,30 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public boolean Bcancel (BookingVo bookingVo) {
+	public MypageVo mCheckPw(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		MypageVo vo = new MypageVo();
+		vo = mypageDao.mCheckPw(mypageVo);
+
+		close(con);
+		return vo;
+	}
+	public ArrayList<BookingVo> bDetail(String sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		ArrayList<BookingVo> list = mypageDao.bDetail(sq);
+		close(con);
+		return list;
+	}
+	public boolean bCancel(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
 
-		int count = mypageDao.Bcancel(bookingVo);
+		int count = mypageDao.bCancel(booking_sq);
 		boolean isSuccess = false;
 		if (count > 0) {
 			commit(con);
@@ -65,14 +82,5 @@ public class MypageService {
 		}
 		close(con);
 		return isSuccess;
-	}
-	public ArrayList<BookingVo> Bhistory(int sq) {
-		MypageDao mypageDao = MypageDao.getInstance();
-		Connection con = getConnection();
-		mypageDao.setConnection(con);
-
-		ArrayList<BookingVo> list = mypageDao.Bhistory(sq);
-		close(con);
-		return list;
 	}
 }
