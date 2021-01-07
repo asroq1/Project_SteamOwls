@@ -36,15 +36,14 @@ String sq = lm.getMemberSq(session);
 	<section>
 		<div>
 			<form action="/booking/Blist" id="ckpoint" method="get">
-				<input type="text" class="form_input" id="basicDate"
-					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
-					type="text" class="form_input" id="basicTime" placeholder="예약시간"
-					name="booking_start" data-input> <select class="form_input" name="booking_people">					
-					<option class="form_input" value="1">1명</option>
-					<option class="form_input" value="2">2명</option>
-					<option class="form_input" value="3">3명</option>
-					<option class="form_input" value="4">4명</option>
-				</select>
+				<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input>
+				<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
+					<select class="form_input" name="booking_people">					
+						<option class="form_input" value="1">1명</option>
+						<option class="form_input" value="2">2명</option>
+						<option class="form_input" value="3">3명</option>
+						<option class="form_input" value="4">4명</option>
+					</select>
 				<button type="submit" class="form_input form_submit">
 					<i class="fas fa-search"></i>
 				</button>
@@ -62,8 +61,8 @@ String sq = lm.getMemberSq(session);
 		<div>
 			<form action="/booking/Blist" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input> 
-					<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input> <select class="form_input"
-					id="" name="booking_people">
+				<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input> 
+				 <select class="form_input" id="" name="booking_people">
 					<option class="form_input" value="1">1명</option>
 					<option class="form_input" value="2">2명</option>
 					<option class="form_input" value="3">3명</option>
@@ -79,6 +78,9 @@ String sq = lm.getMemberSq(session);
 	<%
 		}
 	%>
+	<footer>
+		<h2>푸터 테스트</h2>
+	</footer>
 
 	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
