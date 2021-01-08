@@ -45,7 +45,7 @@ String sq = lm.getMemberSq(session);
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<section>
+	<article>
 		<div>
 			<form action="#" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate"
@@ -57,58 +57,59 @@ String sq = lm.getMemberSq(session);
 				</button>
 			</form>
 		</div>
-	</section>
-	<%
-	for (int i = 0; i < list.size(); i++) {
-	%>
-	<section>
-
-		<!-- 주석 풀고 다시 사용하면 됩니다.  -->
-		<div class="booking_container">
-			<div class="booking_img">
-				<%=list.get(i).getProduct_imagePath()%>
-			</div>
-			<div class="booking__top">
-				<div class="booking__title">
-					<h3 class="booking__title">고객성함</h3>
-					<p class="booking__text">
-						<%=list.get(i).getName()%>
-					</p>
-					<h3 class="booking__title">예약상품</h3>
-					<p class="booking__text">
-						<%=list.get(i).getProduct_name()%>
-					</p>
+	</article>
+		<%
+		for (int i = 0; i < list.size(); i++) {
+		%>
+		<article>
+			<div class="booking_container">
+				<div class="booking_img">
+					<%=list.get(i).getProduct_imagePath()%>
 				</div>
-				<div class="booking__intro">
-					<h3 class="booking__title">예약일자</h3>
-					<p class="booking__text">
-						<%=list.get(i).getBooking_date()%>
-						<%=list.get(i).getBooking_start()%>시
-					</p>
+				<div class="booking__top">
+					<div class="booking__title">
+						<h3 class="booking__title">고객성함</h3>
+						<p class="booking__text">
+							<%=list.get(i).getName()%>
+						</p>
+						<h3 class="booking__title">예약상품</h3>
+						<p class="booking__text">
+							<%=list.get(i).getProduct_name()%>
+						</p>
+					</div>
+					<div class="booking__intro">
+						<h3 class="booking__title">예약일자</h3>
+						<p class="booking__text">
+							<%=list.get(i).getBooking_date()%>
+							<%=list.get(i).getBooking_start()%>시
+						</p>
+					</div>
+				</div>
+				<div class="booking_bottom">
+					<div class="booking_people">
+						<h3 class="booking__title">인원</h3>
+						<p class="booking__text">
+							<%=list.get(i).getBooking_people()%>명
+						</p>
+					</div>
+					<div class="booking_price">
+						<h3 class="booking__title">금액</h3>
+						<p class="booking__text">
+							<%=list.get(i).getProduct_price()%>원
+						</p>
+					</div>
+				</div>
+				<div class="btn-container">
+					<a href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 				</div>
 			</div>
-			<div class="booking_bottom">
-				<div class="booking_people">
-					<h3 class="booking__title">인원</h3>
-					<p class="booking__text">
-						<%=list.get(i).getBooking_people()%>명
-					</p>
-				</div>
-				<div class="booking_price">
-					<h3 class="booking__title">금액</h3>
-					<p class="booking__text">
-						<%=list.get(i).getProduct_price()%>원
-					</p>
-				</div>
-			</div>
-			<div class="btn-container">
-				<a href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
-			</div>
-		</div>
-	</section>
-	<%
-	}
-	%>
+		</article>
+		<%
+		}
+		%>
+		<footer>
+			<jsp:include page="/views/common/footer.jsp"></jsp:include>
+		</footer>
 </body>
 
 </html>
