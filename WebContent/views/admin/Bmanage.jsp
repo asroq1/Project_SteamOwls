@@ -47,7 +47,7 @@ String sq = lm.getMemberSq(session);
 	</nav>
 	<section>
 		<div>
-			<form action="#" id="ckpoint" method="get">
+			<form action="/admin/BmanageProc" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate"
 					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
 					type="text" class="form_input" id="basicTime" placeholder="예약시간"
