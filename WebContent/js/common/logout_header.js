@@ -1,21 +1,13 @@
 
 const toggle_btn = document.querySelector('.toggle_btn');
 const toggle_bar = document.querySelector('.toggle_bar');
-const test = document.querySelector('#test');
+const bar_btn = document.querySelector('.bar_btn');
 
 toggle_btn.addEventListener('click',()=>{ 
 	 toggle_bar.classList.toggle('active');
 });
-toggle_btn.addEventListener('blur',(e)=>{ 
-	if(e.target != button ){
-		toggle_bar.classList.remove('active');
-	}
-});
-
-test.addEventListener('click',(e)=>{
-	e.preventDefault();
-});
-
- document.addEventListener('click',(e)=>{
- 	console.log(e);
- });
+document.addEventListener('click', (e) => {
+    if (document.activeElement === document.body) {
+        toggle_bar.classList.remove('active');
+    }
+})

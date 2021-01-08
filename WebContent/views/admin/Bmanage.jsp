@@ -58,32 +58,32 @@ String sq = lm.getMemberSq(session);
 			</form>
 		</div>
 	</section>
-	<%-- 	<!-- <%
-		for (int i = 0; i < list.size(); i++) {
-	%> --> --%>
+	<%
+	for (int i = 0; i < list.size(); i++) {
+	%>
 	<section>
-	
+
 		<!-- 주석 풀고 다시 사용하면 됩니다.  -->
 		<div class="booking_container">
 			<div class="booking_img">
-				<%-- <!-- <%=list.get(i).getProduct_imagePath()%> --> --%>
+				<%=list.get(i).getProduct_imagePath()%>
 			</div>
 			<div class="booking__top">
 				<div class="booking__title">
 					<h3 class="booking__title">고객성함</h3>
 					<p class="booking__text">
-						 <%-- <%=list.get(i).getName()%>  --%>
+						<%=list.get(i).getName()%>
 					</p>
 					<h3 class="booking__title">예약상품</h3>
 					<p class="booking__text">
-						<%-- 	<!-- <%=list.get(i).getProduct_name()%> --> --%>
+						<%=list.get(i).getProduct_name()%>
 					</p>
 				</div>
 				<div class="booking__intro">
 					<h3 class="booking__title">예약일자</h3>
 					<p class="booking__text">
-						<%-- <!-- <%=list.get(i).getBooking_date()%>
-						<%=list.get(i).getBooking_start()%>시 --> --%>
+						<%=list.get(i).getBooking_date()%>
+						<%=list.get(i).getBooking_start()%>시
 					</p>
 				</div>
 			</div>
@@ -91,25 +91,24 @@ String sq = lm.getMemberSq(session);
 				<div class="booking_people">
 					<h3 class="booking__title">인원</h3>
 					<p class="booking__text">
-						<%-- <!-- <%=list.get(i).getBooking_people()%>명 --> --%>
+						<%=list.get(i).getBooking_people()%>명
 					</p>
 				</div>
 				<div class="booking_price">
 					<h3 class="booking__title">금액</h3>
 					<p class="booking__text">
-						<%-- 	<!-- <%=list.get(i).getProduct_price()%>원 --> --%>
+						<%=list.get(i).getProduct_price()%>원
 					</p>
 				</div>
 			</div>
 			<div class="btn-container">
-				<button>예약취소</button>
-				<%-- 	<a href="/mypage/BCancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a> --%>
+				<a href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
 	</section>
-	<%-- <!-- <%
-		}
-	%> --> --%>
+	<%
+	}
+	%>
 </body>
 
 </html>

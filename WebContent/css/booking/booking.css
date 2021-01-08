@@ -26,8 +26,9 @@
     --font-small: 12px;
     --font-micro: 10px;
 }
+
 body{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 header{
     width: 100%;

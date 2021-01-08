@@ -29,6 +29,7 @@ p{
 }
 section{
    width: 40%;
+   min-height: 100vh;
    margin: 0 auto;
    margin-top: 6em; 
 }

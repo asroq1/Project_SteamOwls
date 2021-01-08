@@ -24,9 +24,15 @@
     --font-micro: 10px;
 
 }
-section{
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+article{
 	width: 70%;
 	margin: 0 auto;
+}
+section{
+	min-height: 100vh; 
 }
 .booking_container{
 	display: inline-flex;

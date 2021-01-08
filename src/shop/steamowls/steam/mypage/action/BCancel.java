@@ -33,7 +33,7 @@ public class BCancel implements Action {
 		if (booking_sq == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Ãë¼ÒÇÒ ¿¹¾àÀÌ ¾ø½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì·¨ì†Œí•  ì˜ˆì•½ì´ ì—†ìŠµë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -42,7 +42,7 @@ public class BCancel implements Action {
 		if (!svc.bCancel(Integer.parseInt(booking_sq))) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('¿¹¾àÃë¼Ò¸¦ ½ÇÆĞÇß½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì˜ˆì•½ì·¨ì†Œë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}

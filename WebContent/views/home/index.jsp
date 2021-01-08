@@ -75,11 +75,12 @@ String sq = lm.getMemberSq(session);
 		</div>
 		<div class="fir_container"></div>
 	</section>
+	
 	<%
 		}
 	%>
 	<footer>
-		<h2>푸터 테스트</h2>
+		 <jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>
 
 	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
