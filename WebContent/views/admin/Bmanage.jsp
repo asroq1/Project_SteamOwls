@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
@@ -11,6 +12,7 @@ BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+DecimalFormat won = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,21 +35,14 @@ String sq = lm.getMemberSq(session);
 </head>
 <body>
 	<header>
-		<div class="header__logo">
-			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-				alt="로고사진">
-			</a>
-		</div>
-		<div class="header__signForm">
-			<a href="/admin/Alogout">로그아웃</a>
-		</div>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<article>
 		<div>
-			<form action="#" id="ckpoint" method="get">
+			<form action="/admin/BmanageProc" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate"
 					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
 					type="text" class="form_input" id="basicTime" placeholder="예약시간"
@@ -58,58 +53,58 @@ String sq = lm.getMemberSq(session);
 			</form>
 		</div>
 	</article>
-		<%
+	<%
 		for (int i = 0; i < list.size(); i++) {
-		%>
-		<article>
-			<div class="booking_container">
-				<div class="booking_img">
-					<%=list.get(i).getProduct_imagePath()%>
+	%>
+	<article>
+		<div class="booking_container">
+			<div class="booking_img">
+				<%=list.get(i).getProduct_imagePath()%>
+			</div>
+			<div class="booking__top">
+				<div class="booking__title">
+					<h3 class="booking__title">고객성함</h3>
+					<p class="booking__text">
+						<%=list.get(i).getName()%>
+					</p>
+					<h3 class="booking__title">예약상품</h3>
+					<p class="booking__text">
+						<%=list.get(i).getProduct_name()%>
+					</p>
 				</div>
-				<div class="booking__top">
-					<div class="booking__title">
-						<h3 class="booking__title">고객성함</h3>
-						<p class="booking__text">
-							<%=list.get(i).getName()%>
-						</p>
-						<h3 class="booking__title">예약상품</h3>
-						<p class="booking__text">
-							<%=list.get(i).getProduct_name()%>
-						</p>
-					</div>
-					<div class="booking__intro">
-						<h3 class="booking__title">예약일자</h3>
-						<p class="booking__text">
-							<%=list.get(i).getBooking_date()%>
-							<%=list.get(i).getBooking_start()%>시
-						</p>
-					</div>
-				</div>
-				<div class="booking_bottom">
-					<div class="booking_people">
-						<h3 class="booking__title">인원</h3>
-						<p class="booking__text">
-							<%=list.get(i).getBooking_people()%>명
-						</p>
-					</div>
-					<div class="booking_price">
-						<h3 class="booking__title">금액</h3>
-						<p class="booking__text">
-							<%=list.get(i).getProduct_price()%>원
-						</p>
-					</div>
-				</div>
-				<div class="btn-container">
-					<a href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+				<div class="booking__intro">
+					<h3 class="booking__title">예약일자</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_date()%>
+						<%=list.get(i).getBooking_start()%>시
+					</p>
 				</div>
 			</div>
-		</article>
-		<%
+			<div class="booking_bottom">
+				<div class="booking_people">
+					<h3 class="booking__title">인원</h3>
+					<p class="booking__text">
+						<%=list.get(i).getBooking_people()%>명
+					</p>
+				</div>
+				<div class="booking_price">
+					<h3 class="booking__title">금액</h3>
+					<p class="booking__text">
+						<%=won.format(list.get(i).getProduct_price() * list.get(i).getBooking_people())%>원
+					</p>
+				</div>
+			</div>
+			<div class="btn-container">
+				<a id="cancel__btn" href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+			</div>
+		</div>
+	</article>
+	<%
 		}
-		%>
-		<footer>
-			<jsp:include page="/views/common/footer.jsp"></jsp:include>
-		</footer>
+	%>
+	<footer>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
+	</footer>
 </body>
 
 </html>

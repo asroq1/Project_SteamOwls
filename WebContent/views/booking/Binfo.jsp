@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
@@ -8,6 +9,7 @@ BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+DecimalFormat won = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,12 +18,14 @@ String sq = lm.getMemberSq(session);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>결제완료</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/booking/payment.css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
 	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
 	crossorigin="anonymous">
+	
 </head>
 
 <body>
@@ -43,6 +47,11 @@ String sq = lm.getMemberSq(session);
 				<div class="Binfo_people">
 					<h3>인원</h3>
 					<p><%=bookingVo.getBooking_people()%>명</p>
+				</div>
+				<div class="Binfo_paid">
+					<h3>결제금액</h3>
+					<p><%=won.format(productInfoVo.getProduct_price() * bookingVo.getBooking_people())%>
+					원</p>
 				</div>
 				<div class="Binfo_info">
 					<h3>예약상품</h3>

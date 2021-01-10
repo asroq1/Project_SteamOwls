@@ -46,6 +46,7 @@ public class BCancel implements Action {
 			out.close();
 			return null;
 		}
+		
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Bcancel.jsp");

@@ -80,7 +80,8 @@ public class Binfo implements Action {
 		} else if(svc.bList(bookingVo) <= 4 && svc.bList(bookingVo) > bookingVo.getBooking_people()) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('최대인원 4명중 " + svc.bList(bookingVo) + "명이 찼습니다. 예약인원을 맞춰주세요'); history.back();</script>");
+			out.print("<script>alert('최대인원 4명중 " + svc.bList(bookingVo)
+					+ "명이 찼습니다. 예약인원을 맞춰주세요'); history.back();</script>");
 			out.close();
 			return null;
 		}

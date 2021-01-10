@@ -52,7 +52,9 @@ section{
 .Binfo_time,
 .Binfo_people,
 .Binfo_info,
-.Binfo_submit{
+.Binfo_submit,
+.Binfo_paid
+{
     padding: 1em;
 }
 .Binfo_date{

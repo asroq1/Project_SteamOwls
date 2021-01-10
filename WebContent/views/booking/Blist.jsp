@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,15 +14,17 @@ BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+DecimalFormat won = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>예약</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/booking/booking.css">
 <link rel="stylesheet"
@@ -53,9 +56,10 @@ String sq = lm.getMemberSq(session);
 			</div>
 			<div class="form_bottom">
 				<div class="bottom_text">
-					<span class="form_intro"><%=list.get(i).getProduct_people()%>명</span> 
-
-					<span class="form_price">1인당 <%=list.get(i).getProduct_price()%>원</span>
+					<span class="form_price">
+					<p class="people_intro">1인당<p> 
+					<p><%= won.format(list.get(i).getProduct_price())%>원</p>
+					</span>
 				</div>
 			
 				<form method="post" id="ckpoint" action="/booking/Binfo?booking_date=<%=bookingInfoVo.getBooking_date()%>
@@ -63,7 +67,7 @@ String sq = lm.getMemberSq(session);
 				&booking_people=<%=bookingInfoVo.getBooking_people()%>
 				&product_sq=<%=list.get(i).getProduct_sq()%>
 				">
-					<button class="booking_btn">예약</button>
+					<button class="booking_btn">예약하기</button>
 				</form>
 			</div>
 		</div>
@@ -71,5 +75,8 @@ String sq = lm.getMemberSq(session);
 	<%
 		}
 	%>
+	<footer>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
+   </footer>
 </body>
 </html>

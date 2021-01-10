@@ -52,7 +52,9 @@ section{
     padding: 1.2em;
 }
 .bill_submit{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25%;
     height: 3em;
     margin: 0 auto;

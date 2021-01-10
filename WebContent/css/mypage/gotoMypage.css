@@ -27,7 +27,12 @@
     --font-micro: 10px;
 
 }
-
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+section{
+	height: 100vh;
+}
 .info-container1{
     display: flex;
     justify-content: space-evenly;

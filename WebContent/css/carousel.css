@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 :root {
     /* Color */
@@ -25,36 +24,38 @@
     --font-micro: 10px;
 
 }
-
-input,
-input::placeholder{
-	color : var(--white--color);
-	font-size: bold;
+.intro__container{
+	width: 50%;
+	text-align: center;
+    font-size: 1.8em;
+    margin: 4em
 }
-#ckpoint{
-    display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-    height : 4em;
-    margin: 0 auto;
-    margin-top: 3em;
-    background-color: var(--theme-color);
-    color : var(--white--color);
-    border-radius: 1.5em;
-    box-shadow: 0 8px 6px -6px black;
+.slider__item img{
+    width: 80%;
+    height: 500px;
+    border-radius: 1em;
 }
-#basicDate,
-#basicTime
-{   
+#slider{
     width: 100%;
-	text-align : center;
-    font-weight: bold;
-}
-.form_submit{
-    width: 30%;
-}
-.form_input:hover{
-    border-radius: 1.5em;
-   	background-color: #f54269;
+    position: relative;
 }
 
+.slider__item{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+/*     opacity: 0; */
+   /*  transition: all .5s ease-in-out;*/
+    transform: trnaslate(0.9); 
+}
+.showing{
+    opacity: 1;
+    z-index: 1;
+    transform: none;
+}
