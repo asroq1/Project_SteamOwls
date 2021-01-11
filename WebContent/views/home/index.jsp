@@ -39,8 +39,9 @@ String sq = lm.getMemberSq(session);
 	</header>
 	<section>
 		<form action="/booking/Blist" id="ckpoint" method="get">
-			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input> 
-			<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input> 
+			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date"
+				data-input>
+			<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
 			<select class="form_input input__btn" name="booking_people">
 				<option class="form_input" value="1">1명</option>
 				<option class="form_input" value="2">2명</option>
@@ -67,8 +68,9 @@ String sq = lm.getMemberSq(session);
 	</header>
 	<section>
 		<form action="/booking/Blist" id="ckpoint" method="get">
-			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date" data-input> 
-			<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input> 
+			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date"
+				data-input>
+			<input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start" data-input>
 			<select class="form_input input__btn" name="booking_people">
 				<option class="form_input" value="1">1명</option>
 				<option class="form_input" value="2">2명</option>
@@ -98,19 +100,19 @@ String sq = lm.getMemberSq(session);
 		<div class="info-container">
 			<div class="info-box">
 				<img src="/css/picture/picForSlide/massage-835468_1280.jpg">
-					 <div class="info-text">헤드 마사지</div>
+				<div class="info-text">헤드 마사지</div>
 			</div>
 			<div class="info-box">
 				<img src="/css/picture/picForSlide/treatment-1327811_1280.jpg">
 				<div class="info-text">지압</div>
 			</div>
 			<div class="info-box">
-				<img src="/css/picture/picForSlide/spa-3184610_1280.jpg"> 
-					 <div class="info-text">핫스톤 마사지</div>
+				<img src="/css/picture/picForSlide/spa-3184610_1280.jpg">
+				<div class="info-text">핫스톤 마사지</div>
 			</div>
 			<div class="info-box">
 				<img src="/css/picture/picForSlide/massage-1929064_1280.jpg">
-					 <div class="info-text">24시간 풀케어</div>
+				<div class="info-text">24시간 풀케어</div>
 			</div>
 		</div>
 

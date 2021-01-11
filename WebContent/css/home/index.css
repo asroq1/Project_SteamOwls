@@ -1,26 +1,26 @@
 @charset "UTF-8";
 
 :root {
-	/* Color */ -
-	-white--color: #fff; -
-	-black--color: #140a00; -
-	-blue--color: #045fd4; -
-	-red--color: #ff0000; -
-	-grey--dark--color: #909090; -
-	-grey--light--color: #e0e0e0; -
-	-green--deep--color: #439889; -
-	-green--light--color: #e0f2f1; -
-	-green--hard-color: #003d33; -
-	-theme-color: #ed6174; -
-	-background-color: #e9ecea;
-	/* Size */ -
-	-padding: 12px; -
-	-avatar--size: 36px;
-	/* Font Size */ -
-	-font-large: 18px; -
-	-font-medium: 14px; -
-	-font-small: 12px; -
-	-font-micro: 10px;
+	/* Color */
+	- -white--color: #fff;
+	- -black--color: #140a00;
+	- -blue--color: #045fd4;
+	- -red--color: #ff0000;
+	- -grey--dark--color: #909090;
+	- -grey--light--color: #e0e0e0;
+	- -green--deep--color: #439889;
+	- -green--light--color: #e0f2f1;
+	- -green--hard-color: #003d33;
+	- -theme-color: #ed6174;
+	- -background-color: #e9ecea;
+	/* Size */
+	- -padding: 12px;
+	- -avatar--size: 36px;
+	/* Font Size */
+	- -font-large: 18px;
+	- -font-medium: 14px;
+	- -font-small: 12px;
+	- -font-micro: 10px;
 }
 
 body {
@@ -33,7 +33,8 @@ a {
 	pad: 0.8em;
 }
 
-ul, li {
+ul,
+li {
 	list-style: none;
 }
 
@@ -43,8 +44,7 @@ header {
 	position: sticky;
 	top: 0;
 	background-color: var(--white--color);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px
-		rgba(0, 0, 0, 0.10);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px rgba(0, 0, 0, 0.10);
 	align-items: center;
 }
 
@@ -53,7 +53,9 @@ section {
 	min-height: 100vh;
 }
 
-input:focus, select:focus, button:focus {
+input:focus,
+select:focus,
+button:focus {
 	outline: none;
 }
 
@@ -124,7 +126,8 @@ input:focus, select:focus, button:focus {
 	border-width: 30%;
 }
 
-#basicDate, #basicTime {
+#basicDate,
+#basicTime {
 	width: 100%;
 }
 
@@ -132,7 +135,9 @@ input:focus, select:focus, button:focus {
 	width: 50%;
 }
 
-#basicDate, #basicTime, .form_input {
+#basicDate,
+#basicTime,
+.form_input {
 	text-align: center;
 	font-weight: bold;
 }
@@ -183,7 +188,7 @@ input:focus, select:focus, button:focus {
 	font-size: 1.5em;
 	margin: 4em;
 	color: #484848;
-	
+
 }
 
 .img__container {
@@ -206,7 +211,7 @@ input:focus, select:focus, button:focus {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	color: #484848;
-	
+
 }
 
 /* 섹션 2 */
@@ -225,7 +230,7 @@ input:focus, select:focus, button:focus {
 	padding: 12px;
 }
 
- .info-container img { 
+.info-container img {
 	border-radius: 12px;
 	width: 100%;
 	height: 100%;
@@ -237,50 +242,55 @@ input:focus, select:focus, button:focus {
 	font-weight: bold;
 }
 
-	/* 
+/* 
         0 ~ 767 gold , 768~1024 lightblue , 1025 ~ lightpink 
         0 ~ 767 모바일 , 768~1024 태블릿 , 1025 ~ PC 
      */
-@media
-screen
-and
-(max-width:
-768px)
-{
+@media screen and (max-width: 768px) {
 
-/* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
-#ckpoint {
-	display: flex;
-	justify-content: space-evenly;
-	width: 60%;
-	height: 4em;
-	margin: 0 auto;
-	margin-top: 3em;
-	background-color: var(--theme-color);
-	box-shadow: 0 8px 6px -6px black;
-	border-radius: 1.5em;
-}
+	header img {
+		width: 80%;
+	}
 
-.info-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	width: 90vw;
-	height: 100%;
-	margin: 0 auto;
-	margin-top: 7em;
-}
+	#ckpoint {
+		display: flex;
+		justify-content: space-evenly;
+		width: 90%;
+		height: 4em;
+		margin: 0 auto;
+		margin-top: 3em;
+		background-color: var(--theme-color);
+		box-shadow: 0 8px 6px -6px black;
+		border-radius: 1.5em;
+	}
 
-.info-box {
-	width: 100%;
-	height: 20em;
-	padding: 2em;
-}
+	.info-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 90vw;
+		height: 100%;
+		margin: 0 auto;
+	}
 
-.intro__container {
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-	font-size: 1.5em;
-}
+	.img__container {
+		width: 90%;
+	}
+
+	.info-box {
+		width: 100%;
+		height: 20em;
+		padding: 2em;
+	}
+
+	.intro__container {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	#basicTime {
+		width: 50%;
+	}
 }

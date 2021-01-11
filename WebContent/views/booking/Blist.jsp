@@ -27,10 +27,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 <link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/booking/booking.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <script src="/js/booking/booking.js" defer></script>
@@ -43,9 +40,10 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%> 
-	<section>
+	<article>
 		<div class="booking_container">
 			<div class="form_img">
+				<img alt="" src="/css/picture/Spa.png">
 				<%=list.get(i). getProduct_imagePath()%>
 			</div>
 			<div class="form_top">
@@ -71,7 +69,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 				</form>
 			</div>
 		</div>
-	</section>
+	</article>
 	<%
 		}
 	%>

@@ -78,3 +78,13 @@ section{
 .info-box ul{
 	margin-top: 1em;
 }
+
+
+@media screen and (max-width: 768px) {
+     .info-container1{
+        width: 90%;
+    }
+    .info-container2{
+        width: 90%;
+    }
+}

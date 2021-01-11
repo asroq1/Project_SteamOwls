@@ -43,18 +43,24 @@ section{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.20),
     0 2px 2px rgba(0, 0, 0, 0.20);
 }
+.booking_img{
+	width: 400px;
+    height: 200px;
+}
+
+/* 서버에 올린뒤 추후 삭제 */
 .booking_img img{
-    width: 22em;
-    height: 15em;
+    width: 350px;
+    height: 200px;
 }
 .booking__top{
     display: flex;
-    width: 50%;
+    width: 40%;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.booking_bottom{
+.booking__bottom{
 	width: 12%;
 	display: flex;
     flex-direction: column;
@@ -80,4 +86,56 @@ section{
 }
 .booking__text{
     margin-top: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+	.booking_container {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		margin-top: 36px;
+		overflow: hidden;
+		padding: 1em;
+	}
+	
+	.booking_img{
+	width: 100%;
+	height: 100%;
+	}
+	
+	/* 추후 삭제 코드 */
+	.booking_img img{
+	width: 100%:
+	}
+	
+	.booking__top,
+	.booking__bottom{
+		width: 100%;
+		}
+		.booking__title,
+		.booking__intro,
+		.booking__people,
+		.booking__price
+ 		{ 
+		display: flex;
+    	justify-content: space-between; 
+    	padding: 0.5em;
+    }	
+    	.booking__title p,
+		.booking__intro p,
+		.booking__people p,
+		.booking__price p{
+			margin-top: 0;
+		}
+		.booking__title h3,
+		.booking__intro h3
+		{
+			width: 80%
+		}
+		.btn-container {
+    width: 50%;
+    margin: auto;
+   
+		}
 }

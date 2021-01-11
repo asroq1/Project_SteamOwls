@@ -33,13 +33,13 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<section>
 		<div class="bill_container">
 			<div class="bill_img">
-				<img src="/css/picture/massage-1017255_640.png" alt="">
+				<img src="/css/picture/Spa.png" alt="">
 			</div>
 			<div class="bill_date">
 				<h3>예약날짜</h3>
 				<p><%=bookingVo.getBooking_date()%></p>
 			</div>
-			<div class="bill_time">
+			<div class="bill_time">	
 				<h3>예약시간</h3>
 				<p><%=bookingVo.getBooking_start() %>시</p>
 			</div>

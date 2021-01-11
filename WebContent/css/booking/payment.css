@@ -42,10 +42,12 @@ section{
 }
 .Binfo{
     width: 40%;
+    min-width: 40%;
 }
 .Binfo_img img{
     width: 350px;
     height: 250px;
+    margin-left : 60px;
     border-radius: 1.5em;
 }
 .Binfo_date,
@@ -95,4 +97,43 @@ section{
 	background: var(--theme-color);
     font-weight: bold;
     border-radius: 1em;
+}
+
+@media screen and (max-width: 768px)  {
+	
+	.Binfo{
+		width: 100%;
+	}
+	
+	.Binfo_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5em;
+    margin-left: 0;
+	}
+	
+	.Binfo_container{
+	width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10em;
+    flex-direction: column-reverse;
+    }
+    
+    .Binfo_date,
+    .Binfo_time,
+    .Binfo_people,
+    .Binfo_paid,
+    .Binfo_info
+ 	 {
+    	display: flex;
+   		justify-content: space-between;
+    }
+      .Binfo_date p,
+    .Binfo_time p,
+    .Binfo_people p,
+    .Binfo_paid p,
+    .Binfo_info p{
+    	margin-top: 0;
+    }
 }
