@@ -23,11 +23,12 @@ String sq = lm.getMemberSq(session);
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-	<script src="/js/common/calendar.js" defer></script>
-	<script src="/js/agreement/agree.js" defer></script>
-	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<scrip src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></scrip>
+	<scrip src="/js/common/calendar.js" defer></scrip>
+	<scrip src="/js/agreement/agree.js" defer></scrip>
+	<scrip src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></scrip>
+	<scrip src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></scrip>
+	<script src="/js/home/index.js" defer></script>
 </head>
 
 <body>
@@ -93,29 +94,31 @@ String sq = lm.getMemberSq(session);
 		}
 	%>
 	<section>
-		<div class="intro__container">
-			<h1>이제, 스파는</h1>
-			<h1>더 특별해진 아울스에서</h1>
+		<div class="wrapper">
+			<div class="intro__container">
+				<h1>이제, 스파는</h1>
+				<h1>더 특별해진 아울스에서</h1>
+			</div>
+			<div class="info-container">
+				<div class="info-box">
+					<img src="/css/picture/picForSlide/massage-835468_1280.jpg">
+					<div class="info-text">헤드 마사지</div>
+				</div>
+				<div class="info-box">
+					<img src="/css/picture/picForSlide/treatment-1327811_1280.jpg">
+					<div class="info-text">지압</div>
+				</div>
+				<div class="info-box">
+					<img src="/css/picture/picForSlide/spa-3184610_1280.jpg">
+					<div class="info-text">핫스톤 마사지</div>
+				</div>
+				<div class="info-box">
+					<img src="/css/picture/picForSlide/massage-1929064_1280.jpg">
+					<div class="info-text">24시간 풀케어</div>
+				</div>
+			</div>
+	
 		</div>
-		<div class="info-container">
-			<div class="info-box">
-				<img src="/css/picture/picForSlide/massage-835468_1280.jpg">
-				<div class="info-text">헤드 마사지</div>
-			</div>
-			<div class="info-box">
-				<img src="/css/picture/picForSlide/treatment-1327811_1280.jpg">
-				<div class="info-text">지압</div>
-			</div>
-			<div class="info-box">
-				<img src="/css/picture/picForSlide/spa-3184610_1280.jpg">
-				<div class="info-text">핫스톤 마사지</div>
-			</div>
-			<div class="info-box">
-				<img src="/css/picture/picForSlide/massage-1929064_1280.jpg">
-				<div class="info-text">24시간 풀케어</div>
-			</div>
-		</div>
-
 	</section>
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
