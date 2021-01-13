@@ -27,16 +27,59 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }
-a{
-    color: var(--black--color);
+	header img {
+		width: 80%;
+	}
+	
+	a{
+
     text-decoration: none;
     pad: 0.8em;
 }
 ul,li{
 	list-style: none;
 }
-header{
+/* 데스크탑 상황에서는 숨김 */
+.mobile__header{
+	display: none;
+}
+
+.desktop__header{
     display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position : sticky;
+    top: 0; 
+    background-color : var(--white--color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10),
+     0 2px 2px rgba(0, 0, 0, 0.10);
+    align-items: center; 
+    z-index: 1;
+}
+
+.header__form{
+	display: flex;
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header__form a{
+	color: #484848;
+	font-weight: bold;
+}
+
+
+
+@media screen and (max-width : 768px){
+	/* 모바일 상황에서는 숨김 */
+	.desktop__header{
+	display: none;
+	
+	}
+.mobile__header{
+    display: flex;
+    width: 100%;
     justify-content: space-around;
     position : sticky;
     top: 0; 
@@ -60,39 +103,22 @@ button:focus
     color: var(--theme-color);
     cursor: pointer;
 }
-.toggle_bar{
-    visibility: hidden;
-	position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-	margin-top: 2em;
-	background-color: var(--background-color);
-	border-radius: 1.6em; 
-}
 .toggle_bar.active{
-	visibility: unset;
-	position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-	margin-top: 2em;
-	background-color: var(--theme-color);
-	box-shadow: 0 10px 20px rgba(0,0,0,0.10),
-     0 2px 2px rgba(0, 0, 0, 0.10);
-	border-radius: 1.6em; 
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--theme-color);
+	border-radius: unset; 
 }
-
-.toggle_bar.active li{
-	text-align: left;
-}
-.bar_flex{
-	display: flex;
-}
-.toggle_bar li{
-	padding: 12px;
+.toggle_bar li:nth-child(1){
+	margin-top: 20%;
 }
 .toggle_bar a{
+	color : var(--white--color);
 	font-weight: bold;
 }
 .bar_btn{
@@ -100,8 +126,7 @@ button:focus
 	font-weight: bold;
 }
 
-@media screen and (max-width : 768px){
-	header img {
-		width: 80%;
-	}
+.toggle_btn{
+	z-index: 1;
+}
 }
