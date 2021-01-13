@@ -140,6 +140,11 @@ text-weight:bold;
     font-size: 1.000em;
 }
 .information__bar a{
-
    color: #0071c2;
+}
+
+@media screen and (max-width : 768px){
+	 .login__form{
+		width: 80%;
+	}
 }

@@ -19,9 +19,7 @@
 
 <body>
 	<header>
-		<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-			alt="로고사진">
-		</a> <a href="/member/login" class="signForm"> 로그인 </a>
+		<jsp:include page="/views/common/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="forgotpw__form">

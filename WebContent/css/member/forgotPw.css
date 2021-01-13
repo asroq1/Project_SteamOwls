@@ -102,3 +102,9 @@ header {
     color: var(--white--color);
     font-weight: bold;
 }
+
+@media screen and (max-width : 768px){
+	 .forgotpw__form{
+		width: 80%;
+	}
+}

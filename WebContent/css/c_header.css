@@ -100,3 +100,8 @@ button:focus
 	font-weight: bold;
 }
 
+@media screen and (max-width : 768px){
+	header img {
+		width: 80%;
+	}
+}

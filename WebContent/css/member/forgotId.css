@@ -103,3 +103,10 @@ header {
     color: var(--white--color);
     font-weight: bold;
 }
+
+
+@media screen and (max-width : 768px){
+	 .findId__form{
+		width: 80%;
+	}
+}
