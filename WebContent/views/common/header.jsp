@@ -28,9 +28,11 @@
 		<a href="/">
 			<img src="/css/picture/owls.PNG" alt="로고사진">
 		</a>
-			<button class="toggle_btn">
-				<i class="fas fa-bars"></i>
-			</button>
+			<span class="toggle_btn">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</span>
 			<ul class="toggle_bar">
 				<li><a href="/member/login">로그인</a></li>
 				<li><a href="/member/signup">회원가입</a></li>

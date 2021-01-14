@@ -8,6 +8,7 @@ import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.dao.MemberDao;
 import shop.steamowls.steam.member.vo.MemberVo;
 import shop.steamowls.steam.mypage.dao.MypageDao;
+import shop.steamowls.steam.mypage.vo.BoardVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
 import static shop.steamowls.common.JdbcUtil.*;
@@ -58,11 +59,11 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-	public ArrayList<BookingVo> bDetail(String sq) {
+	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BookingVo> list = mypageDao.bDetail(sq);
+		ArrayList<BookingVo> list = mypageDao.bDetail(bookingVo);
 		close(con);
 		return list;
 	}
@@ -82,5 +83,24 @@ public class MypageService {
 		}
 		close(con);
 		return isSuccess;
+	}
+	public ArrayList<BoardVo> getBoardList() {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		ArrayList<BoardVo> list = mypageDao.getBoardList();
+		close(con);
+		return list;
+	}
+	
+	public BoardVo qDetail(String board_sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BoardVo vo = new BoardVo();
+		vo = mypageDao.qDetail(board_sq);
+
+		close(con);
+		return vo;
 	}
 }

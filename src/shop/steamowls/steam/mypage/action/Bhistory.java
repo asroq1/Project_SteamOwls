@@ -21,6 +21,8 @@ public class Bhistory implements Action{
 		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
+		String booking_date = request.getParameter("booking_date");
+		String booking_start = request.getParameter("booking_start");
 
 		if (sq == null) {
 			ActionForward forward = new ActionForward();
@@ -29,9 +31,13 @@ public class Bhistory implements Action{
 			return forward;
 		}
 		
+		BookingVo bookingVo = new BookingVo();
+		bookingVo.setMember_sq(Integer.parseInt(sq));
+		bookingVo.setBooking_date(booking_date);
+		bookingVo.setBooking_start(booking_start);
 		
 		MypageService svc = new MypageService();
-		ArrayList<BookingVo> list = svc.bDetail(sq);
+		ArrayList<BookingVo> list = svc.bDetail(bookingVo);
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();

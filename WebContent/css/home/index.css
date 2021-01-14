@@ -68,7 +68,7 @@ button:focus {
 	color: var(--theme-color);
 }
 
-.toggle_bar {
+/* .toggle_bar {
 	visibility: hidden;
 	position: absolute;
 	display: flex;
@@ -78,8 +78,8 @@ button:focus {
 	background-color: var(--background-color);
 	border-radius: 1.6em;
 }
-
-.toggle_bar.active {
+ */
+/* .toggle_bar.active {
 	visibility: unset;
 	position: absolute;
 	display: flex;
@@ -87,8 +87,9 @@ button:focus {
 	width: 20em;
 	margin-top: 2em;
 	background-color: var(--background-color);
-	border-radius: 1.6em;
-}
+	border-radius: 1.6em;\
+
+} */
 
 .bar_flex {
 	display: flex;
@@ -221,6 +222,7 @@ button:focus {
 .wrapper.active{
 	opacity: 1;
 	transition: opacity 2.5s;
+	z-index : 0;
 }
 .info-container {
 	display: flex;
@@ -300,4 +302,9 @@ button:focus {
 		width: 20%;
     	padding-left: 0;
 	}
+	
+	.wrapper.active{
+	opacity: 1;
+	transition: none;
+}
 }
