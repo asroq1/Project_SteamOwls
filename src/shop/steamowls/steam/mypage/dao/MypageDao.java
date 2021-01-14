@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.vo.MemberVo;
+import shop.steamowls.steam.mypage.vo.BoardVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
@@ -108,14 +109,16 @@ public class MypageDao {
 		return vo;
 	}
 	
-	public ArrayList<BookingVo> bDetail(String sq) {
+	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
 		
 		try {
-			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) where A.product_sq = B.product_sq and A.member_sq = ? and A.booking_fl = 1");
-			pstmt.setInt(1, Integer.parseInt(sq));
+			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) "
+					+ "where A.product_sq = B.product_sq and A.member_sq = ? and A.booking_fl = 1 "
+					+ "order by A.booking_date,A.booking_start asc");
+			pstmt.setInt(1, bookingVo.getMember_sq());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -155,5 +158,58 @@ public class MypageDao {
 		}
 		return count;
 	}
+	public ArrayList<BoardVo> getBoardList() {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BoardVo> list = new ArrayList<>();
+		
+		try {
+			pstmt = con.prepareStatement("select * from owls_board_tb where board_del_fl = false order by board_sq desc");
 
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVo vo = new BoardVo();
+				vo = new BoardVo();
+				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_address(rs.getString("board_address"));
+				vo.setBoard_dttm(rs.getString("board_dttm"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return list;
+	}
+
+	public BoardVo qDetail(String board_sq) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVo vo = null;
+		try {
+			pstmt = con.prepareStatement("select * from owls_board_tb where board_sq = ?");
+			pstmt.setInt(1, Integer.parseInt(board_sq));
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new BoardVo();
+				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_address(rs.getString("board_address"));
+				vo.setBoard_dttm(rs.getString("board_dttm"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return vo;
+	}
+	
 }

@@ -180,13 +180,7 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/question")) {
-			Action action = new QuestionProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		
 		} else if (command.equals("/QWriting")) {
 			Action action = new QWriting();
 			try {
