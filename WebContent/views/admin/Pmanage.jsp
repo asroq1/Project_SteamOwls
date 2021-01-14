@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,7 +13,7 @@ MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
-
+DecimalFormat won = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,19 +25,11 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 	<link rel="stylesheet" href="/css/admin/productManage.css">
-	<!-- <script src="/js/admin/Pmamage.js" defer></script> -->
 </head>
 
 <body>
 	<header>
-		 <div class="header__logo">
-            <a href="/views/home/index.jsp">
-                <img src="/css/picture/owls.PNG" alt="로고사진">
-            </a>
-        </div>
-        <div class="header__signForm">
-            <a href="/admin/Alogout">로그아웃</a>
-        </div>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
@@ -69,10 +62,7 @@ ArrayList<ProductVo> list = (ArrayList<ProductVo>) request.getAttribute("list");
 						</div>
 						<div class="booking_info">
 							<p>
-								<%=list.get(i).getProduct_people()%>명
-							</p>
-							<p>
-								<%=list.get(i).getProduct_price()%>
+								<%=won.format(list.get(i).getProduct_price())%>원
 							</p>
 						</div>
 					</div>

@@ -1,17 +1,22 @@
 package shop.steamowls.steam.admin.booking.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import shop.steamowls.steam.admin.admin.dao.AdminDao;
 import shop.steamowls.steam.admin.admin.vo.AdminVo;
+import shop.steamowls.steam.admin.booking.dao.BookingDao;
+import shop.steamowls.steam.booking.vo.BookingVo;
+
 
 import static shop.steamowls.common.JdbcUtil.*;
 
 public class BookingService {
+	public ArrayList<BookingVo> Bmanage() {
+		BookingDao bookingDao = BookingDao.getInstance();
+		Connection con = getConnection();
+		bookingDao.setConnection(con);
 
-<<<<<<< Updated upstream
-	
-=======
 		ArrayList<BookingVo> list = bookingDao.Bmanage();
 		close(con);
 		return list;
@@ -34,6 +39,5 @@ public class BookingService {
 		close(con);
 		return isSuccess;
 	}
->>>>>>> Stashed changes
 
 }

@@ -33,3 +33,13 @@ form_btn.addEventListener('click',(e)=>{
     }
     ckpoint.submit();
 });
+
+const cancelBtn = document.querySelector('#cancel__btn');
+cancelBtn.addEventListener('click',(e)=>{
+    const confirmBtn = confirm('예약을 취소하시겠습니까?');
+    if(confirmBtn === false){
+        e.preventDefault();
+    }else{
+        alert("예약이 취소되었습니다.");
+    }
+});

@@ -5,7 +5,6 @@
 <%
 	LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
-
 %>
 <!DOCTYPE html>
 <html>
@@ -15,22 +14,16 @@ String sq = lm.getMemberSq(session);
 <title>관리자 메인화면</title>
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
-<script src="/js/admin/gotoAdmin.js" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<header>
-		<div class="header__logo">
-			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-				alt="로고사진">
-			</a>
-		</div>
-		<div class="header__signForm">
-			<a href="/admin/Alogout">로그아웃</a>
-		</div>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
-		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
+		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<section>
 		<h1>관리자 메인</h1>

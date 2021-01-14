@@ -24,6 +24,10 @@
     --font-micro: 10px;
 
 }
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
 a{
 	text-decoration: none;
 }
@@ -32,10 +36,13 @@ a{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	position: relative;
+ 	position: relative;
+/*   	z-index: -1; */
 	background-color: var(--theme-color);
   }
-  
+  nav a{
+    font-weight: bold;
+  }
   ul, li {
 	margin: 0;
 	padding: 0;
@@ -65,7 +72,7 @@ a{
   
   #sub-menu {
 	position: absolute;
-	background-color: var(--grey--dark--color);
+	background-color: var(--grey--light--color);
 	opacity: 0;
 	z-index : 5;
 	visibility: hidden;
@@ -78,7 +85,7 @@ a{
   }
   
   #sub-menu > li >  a {
-	color: var(--white--color);
+	color: #484848;
 	text-decoration: none;
   }
   

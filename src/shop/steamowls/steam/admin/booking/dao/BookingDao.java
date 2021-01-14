@@ -3,8 +3,10 @@ package shop.steamowls.steam.admin.booking.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import shop.steamowls.steam.admin.admin.vo.AdminVo;
+import shop.steamowls.steam.booking.vo.BookingVo;
 
 import static shop.steamowls.common.JdbcUtil.close;
 
@@ -27,12 +29,8 @@ public class BookingDao {
 		this.con = con;
 	}
 
-	
-	
+	public ArrayList<BookingVo> Bmanage() {
 
-<<<<<<< Updated upstream
-	
-=======
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
@@ -88,6 +86,5 @@ public class BookingDao {
 		}
 		return count;
 	}
->>>>>>> Stashed changes
 
 }

@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -21,28 +23,24 @@
 			</li>
 			<li><a href="#">예약관리</a>
 				<ul id="sub-menu">
-					<li><a href="/admin/Bmanage.jsp" aria-label="subemnu">예약내역</a></li>
-					<li><a href="/admin/" aria-label="subemnu">예약완료</a></li>
-					<li><a href="/admin/" aria-label="subemnu">예약수정</a></li>
-					<li><a href="/admin/" aria-label="subemnu">예약취소</a></li>
+					<li><a href="/admin/Bmanage" aria-label="subemnu">예약내역</a></li>
 				</ul>
 			</li>
 			<li><a href="#">매출관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/Smanage.jsp" aria-label="subemnu">매출내역</a></li>
+					<li><a href="admin/Smanage" aria-label="subemnu">매출내역</a></li>
 				</ul>
 			</li>
 			<li><a href="#">회원관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/" aria-label="subemnu">회원수정</a></li>
-					<li><a href="/views/admin/" aria-label="subemnu">회원탈퇴</a></li>
-					<li><a href="/views/admin/Mmanage.jsp" aria-label="subemnu">회원내역</a></li>
+					<li><a href="/admin/" aria-label="subemnu">회원탈퇴</a></li>
+					<li><a href="/admin/Mmanage" aria-label="subemnu">회원내역</a></li>
 				</ul>
 			</li>
 			<li><a href="#">문의관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/Qmanage.jsp" aria-label="subemnu">문의내역</a></li>
-					<li><a href="/views/admin/Qanswer.jsp" aria-label="subemnu">답변하기</a></li>
+					<li><a href="/views/admin/Qmanage" aria-label="subemnu">문의내역</a></li>
+					<li><a href="/views/admin/Qanswer" aria-label="subemnu">답변하기</a></li>
 				</ul>
 			</li>
 		</ul>

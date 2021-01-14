@@ -164,13 +164,14 @@ public class MypageDao {
 		ArrayList<BoardVo> list = new ArrayList<>();
 		
 		try {
-			pstmt = con.prepareStatement("select * from owls_board_tb where board_del_fl = false order by board_sq desc");
+			pstmt = con.prepareStatement("select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc");
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BoardVo vo = new BoardVo();
 				vo = new BoardVo();
 				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setMember_id(rs.getString("id"));
 				vo.setBoard_subject(rs.getString("board_subject"));
 				vo.setBoard_content(rs.getString("board_content"));
 				vo.setBoard_address(rs.getString("board_address"));

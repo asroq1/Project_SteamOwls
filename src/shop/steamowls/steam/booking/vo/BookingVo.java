@@ -16,8 +16,6 @@ public class BookingVo {
 	private int booked_people;
 	private int left_people;
 	private String product_imagePath;
-<<<<<<< Updated upstream
-=======
 	private String id;
 	private String tel;
 	private String name;
@@ -54,7 +52,6 @@ public class BookingVo {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
->>>>>>> Stashed changes
 
 	public BookingVo() {
 

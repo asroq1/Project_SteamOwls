@@ -48,7 +48,7 @@ public class BCancel implements Action {
 		}
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/BCancel.jsp");
+		forward.setPath("/views/mypage/Bcancel.jsp");
 		return forward;
 	}
 }

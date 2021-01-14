@@ -1,68 +1,153 @@
 @charset "UTF-8";
-:root {
-    /* Color */
-    --white--color: #fff;
-    --black--color: #140a00;
-    --blue--color: #045fd4;
-    --red--color: #ff0000;
-    --grey--dark--color: #909090;
-    --grey--light--color: #e0e0e0;
-    --green--deep--color: #439889;
-    --green--light--color: #e0f2f1;
-    --green--hard-color: #003d33;
-    --theme-color: #ed6174;
-    --background-color:#e9ecea;
-   
-    /* Size */
-    --padding: 12px;
-    --avatar--size: 36px;
 
-    /* Font Size */
-    --font-large: 18px;
-    --font-medium: 14px;
-    --font-small: 12px;
-    --font-micro: 10px;
+:root {
+	/* Color */
+	--white--color: #fff;
+	--black--color: #140a00;
+	--blue--color: #045fd4;
+	--red--color: #ff0000;
+	--grey--dark--color: #909090;
+	--grey--light--color: #e0e0e0;
+	--green--deep--color: #439889;
+	--green--light--color: #e0f2f1;
+	--green--hard-color: #003d33;
+	--theme-color: #ed6174;
+	--background-color: #e9ecea;
+
+	/* Size */
+	--padding: 12px;
+	--avatar--size: 36px;
+
+	/* Font Size */
+	--font-large: 18px;
+	--font-medium: 14px;
+	--font-small: 12px;
+	--font-micro: 10px;
 
 }
-section{
+
+body {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+article {
 	width: 70%;
 	margin: 0 auto;
 }
-.booking_container{
-	display: inline-flex;
-	width: 100%;
-	margin: 2em;
-}
-.booking_img img{
-    width: 22em;
-    height: 15em;
-}
-.booking__top{
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+section {
+	min-height: 100vh;
 }
 
-.booking_bottom{
-	width: 15%;
+.booking_container {
+	display: inline-flex;
+	width: 100%;
+	height: 14em;
+	margin: 2em;
+	margin-top: 2em;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20),
+		0 2px 2px rgba(0, 0, 0, 0.20);
+}
+
+.booking_img {
+	width: 400px;
+	height: 200px;
+}
+
+/* 서버에 올린뒤 추후 삭제 */
+.booking_img img {
+	width: 350px;
+	height: 200px;
+}
+
+.booking__top {
 	display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;	
-    text-align: center;
+	width: 40%;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
-.btn-container{
+
+.booking__bottom {
+	width: 12%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.btn-container {
 	width: 10%;
-	display: flex; 
-	flex-direction: column; 
-	justify-content: space-evenly; 
-    text-align: center;
-		
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
 }
-.btn-container a{
-	padding: 1.2em;
-	background-color: var(--theme-color);	
+
+.btn-container a {
+	padding: 0.8em;
+	background-color: var(--theme-color);
 	color: var(--white--color);
 	font-weight: bold;
 	border-radius: 12px;
+}
+
+.booking__title {
+	color: #484848;
+}
+
+.booking__text {
+	margin-top: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+	.booking_container {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		margin-top: 36px;
+		overflow: hidden;
+		padding: 1em;
+	}
+
+	.booking_img {
+		width: 100%;
+		height: 100%;
+	}
+
+	/* 추후 삭제 코드 */
+	.booking_img img {
+		width: 100%:
+	}
+
+	.booking__top,
+	.booking__bottom {
+		width: 100%;
+	}
+
+	.booking__title,
+	.booking__intro,
+	.booking__people,
+	.booking__price {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5em;
+	}
+
+	.booking__title p,
+	.booking__intro p,
+	.booking__people p,
+	.booking__price p {
+		margin-top: 0;
+	}
+
+	.booking__title h3,
+	.booking__intro h3 {
+		width: 80%
+	}
+
+	.btn-container {
+		width: 50%;
+		margin: auto;
+
+	}
 }

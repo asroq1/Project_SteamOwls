@@ -41,7 +41,7 @@ public class Bhistory implements Action{
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/BHistory.jsp");
+		forward.setPath("/views/mypage/Bhistory.jsp");
 		return forward;
 	}
 }

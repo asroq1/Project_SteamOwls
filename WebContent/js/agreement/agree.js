@@ -1,5 +1,5 @@
 const body = document.querySelector("body");
-
+const content = document.querySelector('.content');
 function createFeed() {
     const feed = document.createElement('div');
     feed.setAttribute('class', 'feed');
@@ -24,6 +24,5 @@ function createFeed() {
     feed.appendChild(content);
     content.appendChild(del);
     body.appendChild(feed);
-    return feed;    
+    return feed; 
 }
-

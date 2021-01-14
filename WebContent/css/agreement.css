@@ -25,10 +25,9 @@
 
 }
 footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    display: flex;
     height: 4em;
+    margin-top: 4em;
     background-color: var(--grey--light--color);
 }
 .feed{
@@ -61,9 +60,10 @@ footer{
     font-weight: bold;
 }
 .signup__form{
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1.5em;
+    align-items: center;
 }
 .signup__form a{
 	color: var(--grey--dark--color);
