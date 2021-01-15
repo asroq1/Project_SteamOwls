@@ -103,4 +103,71 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
+
+	public boolean qDelete(String board_sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.qDelete(board_sq);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
+	public boolean QWriting(BoardVo boardVo) {
+
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.QWriting(boardVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+	
+	public BoardVo qModify (BoardVo boardVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BoardVo vo = mypageDao.qModify(boardVo);
+
+		close(con);
+		return vo;
+	}
+	
+	public boolean qModifyProc(BoardVo boardVo) {
+
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.qModifyProc(boardVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
 }

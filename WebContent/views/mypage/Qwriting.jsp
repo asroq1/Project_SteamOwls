@@ -1,7 +1,6 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%
 	LoginManager lm = LoginManager.getInstance();
 	String sq = lm.getMemberSq(session);
@@ -20,12 +19,12 @@
 				<!-- 여기 action에 경로 수정해주세요 -->
 		<form action="/mypage/QWritingProc" method="post" id="editorForm">
 			<label for="title">제목</label>
-			<input type="text" id="title" name="title" />
+			<input type="text" id="title" name="board_subject" />
 			<div>
 				<jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
 			</div>
 		</form>
-		<button type="submit" onclick="add()">등록</button>
+		<button  type="button"  onclick="add()">등록</button>
 	</section>
 
 	<a href="/mypage/question">돌아가기</a>

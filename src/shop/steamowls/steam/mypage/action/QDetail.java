@@ -19,7 +19,7 @@ public class QDetail implements Action{
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq == null) {
+		if (sq == null || sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -27,6 +27,12 @@ public class QDetail implements Action{
 		}
 		
 		String board_sq = request.getParameter("board_sq");
+		if(board_sq == null || board_sq.equals("")) {
+			ActionForward forward = new ActionForward();
+			forward.setPath("/");
+			forward.setRedirect(true);
+			return forward;
+		}
 		
 		
 		MypageService svc = new MypageService();

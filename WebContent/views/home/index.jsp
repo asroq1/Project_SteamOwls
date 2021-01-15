@@ -92,6 +92,9 @@ String sq = lm.getMemberSq(session);
 		}
 	%>
 	<section>
+
+	</section>
+	<section>
 		<div class="wrapper">
 			<div class="intro__container">
 				<h1>이제, 스파는</h1>
@@ -115,7 +118,6 @@ String sq = lm.getMemberSq(session);
 					<div class="info-text">24시간 풀케어</div>
 				</div>
 			</div>
-	
 		</div>
 	</section>
 	<footer>
