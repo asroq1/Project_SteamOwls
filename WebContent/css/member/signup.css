@@ -69,7 +69,7 @@ a {
 }
 
 .signup__form {
-    display: flex;
+    display: inline-block;
     width: 25%;
     margin: auto;
     text-align: center;
@@ -135,7 +135,17 @@ a {
     font-weight: bold;
     background-color: var(--kakao--theme-color);
 }
+#kakao-text{
+    color: var(--kakao--text-color);
+    font-weight: bold;
+    font-size: 1em;
+}
 
+#naver-text{
+    color: var(--naver--text-color);
+    font-weight: bold;
+    font-size: 1em;
+}
 .sign__up__naver {
     margin: 10px;
     border-radius: 10px;
@@ -143,13 +153,7 @@ a {
     background-color: var(--naver-color);
 }
 
-.sign__up__naver a {
-    color: #f3fef8;
-}
 
-.sign__up__kakao a {
-    color: #3b1d1b;
-}
 .signup__submit input{
     color: var(--white--color);
     background-color: var(--theme-color);
@@ -172,14 +176,13 @@ a {
     padding: 0;
 }
 .signup__agree .agree__container input{
-	width:20px
-
-}s
-#signup__button{
-	width:100%;
-	height:45px;
-	background-color:var(--theme-color); 
-	border-radius:10px;
-	font-weight:bold;
-	 color:var(--white--color);
+	width:20px;
+}
+.btn-container{
+    box-sizing: border-box;
+    background-color: var(--theme-color);
+    color: var(--white--color);
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: bold;
 }

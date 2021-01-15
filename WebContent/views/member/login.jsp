@@ -28,7 +28,6 @@
 	</header>
 	<section>
 		<div class="login__form">
-			<h1>로그인</h1>
 			<form action="/member/loginProc" method="POST" id="ckpoint"
 				onsubmit="retrun validateCheck()">
 				<div class="login__id">

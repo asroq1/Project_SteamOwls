@@ -23,6 +23,9 @@
     --font-micro: 10px;
 
 }
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
 div{
 	padding:0;
 }

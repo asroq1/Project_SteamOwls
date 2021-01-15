@@ -29,18 +29,22 @@ p{
 }
 section{
    width: 40%;
+   min-height: 100vh;
    margin: 0 auto;
    margin-top: 6em; 
 }
 .bill_container{
     box-shadow: 0 10px 20px rgba(0,0,0,0.20),
     0 2px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 12px;
 }
 .bill_img img{
-    width: 20em;
-    height: 15em;
+    width: 350px;
+    height: 250px;
     display: block;
     margin: 0 auto;
+    padding-top: 1em;
+
 }
 .bill_date,
 .bill_time,
@@ -52,7 +56,7 @@ section{
 }
 .bill_submit{
     display: block;
-    width: 100%;
+    width: 35%;
     height: 3em;
     margin: 0 auto;
     margin-top: 2em;
@@ -60,4 +64,20 @@ section{
     border-radius: 1em;
     color: var(--white--color);
     font-weight: bold; 
+}
+
+@media screen and (max-width: 768px) {
+	section {
+    width: 70%;
+}
+	.bill_submit {
+    	width: 100%;
+}
+	.bill_img img{
+		    width: 90%;
+   			 height: 100%;
+	}
+	.bill_info h3{
+		width: 100%;
+	}
 }

@@ -67,7 +67,6 @@ header{
 #checkPoint input{
     width: 20%;
     height:2.813em;
-    background-color: var(--grey--light--color);
     margin-top: 1em;
     border: 1px solid var(--grey--dark--color);
     border-radius: 5px;
