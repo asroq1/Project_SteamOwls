@@ -8,7 +8,6 @@ import shop.steamowls.common.ActionForward;
 
 public class QWriting implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Qwriting.jsp");
 		return forward;

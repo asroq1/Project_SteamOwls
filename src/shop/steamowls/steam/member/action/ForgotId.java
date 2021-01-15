@@ -22,6 +22,8 @@ public class ForgotId implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
+		
+		
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/member/forgotId.jsp");

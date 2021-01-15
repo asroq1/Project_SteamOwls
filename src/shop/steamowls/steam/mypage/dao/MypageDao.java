@@ -69,8 +69,7 @@ public class MypageDao {
 		int count = 0;
 		try {
 
-			pstmt = con
-					.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and del_fl = 0");
+			pstmt = con.prepareStatement("update owls_mber_tb set del_fl = 1 where sq = ? and del_fl = 0");
 			pstmt.setInt(1, mypageVo.getSq());
 
 			count = pstmt.executeUpdate();
@@ -82,14 +81,14 @@ public class MypageDao {
 		}
 		return count;
 	}
-	
+
 	public MypageVo mCheckPw(MypageVo mypageVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		MypageVo vo = null;
 		try {
-			pstmt = con.prepareStatement("select sq, name, pw, tel from owls_mber_tb " 
-						+ "where sq = ? and del_fl = 0 ");
+			pstmt = con
+					.prepareStatement("select sq, name, pw, tel from owls_mber_tb " + "where sq = ? and del_fl = 0 ");
 			pstmt.setInt(1, mypageVo.getSq());
 
 			rs = pstmt.executeQuery();
@@ -105,15 +104,16 @@ public class MypageDao {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
+			close(rs);
 		}
 		return vo;
 	}
-	
+
 	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
-		
+
 		try {
 			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) "
 					+ "where A.product_sq = B.product_sq and A.member_sq = ? and A.booking_fl = 1 "
@@ -142,6 +142,7 @@ public class MypageDao {
 		}
 		return list;
 	}
+
 	public int bCancel(int booking_sq) {
 		PreparedStatement pstmt = null;
 		int count = 0;
@@ -150,7 +151,7 @@ public class MypageDao {
 			pstmt.setInt(1, booking_sq);
 
 			count = pstmt.executeUpdate();
-	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -158,25 +159,26 @@ public class MypageDao {
 		}
 		return count;
 	}
+
 	public ArrayList<BoardVo> getBoardList() {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BoardVo> list = new ArrayList<>();
-		
+
 		try {
 			pstmt = con.prepareStatement(
-					"select * from owls_board_tb where board_del_fl = 0");
+					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc");
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BoardVo vo = new BoardVo();
 				vo = new BoardVo();
-				vo.setBoard_sq(rs.getInt("Board_sq"));
+				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setMember_id(rs.getString("id"));
 				vo.setBoard_subject(rs.getString("board_subject"));
 				vo.setBoard_content(rs.getString("board_content"));
 				vo.setBoard_address(rs.getString("board_address"));
 				vo.setBoard_dttm(rs.getString("board_dttm"));
-				vo.setBoard_del_fl(rs.getBoolean("board_del_fl"));
 				list.add(vo);
 			}
 		} catch (Exception e) {
@@ -186,29 +188,8 @@ public class MypageDao {
 			close(rs);
 		}
 		return list;
+	}
 
-	}
-	
-	public int QWriting(BoardVo boardVo) {
-		PreparedStatement pstmt = null;
-		int count = 0;
-		try {
-			pstmt = con.prepareStatement(
-			"insert into owls_board_tb (member_sq, board_subject, board_content) values(?, ?, ?)");
-			
-			pstmt.setInt(1, boardVo.getMember_sq());
-			pstmt.setString(2, boardVo.getBoard_subject());
-			pstmt.setString(3, boardVo.getBoard_content());
-			
-			count = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		return count;
-	}
-	
 	public BoardVo qDetail(String board_sq) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -221,6 +202,7 @@ public class MypageDao {
 			while (rs.next()) {
 				vo = new BoardVo();
 				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setMember_sq(rs.getInt("member_sq"));
 				vo.setBoard_subject(rs.getString("board_subject"));
 				vo.setBoard_content(rs.getString("board_content"));
 				vo.setBoard_address(rs.getString("board_address"));
@@ -231,8 +213,96 @@ public class MypageDao {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
+			close(rs);
+		}
+		return vo;
+	}
+
+	public int qDelete(String board_sq) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+
+			pstmt = con.prepareStatement(
+					"update owls_board_tb set board_del_fl = 1 where board_sq = ? and board_del_fl = 0");
+			pstmt.setInt(1, Integer.parseInt(board_sq));
+
+			count = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+
+	public int QWriting(BoardVo boardVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(
+					"insert into owls_board_tb (member_sq, board_subject, board_content) values(?, ?, ?)");
+
+			pstmt.setInt(1, boardVo.getMember_sq());
+			pstmt.setString(2, boardVo.getBoard_subject());
+			pstmt.setString(3, boardVo.getBoard_content());
+
+			count = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+
+	public BoardVo qModify(BoardVo boardVo) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVo vo = null;
+		try {
+			pstmt = con.prepareStatement("select member_sq, board_sq, board_subject, board_content, board_address, board_dttm"
+					+ " from owls_board_tb where board_sq = ? and board_del_fl = 0");
+//			pstmt.setInt(1, boardVo.getMember_sq());
+			pstmt.setInt(1, boardVo.getBoard_sq());
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new BoardVo();
+				vo.setBoard_sq(rs.getInt("member_sq"));
+				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_address(rs.getString("board_address"));
+				vo.setBoard_dttm(rs.getString("board_dttm"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
 		}
 		return vo;
 	}
 	
+	public int qModifyProc(BoardVo boardVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(
+					"update owls_board_tb set board_subject = ?, board_content = ? where board_sq = ?");
+			pstmt.setString(1, boardVo.getBoard_subject());
+			pstmt.setString(2, boardVo.getBoard_content());
+			pstmt.setInt(3, boardVo.getBoard_sq());
+
+			count = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
 }

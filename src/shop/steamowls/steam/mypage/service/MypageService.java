@@ -31,6 +31,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
+
 	public boolean withdraw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -48,7 +49,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-	
+
 	public MypageVo mCheckPw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -59,6 +60,7 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
+
 	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -67,6 +69,7 @@ public class MypageService {
 		close(con);
 		return list;
 	}
+
 	public boolean bCancel(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -84,7 +87,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-	
+
 	public ArrayList<BoardVo> getBoardList() {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -93,7 +96,36 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-	
+
+	public BoardVo qDetail(String board_sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BoardVo vo = new BoardVo();
+		vo = mypageDao.qDetail(board_sq);
+
+		close(con);
+		return vo;
+	}
+
+	public boolean qDelete(String board_sq) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.qDelete(board_sq);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
 	public boolean QWriting(BoardVo boardVo) {
 
 		MypageDao mypageDao = MypageDao.getInstance();
@@ -113,14 +145,33 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-		public BoardVo qDetail(String board_sq) {
+	public BoardVo qModify (BoardVo boardVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		BoardVo vo = new BoardVo();
-		vo = mypageDao.qDetail(board_sq);
+		BoardVo vo = mypageDao.qModify(boardVo);
 
 		close(con);
 		return vo;
 	}
+	
+	public boolean qModifyProc(BoardVo boardVo) {
+
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.qModifyProc(boardVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
 }

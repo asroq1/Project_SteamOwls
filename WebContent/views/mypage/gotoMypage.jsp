@@ -38,7 +38,7 @@
                  <h1>회원정보</h1>
                  <ul>
                     <li>
-                        <a href="/mypage/McheckPw">정보수정</a>
+                        <a href="/mypage/McheckPw">회원정보수정</a>
                     </li>
                     <li>
                        <!--  <a href="/mypage/Mwithdraw">회원탈퇴</a> -->
@@ -52,7 +52,7 @@
                 <h1>문의내역</h1>
                 <ul>
                     <li>
-                        <a href="/mypage/Question">문의내역</a>
+                        <a href="/mypage/question">문의내역</a>
                     </li>
                 </ul>
            </div>           

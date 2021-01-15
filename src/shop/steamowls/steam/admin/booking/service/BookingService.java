@@ -21,16 +21,6 @@ public class BookingService {
 		close(con);
 		return list;
 	}
-	
-	public ArrayList<BookingVo> BmanageProc(BookingVo bookingVo) {
-		BookingDao bookingDao = BookingDao.getInstance();
-		Connection con = getConnection();
-		bookingDao.setConnection(con);
-
-		ArrayList<BookingVo> list = bookingDao.BmanageProc(bookingVo);
-		close(con);
-		return list;
-	}
 
 	public boolean Bcancel(BookingVo bookingVo) {
 		BookingDao bookingDao = BookingDao.getInstance();

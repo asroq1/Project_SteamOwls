@@ -49,6 +49,7 @@ BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
 	<tr>
 		<td><%=list.get(i).getBoard_sq()%></td>
 		<td><a href="/mypage/QDetail?board_sq=<%=list.get(i).getBoard_sq()%>"><%=list.get(i).getBoard_subject()%></a></td>
+		<td><%=list.get(i).getMember_id()%></td>
 		<td><%=list.get(i).getBoard_dttm()%></td>
 		<br>
 	</tr>

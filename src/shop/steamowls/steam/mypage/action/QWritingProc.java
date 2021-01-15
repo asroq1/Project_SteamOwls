@@ -27,44 +27,43 @@ public class QWritingProc implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-		
-		
+
 		String board_subject = request.getParameter("board_subject");
 		String board_content = request.getParameter("content");
-		
-		if(board_subject == null || board_subject.equals("")) {
+
+		if (board_subject == null || board_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('제목을 입력해주세요.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
-		if(board_content == null || board_content.equals("")) {
+
+		if (board_content == null || board_content.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('내용을 작성해주세요.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
+
 		BoardVo boardVo = new BoardVo();
 		boardVo.setMember_sq(Integer.parseInt(sq));
 		boardVo.setBoard_subject(board_subject);
 		boardVo.setBoard_content(board_content);
-		
+
 		MypageService svc = new MypageService();
-		
-		if(!svc.QWriting(boardVo)) {
+
+		if (!svc.QWriting(boardVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('게시물 등록에 실패하셨습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
+
 		ActionForward forward = new ActionForward();
-		forward.setPath("/mypage/Question");
+		forward.setPath("/mypage/question");
 		forward.setRedirect(true);
 		return forward;
 	}

@@ -84,10 +84,3 @@ header{
     color: var(--grey--dark--color);
     margin: 12px 12px;
 }
-
-@media screen and (max-width: 768px){
-	#checkPoint button,
-    #checkPoint input {
-    	width: 50%;	
-}
-

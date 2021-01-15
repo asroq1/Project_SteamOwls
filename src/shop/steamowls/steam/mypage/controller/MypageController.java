@@ -173,20 +173,14 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/Question")) {
+		} else if (command.equals("/question")) {
 			Action action = new Question();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/QuestionProc")) {
-			Action action = new QuestionProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		
 		} else if (command.equals("/QWriting")) {
 			Action action = new QWriting();
 			try {

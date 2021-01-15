@@ -9,11 +9,13 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.BoardVo;
 
 public class Question implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
@@ -25,12 +27,10 @@ public class Question implements Action{
 			return forward;
 		}
 		
+
 		MypageService svc = new MypageService();
-		ArrayList<BoardVo> list = svc.getBoardList(); //조건절로 불러와야되서 집어넣음
-//		request.setAttribute("pagenation", pagenation);
+		ArrayList<BoardVo> list = svc.getBoardList();
 		request.setAttribute("list", list);
-		
-		
 		
 		
 		ActionForward forward = new ActionForward();

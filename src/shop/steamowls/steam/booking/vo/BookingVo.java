@@ -17,9 +17,8 @@ public class BookingVo {
 	private int left_people;
 	private String product_imagePath;
 	private String id;
-	private String pw;
-	private String name;
 	private String tel;
+	private String name;
 	private String gender;
 
 	public String getId() {
@@ -30,12 +29,12 @@ public class BookingVo {
 		this.id = id;
 	}
 
-	public String getPw() {
-		return pw;
+	public String getTel() {
+		return tel;
 	}
 
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 
 	public String getName() {
@@ -44,14 +43,6 @@ public class BookingVo {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getTel() {
-		return tel;
-	}
-
-	public void setTel(String tel) {
-		this.tel = tel;
 	}
 
 	public String getGender() {
