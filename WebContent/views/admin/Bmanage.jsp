@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="shop.steamowls.steam.booking.vo.BookingVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
@@ -11,6 +12,7 @@ BookingVo bookingVo = (BookingVo) request.getAttribute("bookingVo");
 BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+DecimalFormat won = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html>
@@ -21,31 +23,19 @@ String sq = lm.getMemberSq(session);
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/Bmanage.css">
 <link rel="stylesheet" href="/css/mypage/Bhistory.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 <script src="/js/common/calendar.js" defer></script>
 </head>
 <body>
 	<header>
-		<div class="header__logo">
-			<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-				alt="로고사진">
-			</a>
-		</div>
-		<div class="header__signForm">
-			<a href="/admin/Alogout">로그아웃</a>
-		</div>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<section>
+	<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate"
@@ -57,15 +47,13 @@ String sq = lm.getMemberSq(session);
 				</button>
 			</form>
 		</div>
-	</section>
+	</article>
 	<%
-	for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size(); i++) {
 	%>
-	<section>
-
-		<!-- 주석 풀고 다시 사용하면 됩니다.  -->
-		<div class="booking_container">
-			<div class="booking_img">
+	<article>
+		<div class="booking__container">
+			<div class="booking__img">
 				<%=list.get(i).getProduct_imagePath()%>
 			</div>
 			<div class="booking__top">
@@ -87,28 +75,31 @@ String sq = lm.getMemberSq(session);
 					</p>
 				</div>
 			</div>
-			<div class="booking_bottom">
-				<div class="booking_people">
+			<div class="booking__bottom">
+				<div class="booking__people">
 					<h3 class="booking__title">인원</h3>
 					<p class="booking__text">
 						<%=list.get(i).getBooking_people()%>명
 					</p>
 				</div>
-				<div class="booking_price">
+				<div class="booking__price">
 					<h3 class="booking__title">금액</h3>
 					<p class="booking__text">
-						<%=list.get(i).getProduct_price()%>원
+						<%=won.format(list.get(i).getProduct_price() * list.get(i).getBooking_people())%>원
 					</p>
 				</div>
 			</div>
-			<div class="btn-container">
-				<a href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+			<div class="btn__container">
+				<a id="cancel__btn" href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
-	</section>
+	</article>
 	<%
-	}
+		}
 	%>
+	<footer>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
+	</footer>
 </body>
 
 </html>

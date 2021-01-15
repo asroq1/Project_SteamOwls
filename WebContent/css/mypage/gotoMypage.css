@@ -27,7 +27,12 @@
     --font-micro: 10px;
 
 }
-
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+section{
+	height: 100vh;
+}
 .info-container1{
     display: flex;
     justify-content: space-evenly;
@@ -72,4 +77,32 @@
 }
 .info-box ul{
 	margin-top: 1em;
+}
+
+
+@media screen and (max-width: 768px) {
+     .info-container1{
+        width: 90%;
+    }
+    
+    .info-container2{
+        width: 90%;
+    }
+    
+    .info-box h1{
+		padding-left: 0px;
+    	font-size: 1.1em;
+	}
+	
+	.info-box li{
+     	padding: 0; 
+	}
+	
+	.info-box{
+		padding: 1em;
+	}
+	
+	.info-box i{
+     	font-size: 24px; 
+	}
 }

@@ -6,12 +6,17 @@
 	String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이페이지</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/gotoMypage.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -33,7 +38,7 @@
                  <h1>회원정보</h1>
                  <ul>
                     <li>
-                        <a href="/mypage/McheckPw">회원정보수정</a>
+                        <a href="/mypage/McheckPw">정보수정</a>
                     </li>
                     <li>
                        <!--  <a href="/mypage/Mwithdraw">회원탈퇴</a> -->
@@ -47,7 +52,7 @@
                 <h1>문의내역</h1>
                 <ul>
                     <li>
-                        <a href="/mypage/question">문의내역</a>
+                        <a href="/mypage/Question">문의내역</a>
                     </li>
                 </ul>
            </div>           
@@ -64,5 +69,8 @@
        </div>           
         </div>
     </section>
+    <footer>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
+	</footer>
 </body>
 </html>

@@ -13,6 +13,7 @@ public class MypageVo {
 	private String dttm;
 	private boolean del_fl;
 	private boolean admin_fl;
+	
 
 	public MypageVo() {
 
