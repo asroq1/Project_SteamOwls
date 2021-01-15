@@ -8,6 +8,6 @@
 </head>
 <body>
 글삭제화면
-<a href="/mypage/question">삭제</a>
+<a href="/mypage/question">문의게시판</a>
 </body>
 </html>

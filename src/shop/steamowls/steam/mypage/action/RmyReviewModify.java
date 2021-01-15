@@ -1,6 +1,7 @@
 package shop.steamowls.steam.mypage.action;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import shop.steamowls.steam.admin.product.service.ProductService;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
 import shop.steamowls.steam.mypage.service.MypageService;
+import shop.steamowls.steam.mypage.vo.MypageVo;
 
 public class RmyReviewModify implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -27,11 +29,16 @@ public class RmyReviewModify implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-
 		
+		String review_sq = request.getParameter("review_sq");
+		MypageService svc = new MypageService();
+		MypageVo mypageVo = new MypageVo();
+		mypageVo.setReview_sq(Integer.parseInt(review_sq));
+		
+		request.setAttribute("vo", svc.rMyReviewDetail(mypageVo));
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/RmyReview.jsp");
+		forward.setPath("/views/mypage/RmyReviewModify.jsp");
 		return forward;
 	}
 }

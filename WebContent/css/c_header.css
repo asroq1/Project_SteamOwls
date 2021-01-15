@@ -27,16 +27,23 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }
-a{
-    color: var(--black--color);
+	
+	a{
+
     text-decoration: none;
-    pad: 0.8em;
+/*     pad: 0.8em; */
 }
 ul,li{
 	list-style: none;
 }
-header{
+/* 데스크탑 상황에서는 숨김 */
+.mobile__header{
+	display: none;
+}
+
+.desktop__header{
     display: flex;
+    width: 100%;
     justify-content: space-around;
     position : sticky;
     top: 0; 
@@ -45,6 +52,108 @@ header{
      0 2px 2px rgba(0, 0, 0, 0.10);
     align-items: center; 
     z-index: 1;
+}
+
+.header__form{
+	display: flex;
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header__form a{
+	color: #484848;
+	font-weight: bold;
+}
+
+
+
+@media screen and (max-width : 768px){
+	/* 모바일 상황에서는 숨김 */
+	.desktop__header{
+	display: none;
+	}
+	
+	header img {
+		width: 80%;
+	}
+	
+	.toggle_btn.active {
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    
+    .toggle_btn.active .line:nth-child(2) {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+    
+    .toggle_btn ne:nth-child(2) {
+        -webkit-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+    }
+    
+    .toggle_btn.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .toggle_btn.active .line:nth-child(1),
+    .toggle_btn.active .line:nth-child(3) {
+        width: 35px;
+        -webkit-transform-origin: right;
+        -moz-transform-origin: right;
+        -ms-transform-origin: right;
+        -o-transform-origin: right;
+        transform-origin: right;
+    }
+    
+    .toggle_btn.active .line:nth-child(1) {
+        -webkit-transform: translateY(15px) rotate(45deg);
+        -ms-transform: translateY(15px) rotate(45deg);
+        -o-transform: translateY(15px) rotate(45deg);
+        transform: translateY(18px) rotate(45deg);
+    }
+    
+    .toggle_btn.active .line:nth-child(3) {
+        -webkit-transform: translateY(-15px) rotate(-45deg);
+        -ms-transform: translateY(-15px) rotate(-45deg);
+        -o-transform: translateY(-15px) rotate(-45deg);
+        transform: translateY(-20px) rotate(-45deg);
+    }
+    
+    
+    .toggle_btn .line {
+	width: 25px;
+	height: 3px;
+	background-color: var(--theme-color);
+	display: block;
+	margin: 4px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+ .toggle_btn.active .line {
+
+	background-color: var(--white--color);
+
+}
+    
+.mobile__header{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position : sticky;
+    top: 0; 
+    background-color : var(--white--color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10),
+     0 2px 2px rgba(0, 0, 0, 0.10);
+    align-items: center; 
+    z-index: 554;
 }
 input:focus,
 select:focus,
@@ -61,38 +170,25 @@ button:focus
     cursor: pointer;
 }
 .toggle_bar{
-    visibility: hidden;
-	position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-	margin-top: 2em;
-	background-color: var(--background-color);
-	border-radius: 1.6em; 
+	display: none;
 }
-.toggle_bar.active{
-	visibility: unset;
-	position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-	margin-top: 2em;
-	background-color: var(--theme-color);
-	box-shadow: 0 10px 20px rgba(0,0,0,0.10),
-     0 2px 2px rgba(0, 0, 0, 0.10);
-	border-radius: 1.6em; 
+.clicked{
+	display: block;
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--theme-color);
+	border-radius: unset; 
 }
-
-.toggle_bar.active li{
-	text-align: left;
-}
-.bar_flex{
-	display: flex;
-}
-.toggle_bar li{
-	padding: 12px;
+.toggle_bar li:nth-child(1){
+	margin-top: 20%;
 }
 .toggle_bar a{
+	color : var(--white--color);
 	font-weight: bold;
 }
 .bar_btn{
@@ -100,3 +196,7 @@ button:focus
 	font-weight: bold;
 }
 
+.toggle_btn{
+	z-index: 1;
+}
+}

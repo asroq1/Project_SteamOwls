@@ -110,7 +110,7 @@ article {
 		border-top: 1px solid var(- -grey--dark--color);
 		border-bottom: 1px solid var(- -grey--dark--color);
 		padding: 1em;
-	}
+	} 
 
 	.form_img img {
 		width: 100%;
@@ -156,5 +156,7 @@ article {
 		text-align: center;
 		padding: 1em;
 	}
+	
+
 
 }

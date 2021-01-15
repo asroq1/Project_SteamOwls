@@ -38,7 +38,7 @@
                  <h1>회원정보</h1>
                  <ul>
                     <li>
-                        <a href="/mypage/McheckPw">회원정보수정</a>
+                        <a href="/mypage/McheckPw">정보수정</a>
                     </li>
                     <li>
                        <!--  <a href="/mypage/Mwithdraw">회원탈퇴</a> -->
@@ -60,7 +60,7 @@
             <h1>리뷰</h1>
             <ul>
                 <li>
-                    <a href="/mypage/RWriting">리뷰 작성</a>
+                    <a href="/mypage/Rwriting">리뷰 작성</a>
                 </li>
                 <li>
                     <a href="/mypage/RmyReview">나의 리뷰</a>

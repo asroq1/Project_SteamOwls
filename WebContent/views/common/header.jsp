@@ -14,24 +14,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
-	<a href="/">
+	 <div class="desktop__header">
+		<a href="/">
 			<img src="/css/picture/owls.PNG" alt="로고사진">
 		</a>
-		<ul class="signForm">
-			<button class="toggle_btn">
-				<i class="fas fa-bars"></i>
-			</button>
-			<ul class="toggle_bar">
-				<li>
-					<button class="bar_btn" onclick="location.href='/member/login'">로그인</button>
-				</li>
-				<li>
-					<button class="bar_btn" onclick="location.href='/member/signup'">회원가입 </button>
-				</li>
-				<li>
-					<button class="bar_btn" onclick="location.href='/admin'">관리자</button>
-				</li>
-			</ul>
+		<ul class="header__form">
+			<li><a href="/member/login">로그인</a></li>
+			<li><a href="/member/signup">회원가입</a></li>
+			<li><a href="/admin">관리자</a></li>
 		</ul>
+	</div>
+	<div class="mobile__header">
+		<a href="/">
+			<img src="/css/picture/owls.PNG" alt="로고사진">
+		</a>
+			<span class="toggle_btn">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</span>
+			<ul class="toggle_bar">
+				<li><a href="/member/login">로그인</a></li>
+				<li><a href="/member/signup">회원가입</a></li>
+				<li><a href="/admin">관리자</a></li>
+			</ul>
+	</div>
 </body>
 </html>

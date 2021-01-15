@@ -28,8 +28,6 @@ public class Rwriting implements Action {
 			return forward;
 		}
 
-		
-
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Rwriting.jsp");
 		return forward;

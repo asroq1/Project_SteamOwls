@@ -17,6 +17,7 @@ import shop.steamowls.steam.mypage.action.BhistoryProc;
 import shop.steamowls.steam.mypage.action.McheckPw;
 import shop.steamowls.steam.mypage.action.McheckPwProc;
 import shop.steamowls.steam.mypage.action.Mmodify;
+import shop.steamowls.steam.mypage.action.MdetailProc;
 import shop.steamowls.steam.mypage.action.Mdetail;
 import shop.steamowls.steam.mypage.action.QDetail;
 import shop.steamowls.steam.mypage.action.QDetailProc;
@@ -37,7 +38,6 @@ import shop.steamowls.steam.mypage.action.RmyReview;
 import shop.steamowls.steam.mypage.action.RmyReviewDelete;
 import shop.steamowls.steam.mypage.action.RmyReviewModify;
 import shop.steamowls.steam.mypage.action.RmyReviewModifyProc;
-import shop.steamowls.steam.mypage.action.RmyReviewProc;
 import shop.steamowls.steam.mypage.action.RmyreviewDetail;
 import shop.steamowls.steam.mypage.action.Rwriting;
 import shop.steamowls.steam.mypage.action.RwritingProc;
@@ -152,7 +152,7 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (command.equals("/Mdetail")) {
+		} else if (command.equals("/Mdetail")) {
 			Action action = new Mdetail();
 			try {
 				forward = action.execute(request, response);
@@ -187,13 +187,7 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/question")) {
-			Action action = new QuestionProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		
 		} else if (command.equals("/QWriting")) {
 			Action action = new QWriting();
 			try {
@@ -271,13 +265,6 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/RmyReviewProc")) {
-			Action action = new RmyReviewProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		} else if (command.equals("/RmyReviewDetail")) {
 			Action action = new RmyreviewDetail();
 			try {
@@ -307,7 +294,6 @@ public class MypageController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
 
 		if (forward != null) {
 			if (forward.isRedirect()) {

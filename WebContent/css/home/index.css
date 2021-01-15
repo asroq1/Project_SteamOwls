@@ -68,7 +68,7 @@ button:focus {
 	color: var(--theme-color);
 }
 
-.toggle_bar {
+/* .toggle_bar {
 	visibility: hidden;
 	position: absolute;
 	display: flex;
@@ -78,8 +78,8 @@ button:focus {
 	background-color: var(--background-color);
 	border-radius: 1.6em;
 }
-
-.toggle_bar.active {
+ */
+/* .toggle_bar.active {
 	visibility: unset;
 	position: absolute;
 	display: flex;
@@ -87,8 +87,9 @@ button:focus {
 	width: 20em;
 	margin-top: 2em;
 	background-color: var(--background-color);
-	border-radius: 1.6em;
-}
+	border-radius: 1.6em;\
+
+} */
 
 .bar_flex {
 	display: flex;
@@ -183,7 +184,6 @@ button:focus {
 }
 
 .intro__container {
-	width: 50%;
 	text-align: center;
 	font-size: 1.5em;
 	margin: 4em;
@@ -216,18 +216,18 @@ button:focus {
 
 /* 섹션 2 */
 
-
 .wrapper{
 	opacity: 0;
 }
 .wrapper.active{
 	opacity: 1;
-	transition: opacity 2s;
+	transition: opacity 2.5s;
+	z-index : 0;
 }
 .info-container {
 	display: flex;
 	justify-content: space-evenly;
-	width: 90vw;
+	width: 70vw;
 	height: 100%;
 	margin: 0 auto;
 	margin-top: 7em;
@@ -256,10 +256,6 @@ button:focus {
         0 ~ 767 모바일 , 768~1024 태블릿 , 1025 ~ PC 
      */
 @media screen and (max-width: 768px) {
-
-	header img {
-		width: 80%;
-	}
 
 	#ckpoint {
 		display: flex;
@@ -296,10 +292,19 @@ button:focus {
 		width: 100%;
 		margin: 0 auto;
 		text-align: center;
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 
 	#basicTime {
 		width: 50%;
 	}
+	.input__btn {
+		width: 20%;
+    	padding-left: 0;
+	}
+	
+	.wrapper.active{
+	opacity: 1;
+	transition: none;
+}
 }

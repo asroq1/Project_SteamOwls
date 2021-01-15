@@ -23,11 +23,9 @@ String sq = lm.getMemberSq(session);
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<scrip src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></scrip>
-	<scrip src="/js/common/calendar.js" defer></scrip>
-	<scrip src="/js/agreement/agree.js" defer></scrip>
-	<scrip src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></scrip>
-	<scrip src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></scrip>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+	<script src="/js/common/calendar.js" defer></script>
+	<script src="/js/agreement/agree.js" defer></script>
 	<script src="/js/home/index.js" defer></script>
 </head>
 
@@ -94,6 +92,9 @@ String sq = lm.getMemberSq(session);
 		}
 	%>
 	<section>
+
+	</section>
+	<section>
 		<div class="wrapper">
 			<div class="intro__container">
 				<h1>이제, 스파는</h1>
@@ -117,7 +118,6 @@ String sq = lm.getMemberSq(session);
 					<div class="info-text">24시간 풀케어</div>
 				</div>
 			</div>
-	
 		</div>
 	</section>
 	<footer>

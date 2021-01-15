@@ -54,10 +54,7 @@ section{
     background-color: #f7f7f7;
     box-shadow: 10px 10px 20px var(--grey--light--color);
 }
-.box-blur{
-	filter: blur(12px);
-    pointer-events: none;
-}
+
 .info-box h1{
    display: inline;
    padding-left: 0.5em;
@@ -84,7 +81,25 @@ section{
      .info-container1{
         width: 90%;
     }
+    
     .info-container2{
         width: 90%;
     }
+    
+    .info-box h1{
+		padding-left: 0px;
+    	font-size: 1.1em;
+	}
+	
+	.info-box li{
+     	padding: 0; 
+	}
+	
+	.info-box{
+		padding: 1em;
+	}
+	
+	.info-box i{
+     	font-size: 24px; 
+	}
 }
