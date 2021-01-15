@@ -9,15 +9,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>문의하기</title>
+<script src="/js/mypage/Qwriting.js"></script>
 </head>
 <body>
-글쓰기화면
-<form>
-	<div>내용</div>
-	<%-- <jsp:includ page="/editor/editorSkinForRegister.jsp" flush="false"/> --%>
-</form>
+	<section>
+		<!-- 제목 , 내용 ,게시판 sq -->
+				<!-- 여기 action에 경로 수정해주세요 -->
+		<form action="/mypage/QWritingProc" method="post" id="editorForm">
+			<label for="title">제목</label>
+			<input type="text" id="title" name="board_subject" />
+			<div>
+				<jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
+			</div>
+		</form>
+		<button  type="button"  onclick="add()">등록</button>
+	</section>
 
-<a href="/mypage/question">문의로 돌아가기2</a>
+	<a href="/mypage/question">돌아가기</a>
 </body>
 </html>

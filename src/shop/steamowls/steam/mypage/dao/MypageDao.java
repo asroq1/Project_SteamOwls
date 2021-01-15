@@ -212,5 +212,43 @@ public class MypageDao {
 		}
 		return vo;
 	}
+	public int qDelete(String board_sq) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+
+			pstmt = con
+					.prepareStatement("update owls_board_tb set board_del_fl = 1 where board_sq = ? and board_del_fl = 0");
+			pstmt.setInt(1, Integer.parseInt(board_sq));
+
+			count = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+	
+	public int QWriting(BoardVo boardVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(
+			"insert into owls_board_tb (member_sq, board_subject, board_content) values(?, ?, ?)");
+			
+			pstmt.setInt(1, boardVo.getMember_sq());
+			pstmt.setString(2, boardVo.getBoard_subject());
+			pstmt.setString(3, boardVo.getBoard_content());
+			
+			count = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
 	
 }

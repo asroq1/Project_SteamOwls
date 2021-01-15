@@ -40,6 +40,7 @@
 				<div class="booking_container">
 					<div class="booking_img">
 						<%=list.get(i).getProduct_imagePath()%>
+						<img alt="" src="/css/picture/Spa.png">
 					</div>
 					<div class="booking__top">
 						<div class="booking__title">
