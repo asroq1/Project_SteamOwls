@@ -1,0 +1,69 @@
+
+@charset "UTF-8";
+:root {
+    /* Color */
+    --white--color: #fff;
+    --black--color: #140a00;
+    --blue--color: #045fd4;
+    --red--color: #ff0000;
+    --grey--dark--color: #909090;
+    --grey--light--color: #e0e0e0;
+    --green--deep--color: #439889;
+    --green--light--color: #e0f2f1;
+    --green--hard-color: #003d33;
+    --theme-color: #ed6174;
+    --background-color:#e9ecea;
+   
+    /* Size */
+    --padding: 12px;
+    --avatar--size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+}
+ul{
+	list-style: none;
+	}
+p{
+    color: var(--grey--dark--color);
+}
+section{
+   width: 40%;
+   min-height: 100vh;
+   margin: 0 auto;
+   margin-top: 6em; 
+}
+.bill_container{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.20),
+    0 2px 2px rgba(0, 0, 0, 0.20);
+}
+.bill_img img{
+    width: 20em;
+    height: 15em;
+    display: block;
+    margin: 0 auto;
+}
+.bill_date,
+.bill_time,
+.bill_price,
+.bill_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em;
+}
+.bill_submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 3em;
+    margin: 0 auto;
+    margin-top: 2em;
+    background: var(--theme-color);
+    border-radius: 1em;
+    color: var(--white--color);
+    font-weight: bold; 
+}

@@ -10,6 +10,10 @@ public class BoardVo {
 	private String board_address;
 	private String board_dttm;
 	private boolean board_del_fl;
+	private int answer_sq;
+	private boolean answer_fl;
+	private String answer_content;
+	private String answer_dttm;
 	
 
 	public BoardVo() {
@@ -96,6 +100,47 @@ public class BoardVo {
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
 	}
+
+
+	public int getAnswer_sq() {
+		return answer_sq;
+	}
+
+
+	public void setAnswer_sq(int answer_sq) {
+		this.answer_sq = answer_sq;
+	}
+
+
+	public boolean isAnswer_fl() {
+		return answer_fl;
+	}
+
+
+	public void setAnswer_fl(boolean answer_fl) {
+		this.answer_fl = answer_fl;
+	}
+
+
+	public String getAnswer_content() {
+		return answer_content;
+	}
+
+
+	public void setAnswer_content(String answer_content) {
+		this.answer_content = answer_content;
+	}
+
+
+	public String getAnswer_dttm() {
+		return answer_dttm;
+	}
+
+
+	public void setAnswer_dttm(String answer_dttm) {
+		this.answer_dttm = answer_dttm;
+	}
+
 
 
 	

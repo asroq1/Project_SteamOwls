@@ -54,14 +54,17 @@ public class QModifyProc implements Action {
 		boardVo.setBoard_content(board_content);
 		
 		MypageService svc = new MypageService();
-
-		request.setAttribute("vo", svc.qModifyProc(boardVo));
-
+		if (!svc.qModifyProc(boardVo)) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('������ �����߽��ϴ�.'); history.back();</script>");
+			out.close();
+			return null;
+		}
 		
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/mypage/QDetail");
-		forward.setRedirect(true);
 		return forward;
 	}
 }

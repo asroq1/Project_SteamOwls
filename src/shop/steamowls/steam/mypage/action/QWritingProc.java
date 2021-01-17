@@ -47,6 +47,7 @@ public class QWritingProc implements Action {
 			return null;
 		}
 
+		
 		BoardVo boardVo = new BoardVo();
 		boardVo.setMember_sq(Integer.parseInt(sq));
 		boardVo.setBoard_subject(board_subject);
@@ -61,10 +62,17 @@ public class QWritingProc implements Action {
 			out.close();
 			return null;
 		}
+		
+		if (!svc.addAnswerTb(svc.findBoardSq(boardVo))) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>alert('게시물 등록에 실패하셨습니다.'); history.back();</script>");
+			out.close();
+			return null;
+		}
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/mypage/question");
-		forward.setRedirect(true);
 		return forward;
 	}
 }

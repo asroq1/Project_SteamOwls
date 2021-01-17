@@ -27,6 +27,12 @@ public class QDetail implements Action{
 		}
 		
 		String board_sq = request.getParameter("board_sq");
+		if(board_sq == null || board_sq.equals("")) {
+			ActionForward forward = new ActionForward();
+			forward.setPath("/");
+			forward.setRedirect(true);
+			return forward;
+		}
 		
 		
 		MypageService svc = new MypageService();
