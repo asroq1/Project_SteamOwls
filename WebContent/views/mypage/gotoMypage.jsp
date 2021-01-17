@@ -40,9 +40,6 @@
                     <li>
                         <a href="/mypage/McheckPw">정보수정</a>
                     </li>
-                    <li>
-                       <!--  <a href="/mypage/Mwithdraw">회원탈퇴</a> -->
-                    </li>
                 </ul>
             </div>
         </div>
@@ -57,6 +54,7 @@
                 </ul>
            </div>           
            <div class="info-box box-blur">
+           		<i class="far fa-comment-dots"></i>
             <h1>리뷰</h1>
             <ul>
                 <li>

@@ -1,9 +1,12 @@
+<%@page import="shop.steamowls.common.Pagenation"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="shop.steamowls.steam.mypage.vo.MypageVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list"); 
+Pagenation pagenation = (Pagenation) request.getAttribute("pagenation");
+String pn = request.getParameter("pn");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);%>
 <!DOCTYPE html>
@@ -17,7 +20,7 @@ String sq = lm.getMemberSq(session);%>
 	<br>
 	<div>
 		<tr>
-			<th>문의번호</th>
+			<th>리뷰번호</th>
 			<th>제목</th>
 			<th>작성자</th>
 			<th>날짜</th>
@@ -39,5 +42,35 @@ String sq = lm.getMemberSq(session);%>
 	<%
 	}
 	%>
+	
+	<div>
+		<%
+		if (pagenation.getStartPageNumber() != 1) {
+		%>
+		<a href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+		<%
+		}
+		%>
+		<%
+		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
+			if (i != Integer.parseInt(pn)) {
+		%>
+		<a href="/mypage/RmyReview?pn=<%=i%>"><%=i%></a>
+		<%
+		} else {
+		%>
+		<%=i%>
+		<%
+		}
+		}
+		%>
+		<%
+		if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
+		%>
+		<a href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+		<%
+		}
+		%>
+	</div>
 </body>
 </html>

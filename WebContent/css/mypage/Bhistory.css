@@ -25,7 +25,10 @@
 	--font-micro: 10px;
 
 }
-
+	
+ul{
+	list-style: none;
+	}
 body {
 	font-family: 'Nanum Gothic', sans-serif;
 }

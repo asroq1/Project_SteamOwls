@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -60,8 +61,32 @@ public class RwritingProc implements Action {
 		mypageVo.setReview_subject(review_subject);
 		mypageVo.setReview_content(review_content);
 		mypageVo.setReview_star(Double.parseDouble(review_star));
+		
+		
 
 		MypageService svc = new MypageService();
+		
+		String pn = request.getParameter("pn");
+		if (pn == null || pn == "") {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>location.href='/mypage/RmyReview?pn=1';</script>");
+			out.close();
+			return null;
+		}
+		int page = Integer.parseInt(pn);
+
+
+		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
+		// 끝 이상으로 넘어가면 마지막 페이지 표시
+		if (page > pagenation.getTotalPageCount()) {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>location.href='/mypage/RmyReview?pn=" + pagenation.getTotalPageCount() + "';</script>");
+			out.close();
+			return null;
+		}
+		
 		if (!svc.rWriting(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -70,8 +95,9 @@ public class RwritingProc implements Action {
 			return null;
 		}
 		
-		ArrayList<MypageVo> list = svc.rMyReview(mypageVo);
+		ArrayList<MypageVo> list = svc.rMyReview(mypageVo, pagenation);
 		
+		request.setAttribute("pagenation", pagenation);
 		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();

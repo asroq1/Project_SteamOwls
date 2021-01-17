@@ -100,22 +100,22 @@ String sq = lm.getMemberSq(session);
 				<h1>이제, 스파는</h1>
 				<h1>더 특별해진 아울스에서</h1>
 			</div>
-			<div class="info-container">
-				<div class="info-box">
+			<div class="info__container">
+				<div class="info__box">
 					<img src="/css/picture/picForSlide/massage-835468_1280.jpg">
-					<div class="info-text">헤드 마사지</div>
+					<div class="info__text">헤드 마사지</div>
 				</div>
-				<div class="info-box">
+				<div class="info__box">
 					<img src="/css/picture/picForSlide/treatment-1327811_1280.jpg">
-					<div class="info-text">지압</div>
+					<div class="info__text">지압</div>
 				</div>
-				<div class="info-box">
+				<div class="info__box">
 					<img src="/css/picture/picForSlide/spa-3184610_1280.jpg">
-					<div class="info-text">핫스톤 마사지</div>
+					<div class="info__text">핫스톤 마사지</div>
 				</div>
-				<div class="info-box">
+				<div class="info__box">
 					<img src="/css/picture/picForSlide/massage-1929064_1280.jpg">
-					<div class="info-text">24시간 풀케어</div>
+					<div class="info__text">24시간 풀케어</div>
 				</div>
 			</div>
 		</div>

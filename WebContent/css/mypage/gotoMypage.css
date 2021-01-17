@@ -15,7 +15,7 @@
     --green--hard-color: #003d33;
     --theme-color: #ed6174;
     --background-color:#e9ecea;
-   
+   	--text-color: rgba(110,110,110,1);
     /* Size */
     --padding: 12px;
     --avatar--size: 36px;
@@ -27,6 +27,12 @@
     --font-micro: 10px;
 
 }
+ul{
+	list-style: none;
+	}
+	a{
+	color: var(--text-color);
+	} 
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }

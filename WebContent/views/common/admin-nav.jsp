@@ -33,14 +33,18 @@
 			</li>
 			<li><a href="#">회원관리</a>
 				<ul id="sub-menu">
-					<li><a href="/admin/" aria-label="subemnu">회원탈퇴</a></li>
 					<li><a href="/admin/Mmanage" aria-label="subemnu">회원내역</a></li>
 				</ul>
 			</li>
 			<li><a href="#">문의관리</a>
 				<ul id="sub-menu">
-					<li><a href="/views/admin/Qmanage" aria-label="subemnu">문의내역</a></li>
-					<li><a href="/views/admin/Qanswer" aria-label="subemnu">답변하기</a></li>
+					<li><a href="/admin/Qmanage" aria-label="subemnu">문의내역</a></li>
+					<li><a href="/admin/Qanswer" aria-label="subemnu">답변하기</a></li>
+				</ul>
+			</li>
+			<li><a href="#">리뷰관리</a>
+				<ul id="sub-menu">
+					<li><a href="/admin/Rmanage" aria-label="subemnu">리뷰내역</a></li>
 				</ul>
 			</li>
 		</ul>

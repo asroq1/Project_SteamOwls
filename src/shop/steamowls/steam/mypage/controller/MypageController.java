@@ -152,7 +152,7 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/Mdetail")) {
+		}else if (command.equals("/Mdetail")) {
 			Action action = new Mdetail();
 			try {
 				forward = action.execute(request, response);

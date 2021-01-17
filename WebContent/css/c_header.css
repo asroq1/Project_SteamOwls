@@ -31,7 +31,6 @@ body{
 	a{
 
     text-decoration: none;
-/*     pad: 0.8em; */
 }
 ul,li{
 	list-style: none;
@@ -43,27 +42,28 @@ ul,li{
 
 .desktop__header{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    position : sticky;
-    top: 0; 
-    background-color : var(--white--color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.10),
-     0 2px 2px rgba(0, 0, 0, 0.10);
-    align-items: center; 
+    /* position: relative; */
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    background-color: var(--white--color);
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 2px 2px rgba(0, 0, 0, 0.10); */
+    align-items: center;
     z-index: 1;
 }
 
 .header__form{
 	display: flex;
-    width: 15%;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
 .header__form a{
 	color: #484848;
-	font-weight: bold;
+ 	font-weight: bold; 
+ 	padding: 0 10px 0 10px;
 }
 
 
@@ -186,6 +186,10 @@ button:focus
 }
 .toggle_bar li:nth-child(1){
 	margin-top: 20%;
+}
+
+.toggle_bar li{
+	padding: 12px;
 }
 .toggle_bar a{
 	color : var(--white--color);
