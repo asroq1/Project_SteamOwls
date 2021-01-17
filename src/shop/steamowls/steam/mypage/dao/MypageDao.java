@@ -161,7 +161,7 @@ public class MypageDao {
 		return count;
 	}
 
-	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo) {
+	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<MypageVo> list = new ArrayList<>();
@@ -170,12 +170,14 @@ public class MypageDao {
 			pstmt = con.prepareStatement(
 					"select"
 					+ " A.review_sq, A.review_subject, A.review_content, A.review_dttm,A.review_star, B.id"
-					+ " from (owls_review_tb A, owls_mber_tb B)"
-					+ " where A.member_sq = B.sq"
+					+ " from owls_review_tb A INNER JOIN owls_mber_tb B"
+					+ " on A.member_sq=B.sq"
+					+ " where A.review_del_fl = false"
 					+ " and A.member_sq = ?"
-					+ " and A.review_del_fl = 0"
-					+ " order by A.review_dttm desc");
+					+ " order by A.review_sq desc limit ?,?");
 			pstmt.setInt(1, mypageVo.getSq());
+			pstmt.setInt(2, pagenation.getStartArticleNumber());
+			pstmt.setInt(3, pagenation.getARTICLE_COUNT_PER_PAGE());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

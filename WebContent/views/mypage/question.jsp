@@ -68,7 +68,7 @@ String pn = request.getParameter("pn");
 		}
 		%>
 		<%
-		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber() - 1; i++) {
+		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
 			if (i != Integer.parseInt(pn)) {
 		%>
 		<a href="/mypage/question?pn=<%=i%>"><%=i%></a>

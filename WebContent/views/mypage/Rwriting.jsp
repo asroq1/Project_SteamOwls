@@ -76,7 +76,7 @@ String sq = lm.getMemberSq(session);
             <span>
                 <h2>제목</h2>
             </span>
-            <input type="text" id="review__subject" name="review_subject">
+            <input type="text" id="review__subject" name="review_subject" maxlength="50">
         </div>
 
 
@@ -84,7 +84,7 @@ String sq = lm.getMemberSq(session);
             <span>
                 <h2>이용후기</h2>
             </span>
-            <textarea id="detail__form" name="review_content" rows="5" placeholder="자세한 리뷰는 고객의 예약에 많은 도움이 됩니다."></textarea>
+            <textarea id="detail__form" name="review_content" rows="5" placeholder="자세한 리뷰는 고객의 예약에 많은 도움이 됩니다." maxlength="200"></textarea>
         </div>
     </form>
     <div class="review__btn">

@@ -63,7 +63,7 @@ public class QWritingProc implements Action {
 		}
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/mypage/RmyReview");
+		forward.setPath("/mypage/Question");
 		return forward;
 	}
 }

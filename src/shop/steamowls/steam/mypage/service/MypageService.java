@@ -87,11 +87,11 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo) {
+	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<MypageVo> list = mypageDao.rMyReview(mypageVo);
+		ArrayList<MypageVo> list = mypageDao.rMyReview(mypageVo, pagenation);
 		close(con);
 		return list;
 	}

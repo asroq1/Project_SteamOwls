@@ -24,7 +24,7 @@
 				<jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
 			</div>
 		</form>
-		<button  type="button"  onclick="add()">등록</button>
+		<button type="button" onclick="add()">등록</button>
 	</section>
 
 	<a href="/mypage/question">돌아가기</a>
