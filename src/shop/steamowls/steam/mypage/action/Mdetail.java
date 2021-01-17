@@ -1,7 +1,10 @@
 package shop.steamowls.steam.mypage.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
@@ -13,8 +16,8 @@ import shop.steamowls.steam.mypage.vo.MypageVo;
 public class Mdetail implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	
-		// ·Î±×ÀÎ¿©ºÎ ¹× Àß¸øµÈ Á¢±Ù
-				// ¼¼¼Ç¿¡ sq °¡Áö°í ÀÖ±â
+		// ï¿½Î±ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				// ï¿½ï¿½ï¿½Ç¿ï¿½ sq ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
 				HttpSession session = request.getSession();
 
 				LoginManager lm = LoginManager.getInstance();
@@ -27,7 +30,7 @@ public class Mdetail implements Action{
 					return forward;
 				}
 
-				// jsp¿¡¼­ µ¥ÀÌÅÍ ¹Þ±â
+				// jspï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ±ï¿½
 				String name = request.getParameter("name");
 				String pw = request.getParameter("pw");
 				String tel = request.getParameter("tel");
@@ -35,7 +38,7 @@ public class Mdetail implements Action{
 				if (name == null || tel == null) {
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.print("<script>alert('Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.'); location.href='/mypage/Mmodify';</script>");
+					out.print("<script>alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.'); location.href='/mypage/Mmodify';</script>");
 					out.close();
 					return null;
 				}
@@ -57,7 +60,7 @@ public class Mdetail implements Action{
 				if (!svc.modify(mypageVo)) {
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.print("<script>alert('È¸¿øÁ¤º¸¼öÁ¤¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
+					out.print("<script>alert('È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.'); history.back();</script>");
 					out.close();
 					return null;
 				}

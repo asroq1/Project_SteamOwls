@@ -1,7 +1,10 @@
 package shop.steamowls.steam.mypage.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
@@ -31,7 +34,7 @@ public class QModifyProc implements Action {
 		if (board_subject == null || board_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.'); history.back();</script>");
+			out.print("<script>alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -39,7 +42,7 @@ public class QModifyProc implements Action {
 		if (board_content == null || board_content.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('³»¿ëÀ» ÀÛ¼ºÇØÁÖ¼¼¿ä.'); history.back();</script>");
+			out.print("<script>alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -54,7 +57,7 @@ public class QModifyProc implements Action {
 		if (!svc.qModifyProc(boardVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('¼öÁ¤¿¡ ½ÇÆÐÇß½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.'); history.back();</script>");
 			out.close();
 			return null;
 		}

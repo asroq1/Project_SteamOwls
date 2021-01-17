@@ -24,7 +24,9 @@
 	- -font-small: 12px;
 	- -font-micro: 10px;
 }
-
+	ul{
+	list-style: none;
+	} 
 body {
 	font-family: 'Nanum Gothic', sans-serif;
 }

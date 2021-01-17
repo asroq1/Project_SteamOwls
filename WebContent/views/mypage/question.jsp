@@ -1,3 +1,4 @@
+<%@page import="shop.steamowls.common.Pagenation"%>
 <%@page import="shop.steamowls.steam.mypage.vo.BoardVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,6 +7,8 @@
 <%
 ArrayList<BoardVo> list = (ArrayList<BoardVo>) request.getAttribute("list");
 BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
+Pagenation pagenation = (Pagenation) request.getAttribute("pagenation");
+String pn = request.getParameter("pn");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -56,6 +59,35 @@ BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
 	<%
 	}
 	%>
+	<div>
+		<%
+		if (pagenation.getStartPageNumber() != 1) {
+		%>
+		<a href="/mypage/question?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+		<%
+		}
+		%>
+		<%
+		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber() - 1; i++) {
+			if (i != Integer.parseInt(pn)) {
+		%>
+		<a href="/mypage/question?pn=<%=i%>"><%=i%></a>
+		<%
+		} else {
+		%>
+		<%=i%>
+		<%
+		}
+		}
+		%>
+		<%
+		if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
+		%>
+		<a href="/mypage/question?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+		<%
+		}
+		%>
+	</div>
 
 	<a href="/mypage/QWriting">글쓰기</a>
 	<a href="/mypage/gotoMypage">마이페이지로 이동</a>

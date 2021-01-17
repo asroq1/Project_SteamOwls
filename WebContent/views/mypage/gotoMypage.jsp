@@ -40,9 +40,6 @@
                     <li>
                         <a href="/mypage/McheckPw">정보수정</a>
                     </li>
-                    <li>
-                       <!--  <a href="/mypage/Mwithdraw">회원탈퇴</a> -->
-                    </li>
                 </ul>
             </div>
         </div>
@@ -57,13 +54,14 @@
                 </ul>
            </div>           
            <div class="info-box box-blur">
-            <h1>포인트</h1>
+           		<i class="far fa-comment-dots"></i>
+            <h1>리뷰</h1>
             <ul>
                 <li>
-                    <a href="#">포인트 조회</a>
+                    <a href="/mypage/Rwriting">리뷰 작성</a>
                 </li>
                 <li>
-                    <a href="#">충전하기</a>
+                    <a href="/mypage/RmyReview">나의 리뷰</a>
                 </li>
             </ul>
        </div>           

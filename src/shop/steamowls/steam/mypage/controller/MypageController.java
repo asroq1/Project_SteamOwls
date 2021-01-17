@@ -34,6 +34,13 @@ import shop.steamowls.steam.mypage.action.QDelete;
 import shop.steamowls.steam.mypage.action.QDeleteProc;
 import shop.steamowls.steam.mypage.action.Question;
 import shop.steamowls.steam.mypage.action.QuestionProc;
+import shop.steamowls.steam.mypage.action.RmyReview;
+import shop.steamowls.steam.mypage.action.RmyReviewDelete;
+import shop.steamowls.steam.mypage.action.RmyReviewModify;
+import shop.steamowls.steam.mypage.action.RmyReviewModifyProc;
+import shop.steamowls.steam.mypage.action.RmyreviewDetail;
+import shop.steamowls.steam.mypage.action.Rwriting;
+import shop.steamowls.steam.mypage.action.RwritingProc;
 import shop.steamowls.steam.mypage.action.Mwithdraw;
 import shop.steamowls.steam.mypage.action.MwithdrawProc;
 import shop.steamowls.steam.mypage.action.QWriting;
@@ -232,6 +239,55 @@ public class MypageController extends HttpServlet {
 			}
 		} else if (command.equals("/QDeleteProc")) {
 			Action action = new QDeleteProc();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/Rwriting")) {
+			Action action = new Rwriting();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RwritingProc")) {
+			Action action = new RwritingProc();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RmyReview")) {
+			Action action = new RmyReview();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RmyReviewDetail")) {
+			Action action = new RmyreviewDetail();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RmyReviewModify")) {
+			Action action = new RmyReviewModify();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RmyReviewModifyProc")) {
+			Action action = new RmyReviewModifyProc();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/RmyReviewDelete")) {
+			Action action = new RmyReviewDelete();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

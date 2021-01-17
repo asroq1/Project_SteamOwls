@@ -44,6 +44,7 @@ public class HomeController extends HttpServlet {
 			}
 		}
 
+		
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
