@@ -166,7 +166,12 @@ public BoardVo qDetail(String board_sq) {
 		ResultSet rs = null;
 		BoardVo vo = null;
 		try {
-			pstmt = con.prepareStatement("select obt.*, omt.id from owls_board_tb obt inner join owls_mber_tb omt on obt.member_sq=omt.sq where board_sq = ?");
+			pstmt = con.prepareStatement("select * from owls_board_tb a"
+					+ " inner join owls_mber_tb b"
+					+ " on a.member_sq = b.sq"
+					+ " inner join owls_board_answer_tb c"
+					+ " on a.board_sq = c.board_sq"
+					+ " where b.del_fl = 0 and a.board_del_fl = 0 and a.board_sq = ?");
 			pstmt.setInt(1, Integer.parseInt(board_sq));
 
 			rs = pstmt.executeQuery();
@@ -180,6 +185,7 @@ public BoardVo qDetail(String board_sq) {
 				vo.setBoard_address(rs.getString("board_address"));
 				vo.setBoard_dttm(rs.getString("board_dttm"));
 				vo.setAnswer_fl(rs.getBoolean("answer_fl"));
+				vo.setAnswer_content(rs.getString("answer_content"));
 			}
 
 		} catch (Exception e) {
@@ -534,6 +540,25 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 			if (rs.next()) {
 				count = rs.getInt(1);
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
+	
+	public int qAnswer(BoardVo boardVo) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(
+					"insert into owls_board_answer_tb (board_sq, answer_content) values(?, ?)");
+
+			pstmt.setInt(1, boardVo.getBoard_sq());
+			pstmt.setString(2, boardVo.getAnswer_content());
+
+			count = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

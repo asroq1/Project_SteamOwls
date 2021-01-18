@@ -40,7 +40,7 @@ public class QDetail implements Action{
 		if (svc.qDetail(board_sq) == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('»ó¼¼ÆäÀÌÁö ÀÌµ¿¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}

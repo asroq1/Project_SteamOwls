@@ -49,7 +49,6 @@ public class Qdetail implements Action{
 		
 		
 		request.setAttribute("boardVo", svc.qDetail(board_sq));
-		request.setAttribute("answerVo", svc.qAnswer(board_sq));
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/admin/Qdetail.jsp");
