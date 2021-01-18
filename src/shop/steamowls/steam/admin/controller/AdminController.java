@@ -19,6 +19,7 @@ import shop.steamowls.steam.admin.booking.action.Bcancel;
 import shop.steamowls.steam.admin.booking.action.Bmanage;
 import shop.steamowls.steam.admin.booking.action.BmanageProc;
 import shop.steamowls.steam.admin.member.action.Mmanage;
+import shop.steamowls.steam.admin.member.action.MmanageProc;
 import shop.steamowls.steam.admin.product.action.Padd;
 import shop.steamowls.steam.admin.product.action.PaddProc;
 import shop.steamowls.steam.admin.product.action.Pdelete;
@@ -31,6 +32,7 @@ import shop.steamowls.steam.admin.product.action.PsellingButton;
 import shop.steamowls.steam.admin.product.action.PstopButton;
 import shop.steamowls.steam.admin.question.action.Qanswer;
 import shop.steamowls.steam.admin.question.action.QanswerProc;
+import shop.steamowls.steam.admin.question.action.Qdetail;
 import shop.steamowls.steam.admin.question.action.Qmanage;
 import shop.steamowls.steam.admin.question.action.QmanageProc;
 import shop.steamowls.steam.admin.review.action.Rdelete;
@@ -96,6 +98,13 @@ public class AdminController extends HttpServlet {
 			}
 		} else if (command.equals("/Mmanage")) {
 			Action action = new Mmanage();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/MmanageProc")) {
+			Action action = new MmanageProc();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -171,7 +180,7 @@ public class AdminController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/QManage")) {
+		} else if (command.equals("/Qmanage")) {
 			Action action = new Qmanage();
 			try {
 				forward = action.execute(request, response);
@@ -180,6 +189,13 @@ public class AdminController extends HttpServlet {
 			}
 		} else if (command.equals("/QmanageProc")) {
 			Action action = new QmanageProc();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/Qdetail")) {
+			Action action = new Qdetail();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

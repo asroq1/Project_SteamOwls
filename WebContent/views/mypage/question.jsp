@@ -21,11 +21,7 @@ String pn = request.getParameter("pn");
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<style>
-		h3 {
-			display: inline-block;
-		}
-	</style>
+
 </head>
 
 <body>

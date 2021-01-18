@@ -29,7 +29,7 @@ String sq = lm.getMemberSq(session);
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
 	</nav>
 	<section>
-		
+		<h1>상품 관리</h1>
 		<form  action="/admin/PaddProc" id="ckpoint" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="product_image">이미지</label> 

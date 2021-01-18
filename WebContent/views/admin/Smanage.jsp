@@ -16,6 +16,7 @@
 <nav role="navigation">
 	<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
 </nav>
+<h1>매출 관리</h1>
 list1
 <br>
 list2

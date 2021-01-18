@@ -34,7 +34,7 @@ public class QModifyProc implements Action {
 		if (board_subject == null || board_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('������ �Է����ּ���.'); history.back();</script>");
+			out.print("<script>alert('제목을 입력해주세요.'); history.back();</script>");
 			out.close();
 			return null;
 		}
@@ -42,7 +42,7 @@ public class QModifyProc implements Action {
 		if (board_content == null || board_content.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('������ �ۼ����ּ���.'); history.back();</script>");
+			out.print("<script>alert('내용을 작성해주세요.'); history.back();</script>");
 			out.close();
 			return null;
 		}
