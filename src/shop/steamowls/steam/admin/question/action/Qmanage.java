@@ -41,7 +41,7 @@ public class Qmanage implements Action{
 		MypageService svc = new MypageService();
 
 		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// ë ì´ìƒìœ¼ë¡œ ë„˜ì–´ê°€ë©´ ë§ˆì§€ë§‰ íŽ˜ì´ì§€ í‘œì‹œ
+		// ³¡ ÀÌ»óÀ¸·Î ³Ñ¾î°¡¸é ¸¶Áö¸· ÆäÀÌÁö Ç¥½Ã
 		if (page > pagenation.getTotalPageCount()) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();

@@ -19,7 +19,6 @@ import shop.steamowls.steam.admin.booking.action.Bcancel;
 import shop.steamowls.steam.admin.booking.action.Bmanage;
 import shop.steamowls.steam.admin.booking.action.BmanageProc;
 import shop.steamowls.steam.admin.member.action.Mmanage;
-import shop.steamowls.steam.admin.member.action.MmanageProc;
 import shop.steamowls.steam.admin.product.action.Padd;
 import shop.steamowls.steam.admin.product.action.PaddProc;
 import shop.steamowls.steam.admin.product.action.Pdelete;
@@ -103,13 +102,7 @@ public class AdminController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/MmanageProc")) {
-			Action action = new MmanageProc();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		
 		} else if (command.equals("/Pmanage")) {
 			Action action = new Pmanage();
 			try {

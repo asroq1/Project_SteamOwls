@@ -152,7 +152,7 @@ public class MypageDao {
 			pstmt.setInt(1, booking_sq);
 
 			count = pstmt.executeUpdate();
-	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -161,40 +161,7 @@ public class MypageDao {
 		return count;
 	}
 
-public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ArrayList<BoardVo> list = new ArrayList<>();
-		
-		try {
-			pstmt = con.prepareStatement(
-					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?,?");
-				pstmt.setInt(1, pagenation.getStartArticleNumber());
-				pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
-				
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				BoardVo vo = new BoardVo();
-				vo = new BoardVo();
-				vo.setBoard_sq(rs.getInt("board_sq"));
-				vo.setMember_id(rs.getString("id"));
-				vo.setBoard_subject(rs.getString("board_subject"));
-				vo.setBoard_content(rs.getString("board_content"));
-				vo.setBoard_address(rs.getString("board_address"));
-				vo.setBoard_dttm(rs.getString("board_dttm"));
-			
-				list.add(vo);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-			close(rs);
-		}
-		return list;
-	}
-
-	public BoardVo qDetail(String board_sq) {
+public BoardVo qDetail(String board_sq) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BoardVo vo = null;
@@ -223,15 +190,46 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		}
 		return vo;
 	}
-	
+
+public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BoardVo> list = new ArrayList<>();
+
+		try {
+			pstmt = con.prepareStatement(
+					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?,?");
+				pstmt.setInt(1, pagenation.getStartArticleNumber());
+				pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
+				
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVo vo = new BoardVo();
+				vo = new BoardVo();
+				vo.setBoard_sq(rs.getInt("board_sq"));
+				vo.setMember_id(rs.getString("id"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_address(rs.getString("board_address"));
+				vo.setBoard_dttm(rs.getString("board_dttm"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return list;
+	}
 	
 	public int qDelete(String board_sq) {
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
 
-			pstmt = con
-					.prepareStatement("update owls_board_tb set board_del_fl = 1 where board_sq = ? and board_del_fl = 0");
+			pstmt = con.prepareStatement(
+					"update owls_board_tb set board_del_fl = 1 where board_sq = ? and board_del_fl = 0");
 			pstmt.setInt(1, Integer.parseInt(board_sq));
 
 			count = pstmt.executeUpdate();
@@ -246,27 +244,24 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 	
 	public int QWriting(BoardVo boardVo) {
 		PreparedStatement pstmt = null;
-
 		int count = 0;
 		try {
 			pstmt = con.prepareStatement(
-			"insert into owls_board_tb (member_sq, board_subject, board_content) values(?, ?, ?)");
-			
+					"insert into owls_board_tb (member_sq, board_subject, board_content) values(?, ?, ?)");
+
 			pstmt.setInt(1, boardVo.getMember_sq());
 			pstmt.setString(2, boardVo.getBoard_subject());
 			pstmt.setString(3, boardVo.getBoard_content());
-			
+
 			count = pstmt.executeUpdate();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
-
 		}
 		return count;
 	}
-	public BoardVo findBoardSq(BoardVo boardVo) {
+		public BoardVo findBoardSq(BoardVo boardVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BoardVo vo = null;
@@ -288,7 +283,7 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		return vo;
 	}
 	
-	public int addAnswerTb(BoardVo vo) {
+		public int addAnswerTb(BoardVo vo) {
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
@@ -306,6 +301,8 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		}
 		return count;
 	}
+
+	
 	public BoardVo qModify(BoardVo boardVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -355,7 +352,7 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		return count;
 	}
 	
-	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo) {
+	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<MypageVo> list = new ArrayList<>();
@@ -526,7 +523,7 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		}
 		return list;
 	}
-	
+
 	public int getOrderCount() {
 		PreparedStatement pstmt = null; // 쿼리문 작성할 메소드
 		ResultSet rs = null;
