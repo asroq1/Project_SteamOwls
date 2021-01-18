@@ -13,14 +13,20 @@ String sq = lm.getMemberSq(session);%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 리뷰</title>
+ 	<link rel="stylesheet" href="/css/base.css">
+ 	<link rel="stylesheet" href="/css/mypage/RmyReview.css">
 </head>
 <body>
+	<header>
+        <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+    </header>
 <h1>리뷰 게시판</h1>
 	<br>
 	<div>
 		<tr>
 			<th>리뷰번호</th>
+			
 			<th>제목</th>
 			<th>작성자</th>
 			<th>날짜</th>
@@ -59,7 +65,7 @@ String sq = lm.getMemberSq(session);%>
 		<%
 		} else {
 		%>
-		<%=i%>
+		<%=i%>	
 		<%
 		}
 		}

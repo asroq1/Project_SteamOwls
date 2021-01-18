@@ -37,7 +37,8 @@ header {
 }
 
 article {
-	width: 70%;
+	max-width: 1200px;
+	width: 100%;
 	margin: auto;
 }
 

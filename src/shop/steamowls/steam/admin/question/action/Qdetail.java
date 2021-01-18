@@ -1,7 +1,6 @@
 package shop.steamowls.steam.admin.question.action;
 
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,11 +9,11 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
-import shop.steamowls.common.Pagenation;
+import shop.steamowls.steam.admin.question.service.QuestionService;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.BoardVo;
 
-public class Qmanage implements Action{
+public class Qdetail implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		HttpSession session = request.getSession();
@@ -27,36 +26,33 @@ public class Qmanage implements Action{
 			forward.setRedirect(true);
 			return forward;
 		}
-
-		String pn = request.getParameter("pn");
-		if (pn == null || pn == "") {
-			response.setContentType("text/html;charset=UTF-8");
+		
+		String board_sq = request.getParameter("board_sq");
+		if(board_sq == null || board_sq.equals("")) {
+			ActionForward forward = new ActionForward();
+			forward.setPath("/");
+			forward.setRedirect(true);
+			return forward;
+		}
+		
+		
+		
+		QuestionService svc = new QuestionService();
+		
+		if (svc.qDetail(board_sq) == null) {
+			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/admin/Qmanage?pn=1';</script>");
+			out.print("<script>alert('ìƒì„¸í˜ì´ì§€ ì´ë™ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		int page = Integer.parseInt(pn);
-
-		MypageService svc = new MypageService();
-
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// ³¡ ÀÌ»óÀ¸·Î ³Ñ¾î°¡¸é ¸¶Áö¸· ÆäÀÌÁö Ç¥½Ã
-		if (page > pagenation.getTotalPageCount()) {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/admin/Qmanage?pn=" + pagenation.getTotalPageCount() + "';</script>");
-			out.close();
-			return null;
-		}
-
-		ArrayList<BoardVo> list = svc.getBoardList(pagenation);
-		request.setAttribute("pagenation", pagenation);
-		request.setAttribute("list", list);
-
+		
+		
+		request.setAttribute("boardVo", svc.qDetail(board_sq));
+		request.setAttribute("answerVo", svc.qAnswer(board_sq));
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/admin/Qmanage.jsp");
+		forward.setPath("/views/admin/Qdetail.jsp");
 		return forward;
 	}
 }

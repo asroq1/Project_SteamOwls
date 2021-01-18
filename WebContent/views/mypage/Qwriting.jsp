@@ -14,6 +14,9 @@
 <script src="/js/mypage/Qwriting.js"></script>
 </head>
 <body>
+	<header>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+	</header>
 	<section>
 		<!-- 제목 , 내용 ,게시판 sq -->
 				<!-- 여기 action에 경로 수정해주세요 -->

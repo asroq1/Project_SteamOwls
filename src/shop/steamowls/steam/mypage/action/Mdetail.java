@@ -16,8 +16,8 @@ import shop.steamowls.steam.mypage.vo.MypageVo;
 public class Mdetail implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	
-		// �α��ο��� �� �߸��� ����
-				// ���ǿ� sq ������ �ֱ�
+		// 로그인여부 및 잘못된 접근
+				// 세션에 sq 가지고 있기
 				HttpSession session = request.getSession();
 
 				LoginManager lm = LoginManager.getInstance();
@@ -30,7 +30,7 @@ public class Mdetail implements Action{
 					return forward;
 				}
 
-				// jsp���� ������ �ޱ�
+				// jsp에서 데이터 받기
 				String name = request.getParameter("name");
 				String pw = request.getParameter("pw");
 				String tel = request.getParameter("tel");
@@ -38,7 +38,7 @@ public class Mdetail implements Action{
 				if (name == null || tel == null) {
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.print("<script>alert('������ �Է����ּ���.'); location.href='/mypage/Mmodify';</script>");
+					out.print("<script>alert('정보를 입력해주세요.'); location.href='/mypage/Mmodify';</script>");
 					out.close();
 					return null;
 				}
@@ -60,7 +60,7 @@ public class Mdetail implements Action{
 				if (!svc.modify(mypageVo)) {
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.print("<script>alert('ȸ������������ �����Ͽ����ϴ�.'); history.back();</script>");
+					out.print("<script>alert('회원정보수정에 실패하였습니다.'); history.back();</script>");
 					out.close();
 					return null;
 				}

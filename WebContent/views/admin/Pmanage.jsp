@@ -39,6 +39,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 		for (int i = 0; i < list.size(); i++) {
 	%>
 	<section>
+	<h1>상품 관리</h1>
 		<form
 			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
 			class="form__container" method="post" id="ckpoint">

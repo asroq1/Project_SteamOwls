@@ -8,19 +8,19 @@ submitBtn.addEventListener('click', (e) => {
 
     // for (let i = 0; i < rating__star.length; i++) {
     //     if (!rating__star[i].checked) {
-    //         alert('º°Á¡À» ÀÔ·ÂÇØÁÖ¼¼¿ä');
+    //         alert('ë³„ì ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”');
     //         return;
     //     }
     //     if(rating__star[i].checked) {
-    //        alert('¼º°ø');
+    //        alert('ì„±ê³µ');
     //     }
-    // }¤¤
+    // }ã„´
     if (!review__subject.value) {
-        alert('Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä');
+        alert('ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”');
         return;
     }
     if (!detail__form.value) {
-        alert('ÀÌ¿ëÈÄ±â¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.');
+        alert('ì´ìš©í›„ê¸°ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.');
         return;
     }
 
