@@ -1,3 +1,7 @@
+<%@page import="shop.steamowls.steam.mypage.vo.BoardVo"%>
+<%@page import="shop.steamowls.steam.admin.review.vo.ReviewVo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="shop.steamowls.steam.mypage.vo.MypageVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,6 +10,8 @@
 <%
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+MypageVo mypageVo = (MypageVo) request.getAttribute("vo"); 
+ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,7 +28,7 @@ String sq = lm.getMemberSq(session);
     <link rel="stylesheet" href="/css/agreement.css">
     <link rel="stylesheet" href="/css/base.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="/css/mypage/Rwriting.css">  
+    <link rel="stylesheet" href="/css/mypage/Rwriting.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
     <script src="/js/common/calendar.js" defer></script>
@@ -82,7 +88,7 @@ String sq = lm.getMemberSq(session);
             </button>
         </form>
         <div class="main__intro">
-          <!--   <h1>Premium Spa</h1>
+            <!--   <h1>Premium Spa</h1>
             <p>오직 한 사람만을 위한 특별한 스파 </p> -->
         </div>
         <div class="img__container">
@@ -94,158 +100,61 @@ String sq = lm.getMemberSq(session);
 	%>
 
     <section>
-
-        <div class="slider__box">
-            <div id="slider">
-
-                <div class="slider__item">
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                                이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                                원샷이겠죠 ?
-                                아울스 너무 좋아요 짱짱짱~!
-
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
+        <div id="slider">
+            <%
+				for(int i = 0; i < list.size(); i++){
+				%>
+            <div class="slider__item">
+                <div class="review__box">
+                    <div class="review__top">
+                        <div class="review__title">
+                            <%=list.get(i).getReview_subject()%>
                         </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-
+                        <div class="review__name">
+                            <%=list.get(i).getId()%>
+                        </div>
+                        <div class="review__star">
+                        	<span class="star">
+                        		<i class="fas fa-star"></i>
+                        	</span>
+                        	  <%=list.get(i).getReview_star()%> 
                         </div>
                     </div>
-
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
-                    </div>
-                </div>
-                <div class="slider__item">
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
-                    </div>
-
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
+                    <div class="review__bottom">
+                        <%=list.get(i).getReview_content()%>
                     </div>
                 </div>
 
-                <div class="slider__item">
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
+                <div class="review__box">
+                    <div class="review__top">
+                        <div class="review__title">
+                            <%=list.get(i).getReview_subject()%>
                         </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
+                        <div class="review__name">
+                            <%=list.get(i).getId()%>                           
+                        </div>
+                         <div class="review__star">
+                        	<span class="star">
+                        		<i class="fas fa-star"></i>
+                        	</span>
+                        	  <%=list.get(i).getReview_star()%> 
                         </div>
                     </div>
-
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
+                    <div class="review__bottom">
+                        <%=list.get(i).getReview_content()%>
                     </div>
                 </div>
-
-                <div class="slider__item">
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
-                    </div>
-
-                    <div class="review__box">
-                        <div class="review__top">
-                            <div class="review__title">
-                                아울스 너무 좋아요 짱짱짱~!
-                            </div>
-                            <div class="review__name">
-                                marsoon
-                            </div>
-                        </div>
-                        <div class="review__bottom">
-                            이번에 부모님 따라 갔는데 너무 좋네용 호호홍 다음에 가면 또 좋은 서비스를 경험할 수 있겠죠?
-                            원샷이겠죠 ?
-                        </div>
-                    </div>
-                </div>
+               
             </div>
-            <div class="btn__container">
-                <button class="btn prev">
-                    <</button> <button class="btn next">>
-                </button>
-            </div>
+             <% 
+					 } 
+          %>
         </div>
-
+        <div class="btn__container">
+            <button class="btn prev"><</button>
+             <button class="btn next">></button>
+        </div>
     </section>
-
     <section>
         <div class="wrapper">
             <div class="intro__container">

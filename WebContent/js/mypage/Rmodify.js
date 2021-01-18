@@ -1,7 +1,10 @@
 const checkPoint = document.querySelector('#editorForm');
-const submitBtn = document.querySelector('#"submit__btn"');
+const modifyBtn = document.querySelector('#modifyBtn');
 
-submitBtn.addEventListener('click',()=>{
-	console.log('test');
-    checkPoint.submit();
+modifyBtn.addEventListener('click',(e)=>{
+	e.preventDefault();
+    const ask = confirm('수정하시겠습니까?');
+    if(ask === true){
+        checkPoint.submit();
+    }
 });

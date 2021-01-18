@@ -69,12 +69,21 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-	public boolean bCancel(int booking_sq) {
+	public BookingVo bCancel(BookingVo bookingVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BookingVo vo = mypageDao.bCancel(bookingVo);
+		close(con);
+		return vo;
+	}
+
+	public boolean bCancelProc(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
 
-		int count = mypageDao.bCancel(booking_sq);
+		int count = mypageDao.bCancelProc(booking_sq);
 		boolean isSuccess = false;
 		if (count > 0) {
 			commit(con);

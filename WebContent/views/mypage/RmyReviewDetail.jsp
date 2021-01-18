@@ -1,30 +1,67 @@
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.steam.mypage.vo.MypageVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <% MypageVo mypageVo = (MypageVo) request.getAttribute("vo"); 
-    LoginManager lm = LoginManager.getInstance();
-String sq = lm.getMemberSq(session);%>
+	pageEncoding="UTF-8"%>
+<%
+	MypageVo mypageVo = (MypageVo) request.getAttribute("vo");
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상세리뷰</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/mypage/Rdetail.css">
 </head>
 <body>
-<h1>Article Detail</h1>
-<br>
-<h3>NO : <%=mypageVo.getReview_sq()%></h3>
-<h3>SUBJECT : <%=mypageVo.getReview_subject()%></h3>
-<h3>CONTENT : <%=mypageVo.getReview_content()%></h3>
-<h3>STAR : <%=mypageVo.getReview_star()%></h3>
-<h3>DATE : <%=mypageVo.getReview_dttm()%></h3>
+	<header>
+		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+	</header>
 
-<%if(Integer.parseInt(sq) == mypageVo.getSq()){ %>
-<a href="/mypage/RmyReviewModify?review_sq=<%=mypageVo.getReview_sq()%>">글수정</a>
-<a href="/mypage/RmyReviewDelete?review_sq=<%=mypageVo.getReview_sq()%>">글삭제</a>
+	<section>
+		<div class="review__container">
+			<div class="reivew__title">
+				<h3>글제목</h3>
+				<p class="review__text"><%=mypageVo.getReview_subject()%></p>
+			</div>
+			<div class="review__content">
+				<h3>글내용</h3>
+				<p class="review__text">
+					<%=mypageVo.getReview_content()%></p>
+			</div>
 
-<%} %>
-<a href="/mypage/RmyReview">확인</a>
+			<div class="review__date">
+				<h3>작성일</h3>
+				<p class="review__text"><%=mypageVo.getReview_dttm()%></p>
+			</div>
+
+			<div class="review__star">
+				<h3>평점</h3>
+				<div class="review__text review__star">
+					 <i class="fas fa-star"></i>
+					<%=mypageVo.getReview_star()%>
+				</div>
+			</div>
+					<div class="btn__container">
+		<%
+			if (Integer.parseInt(sq) == mypageVo.getSq()) {
+		%>
+		<a 	href="/mypage/RmyReviewModify?review_sq=<%=mypageVo.getReview_sq()%>">수정</a>
+		<a 	href="/mypage/RmyReviewDelete?review_sq=<%=mypageVo.getReview_sq()%>">삭제</a>
+
+		<%
+			}
+		%>
+	</div>
+		</div>
+
+	</section>	
+
+	
+	<!-- 
+<a href="/mypage/RmyReview">확인</a> -->
 </body>
 </html>

@@ -1,6 +1,7 @@
 package shop.steamowls.steam.mypage.action;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,40 +13,37 @@ import shop.steamowls.common.LoginManager;
 import shop.steamowls.steam.admin.product.service.ProductService;
 import shop.steamowls.steam.admin.product.vo.ProductVo;
 import shop.steamowls.steam.booking.service.BookingService;
+import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.mypage.service.MypageService;
 
 public class BCancel implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		
 		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
+		String booking_sq = request.getParameter("booking_sq");
 
-		if (sq == null) {
+
+		if (sq == null || sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
-
-		String booking_sq = request.getParameter("booking_sq");
-
-		if (booking_sq == null) {
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.print("<script>alert('취소할 예약이 없습니다.'); history.back();</script>");
-			out.close();
-			return null;
+		if (booking_sq == null || booking_sq.equals("")) {
+			ActionForward forward = new ActionForward();
+			forward.setPath("/");
+			forward.setRedirect(true);
+			return forward;
 		}
-
+		
+		BookingVo bookingVo = new BookingVo();
+		bookingVo.setBooking_sq(Integer.parseInt(booking_sq));
+		
 		MypageService svc = new MypageService();
-		if (!svc.bCancel(Integer.parseInt(booking_sq))) {
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.print("<script>alert('예약취소를 실패했습니다.'); history.back();</script>");
-			out.close();
-			return null;
-		}
+		BookingVo vo = svc.bCancel(bookingVo);
+		request.setAttribute("vo", vo);
 		
 
 		ActionForward forward = new ActionForward();
