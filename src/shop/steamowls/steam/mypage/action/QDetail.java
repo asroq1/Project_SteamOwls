@@ -40,7 +40,7 @@ public class QDetail implements Action{
 		if (svc.qDetail(board_sq) == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('상세페이지 이동에 실패하였습니다.'); history.back();</script>");
+			out.print("<script>alert('잘못된 접근입니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}

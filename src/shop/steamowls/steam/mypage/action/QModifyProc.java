@@ -57,7 +57,7 @@ public class QModifyProc implements Action {
 		if (!svc.qModifyProc(boardVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('수정에 실패했습니다.'); history.back();</script>");
+			out.print("<script>alert('������ �����߽��ϴ�.'); history.back();</script>");
 			out.close();
 			return null;
 		}

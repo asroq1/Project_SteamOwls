@@ -3,6 +3,7 @@ package shop.steamowls.steam.mypage.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.booking.dao.BookingDao;
 import shop.steamowls.steam.booking.vo.BookingVo;
 import shop.steamowls.steam.member.dao.MemberDao;
@@ -70,12 +71,21 @@ public class MypageService {
 		return list;
 	}
 
-	public boolean bCancel(int booking_sq) {
+	public BookingVo bCancel(BookingVo bookingVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BookingVo vo = mypageDao.bCancel(bookingVo);
+		close(con);
+		return vo;
+	}
+
+	public boolean bCancelProc(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
 
-		int count = mypageDao.bCancel(booking_sq);
+		int count = mypageDao.bCancelProc(booking_sq);
 		boolean isSuccess = false;
 		if (count > 0) {
 			commit(con);
@@ -88,11 +98,94 @@ public class MypageService {
 		return isSuccess;
 	}
 
-	public ArrayList<BoardVo> getBoardList() {
+	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BoardVo> list = mypageDao.getBoardList();
+		ArrayList<MypageVo> list = mypageDao.rMyReview(mypageVo, pagenation);
+		close(con);
+		return list;
+	}
+
+	public MypageVo rMyReviewDetail(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		MypageVo vo = new MypageVo();
+		vo = mypageDao.rMyReviewDetail(mypageVo);
+
+		close(con);
+		return vo;
+	}
+
+	public boolean rMyReviewModify(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.rMyReviewModify(mypageVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
+	public boolean rMyReviewDelete(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.rMyReviewDelete(mypageVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
+	public boolean rWriting(MypageVo mypageVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.rWriting(mypageVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
+	public ArrayList<MypageVo> reviewList() {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		ArrayList<MypageVo> list = mypageDao.reviewList();
+		close(con);
+		return list;
+	}
+
+	public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		ArrayList<BoardVo> list = mypageDao.getBoardList(pagenation);
 		close(con);
 		return list;
 	}
@@ -144,8 +237,37 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-	
-	public BoardVo qModify (BoardVo boardVo) {
+
+	public BoardVo findBoardSq(BoardVo boardVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BoardVo vo = mypageDao.findBoardSq(boardVo);
+
+		close(con);
+		return vo;
+	}
+
+	public boolean addAnswerTb(BoardVo vo) {
+
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+
+		int count = mypageDao.addAnswerTb(vo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
+
+	public BoardVo qModify(BoardVo boardVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
@@ -154,7 +276,7 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-	
+
 	public boolean qModifyProc(BoardVo boardVo) {
 
 		MypageDao mypageDao = MypageDao.getInstance();
@@ -172,6 +294,15 @@ public class MypageService {
 		}
 		close(con);
 		return isSuccess;
+	}
+
+	public int getOrderCount() {
+		MypageDao dao = MypageDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		int count = dao.getOrderCount();
+		close(con);
+		return count;
 	}
 
 }

@@ -37,8 +37,8 @@
 				for (int i = 0; i < list.size(); i++) {
 			%>
 			<article>
-				<div class="booking_container">
-					<div class="booking_img">
+				<div class="booking__container">
+					<div class="booking__img">
 						<%=list.get(i).getProduct_imagePath()%>
 						<img alt="" src="/css/picture/Spa.png">
 					</div>
@@ -57,20 +57,20 @@
 							</p>
 						</div>
 					</div>
-					<div class="booking_bottom">
-						<div class="booking_people">
+					<div class="booking__bottom">
+						<div class="booking__people">
 							<h3 class="booking__title">예약인원</h3>
 							<p class="booking__text">
 								<%=list.get(i).getBooking_people()%>명
 							</p>
 						</div>
-						<div class="booking_price">
+						<div class="booking__price">
 							<h3 class="booking__title">결제금액</h3>
 							<p class="booking__text">
 								<%=won.format(list.get(i).getProduct_price() * list.get(i).getBooking_people())%>원</p>
 						</div>
 					</div>
-					<div class="btn-container">
+					<div class="btn__container">
 						<a id="ckpoint" href="/mypage/BCancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 					</div>
 				</div>

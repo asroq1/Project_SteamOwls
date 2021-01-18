@@ -29,6 +29,9 @@ p{
     color: var(--grey--dark--color);
     margin-top: 1em;
 }
+ul{
+	list-style: none;
+	} 
 section{
     width: 60%;
     min-height: 100vh;
@@ -100,6 +103,9 @@ section{
 }
 
 @media screen and (max-width: 768px)  {
+	#ckpoint{
+   	width: 100%;
+ 	}
 	
 	.Binfo{
 		width: 100%;

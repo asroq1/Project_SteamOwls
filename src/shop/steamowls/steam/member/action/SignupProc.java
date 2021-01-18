@@ -56,15 +56,7 @@ public class SignupProc implements Action {
 			out.close();
 			return null;
 		}
-		
-		
-//		if(pw.equals(cpw)) {
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('비밀번호를 확인해주세요.'); history.back();</script>");
-//			out.close();
-//			return null;
-//		}
+
 		
 		if(info_fl == null) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -85,14 +77,7 @@ public class SignupProc implements Action {
 		memberVo.setSms_fl(smsFl);
 		
 		MemberService svc = new MemberService();
-		
-//		if(svc.checkId(id)) {
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('아이디가 중복되었습니다.'); history.back();</script>");
-//			out.close();
-//			return null;
-//		}
+
 		
 		if(!svc.signUp(memberVo)) {
 			response.setContentType("text/html; charset=UTF-8");

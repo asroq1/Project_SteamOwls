@@ -35,6 +35,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
 	</nav>
+	<h1>상품 관리</h1>
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>

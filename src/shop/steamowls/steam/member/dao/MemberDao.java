@@ -151,7 +151,6 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
-			close(rs);
 		}
 		return vo;
 

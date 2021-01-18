@@ -35,7 +35,7 @@ public class Mmodify implements Action {
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");
 
-		if (name == null || tel == null) {
+		if (name == null || name.equals("") || tel == null || tel.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('정보를 입력해주세요.'); location.href='/mypage/Mmodify';</script>");

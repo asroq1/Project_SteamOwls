@@ -4,9 +4,8 @@
 	pageEncoding="UTF-8"%>
 <%
 	MemberVo vo = (MemberVo) request.getAttribute("vo");
-	LoginManager lm = LoginManager.getInstance();
-	String sq = lm.getMemberSq(session);
-	
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,43 +22,23 @@
 
 <body>
 	<header>
-		 <jsp:include page="/views/common/header.jsp"></jsp:include>
+		<jsp:include page="/views/common/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="checkId__form">
-			<h1>찾으시는 고객님의 아이디는</h1>
+			<p>찾으시는 고객님의 아이디는
+			<p>
 			<div class="checkId__name">
-				<p>
-					아이디는 <span id="myId"><%=vo.getId()%></span> 입니다.
-				</p>
+				아이디는 <span id="myId"><%=vo.getId()%></span> 입니다.
 			</div>
 			<div>
 				<button id="checkId__btn">
-					<p>
-						<a href="/member/login">로그인 화면으로 가기</a>
-					</p>
+					<a href="/member/login">로그인 화면으로 가기</a>
 				</button>
-			</div>
-			<span id="login__line">
-				또는 다른 것이 필요하신가요?
-			 </span>
-			<div class="chekcPw__others">
-				<button id="checkPw__btn">
-					<p>
-					  <a href="/member/forgotPw">비밀번호 찾기</a>
-					</p>
-				</button>
-				<div class="sign__up__kakao">
-					<a href="#">카카오톡으로 로그인</a>
-				</div>
-				<div class="sign__up__naver">
-					<a href="#">네이버로 로그인</a>
-				</div>
 			</div>
 		</div>
 	</section>
-	<script defer="defer" src="/js/member/checkId.js"
-		type="text/javascript"></script>
+	<script src="/js/member/checkId.js" type="text/javascript" defer></script>
 </body>
 
 </html>

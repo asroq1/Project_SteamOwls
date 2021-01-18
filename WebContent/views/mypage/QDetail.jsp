@@ -23,6 +23,7 @@ String sq = lm.getMemberSq(session);
 <h3>CONTENT : <%=vo.getBoard_content()%></h3>
 <h3>ID : <%=vo.getMember_id()%></h3>
 <h3>DATE : <%=vo.getBoard_dttm()%></h3>
+<h3>ANSWER : <%=vo.getAnswer_content() %></h3>
 
 <%if(Integer.parseInt(sq) == vo.getMember_sq()){ %>
 <a href="/mypage/QModify?board_sq=<%=vo.getBoard_sq()%>">글수정</a>

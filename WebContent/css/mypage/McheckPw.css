@@ -34,13 +34,19 @@ li{
 a{
     text-decoration: none;
 }
+header {
+	position: sticky;
+	top: 0;
+	background-color: var(--white--color);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px rgba(0, 0, 0, 0.10);
+}
+
 body{
     margin: 0 auto;
     text-align: center;
 }
 header{
     width: 100%;
-    background-color: var(--theme-color);
 }
 .header__signForm ul{
     display: flex;
@@ -84,3 +90,10 @@ header{
     color: var(--grey--dark--color);
     margin: 12px 12px;
 }
+
+@media screen and (max-width: 768px){
+	#checkPoint button,
+    #checkPoint input {
+    	width: 50%;	
+}
+

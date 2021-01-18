@@ -24,7 +24,9 @@
 	- -font-small: 12px;
 	- -font-micro: 10px;
 }
-
+	ul{
+	list-style: none;
+	} 
 body {
 	font-family: 'Nanum Gothic', sans-serif;
 }
@@ -35,7 +37,8 @@ header {
 }
 
 article {
-	width: 70%;
+	max-width: 1200px;
+	width: 100%;
 	margin: auto;
 }
 
@@ -110,7 +113,7 @@ article {
 		border-top: 1px solid var(- -grey--dark--color);
 		border-bottom: 1px solid var(- -grey--dark--color);
 		padding: 1em;
-	}
+	} 
 
 	.form_img img {
 		width: 100%;
@@ -156,5 +159,7 @@ article {
 		text-align: center;
 		padding: 1em;
 	}
+	
+
 
 }

@@ -24,6 +24,9 @@
     --font-small: 12px;
     --font-micro: 10px;
 }
+ul{
+	list-style: none;
+	}
 p{
     color: var(--grey--dark--color);
 }
