@@ -130,6 +130,7 @@ i{
 .review__text{
     width: 100%;
     height: 2.5em;
+    padding: 0.5rem;
     border: 1px solid var(--grey--dark--color);
     border-radius: 6px;
 }
@@ -138,9 +139,11 @@ i{
 	border: 1px solid var(--grey--dark--color);
     width: 100%;
     height: 80%;
+    padding : 0.5rem;
     margin-top: 0px;
     margin-bottom: 0px;
     border-radius: 6px;	
+    resize: none;
 }
 
 .btn__container{
@@ -148,7 +151,8 @@ i{
     justify-content: flex-end;
 }
 
-.btn__container a{
+.btn__container a,
+#modifyBtn{
 	margin: 0 10px 0 10px;
 	padding: 1rem 1.5rem 1rem 1.5rem;
 	color: var(--white--color);
