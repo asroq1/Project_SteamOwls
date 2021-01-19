@@ -48,32 +48,6 @@ public class RmyReviewDelete implements Action {
 			out.close();
 			return null;
 		}
-		
-		String pn = request.getParameter("pn");
-		if (pn == null || pn == "") {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/mypage/RmyReview?pn=1';</script>");
-			out.close();
-			return null;
-		}
-		int page = Integer.parseInt(pn);
-
-
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// 끝 이상으로 넘어가면 마지막 페이지 표시
-		if (page > pagenation.getTotalPageCount()) {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/mypage/RmyReview?pn=" + pagenation.getTotalPageCount() + "';</script>");
-			out.close();
-			return null;
-		}
-		
-		ArrayList<MypageVo> list = svc.rMyReview(mypageVo, pagenation);
-		
-		request.setAttribute("pagenation", pagenation);
-		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/mypage/RmyReview");

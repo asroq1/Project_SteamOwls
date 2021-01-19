@@ -40,8 +40,8 @@ public class Qmanage implements Action{
 
 		MypageService svc = new MypageService();
 
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// ³¡ ÀÌ»óÀ¸·Î ³Ñ¾î°¡¸é ¸¶Áö¸· ÆäÀÌÁö Ç¥½Ã
+		Pagenation pagenation = new Pagenation(page, svc.getBoardCount());
+		// ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 		if (page > pagenation.getTotalPageCount()) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();

@@ -197,17 +197,17 @@ public BoardVo qDetail(String board_sq) {
 		return vo;
 	}
 
-public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
+	public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BoardVo> list = new ArrayList<>();
 
 		try {
 			pstmt = con.prepareStatement(
-					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?,?");
-				pstmt.setInt(1, pagenation.getStartArticleNumber());
-				pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
-				
+					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?, ?");
+			pstmt.setInt(1, pagenation.getStartArticleNumber());	
+			pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
+			
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BoardVo vo = new BoardVo();
@@ -227,6 +227,30 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 			close(rs);
 		}
 		return list;
+	}
+
+	public int getBoardCount() {
+		PreparedStatement pstmt = null; // 쿼리문 작성할 메소드
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("select"
+					+ " count(obt.board_sq)"
+					+ " from owls_board_tb obt INNER JOIN owls_mber_tb omt"
+					+ " on obt.member_sq=omt.sq"
+					+ " where obt.board_del_fl = false"
+					+ " order by obt.board_sq desc");
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
 	}
 	
 	public int qDelete(String board_sq) {
@@ -479,8 +503,7 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		int count = 0;
 		try {
 			pstmt = con.prepareStatement(
-					"insert"
-					+ " into owls_review_tb(member_sq, review_star, review_subject, review_content)"
+					"insert into owls_review_tb(member_sq, review_star, review_subject, review_content)"
 					+ " values(?, ?, ?, ?)");
 			pstmt.setInt(1, mypageVo.getSq());
 			pstmt.setDouble(2, mypageVo.getReview_star());
@@ -530,12 +553,20 @@ public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		return list;
 	}
 
-	public int getOrderCount() {
+	public int getReviewCount(int member_sq) {
 		PreparedStatement pstmt = null; // 쿼리문 작성할 메소드
 		ResultSet rs = null;
 		int count = 0;
 		try {
-			pstmt = con.prepareStatement("select count(board_sq) from owls_board_tb");
+			pstmt = con.prepareStatement("select"
+					+" count(A.review_sq)"
+					+" from owls_review_tb A INNER JOIN owls_mber_tb B"
+					+" on A.member_sq=B.sq"
+					+" where A.review_del_fl = false"
+					+" and A.member_sq = ?"
+					+" order by A.review_sq desc");
+			
+			pstmt.setInt(1, member_sq);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				count = rs.getInt(1);

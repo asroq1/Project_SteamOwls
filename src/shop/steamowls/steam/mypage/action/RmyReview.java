@@ -45,7 +45,7 @@ public class RmyReview implements Action {
 		int page = Integer.parseInt(pn);
 
 
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
+		Pagenation pagenation = new Pagenation(page, svc.getReviewCount(Integer.parseInt(member_sq)));
 		// 끝 이상으로 넘어가면 마지막 페이지 표시
 		if (page > pagenation.getTotalPageCount()) {
 			response.setContentType("text/html;charset=UTF-8");
