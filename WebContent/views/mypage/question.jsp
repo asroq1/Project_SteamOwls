@@ -35,15 +35,15 @@ String pn = request.getParameter("pn");
 		<table>
 
 				<tr class="category">
-					<th class="no">문의번호</th>
-					<th class="sub">제목</th>
-					<th class="id">작성자</th>
-					<th class="time">날짜</th>
+					<th class="category__no">문의번호</th>
+					<th class="category__sub">제목</th>
+					<th class="category__id">작성자</th>
+					<th class="category__time">날짜</th>
 				</tr>
 			<%
 	for (int i = 0; i < list.size(); i++) {
 	%>
-				<tr class="data">
+				<tr class="category__data">
 					<td><%=list.get(i).getBoard_sq()%></td>
 					<td><a
 							href="/mypage/QD\etail?board_sq=<%=list.get(i).getBoard_sq()%>"><%=list.get(i).getBoard_subject()%></a>
@@ -55,7 +55,7 @@ String pn = request.getParameter("pn");
 	}
 	%>
 		</table>
-		<div>
+		<span class="pagination">
 			<%
 		if (pagenation.getStartPageNumber() != 1) {
 		%>
@@ -78,14 +78,18 @@ String pn = request.getParameter("pn");
 		%>
 			<%
 		if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
-		%>
+			%>
+		
 			<a href="/mypage/question?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
-			<%
+		
+		<%
 		}
 		%>
-		</div>
-		<a href="/mypage/QWriting">글쓰기</a>
-		<a href="/mypage/gotoMypage">마이페이지로 이동</a>
+		</span>
+		<span class="btn__container">
+			<a href="/mypage/QWriting">글쓰기</a>
+			<a href="/mypage/gotoMypage">마이페이지</a>
+		</span>
 	</div>
 </body>
 
