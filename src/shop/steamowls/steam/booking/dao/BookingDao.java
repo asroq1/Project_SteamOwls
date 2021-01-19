@@ -81,7 +81,7 @@ public class BookingDao {
 		ArrayList<BookingVo> list = new ArrayList<>();
 
 		try {
-			pstmt = con.prepareStatement("select * from owls_product_tb where product_del_fl = 0");
+			pstmt = con.prepareStatement("select * from owls_product_tb where product_del_fl = 0 and product_status_fl = 0");
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

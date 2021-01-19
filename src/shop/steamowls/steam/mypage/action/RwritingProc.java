@@ -30,7 +30,7 @@ public class RwritingProc implements Action {
 
 		String review_star = request.getParameter("review_star");
 		String review_subject = request.getParameter("review_subject");
-		String review_content = request.getParameter("review_content");
+		String review_content = request.getParameter("content");
 
 		if (review_subject == null || review_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");

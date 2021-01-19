@@ -32,7 +32,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public boolean withdraw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -50,7 +50,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public MypageVo mCheckPw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -61,7 +61,6 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-
 	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -70,7 +69,6 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-
 	public BookingVo bCancel(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -97,7 +95,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -106,7 +104,8 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-
+	
+	
 	public MypageVo rMyReviewDetail(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -117,7 +116,7 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-
+	
 	public boolean rMyReviewModify(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -135,7 +134,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public boolean rMyReviewDelete(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -153,7 +152,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public boolean rWriting(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -171,7 +170,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public ArrayList<MypageVo> reviewList() {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -180,7 +179,7 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-
+	
 	public ArrayList<BoardVo> getBoardList(Pagenation pagenation) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -189,7 +188,7 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-
+	
 	public BoardVo qDetail(String board_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -237,8 +236,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
-	public BoardVo findBoardSq(BoardVo boardVo) {
+	public BoardVo findBoardSq (BoardVo boardVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
@@ -247,7 +245,6 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-
 	public boolean addAnswerTb(BoardVo vo) {
 
 		MypageDao mypageDao = MypageDao.getInstance();
@@ -266,8 +263,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
-	public BoardVo qModify(BoardVo boardVo) {
+	public BoardVo qModify (BoardVo boardVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
@@ -276,7 +272,7 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-
+	
 	public boolean qModifyProc(BoardVo boardVo) {
 
 		MypageDao mypageDao = MypageDao.getInstance();
@@ -295,7 +291,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public int getOrderCount() {
 		MypageDao dao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -304,5 +300,4 @@ public class MypageService {
 		close(con);
 		return count;
 	}
-
 }
