@@ -61,11 +61,12 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
+
+	public ArrayList<BookingVo> bHistory(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BookingVo> list = mypageDao.bDetail(bookingVo);
+		ArrayList<BookingVo> list = mypageDao.bHistory(bookingVo);
 		close(con);
 		return list;
 	}
