@@ -19,18 +19,17 @@ public class PdeleteProc implements Action {
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq == null) {
+		if (sq == null || sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
 		
-		sq = request.getParameter("sq");
 		String product_sq = request.getParameter("product_sq");
 		System.out.println(product_sq);
 		
-		if(product_sq == null){
+		if(product_sq == null || product_sq.equals("")){
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('게시물이 없습니다.'); history.back();</script>");

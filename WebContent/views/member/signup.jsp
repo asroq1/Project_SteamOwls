@@ -19,8 +19,7 @@
 
 <body>
 	<header>
-		<a href="/views/home/index.jsp"> <img src="/css/picture/owls.PNG"
-			alt="로고사진">
+		<a href="/"> <img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 	</header>
 	<section>

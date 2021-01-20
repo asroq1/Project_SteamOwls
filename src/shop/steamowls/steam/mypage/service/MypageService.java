@@ -61,11 +61,12 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
+
+	public ArrayList<BookingVo> bHistory(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BookingVo> list = mypageDao.bDetail(bookingVo);
+		ArrayList<BookingVo> list = mypageDao.bHistory(bookingVo);
 		close(con);
 		return list;
 	}
@@ -292,11 +293,20 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public int getOrderCount() {
+	public int getReviewCount(int member_sq) {
 		MypageDao dao = MypageDao.getInstance();
 		Connection con = getConnection();
 		dao.setConnection(con);
-		int count = dao.getOrderCount();
+		int count = dao.getReviewCount(member_sq);
+		close(con);
+		return count;
+	}
+	
+	public int getBoardCount() {
+		MypageDao dao = MypageDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		int count = dao.getBoardCount();
 		close(con);
 		return count;
 	}

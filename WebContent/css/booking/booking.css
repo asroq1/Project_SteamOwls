@@ -36,6 +36,9 @@ header {
 	margin: 0 auto;
 }
 
+section{
+	height: 100vh;
+}
 article {
 	max-width: 1200px;
 	width: 100%;

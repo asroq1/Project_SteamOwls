@@ -37,7 +37,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	</nav>
 	<h1>상품 관리</h1>
 	<%
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size(); i++) { 
 	%>
 
 	<%
@@ -50,9 +50,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 	<section>
 		<h1>상품삭제</h1>
-		<form
-			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
-			class="form__container" method="post" id="ckpoint">
+		<form class="form__container" method="post" id="ckpoint">
 			<div class="booking__Form">
 
 				<div class="booking_img">
@@ -81,15 +79,16 @@ DecimalFormat won = new DecimalFormat("###,###");
 			</div>
 		</form>
 		<div class="booking__confirm">
-			<button class="confirm__add" onclick="Pdelete()">상품삭제</button>
+			<button class="confirm__add" onclick="Pdelete(<%=list.get(i).getProduct_sq()%>)">상품삭제</button>
 		</div>
 	</section>
 	<%
-		}
+		} 
 	%>
 	<%
-		}
+		} 
 	%>
+	
 </body>
 
 </html>

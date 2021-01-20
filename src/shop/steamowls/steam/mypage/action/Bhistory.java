@@ -35,9 +35,9 @@ public class Bhistory implements Action{
 		bookingVo.setMember_sq(Integer.parseInt(sq));
 		bookingVo.setBooking_date(booking_date);
 		bookingVo.setBooking_start(booking_start);
-		
 		MypageService svc = new MypageService();
-		ArrayList<BookingVo> list = svc.bDetail(bookingVo);
+		
+		ArrayList<BookingVo> list = svc.bHistory(bookingVo);
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();

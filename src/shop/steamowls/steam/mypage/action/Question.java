@@ -20,9 +20,9 @@ public class Question implements Action {
 
 		HttpSession session = request.getSession();
 		LoginManager lm = LoginManager.getInstance();
-		String sq = lm.getMemberSq(session);
+		String member_sq = lm.getMemberSq(session);
 
-		if (sq == null) {
+		if (member_sq == null || member_sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -41,7 +41,7 @@ public class Question implements Action {
 
 		MypageService svc = new MypageService();
 
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
+		Pagenation pagenation = new Pagenation(page, svc.getBoardCount());
 		// 끝 이상으로 넘어가면 마지막 페이지 표시
 		if (page > pagenation.getTotalPageCount()) {
 			response.setContentType("text/html;charset=UTF-8");

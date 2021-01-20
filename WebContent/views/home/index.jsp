@@ -59,8 +59,7 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
             </button>
         </form>
         <div class="main__intro">
-            <h1>Premium Spa</h1>
-            <p>오직 한 사람만을 위한 특별한 스파 </p>
+         
         </div>
         <div class="img__container">
             <img src="/css/picture/Spa.png" alt="main">
@@ -71,7 +70,7 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	%>
     <header>
         <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
-    </header>
+    </header>`
     <section>
         <form action="/booking/Blist" id="ckpoint" method="get">
             <input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date"
