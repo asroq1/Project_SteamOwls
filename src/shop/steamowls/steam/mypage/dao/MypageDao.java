@@ -561,7 +561,7 @@ public BoardVo qDetail(String board_sq) {
 					+ " A.member_sq, A.review_star, A.review_subject, A.review_content, B.id"
 					+ " from (owls_review_tb A, owls_mber_tb B)"
 					+ " where A.member_sq = B.sq"
-					+ " order by review_star, review_dttm desc limit 1,5");
+					+ " order by review_star, review_dttm desc limit 1,10");
 					
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

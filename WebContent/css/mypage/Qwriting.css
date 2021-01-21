@@ -63,13 +63,14 @@ label{
 
 .addBtn{
 	position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     padding: 1remc;
     background-color: var(--theme-color);
     color: var(--white--color);
     border-radius: 4px;
+    font-weight: bold;
 }
 
 

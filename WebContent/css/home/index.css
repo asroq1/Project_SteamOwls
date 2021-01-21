@@ -216,17 +216,17 @@ button:focus {
 	margin-top : 20vh;
 	color: var(--text-color);
 	top: 0;
-	z-index: 0;
+	z-index: 0; 
 	opacity: 0;
 	transition: all .5s ease-in-out;
-	transform: scale(0.9);
+	transform: scale(0.9); 
 	overflow: hidden;
 }
 
 .showing {
 	opacity: 1;
 	z-index: 1;
-	transform: none;
+    transition: all 0.25s ease 0s;
 }
 
 .review__box {
@@ -397,5 +397,8 @@ button:focus {
 	.slider__item {
 	width: 100%;
 	
+}
+.btn__container {
+    width: 95%;
 }
 }
