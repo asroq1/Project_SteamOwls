@@ -30,7 +30,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 <body>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
@@ -78,7 +78,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 			</div>
 		</form>
-		<div class="booking__confirm">
+		<div class="booking__confirm" >
 			<button class="confirm__add" onclick="Pdelete(<%=list.get(i).getProduct_sq()%>)">상품삭제</button>
 		</div>
 	</section>

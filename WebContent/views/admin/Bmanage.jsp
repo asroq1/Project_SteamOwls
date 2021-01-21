@@ -27,10 +27,11 @@ DecimalFormat won = new DecimalFormat("###,###");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 <script src="/js/common/calendar.js" defer></script>
+<script src="/js/admin/Bdelete.js"></script>
 </head>
 <body>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
@@ -89,7 +90,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 				</div>
 			</div>
 			<div class="btn__container">
-				<a id="cancel__btn" href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+				<button id="cancel__btn" onclick="bookingDelete(<%=list.get(i).getBooking_sq()%>)">예약취소</button>
 			</div>
 		</div>
 		<%

@@ -18,8 +18,8 @@ String sq = lm.getMemberSq(session);
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 </head>
 <body>
-	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+<header>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>

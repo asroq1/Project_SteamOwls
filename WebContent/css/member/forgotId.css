@@ -53,13 +53,6 @@ a {
     color: var(--black--color);
 }
 
-header {
-	position: sticky;
-	top: 0;
-	background-color: var(--white--color);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px rgba(0, 0, 0, 0.10);
-}
-
 #name,
 #tel{
 	padding-left: 15px;

@@ -20,7 +20,7 @@ String sq = lm.getMemberSq(session);
 
 <body>
     <header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
     <nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	

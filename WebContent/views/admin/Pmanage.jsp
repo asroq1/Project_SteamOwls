@@ -7,8 +7,7 @@
 <%@page import="shop.steamowls.steam.admin.product.vo.ProductVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%
-
-ProductVo productVo = (ProductVo) request.getAttribute("productVo");
+	ProductVo productVo = (ProductVo) request.getAttribute("productVo");
 MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
@@ -19,27 +18,27 @@ DecimalFormat won = new DecimalFormat("###,###");
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>상품관리</title>
-	<link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
-	<link rel="stylesheet" href="/css/admin/productManage.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상품관리</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+<link rel="stylesheet" href="/css/admin/productManage.css">
+<script src="/js/admin/Pmamage.js" defer></script>
 </head>
 
 <body>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
-		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
+		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
 	<section>
-	<h1>상품 관리</h1>
+		<h1>상품 관리</h1>
 		<form
 			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
 			class="form__container" method="post" id="ckpoint">
@@ -69,12 +68,11 @@ DecimalFormat won = new DecimalFormat("###,###");
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="booking__confirm">
-				<input class="confirm__add" type="submit" value="상품판매" formaction="/admin/PsellingButton?product_sq=<%=list.get(i).getProduct_sq()%>">
-				<input class="confirm__delete" type="submit" value="판매정지" formaction="/admin/PstopButton?product_sq=<%=list.get(i).getProduct_sq()%>">
-		</div>
+				<button class="confirm__add" type="button"  onclick="selling(<%=list.get(i).getProduct_sq()%>)">상품판매</button>
+				<button class="confirm__delete" type="button" onclick="stopSelling(<%=list.get(i).getProduct_sq()%>)">판매중지</button>
+			</div>
 		</form>
 	</section>
 	<%

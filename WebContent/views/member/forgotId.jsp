@@ -20,6 +20,7 @@
 	<header>
 		<jsp:include page="/views/common/header.jsp"></jsp:include>
 	</header>
+	
 	<section>
 		<div class="findId__form">
 			<h3>아이디 찾기</h3>
@@ -39,8 +40,7 @@
 
 		</div>
 	</section>
-	<script defer="defer" src="/js/member/forgotId.js"
-		type="text/javascript"></script>
+	<script defer="defer" src="/js/member/forgotId.js" type="text/javascript"></script>
 </body>
 
 </html>

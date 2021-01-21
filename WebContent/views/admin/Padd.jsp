@@ -22,7 +22,7 @@ String sq = lm.getMemberSq(session);
 <script src="/js/admin/Padd.js" defer></script>
 </head>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 <body>
 	<nav role="navigation">

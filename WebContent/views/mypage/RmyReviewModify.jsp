@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	MypageVo mypageVo = (MypageVo) request.getAttribute("vo");
+MypageVo mypageVo = (MypageVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 %>
@@ -27,16 +27,13 @@ String sq = lm.getMemberSq(session);
 				<div class="review__container">
 				<div class="review__title">
 					<h3>제목</h3>
-					<input type="text" class="review__text" name="board_subject"
-						value="<%=mypageVo.getReview_subject()%>" />
-					<%-- <p class="review__text"><%=mypageVo.getReview_subject()%></p> --%>
+					<input type="text" class="review__text" name="board_subject" value="<%=mypageVo.getReview_subject()%>" />
+					
 				</div>
 				<div class="review__content">
 					<h3>이용후기</h3>
-					<textarea rows="10" cols="30" class="review__detail"
-						name="review_content"><%=mypageVo.getReview_content()%></textarea>
-					<%-- <p class="review__text">
-				<%=mypageVo.getReview_content()%></p> --%>
+					<textarea rows="10" cols="30" class="review__detail" name="review_content"><%=mypageVo.getReview_content()%></textarea>
+				
 				</div>
 				<div class="review__star">
 					<h3>평점</h3>

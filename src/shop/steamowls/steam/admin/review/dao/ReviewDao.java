@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.admin.admin.vo.AdminVo;
 import shop.steamowls.steam.admin.review.vo.ReviewVo;
 import shop.steamowls.steam.mypage.vo.MypageVo;
@@ -30,7 +31,7 @@ public class ReviewDao {
 		this.con = con;
 	}
 
-	public ArrayList<ReviewVo> rManage() {
+	public ArrayList<ReviewVo> rManage(Pagenation pagenation) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<ReviewVo> list = new ArrayList<>();
@@ -42,7 +43,9 @@ public class ReviewDao {
 					+ " from (owls_review_tb A, owls_mber_tb B)"
 					+ " where A.member_sq = B.sq"
 					+ " and A.review_del_fl = 0"
-					+ " order by A.review_dttm desc");
+					+ " order by A.review_dttm desc limit ?, ?");
+			pstmt.setInt(1, pagenation.getStartArticleNumber());
+			pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -123,5 +126,28 @@ public class ReviewDao {
 		return count;
 	}
 	
+	public int getReviewCount() {
+		PreparedStatement pstmt = null; // 쿼리문 작성할 메소드
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("select"
+					+ " count(obt.review_sq)"
+					+ " from owls_review_tb obt INNER JOIN owls_mber_tb omt"
+					+ " on obt.member_sq=omt.sq"
+					+ " where obt.review_del_fl = false"
+					+ " order by obt.review_sq desc");
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return count;
+	}
 
 }
