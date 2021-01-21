@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>관리자 페이지</title>
+	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/admin/Alogin.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">

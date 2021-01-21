@@ -16,6 +16,7 @@ modifyBtn.addEventListener('click',(e)=>{
         return;
     }
     if(ask === true){
-        saveContent();
+    	
+        checkPoint.submit();
     }
 });

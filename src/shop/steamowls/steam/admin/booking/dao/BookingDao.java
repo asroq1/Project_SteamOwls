@@ -75,12 +75,14 @@ public class BookingDao {
 		ArrayList<BookingVo> list = new ArrayList<>();
 
 		try {
-			pstmt = con.prepareStatement("select *" + "	from owls_booking_tb a" + "	inner join owls_mber_tb b"
-					+ "	on a.member_sq = b.sq" + "	inner join owls_product_tb c" + "	on a.product_sq = c.product_sq"
-					+ "	where b.del_fl = 0 and booking_date = ? and booking_start = ?"
-					+ " order by a.booking_date, a.booking_start asc");
+			pstmt = con.prepareStatement("select * from owls_booking_tb a"
+					+ " INNER JOIN owls_mber_tb b"
+					+ " on a.member_sq = b.sq"
+					+ " INNER  join owls_product_tb c"
+					+ " on a.product_sq = c.product_sq"
+					+ " where b.del_fl = 0 and booking_date = ?"
+					+ " order by a.booking_start asc");
 			pstmt.setString(1, bookingVo.getBooking_date());
-			pstmt.setString(2, bookingVo.getBooking_start());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

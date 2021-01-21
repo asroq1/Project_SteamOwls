@@ -476,8 +476,9 @@ public class MypageDao {
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
-			pstmt = con.prepareStatement("update owls_review_tb" + " set review_star = ?" + " , review_subject = ?"
-					+ " , review_content = ?" + " where review_sq = ?" + " and review_del_fl = 0");
+			pstmt = con.prepareStatement("update owls_review_tb"
+					+ " set review_star = ?, review_subject = ?, review_content = ?"
+					+ " where review_sq = ? and review_del_fl = 0;");
 			pstmt.setDouble(1, mypageVo.getReview_star());
 			pstmt.setString(2, mypageVo.getReview_subject());
 			pstmt.setString(3, mypageVo.getReview_content());

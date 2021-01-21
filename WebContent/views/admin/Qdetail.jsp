@@ -17,6 +17,9 @@ String sq = lm.getMemberSq(session);
 <title>상세페이지</title>
 </head>
 <body>
+<header>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
+</header>
 <h1>문의 관리</h1>
 <br>
 <h3>문의 번호 : <%=boardVo.getBoard_sq()%></h3>

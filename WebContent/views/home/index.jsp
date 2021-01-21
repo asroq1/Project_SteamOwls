@@ -109,31 +109,10 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 		<div id="slider">
 
 			<%
-				for (int i = 0; i < 10; i++) {
+				for (int i = 1; i < 10; i++) {
 			%>
 			<div class="slider__item">
 				<!-- 박스 1 -->
-				<div class="review__box">
-					<div class="review__top">
-						<div class="review__title">
-							<%=list.get(i + 1).getReview_subject()%>
-						</div>
-						<div class="review__name">
-							<%=list.get(i + 1).getId()%>
-						</div>
-						<div class="review__star">
-							<span class="star"> <i class="fas fa-star"></i>
-							</span>
-							<%=list.get(i + 1).getReview_star()%>
-						</div>
-					</div>
-					<div class="review__bottom">
-						<%=list.get(i + 1).getReview_content()%>
-					</div>
-				</div>
-				<!-- 박스 1 -->
-				
-				<!-- 박스2 -->
 				<div class="review__box">
 					<div class="review__top">
 						<div class="review__title">
@@ -150,6 +129,27 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 					</div>
 					<div class="review__bottom">
 						<%=list.get(i).getReview_content()%>
+					</div>
+				</div>
+				<!-- 박스 1 -->
+				
+				<!-- 박스2 -->
+				<div class="review__box">
+					<div class="review__top">
+						<div class="review__title">
+							<%=list.get(i- 1).getReview_subject()%>
+						</div>
+						<div class="review__name">
+							<%=list.get(i- 1).getId()%>
+						</div>
+						<div class="review__star">
+							<span class="star"> <i class="fas fa-star"></i>
+							</span>
+							<%=list.get(i -1).getReview_star()%>
+						</div>
+					</div>
+					<div class="review__bottom">
+						<%=list.get(i - 1).getReview_content()%>
 					</div>
 				</div>
 			</div>
