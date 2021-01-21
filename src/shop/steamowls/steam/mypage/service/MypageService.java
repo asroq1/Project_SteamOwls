@@ -293,11 +293,20 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public int getOrderCount() {
+	public int getReviewCount(int member_sq) {
 		MypageDao dao = MypageDao.getInstance();
 		Connection con = getConnection();
 		dao.setConnection(con);
-		int count = dao.getOrderCount();
+		int count = dao.getReviewCount(member_sq);
+		close(con);
+		return count;
+	}
+	
+	public int getBoardCount() {
+		MypageDao dao = MypageDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		int count = dao.getBoardCount();
 		close(con);
 		return count;
 	}

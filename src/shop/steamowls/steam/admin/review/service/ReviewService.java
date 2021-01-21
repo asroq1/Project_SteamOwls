@@ -8,6 +8,7 @@ import static shop.steamowls.common.JdbcUtil.rollback;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.admin.review.dao.ReviewDao;
 import shop.steamowls.steam.admin.review.vo.ReviewVo;
 import shop.steamowls.steam.mypage.dao.MypageDao;
@@ -15,12 +16,12 @@ import shop.steamowls.steam.mypage.vo.MypageVo;
 
 public class ReviewService {
 
-	public ArrayList<ReviewVo> rManage() {
+	public ArrayList<ReviewVo> rManage(Pagenation pagenation) {
 		ReviewDao reviewDao = ReviewDao.getInstance();
 		Connection con = getConnection();
 		reviewDao.setConnection(con);
 		
-		ArrayList<ReviewVo> list = reviewDao.rManage();
+		ArrayList<ReviewVo> list = reviewDao.rManage(pagenation);
 		close(con);
 		return list;
 	}
@@ -51,6 +52,15 @@ public class ReviewService {
 		}
 		close(con);
 		return isSuccess;
+	}
+	
+	public int getReviewCount() {
+		ReviewDao dao = ReviewDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		int count = dao.getReviewCount();
+		close(con);
+		return count;
 	}
 
 }

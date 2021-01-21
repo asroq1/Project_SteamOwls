@@ -32,14 +32,14 @@ public class RmyReviewModifyProc implements Action {
 		String review_content = request.getParameter("review_content");
 		String review_star = request.getParameter("review_star");
 		
-		if(review_sq == null || review_sq.equals(review_sq)) {
+		if(review_sq == null || review_sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
 		
-		if(review_subject == null || review_subject.equals(review_subject)) {
+		if(review_subject == null || review_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('리뷰 제목을 입력해주세요.'); location.href='/mypage/Mmodify';</script>");
@@ -47,7 +47,7 @@ public class RmyReviewModifyProc implements Action {
 			return null;
 		}
 		
-		if(review_content == null || review_content.equals(review_content)) {
+		if(review_content == null || review_content.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('리뷰 내용을 입력해주세요.'); location.href='/mypage/Mmodify';</script>");
@@ -55,7 +55,7 @@ public class RmyReviewModifyProc implements Action {
 			return null;
 		}
 		
-		if(review_star == null || review_star.equals(review_star)) {
+		if(review_star == null || review_star.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('리뷰 별점을 확인해주세요.'); location.href='/mypage/Mmodify';</script>");
@@ -79,7 +79,7 @@ public class RmyReviewModifyProc implements Action {
 		}
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/RmyReviewDetail.jsp");
+		forward.setPath("/mypage/RmyReviewDetail");
 		return forward;
 	}
 }

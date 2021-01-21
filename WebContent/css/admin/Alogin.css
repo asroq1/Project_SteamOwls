@@ -26,6 +26,11 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }
+
+header img{
+	width: 50%;
+    margin-top: 2rem;
+}
 div{
 	padding:0;
 }

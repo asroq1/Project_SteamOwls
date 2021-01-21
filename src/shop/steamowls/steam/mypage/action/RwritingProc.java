@@ -30,7 +30,7 @@ public class RwritingProc implements Action {
 
 		String review_star = request.getParameter("review_star");
 		String review_subject = request.getParameter("review_subject");
-		String review_content = request.getParameter("content");
+		String review_content = request.getParameter("review_content");
 
 		if (review_subject == null || review_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -66,26 +66,7 @@ public class RwritingProc implements Action {
 
 		MypageService svc = new MypageService();
 		
-		String pn = request.getParameter("pn");
-		if (pn == null || pn == "") {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/mypage/RmyReview?pn=1';</script>");
-			out.close();
-			return null;
-		}
-		int page = Integer.parseInt(pn);
-
-
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// 끝 이상으로 넘어가면 마지막 페이지 표시
-		if (page > pagenation.getTotalPageCount()) {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>location.href='/mypage/RmyReview?pn=" + pagenation.getTotalPageCount() + "';</script>");
-			out.close();
-			return null;
-		}
+		
 		
 		if (!svc.rWriting(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -95,13 +76,9 @@ public class RwritingProc implements Action {
 			return null;
 		}
 		
-		ArrayList<MypageVo> list = svc.rMyReview(mypageVo, pagenation);
-		
-		request.setAttribute("pagenation", pagenation);
-		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/RmyReview.jsp");
+		forward.setPath("/mypage/RmyReview");
 		return forward;
 	}
 }

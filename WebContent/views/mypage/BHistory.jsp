@@ -15,7 +15,6 @@
 %>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,13 +24,13 @@
 	<link rel="stylesheet" href="/css/mypage/Bhistory.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
-
 <body>
-	<div id="tt">
 		<header>
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
+	
 		<section>
 			<%
 				for (int i = 0; i < list.size(); i++) {
@@ -79,10 +78,19 @@
 				}
 			%>
 		</section>
+		<footer>
+		<jsp:include page="/views/common/footer.jsp"></jsp:include>
+		</footer>
+	
+<%-- 	 <div>
+		<i class="fas fa-calendar-times"></i>
+		<span>예약된 상품이 없습니다.</span>	
+	
 	</div>
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>
+	 --%>
+		
 </body>
-
 </html>

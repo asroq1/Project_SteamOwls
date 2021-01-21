@@ -1,12 +1,15 @@
+<%@page import="shop.steamowls.common.Pagenation"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.steam.admin.review.vo.ReviewVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+Pagenation pagenation = (Pagenation) request.getAttribute("pagenation");
 	ArrayList<ReviewVo> list = (ArrayList<ReviewVo>) request.getAttribute("list");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
+String pn = request.getParameter("pn");
 %>
 
 <!DOCTYPE html>
@@ -51,5 +54,35 @@ String sq = lm.getMemberSq(session);
 	<%
 	}
 	%>
+	
+	<div>
+		<%
+		if (pagenation.getStartPageNumber() != 1) {
+		%>
+		<a href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+		<%
+		}
+		%>
+		<%
+		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
+			if (i != Integer.parseInt(pn)) {
+		%>
+		<a href="/admin/Qmanage?pn=<%=i%>"><%=i%></a>
+		<%
+		} else {
+		%>
+		<%=i%>
+		<%
+		}
+		}
+		%>
+		<%
+		if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
+		%>
+		<a href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+		<%
+		}
+		%>
+	</div>
 </body>
 </html>
