@@ -140,11 +140,12 @@ text-weight:bold;
     padding-right: 5px;
 }
 
-.information__bar {
+#information__bar {
     margin-top: 1.5em;
-    font-size: 1.000em;
+    padding: 0;
+    font-size: 1em;
 }
-.information__bar a{
+#information__bar a{
    color: #0071c2;
 }
 

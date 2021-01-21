@@ -1,92 +1,169 @@
 @charset "UTF-8";
+
+@charset "UTF-8";
+
 :root {
-    /* Color */
-    --white--color: #fff;
-    --black--color: #140a00;
-    --blue--color: #045fd4;
-    --red--color: #ff0000;
-    --grey--dark--color: #909090;
-    --grey--light--color: #e0e0e0;
-    --green--deep--color: #439889;
-    --green--light--color: #e0f2f1;
-    --green--hard-color: #003d33;
-    --theme-color: #ed6174;
-    --background-color:#e9ecea;
-   
-    /* Size */
-    --padding: 12px;
-    --avatar--size: 36px;
-
-    /* Font Size */
-    --font-large: 18px;
-    --font-medium: 14px;
-    --font-small: 12px;
-    --font-micro: 10px;
-
+	/* Color */
+	- -white--color: #fff;
+	- -black--color: #140a00;
+	- -blue--color: #045fd4;
+	- -red--color: #ff0000;
+	- -grey--dark--color: #909090;
+	- -grey--light--color: #e0e0e0;
+	- -green--deep--color: #439889;
+	- -green--light--color: #e0f2f1;
+	- -green--hard-color: #003d33;
+	- -theme-color: #ed6174;
+	- -background-color: #e9ecea;
+	/* Size */
+	- -padding: 12px;
+	- -avatar--size: 36px;
+	/* Font Size */
+	- -font-large: 18px;
+	- -font-medium: 14px;
+	- -font-small: 12px;
+	- -font-micro: 10px;
+}
+	ul{
+	list-style: none;
+	} 
+body {
+	font-family: 'Nanum Gothic', sans-serif;
 }
 
-a{
-    color: var(--black--color);
-}
-section{
-    margin: auto;
-    width: 70%;
-}
-.form__container{
-display:inline-block;
-width : 70%;
-height : 15em;
-border-top: 1px solid var(--grey--light--color);
-border-bottom: 1px solid var(--grey--light--color);
-}
-.booking__Form{
-    display: inline-flex;
-    width : 80%;
-    height : 100%; 
-    justify-content: space-around;
-}
-.booking__confirm{
-	position : absolute;
-	display : inline-flex;
-	flex-direction: column;
-	justify-content:center;
-	width: 12%;
-	height : 15em;
-	margin-left: 4em;
-}
-.confirm__add,
-.confirm__delete
-{	
-	height: 3em;
-	margin: 6px;
- 	text-align: center; 
-	background-color: var(--theme-color);
-	color: var(--white--color);
-	border-radius: 6px;
-	font-weight: bold;
-}
-.booking_img{
-    position: relative;
-    width: 30%;
-    height: 100%;
-}
-.booking_img img{
-    position: absolute;
+header {
 	width: 100%;
-	height:90%;
-	margin-top: 1em;
-	align-items: center;
+	margin: 0 auto;
+}
+
+section{
+	height: 100vh;
+}
+article {
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}
+
+.form_img img {
+	width: 350px;
+	height: 200px;
 	border-radius: 5px;
 }
-.title__top{
-    display: flex;
-    flex-direction : column;
-    justify-content: space-evenly;
+
+.booking_container {
+	display: inline-flex;
+	width: 100%;
+	height: 15em;
+	margin-top: 48px;
+	padding: 1em;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.30), 0 2px 2px rgba(0, 0, 0, 0.20);
+	border-radius: 12px;
 }
-.booking_bottom{
-    display: flex;
+
+.form_top {
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-left: 16px;
+}
+
+.form_bottom {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding-left: 12px;
+}
+
+.bottom_text {
+	display: flex;
+	flex-direction: column;
+}
+
+.confirm__add,
+.confirm__delete {
+	width: 80%; 
+	padding: 10px 20px 10px 20px;
+	background-color: var(--theme-color);
+	color: var(--white--color);
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.booking_btn:hover {
+	background-color: #ec407a;
+	font-weight: bold;
+}
+
+.form_intro,
+.people_intro {
+	color: var(- -grey--dark--color);
+}
+
+.form_price {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+	.booking_container {
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		margin-top: 48px;
+		border-top: 1px solid var(- -grey--dark--color);
+		border-bottom: 1px solid var(- -grey--dark--color);
+		padding: 1em;
+	} 
+
+	.form_img img {
+		width: 100%;
+		height: 100%;
+		border-radius: 5px;
+		margin: auto;
+	}
+
+	.form_bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.form_top h3 {
+		padding: 12px;
+	}
+
+	.form_top p {
+		padding: 12px;
+	}
+
+	.form_bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: unset;
+		justify-content: space-around;
+
+	}
+
+	.booking_btn {
+		width: 100%;
+	}
+
+	.bottom_text {
+		padding-left: 12px;
+	}
+
+	#ckpoint {
+		text-align: center;
+		padding: 1em;
+	}
 	
-}
-.booking_info{
-    margin-left: 3em;
+
+
 }

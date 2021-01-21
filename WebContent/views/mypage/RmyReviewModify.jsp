@@ -23,11 +23,11 @@ String sq = lm.getMemberSq(session);
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
 		<section>
-			<form action="/mypage/RmyReviewModifyProc?board_sq=<%=mypageVo.getReview_sq() %>" method="post" id="editorForm">
+			<form action="/mypage/RmyReviewModifyProc?review_sq=<%=mypageVo.getReview_sq() %>" method="post" id="editorForm">
 				<div class="review__container">
 				<div class="review__title">
 					<h3>제목</h3>
-					<input type="text" class="review__text" name="board_subject" value="<%=mypageVo.getReview_subject()%>" />
+					<input type="text" class="review__text" name="review_subject" value="<%=mypageVo.getReview_subject()%>" />
 					
 				</div>
 				<div class="review__content">

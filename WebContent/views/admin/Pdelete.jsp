@@ -35,7 +35,6 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
 	</nav>
-	<h1>상품 관리</h1>
 	<%
 		for (int i = 0; i < list.size(); i++) { 
 	%>
@@ -47,41 +46,29 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<%
 		} else {
 	%>
-
-	<section>
-		<h1>상품삭제</h1>
-		<form class="form__container" method="post" id="ckpoint">
-			<div class="booking__Form">
-
-				<div class="booking_img">
-					<%=list.get(i).getProduct_image()%>
-				</div>
-				<div class="title__top">
-					<div class="booking__title">
-						<h3>
-							<%=list.get(i).getProduct_name()%>
-						</h3>
-					</div>
-					<div class="booking_bottom">
-						<div class="booking__intro">
-							<p>
-								<%=list.get(i).getProduct_detail()%>
-							</p>
-						</div>
-						<div class="booking_info">
-							<p>
-								<%= won.format(list.get(i).getProduct_price())%>원
-							</p>
-						</div>
-					</div>
-				</div>
-
+	<article>
+		<div class="booking_container">
+			<div class="form_img">
+				<img alt="" src="/css/picture/Spa.png">
+				<%=list.get(i). getProduct_imagePath()%>
 			</div>
-		</form>
-		<div class="booking__confirm" >
-			<button class="confirm__add" onclick="Pdelete(<%=list.get(i).getProduct_sq()%>)">상품삭제</button>
+			<div class="form_top">
+				<h3><%=list.get(i).getProduct_name()%></h3>
+				<p class="form_intro">
+					<%=list.get(i).getProduct_detail()%>
+				</p>
+			</div>
+			<div class="form_bottom">
+				<div class="bottom_text">
+					<span class="form_price">
+					<p><%= won.format(list.get(i).getProduct_price())%>원</p>
+					</span>
+				</div>
+					<button class="confirm__add" onclick="Pdelete(<%=list.get(i).getProduct_sq()%>)">상품삭제</button>
+				</form>
+			</div>
 		</div>
-	</section>
+	</article>
 	<%
 		} 
 	%>

@@ -60,10 +60,30 @@
     justify-content: center;
     margin-top: 1.5em;
 }
+
+.modify__form{
+	display: flex;
+    width: 25%;
+    justify-content: space-around;
+    margin : 0 auto;
+    margin-top: 1.5em;
+}
+.modify__form a{
+	color: #484848;
+}
+
+}
 .signup__form a{
-	color: var(--grey--dark--color);
-    font-size: 0.8em;
-    margin-left: 1em;
-    margin-right: 1em;
+	color:  #0071c2;
+	font-size: 1rem;
+}
+
+
+@media screen and (max-width: 768px){
+	
+
+    .modify__form{
+     	width: 90%;
+    }
 }
 

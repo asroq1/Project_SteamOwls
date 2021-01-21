@@ -36,7 +36,7 @@ header {
 	z-index: 112;
 }
 	
-	a{
+a{
 
     text-decoration: none;
 }
@@ -60,9 +60,13 @@ ul,li{
     z-index: 1;
 }
 
+.desktop__header a{
+	width: 15%;
+}
+
 .desktop__header img{
-	width: 40%;
-    padding: 20px 0 20px 0;
+	width: 100%;
+    padding: 10px 0 10px 0;
 }
 
 .header__form{
@@ -87,15 +91,17 @@ ul,li{
 	}
 	
 	.mobile__header a{
-		width: 90%;
+		width: 38%;
+		margin-left: 1rem;
 	}
 	.mobile__header img {
-		width: 50%;
+		width: 100%;
 	}
+	
 	
 	.toggle_btn.active {
         -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
+/*         -ms-transform: rotate(90deg); */
         -o-transform: rotate(90deg);
         transform: rotate(90deg);
     }
@@ -161,7 +167,7 @@ ul,li{
 .mobile__header{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     position : sticky;
     top: 0; 
     background-color : var(--white--color);
@@ -179,7 +185,14 @@ button:focus
 .signForm a{
     padding: 10px;
 }
+
+.toggle_btn{
+	margin-right: 2rem;
+}
+
+}
 .toggle_btn i{
+	margin-right: 2.5rem;
     font-size: 1.5em;
     color: var(--theme-color);
     cursor: pointer;

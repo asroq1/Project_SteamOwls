@@ -1,3 +1,4 @@
+<%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.common.Pagenation"%>
 <%@page import="shop.steamowls.steam.mypage.vo.BoardVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -5,6 +6,8 @@
 	pageEncoding="UTF-8"%>
 
 <%
+LoginManager lm = LoginManager.getInstance();
+String sq = lm.getMemberSq(session);
 ArrayList<BoardVo> list = (ArrayList<BoardVo>) request.getAttribute("list");
 BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
 Pagenation pagenation = (Pagenation) request.getAttribute("pagenation");

@@ -21,22 +21,16 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Owls</title>
-<link href="/css/picture/icons8_owl.ico" rel="shortcut icon"
-	type="image/x-icon">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-<link rel="stylesheet" type="text/css"
-	href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
 <link rel="stylesheet" href="/css/home/index.css">
 <link rel="stylesheet" href="/css/agreement.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" href="/css/mypage/Rwriting.css">
-<link
-	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-	rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js" defer></script>
 <script src="/js/common/calendar.js" defer></script>
 <script src="/js/agreement/agree.js" defer></script>
 <script src="/js/home/index.js" defer></script>
@@ -93,10 +87,6 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 				<i class="fas fa-search"></i>
 			</button>
 		</form>
-		<div class="main__intro">
-			<!--   <h1>Premium Spa</h1>
-            <p>오직 한 사람만을 위한 특별한 스파 </p> -->
-		</div>
 		<div class="img__container">
 			<img src="/css/picture/Spa.png" alt="main">
 		</div>
@@ -106,6 +96,10 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	%>
 
 	<section>
+		<div class="intro__container">
+				<h1>호랑나비야</h1>
+				<h1>날아라</h1>
+		</div>
 		<div id="slider">
 
 			<%

@@ -42,7 +42,7 @@
 	            <button type="submit">수정하기</button>
 	        </form>
 	        <article>
-	            <div class="signup__form">
+	            <div class="modify__form">
 	                <a href="#" onclick="createFeed()"class="agreement">이용안내</a>
 	                <a href="#" onclick="createFeed()"class="agreement">개인정보방침</a>
 	                <a href="#" onclick="createFeed()"class="agreement">제휴문의</a>

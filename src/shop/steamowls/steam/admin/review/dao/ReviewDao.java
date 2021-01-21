@@ -127,7 +127,7 @@ public class ReviewDao {
 	}
 	
 	public int getReviewCount() {
-		PreparedStatement pstmt = null; // Äõ¸®¹® ÀÛ¼ºÇÒ ¸Þ¼Òµå
+		PreparedStatement pstmt = null; // ì¿¼ë¦¬ë¬¸ ìž‘ì„±í•  ë©”ì†Œë“œ
 		ResultSet rs = null;
 		int count = 0;
 		try {
