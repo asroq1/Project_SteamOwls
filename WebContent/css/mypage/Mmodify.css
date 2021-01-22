@@ -84,10 +84,23 @@ body{
     margin: 12px 12px;
 }
 
+.signup__form{
+	width: 25%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.agreement{
+	color: 484848;
+}
 @media screen and (max-width: 768px){
 	
 	#checkPoint button,
     #checkPoint input {
     	width: 50%;	
+	}	
+    
 }
 

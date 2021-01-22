@@ -21,22 +21,16 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Owls</title>
-<link href="/css/picture/icons8_owl.ico" rel="shortcut icon"
-	type="image/x-icon">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-<link rel="stylesheet" type="text/css"
-	href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
 <link rel="stylesheet" href="/css/home/index.css">
 <link rel="stylesheet" href="/css/agreement.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" href="/css/mypage/Rwriting.css">
-<link
-	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-	rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js" defer></script>
 <script src="/js/common/calendar.js" defer></script>
 <script src="/js/agreement/agree.js" defer></script>
 <script src="/js/home/index.js" defer></script>
@@ -93,10 +87,6 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 				<i class="fas fa-search"></i>
 			</button>
 		</form>
-		<div class="main__intro">
-			<!--   <h1>Premium Spa</h1>
-            <p>오직 한 사람만을 위한 특별한 스파 </p> -->
-		</div>
 		<div class="img__container">
 			<img src="/css/picture/Spa.png" alt="main">
 		</div>
@@ -106,10 +96,14 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	%>
 
 	<section>
+		<div class="intro__container">
+				<h1>수백만 명에 이르는 아울스 커뮤니티의 일원이 되어보세요.</h1>
+				
+		</div>
 		<div id="slider">
 
 			<%
-				for (int i = 1; i < 10; i++) {
+				for (int i = 1; i < list.size(); i++) {
 			%>
 			<div class="slider__item">
 				<!-- 박스 1 -->
@@ -137,19 +131,19 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 				<div class="review__box">
 					<div class="review__top">
 						<div class="review__title">
-							<%=list.get(i- 1).getReview_subject()%>
+							<%=list.get(i-1).getReview_subject()%>
 						</div>
 						<div class="review__name">
-							<%=list.get(i- 1).getId()%>
+							<%=list.get(i-1).getId()%>
 						</div>
 						<div class="review__star">
 							<span class="star"> <i class="fas fa-star"></i>
 							</span>
-							<%=list.get(i -1).getReview_star()%>
+							<%=list.get(i-1).getReview_star()%>
 						</div>
 					</div>
 					<div class="review__bottom">
-						<%=list.get(i - 1).getReview_content()%>
+						<%=list.get(i-1).getReview_content()%>
 					</div>
 				</div>
 			</div>

@@ -14,8 +14,8 @@ public class AdminVo {
 	private String product_detail;
 	private String file_path;
 	private String thumbnail_path;
-	
-	
+	private String admin_id;
+	private String admin_pw;
 
 	/**
 	 * @return the sq
@@ -184,5 +184,35 @@ public class AdminVo {
 	public void setThumbnail_path(String thumbnail_path) {
 		this.thumbnail_path = thumbnail_path;
 	}
+
+	/**
+	 * @return the admin_id
+	 */
+	public String getAdmin_id() {
+		return admin_id;
+	}
+
+	/**
+	 * @param admin_id the admin_id to set
+	 */
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
+	}
+
+	/**
+	 * @return the admin_pw
+	 */
+	public String getAdmin_pw() {
+		return admin_pw;
+	}
+
+	/**
+	 * @param admin_pw the admin_pw to set
+	 */
+	public void setAdmin_pw(String admin_pw) {
+		this.admin_pw = admin_pw;
+	}
+	
+	
 
 }

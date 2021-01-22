@@ -15,7 +15,7 @@
 </head>
 <body>
 		<div class="desktop__header">
-			<a href="/">
+		<a href="/">
 			<img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 		<ul class="header__form">

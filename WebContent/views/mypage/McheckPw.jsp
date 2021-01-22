@@ -30,11 +30,6 @@
             <button type="submit">확인</button>
         </form>
     </section>
-    <article>
-        <div class="signup__form">
-            <jsp:include page="/views/common/footer-middle.jsp"></jsp:include>
-        </div>
-    </article>
 </body>
 
 </html>

@@ -37,7 +37,31 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
-	<section>
+	<article>
+		<div class="booking_container">
+			<div class="form_img">
+				<img alt="" src="/css/picture/Spa.png">
+				<%=list.get(i). getProduct_imagePath()%>
+			</div>
+			<div class="form_top">
+				<h3><%=list.get(i).getProduct_name()%></h3>
+				<p class="form_intro">
+					<%=list.get(i).getProduct_detail()%>
+				</p>
+			</div>
+			<div class="form_bottom">
+				<div class="bottom_text">
+					<span class="form_price">
+					<p><%= won.format(list.get(i).getProduct_price())%>원</p>
+					</span>
+				</div>
+					<button class="confirm__add" type="button"  onclick="selling(<%=list.get(i).getProduct_sq()%>)">상품판매</button>
+				<button class="confirm__delete" type="button" onclick="stopSelling(<%=list.get(i).getProduct_sq()%>)">판매중지</button>
+				</form>
+			</div>
+		</div>
+	</article>
+	<%-- <section>
 		<h1>상품 관리</h1>
 		<form
 			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
@@ -74,7 +98,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 				<button class="confirm__delete" type="button" onclick="stopSelling(<%=list.get(i).getProduct_sq()%>)">판매중지</button>
 			</div>
 		</form>
-	</section>
+	</section> --%>
 	<%
 		}
 	%>

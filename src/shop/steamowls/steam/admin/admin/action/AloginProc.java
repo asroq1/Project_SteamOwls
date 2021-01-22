@@ -19,14 +19,6 @@ public class AloginProc implements Action {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 
-//		if (RegExp.isEmpty(id) || RegExp.isEmpty(pw)) {
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.print("<script>alert('잘못된 접근입니다..'); location.href='/';</script>");
-//			out.close();
-//			return null;
-//		}
-
 		AdminService svc = new AdminService();
 
 		AdminVo adminVo = new AdminVo();

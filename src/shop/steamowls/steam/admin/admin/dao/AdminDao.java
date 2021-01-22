@@ -35,7 +35,7 @@ public class AdminDao {
 		AdminVo vo = null;
 
 		try {
-			pstmt = con.prepareStatement("select sq, id, pw from owls_mber_tb where id = ? and del_fl = 0 and admin_fl = 1");
+			pstmt = con.prepareStatement("select B.sq, B.id, B.pw from (owls_admin_tb A, owls_mber_tb B) where A.member_sq = B.sq and B.id = ? and A.admin_fl = 1");
 			pstmt.setString(1, adminVo.getId());
 
 			rs = pstmt.executeQuery();

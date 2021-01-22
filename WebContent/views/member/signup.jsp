@@ -11,9 +11,7 @@
 <link rel="stylesheet" href="/css/member/signup.css" type="text/css"></link>
 <link rel="stylesheet" href="/css/agreement-middle.css" type="text/css"></link>
 <script src="/js/ajax/ajaxID.js" type="text/javascript" defer></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"
-	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-	crossorigin="anonymous" defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" defer></script>
 
 </head>
 
@@ -55,7 +53,7 @@
 						<option value="여">여성</option>
 					</select>
 				</div>
-				<div class="signup__agree">
+				<div class="signup__agree" id="signup__box">
 					<div class="agree__container">
 						<div>
 							<p class="agree__text">개인정보동의(필수)</p>
@@ -82,13 +80,15 @@
 			</div>
 	</section>
 	<footer>
-		<span class="signup__form">
-			로그인하거나 회원으로 가입하시면 당사
-			<a href="#" class="agreement"onclick="createFeed()">이용약관</a>
-			 및
-			<a href="#" onclick="createFeed()"class="agreement">개인정보 보호정책</a>
-			 <p>에 동의하시는 것으로 간주됩니다.</p>
-		</span>
+		<div class="signup__form">
+			<p class="agreement">로그인하거나 회원으로 가입하시면 당사</p>
+			<span>
+				<a href="#" class="agreement__text"onclick="createFeed()">이용약관</a>
+			 	및
+			 	<a href="#" class="agreement__text" onclick="createFeed()">개인정보 보호정책</a>에
+			</span>
+			 <p class="agreement">동의하시는 것으로 간주됩니다.</p>
+		</div>
 	</footer>
 	<script src="/js/agreement/agree.js" type="text/javascript"></script>
 	<script src="/js/member/signup.js" type="text/javascript"></script>
