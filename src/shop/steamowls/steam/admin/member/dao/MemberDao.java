@@ -39,10 +39,11 @@ public class MemberDao {
 		ArrayList<MemberVo> list = new ArrayList<>();
 
 		try {
-			pstmt = con.prepareStatement(
-					"select sq, id, name, tel, gender"
-					+ " from owls_mber_tb"
-					+ " where del_fl = 0");
+			pstmt = con.prepareStatement(""
+					+ "select * from owls_mber_tb"
+					+ " where del_fl = 0"
+					+ " ORDER BY sq asc LIMIT ?,?");
+
 			pstmt.setInt(1, pagenation.getStartArticleNumber());
 			pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
 			

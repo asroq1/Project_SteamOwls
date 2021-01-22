@@ -30,7 +30,7 @@ String pn = request.getParameter("pn");
     <nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
 	</nav>
-	<%
+<%-- 	<%
 	for (int i = 0; i < list.size(); i++) {
 	%>
 	<tr>
@@ -42,7 +42,7 @@ String pn = request.getParameter("pn");
 	</tr>
 	<%
 	}
-	%>
+	%> --%>
 	
 		 <table>
 			<tr class="category">
@@ -50,7 +50,7 @@ String pn = request.getParameter("pn");
 				<th class="category__sub">아이디</th>
 				<th class="category__id">이름</th>
 				<th class="category__time">전화번호</th>
-				<th>성별</th>
+				<th class="category__gender">성별</th>
 			</tr>
 			<%
 	for (int i = 0; i < list.size(); i++) {
@@ -58,6 +58,7 @@ String pn = request.getParameter("pn");
 				<tr class="category__data">
 					<td><%=list.get(i).getSq()%></td>
 					<td><a href="/admin/Mdetail?review_sq=<%=list.get(i).getSq()%>"><%=list.get(i).getId()%></a></td>
+					<td><%=list.get(i).getName()%></td>
 					<td><%=list.get(i).getTel()%></td>
 					<td><%=list.get(i).getGender()%></td>
 				</tr>
@@ -70,7 +71,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getStartPageNumber() != 1) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+			href="/admin/Mmanage?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
 		<%
 			}
 		%>
@@ -78,7 +79,7 @@ String pn = request.getParameter("pn");
 			for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
 			if (i != Integer.parseInt(pn)) {
 		%>
-		<a href="/mypage/RmyReview?pn=<%=i%>"><%=i%></a>
+		<a href="/admin/Mmanage?pn=<%=i%>"><%=i%></a>
 		<%
 			} else {
 		%>
@@ -91,7 +92,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+			href="/admin/Mmanage?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
 		<%
 			}
 		%>
