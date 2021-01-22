@@ -66,7 +66,7 @@ public class Mmodify implements Action {
 		}
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/Mdetail.jsp");
+		forward.setPath("/views/mypage/gotoMypage.jsp");
 		return forward;
 	}
 }

@@ -61,20 +61,30 @@ public class MypageService {
 		close(con);
 		return vo;
 	}
-	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
+
+	public ArrayList<BookingVo> bHistory(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BookingVo> list = mypageDao.bDetail(bookingVo);
+		ArrayList<BookingVo> list = mypageDao.bHistory(bookingVo);
 		close(con);
 		return list;
 	}
-	public boolean bCancel(int booking_sq) {
+	public BookingVo bCancel(BookingVo bookingVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BookingVo vo = mypageDao.bCancel(bookingVo);
+		close(con);
+		return vo;
+	}
+
+	public boolean bCancelProc(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
 
-		int count = mypageDao.bCancel(booking_sq);
+		int count = mypageDao.bCancelProc(booking_sq);
 		boolean isSuccess = false;
 		if (count > 0) {
 			commit(con);
@@ -300,5 +310,4 @@ public class MypageService {
 		close(con);
 		return count;
 	}
-	
 }

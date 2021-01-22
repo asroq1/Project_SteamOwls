@@ -65,10 +65,7 @@ address {
 }
 
 table {
-  margin : 0 auto;
-  margin-top : 10vh;
   border-collapse: collapse;
-  text-align: center;
 }
 
 button {
@@ -77,7 +74,8 @@ button {
 }
 
 #boxalign {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -99,7 +97,10 @@ h3 {
   text-align: center;
 }
 
-
+table {
+  margin: 1em;
+  text-align: center;
+}
 
 td{
 	 padding: 10px 0 10px 0;
@@ -130,6 +131,20 @@ td{
  border-bottom: 1px solid var(--grey--light--color);
 }
 
+.btn__container{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.btn__container a{
+	
+	margin: 0 6px 0 6px;
+    padding: 12px;
+    border-radius: 4px;
+    color: var(--white--color);
+    background-color: var(--theme-color);
+}
+
 .pagination__container{
 	display: flex;
     justify-content: space-evenly;
@@ -138,8 +153,17 @@ td{
 }
 
 @media screen and (max-width : 768px){
-	table{
+	
+table{
 	width: 90%;
 	}
-}
+	
+.btn__container a{
+	padding: 6px;
+}	
 
+.btn__container{
+    margin: 12px 0 12px 0;
+}
+	
+}

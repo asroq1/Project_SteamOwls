@@ -59,6 +59,11 @@ header {
     height: 60px;
   	align-items:center;
 }
+
+header img{
+	width: 50%;
+    margin-top: 2rem;
+}
 #id,
 #pw{
 	padding-left: 15px;

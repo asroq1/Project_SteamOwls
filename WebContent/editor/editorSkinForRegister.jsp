@@ -5,8 +5,8 @@
 
 <script>
     // 에디터
-    var cn_wi = 1500;
-    var cn_hi = 500;
+    var cn_wi = 1200;
+    var cn_hi = 300;
     if (window.innerWidth <= 400) {
         cn_wi = 400;
         cn_hi = 330;

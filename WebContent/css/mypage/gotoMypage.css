@@ -27,6 +27,7 @@
     --font-micro: 10px;
 
 }
+
 ul{
 	list-style: none;
 	}
@@ -71,11 +72,11 @@ section{
 }
 
 .info-box a{
-    padding: 0.5em;
+	padding-left: 2em;
 }
 
 .info-box i{
-    font-size: 2em;
+    font-size: 1.5em;
     color: #484848;
 }
 .info-box ul{
@@ -85,13 +86,20 @@ section{
 
 @media screen and (max-width: 768px) {
      .info-container1{
-        width: 90%;
+        width: 100%;
     }
     
     .info-container2{
         width: 90%;
     }
-    
+ 	
+ 	.info-box{
+ 		height: 20vh;
+ 		text-align: center;
+ 	}   
+ 	.info-box a{
+ 		padding-left: 0;
+ 	}
     .info-box h1{
 		padding-left: 0px;
     	font-size: 1.1em;

@@ -56,6 +56,11 @@ a {
     color: var(--black--color);
 }
 
+header img{
+	width: 12%;
+    margin-top: 2rem;
+}
+
 .header__logo {
     font-size: 3.000em;
 }
@@ -188,6 +193,11 @@ a {
 }
 
 @media screen and (max-width : 768px){
+		header img{
+	width: 50%;
+
+}
+
 	 .signup__form{
 		width: 80%;
 	}

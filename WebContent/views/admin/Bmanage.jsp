@@ -35,19 +35,17 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<h1>예약 관리</h1>
+	<section>
 	<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
-				<input type="text" class="form_input" id="basicDate"
-					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
-					type="text" class="form_input" id="basicTime" placeholder="예약시간"
-					name="booking_start" data-input>
+				<input type="text" class="form_input" id="basicDate" placeholder="예약날짜" name="booking_date" data-input>
 				<button type="submit" class="form_input form_submit">
 					<i class="fas fa-search"></i>
 				</button>
 			</form>
 		</div>
+	
 	</article>
 	<%
 		for (int i = 0; i < list.size(); i++) {
@@ -94,10 +92,12 @@ DecimalFormat won = new DecimalFormat("###,###");
 				<a id="cancel__btn" href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
 			</div>
 		</div>
-	</article>
-	<%
+		<%
 		}
-	%>
+		%>
+	</article>
+	</section>
+
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

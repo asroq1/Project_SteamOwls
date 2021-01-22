@@ -110,7 +110,7 @@ public class MypageDao {
 		return vo;
 	}
 
-	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
+	public ArrayList<BookingVo> bHistory(BookingVo bookingVo) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
@@ -144,7 +144,37 @@ public class MypageDao {
 		return list;
 	}
 
-	public int bCancel(int booking_sq) {
+	public BookingVo bCancel(BookingVo bookingVo) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookingVo vo = null;
+
+		try {
+			pstmt = con.prepareStatement("select * from (owls_booking_tb A, owls_product_tb B) "
+					+ "where A.product_sq = B.product_sq and A.booking_sq = ? and A.booking_fl = 1 ");
+			pstmt.setInt(1, bookingVo.getBooking_sq());
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new BookingVo();
+				vo.setBooking_sq(rs.getInt("booking_sq"));
+				vo.setProduct_name(rs.getString("product_name"));
+				vo.setBooking_people(rs.getInt("booking_people"));
+				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setBooking_date(rs.getString("Booking_date"));
+				vo.setBooking_start(rs.getString("Booking_start"));
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return vo;
+	}
+
+	public int bCancelProc(int booking_sq) {
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
@@ -204,10 +234,11 @@ public BoardVo qDetail(String board_sq) {
 
 		try {
 			pstmt = con.prepareStatement(
-					"select obt.*, omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?, ?");
-			pstmt.setInt(1, pagenation.getStartArticleNumber());	
+					"select obt.board_sq, obt.board_subject, obt.board_content, obt.board_address, obt.member_sq, date_format(obt.board_dttm, '%Y-%m-%d %H:%i') as board_dttm," + 
+					" omt.id from owls_board_tb obt INNER JOIN owls_mber_tb omt on obt.member_sq=omt.sq where obt.board_del_fl = false order by obt.board_sq desc limit ?,?");
+			pstmt.setInt(1, pagenation.getStartArticleNumber());
 			pstmt.setInt(2, pagenation.getARTICLE_COUNT_PER_PAGE());
-			
+
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BoardVo vo = new BoardVo();
