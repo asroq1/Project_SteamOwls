@@ -97,13 +97,13 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 
 	<section>
 		<div class="intro__container">
-				<h1>호랑나비야</h1>
-				<h1>날아라</h1>
+				<h1>수백만 명에 이르는 아울스 커뮤니티의 일원이 되어보세요.</h1>
+				
 		</div>
 		<div id="slider">
 
 			<%
-				for (int i = 1; i < 10; i++) {
+				for (int i = 1; i < list.size(); i++) {
 			%>
 			<div class="slider__item">
 				<!-- 박스 1 -->
@@ -131,19 +131,19 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 				<div class="review__box">
 					<div class="review__top">
 						<div class="review__title">
-							<%=list.get(i- 1).getReview_subject()%>
+							<%=list.get(i-1).getReview_subject()%>
 						</div>
 						<div class="review__name">
-							<%=list.get(i- 1).getId()%>
+							<%=list.get(i-1).getId()%>
 						</div>
 						<div class="review__star">
 							<span class="star"> <i class="fas fa-star"></i>
 							</span>
-							<%=list.get(i -1).getReview_star()%>
+							<%=list.get(i-1).getReview_star()%>
 						</div>
 					</div>
 					<div class="review__bottom">
-						<%=list.get(i - 1).getReview_content()%>
+						<%=list.get(i-1).getReview_content()%>
 					</div>
 				</div>
 			</div>

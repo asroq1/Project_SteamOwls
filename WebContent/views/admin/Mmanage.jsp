@@ -5,11 +5,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-	ArrayList<MemberVo> list = (ArrayList<MemberVo>) request.getAttribute("list");
+<%
+ArrayList<MemberVo> list = (ArrayList<MemberVo>) request.getAttribute("list");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
-ArrayList<BoardVo> BoardList = (ArrayList<BoardVo>) request.getAttribute("list");
 BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
 Pagenation pagenation = (Pagenation) request.getAttribute("pagenation");
 String pn = request.getParameter("pn");
@@ -30,9 +29,9 @@ String pn = request.getParameter("pn");
 	</header>
     <nav role="navigation">
 		 <jsp:include page="/views/common/admin-nav.jsp"></jsp:include>	
-	</nav>
+	</nav> 
 	
-<%-- 	<h1>회원목록</h1>
+		<h1>회원목록</h1>
 	<br>
 	<div>
 		<tr>
@@ -59,9 +58,9 @@ String pn = request.getParameter("pn");
 	</tr>
 	<%
 	}
-	%> --%>
+	%>
 	
-		<table>
+		 <table>
 
 			<tr class="category">
 				<th class="category__no">문의번호</th>
@@ -108,7 +107,7 @@ String pn = request.getParameter("pn");
 
 			<%
 				}
-			%>
+			%> 
 </body>
 
 </html>
