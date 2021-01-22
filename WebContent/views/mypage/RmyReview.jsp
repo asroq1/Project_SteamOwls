@@ -29,7 +29,7 @@ String sq = lm.getMemberSq(session);
 
 	
 	<tr class="category">
-		<th class="category__no">리뷰번호</th>
+		<th class="category__no">No</th>
 		<th class="category__sub">제목</th>
 		<th class="category__id">작성자</th>
 		<th class="category__time">날짜</th>

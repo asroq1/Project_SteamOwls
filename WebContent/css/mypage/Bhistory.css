@@ -120,7 +120,7 @@ section {
 	/* 추후 삭제 코드 */
 	.booking__img img {
 		width: 100%;
-	}
+	} 
 
 	.booking__top,
 	.booking__bottom {
@@ -151,6 +151,11 @@ section {
 	.btn__container {
 		width: 50%;
 		margin: auto;
+	}
+	
+	article {
+    width: 90%;
+	
 	}
 	
 }

@@ -17,23 +17,23 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 <html lang="ko">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Owls</title>
-<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
-<link rel="stylesheet" href="/css/home/index.css">
-<link rel="stylesheet" href="/css/agreement.css">
-<link rel="stylesheet" href="/css/base.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="/css/mypage/Rwriting.css">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js" defer></script>
-<script src="/js/common/calendar.js" defer></script>
-<script src="/js/agreement/agree.js" defer></script>
-<script src="/js/home/index.js" defer></script>
+	<title>Owls</title>
+	<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+	<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+	<link rel="stylesheet" href="/css/home/index.css">
+	<link rel="stylesheet" href="/css/agreement.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="/css/mypage/Rwriting.css">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js" defer></script>
+	<script src="/js/common/calendar.js" defer></script>
+	<script src="/js/agreement/agree.js" defer></script>
+	<script src="/js/home/index.js" defer></script>
 </head>
 
 <body>
@@ -45,11 +45,9 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	</header>
 	<section>
 		<form action="/booking/Blist" id="ckpoint" method="get">
-			<input type="text" class="form_input" id="basicDate"
-				placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
-				type="text" class="form_input" id="basicTime" placeholder="예약시간"
-				name="booking_start" data-input> <select
-				class="form_input input__btn" name="booking_people">
+			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date"
+				data-input> <input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start"
+				data-input> <select class="form_input input__btn" name="booking_people">
 				<option class="form_input" value="1">1명</option>
 				<option class="form_input" value="2">2명</option>
 				<option class="form_input" value="3">3명</option>
@@ -73,11 +71,9 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	`
 	<section>
 		<form action="/booking/Blist" id="ckpoint" method="get">
-			<input type="text" class="form_input" id="basicDate"
-				placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
-				type="text" class="form_input" id="basicTime" placeholder="예약시간"
-				name="booking_start" data-input> <select
-				class="form_input input__btn" name="booking_people">
+			<input type="text" class="form_input" id="basicDate" placeholder="언제가 편하신가요?" name="booking_date"
+				data-input> <input type="text" class="form_input" id="basicTime" placeholder="예약시간" name="booking_start"
+				data-input> <select class="form_input input__btn" name="booking_people">
 				<option class="form_input" value="1">1명</option>
 				<option class="form_input" value="2">2명</option>
 				<option class="form_input" value="3">3명</option>
@@ -97,8 +93,8 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 
 	<section>
 		<div class="intro__container">
-				<h1>수백만 명에 이르는 아울스 커뮤니티의 일원이 되어보세요.</h1>
-				
+			<h1 class="slider__intro">수백만 명에 이르는 아울스 회원의 리뷰어가 되어보세요.</h1>
+
 		</div>
 		<div id="slider">
 
@@ -126,7 +122,7 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 					</div>
 				</div>
 				<!-- 박스 1 -->
-				
+
 				<!-- 박스2 -->
 				<div class="review__box">
 					<div class="review__top">
@@ -152,8 +148,9 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 		</div>
 
 		<div class="btn__container">
-			<button class="btn prev"><</button>
-			<button class="btn next">></button>
+			<button class="btn prev">
+				<</button> <button class="btn next">>
+			</button>
 		</div>
 	</section>
 	<section>

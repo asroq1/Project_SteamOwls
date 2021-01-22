@@ -140,6 +140,12 @@ td{
 @media screen and (max-width : 768px){
 	table{
 	width: 90%;
-	}
+  }
+  tbody{
+    font-size: 0.8em;
+  }
+  h1{ 
+    font-size: 1.2em;
+  }
 }
 

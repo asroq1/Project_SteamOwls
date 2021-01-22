@@ -37,6 +37,8 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<section>
+	
+	</section>
 	<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
@@ -48,10 +50,10 @@ DecimalFormat won = new DecimalFormat("###,###");
 		</div>
 	
 	</article>
+	<article>
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
-	<article>
 		<div class="booking__container">
 			<div class="booking__img">
 				<%=list.get(i).getProduct_imagePath()%>
@@ -97,8 +99,6 @@ DecimalFormat won = new DecimalFormat("###,###");
 		}
 		%>
 	</article>
-	</section>
-
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

@@ -37,7 +37,7 @@ header {
 }
 
 section{
-	height: 100vh;
+	height: 100%;
 }
 article {
 	max-width: 1200px;
@@ -109,7 +109,8 @@ article {
 @media screen and (max-width: 768px) {
 	.booking_container {
 		display: block;
-		width: 100%;
+		margin: 0 auto;
+		width: 95%;
 		height: 100%;
 		overflow: hidden;
 		margin-top: 48px;

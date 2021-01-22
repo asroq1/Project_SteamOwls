@@ -1,5 +1,6 @@
 package shop.steamowls.steam.admin.member.action;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.admin.member.service.MemberService;
 import shop.steamowls.steam.admin.member.vo.MemberVo;
 import shop.steamowls.steam.admin.review.service.ReviewService;
@@ -28,8 +30,31 @@ public class Mmanage implements Action {
 		}
 		
 		MemberService svc = new MemberService();
-		ArrayList<MemberVo> list = svc.mManage();
+
 		
+		String pn = request.getParameter("pn");
+		if (pn == null || pn == "") {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>location.href='/admin/Mmanage?pn=1';</script>");
+			out.close();
+			return null;
+		}
+		
+		int page = Integer.parseInt(pn);
+
+		Pagenation pagenation = new Pagenation(page, svc.getMemberCount());
+		if (page > pagenation.getTotalPageCount()) {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>location.href='/admin/Mmanage?pn=" + pagenation.getTotalPageCount() + "';</script>");
+			out.close();
+			return null;
+		}
+
+		
+		ArrayList<MemberVo> list = svc.mManage(pagenation);
+		request.setAttribute("pagenation", pagenation);
 		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();

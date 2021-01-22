@@ -13,9 +13,9 @@
   --green--hard-color: #003d33;
   --theme-color: #ed6174;
   --background-color: #e9ecea;
-  --text-color:  #484848
-  /* Size */
-  --padding: 12px;
+  --text-color: #484848
+    /* Size */
+    --padding: 12px;
   --avatar--size: 36px;
 
   /* Font Size */
@@ -93,77 +93,90 @@ h3 {
   margin-top: 1rem;
   font-size: 1.1rem;
   font-weight: lighter;
-  margin : 3rem 0 3rem 0;
+  margin: 3rem 0 3rem 0;
   text-align: center;
 }
 
 table {
-  margin: 1em;
   text-align: center;
 }
 
-td{
-	 padding: 10px 0 10px 0;
+td {
+  padding: 10px 0 10px 0;
 }
 
-.category{
+.category {
   height: 30px;
   background: var(--grey--light--color);
   color: var(--text-color);
 }
-.category__no{
+
+.category__no {
   width: 100px;
 }
 
-.category__sub{
+.category__sub {
   width: 700Px;
 }
 
-.category__id{
+.category__id {
   width: 200px;
 }
 
-.category__time{
+.category__time {
   width: 200px;
 }
-.category__data{
- height: 30px;
- border-bottom: 1px solid var(--grey--light--color);
+
+.category__data {
+  height: 30px;
+  border-bottom: 1px solid var(--grey--light--color);
 }
 
-.btn__container{
-	display: flex;
-	justify-content: flex-end;
+.btn__container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
 }
 
-.btn__container a{
-	
-	margin: 0 6px 0 6px;
-    padding: 12px;
-    border-radius: 4px;
-    color: var(--white--color);
-    background-color: var(--theme-color);
+.btn__container a {
+
+  margin: 0 6px 0 6px;
+  padding: 12px;
+  border-radius: 4px;
+  color: var(--white--color);
+  background-color: var(--theme-color);
 }
 
-.pagination__container{
-	display: flex;
-    justify-content: space-evenly;
-    width: 120px;
+.pagination__container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 120px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width : 768px) {
+
+  table {
+    width: 90%;
     margin: 0 auto;
-}
+  }
 
-@media screen and (max-width : 768px){
-	
-table{
-	width: 90%;
-	}
-	
-.btn__container a{
-	padding: 6px;
-}	
+  tbody{
+    font-size: 0.8em;
+  }
+  
+  h1{ 
+    font-size: 1.2em;
+  }
 
-.btn__container{
-    margin: 12px 0 12px 0;
-}
-	
+  .btn__container a {
+    padding: 6px;
+  }
+
+  .btn__container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
 }
