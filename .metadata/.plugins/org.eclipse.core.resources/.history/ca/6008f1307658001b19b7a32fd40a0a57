@@ -1,7 +1,0 @@
-package shop.steamowls.steam.admin.review.vo;
-
-public class ReviewVo {
-	private int sq;
-	private String id;
-	
-}
