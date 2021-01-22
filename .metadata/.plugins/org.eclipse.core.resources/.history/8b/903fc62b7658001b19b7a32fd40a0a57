@@ -1,0 +1,9 @@
+package shop.steamowls.steam.admin.review.vo;
+
+public class ReviewVo {
+	private String review_subject;
+	private String review_content;
+	private String review_dttm;
+	private double review_star;
+	
+}

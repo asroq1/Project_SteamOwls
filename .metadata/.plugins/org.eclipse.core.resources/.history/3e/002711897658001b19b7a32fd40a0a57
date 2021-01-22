@@ -1,0 +1,24 @@
+package shop.steamowls.steam.admin.review.service;
+
+import static shop.steamowls.common.JdbcUtil.close;
+import static shop.steamowls.common.JdbcUtil.getConnection;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import shop.steamowls.steam.admin.review.vo.ReviewVo;
+import shop.steamowls.steam.mypage.dao.MypageDao;
+import shop.steamowls.steam.mypage.vo.MypageVo;
+
+public class ReviewService {
+
+	public ArrayList<ReviewVo> rManage() {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		ArrayList<ReviewVo> list = mypageDao.rManage();
+		close(con);
+		return list;
+	}
+
+}

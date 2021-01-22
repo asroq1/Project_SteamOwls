@@ -1,0 +1,130 @@
+package shop.steamowls.steam.admin.review.vo;
+
+public class ReviewVo {
+	private int sq;
+	private String id;
+	private int review_sq;
+	private boolean review_del_fl;
+	private String review_subject;
+	private String review_content;
+	private String review_dttm;
+	private double review_star;
+
+	public ReviewVo() {
+
+	}
+
+	/**
+	 * @return the sq
+	 */
+	public int getSq() {
+		return sq;
+	}
+
+	/**
+	 * @param sq the sq to set
+	 */
+	public void setSq(int sq) {
+		this.sq = sq;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the review_sq
+	 */
+	public int getReview_sq() {
+		return review_sq;
+	}
+
+	/**
+	 * @param review_sq the review_sq to set
+	 */
+	public void setReview_sq(int review_sq) {
+		this.review_sq = review_sq;
+	}
+
+	/**
+	 * @return the review_del_fl
+	 */
+	public boolean isReview_del_fl() {
+		return review_del_fl;
+	}
+
+	/**
+	 * @param review_del_fl the review_del_fl to set
+	 */
+	public void setReview_del_fl(boolean review_del_fl) {
+		this.review_del_fl = review_del_fl;
+	}
+
+	/**
+	 * @return the review_subject
+	 */
+	public String getReview_subject() {
+		return review_subject;
+	}
+
+	/**
+	 * @param review_subject the review_subject to set
+	 */
+	public void setReview_subject(String review_subject) {
+		this.review_subject = review_subject;
+	}
+
+	/**
+	 * @return the review_content
+	 */
+	public String getReview_content() {
+		return review_content;
+	}
+
+	/**
+	 * @param review_content the review_content to set
+	 */
+	public void setReview_content(String review_content) {
+		this.review_content = review_content;
+	}
+
+	/**
+	 * @return the review_dttm
+	 */
+	public String getReview_dttm() {
+		return review_dttm;
+	}
+
+	/**
+	 * @param review_dttm the review_dttm to set
+	 */
+	public void setReview_dttm(String review_dttm) {
+		this.review_dttm = review_dttm;
+	}
+
+	/**
+	 * @return the review_star
+	 */
+	public double getReview_star() {
+		return review_star;
+	}
+
+	/**
+	 * @param review_star the review_star to set
+	 */
+	public void setReview_star(double review_star) {
+		this.review_star = review_star;
+	}
+	
+	
+}

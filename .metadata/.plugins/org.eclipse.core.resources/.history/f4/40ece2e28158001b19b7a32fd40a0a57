@@ -1,0 +1,25 @@
+package shop.steamowls.steam.admin.member.service;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import shop.steamowls.steam.admin.member.dao.MemberDao;
+import shop.steamowls.steam.admin.member.vo.MemberVo;
+import shop.steamowls.steam.admin.review.dao.ReviewDao;
+import shop.steamowls.steam.admin.review.vo.ReviewVo;
+
+import static shop.steamowls.common.JdbcUtil.*;
+
+public class MemberService {
+
+	public ArrayList<MemberVo> mManage() {
+		MemberDao memberDao = MemberDao.getInstance();
+		Connection con = getConnection();
+		memberDao.setConnection(con);
+		
+		ArrayList<MemberVo> list = memberDao.rManage();
+		close(con);
+		return list;
+	}
+
+}
