@@ -50,9 +50,9 @@ public class Rmanage implements Action{
 		}
 		
 		ArrayList<ReviewVo> list = svc.rManage(pagenation);
-		request.setAttribute("list", list);
 		request.setAttribute("pagenation", pagenation);
-		
+		request.setAttribute("list", list);
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/admin/Rmanage.jsp");
 		return forward;
