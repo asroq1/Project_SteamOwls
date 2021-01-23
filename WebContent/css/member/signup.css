@@ -201,9 +201,8 @@ header img{
 }
 
 .agreement__text{
-	color: var(--grey--dark--color);
-    font-size: 1rem;
-    margin: 0;
+	color:  #0071c2;
+    
 }
 
 @media screen and (max-width : 768px){

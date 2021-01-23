@@ -19,6 +19,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>예약관리</title>
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/Bmanage.css">
@@ -26,7 +27,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-<script src="/js/common/calendar.js" defer></script>
+<script src="/js/common/calendarForAdmin.js" defer></script>
 <script src="/js/admin/Bdelete.js"></script>
 </head>
 <body>
@@ -37,9 +38,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<section>
-	
-	</section>
-	<article>
+			<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="예약날짜" name="booking_date" data-input>
@@ -98,7 +97,9 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<%
 		}
 		%>
-	</article>
+	</article>	
+	</section>
+
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

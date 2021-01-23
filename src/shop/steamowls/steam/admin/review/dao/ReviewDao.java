@@ -39,7 +39,7 @@ public class ReviewDao {
 		try {
 			pstmt = con.prepareStatement(
 					"select"
-					+ " A.review_sq, A.review_subject, A.review_content, A.review_dttm, A.review_star, B.id, B.sq"
+					+ " A.review_sq, A.review_subject, A.review_content, date_format(A.review_dttm, '%Y-%m-%d %H:%i') as review_dttm, A.review_star, B.id, B.sq"
 					+ " from (owls_review_tb A, owls_mber_tb B)"
 					+ " where A.member_sq = B.sq"
 					+ " and A.review_del_fl = 0"

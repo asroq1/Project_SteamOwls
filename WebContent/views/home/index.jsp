@@ -4,11 +4,10 @@
 <%@page import="shop.steamowls.steam.mypage.vo.MypageVo"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
 <%@page import="shop.steamowls.common.LoginManager"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 
 <%
-	LoginManager lm = LoginManager.getInstance();
+LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 MypageVo mypageVo = (MypageVo) request.getAttribute("vo");
 ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
@@ -31,6 +30,8 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 	<link rel="stylesheet" href="/css/mypage/Rwriting.css">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js" defer></script>
+	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js" defer></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js" defer></script>
 	<script src="/js/common/calendar.js" defer></script>
 	<script src="/js/agreement/agree.js" defer></script>
 	<script src="/js/home/index.js" defer></script>

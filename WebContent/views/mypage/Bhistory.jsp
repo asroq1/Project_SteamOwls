@@ -32,7 +32,19 @@
 		<header>
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
-	
+		
+		
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>예약하신 상품이  존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
+		
+		
 		<section>
 			<%
 				for (int i = 0; i < list.size(); i++) {
@@ -80,20 +92,11 @@
 				}
 			%>
 		</section>
+		<% } %>
+		
 		<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
-		</footer>
-	
-<%-- 	 <div>
-		<i class="fas fa-calendar-times"></i>
-		<span>예약된 상품이 없습니다.</span>	
-	
-	</div>
-	<footer>
-		<jsp:include page="/views/common/footer.jsp"></jsp:include>
-	</footer>
-	 --%>
-		
+		</footer>		
 </body>
 
 </html>

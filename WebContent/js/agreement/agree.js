@@ -1,6 +1,6 @@
-const body = document.querySelector("body");
-const content = document.querySelector('.content');
+
 function createFeed() {
+	const body = document.querySelector("body");
     const feed = document.createElement('div');
     feed.setAttribute('class', 'feed');
 	
