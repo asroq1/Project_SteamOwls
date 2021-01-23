@@ -413,7 +413,7 @@ public class MypageDao {
 
 		try {
 			pstmt = con.prepareStatement(
-					"select" + " A.review_sq, A.review_subject, A.review_content, A.review_dttm,A.review_star, B.id"
+					"select" + " A.review_sq, A.review_subject, A.review_content, date_format(A.review_dttm, '%Y-%m-%d %H:%i') as review_dttm,A.review_star, B.id"
 							+ " from owls_review_tb A INNER JOIN owls_mber_tb B" + " on A.member_sq=B.sq"
 							+ " where A.review_del_fl = false" + " and A.member_sq = ?"
 							+ " order by A.review_sq desc limit ?,?");
