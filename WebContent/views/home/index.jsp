@@ -91,7 +91,7 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 		}
 	%>
 
-	<section>
+	<article>
 		<div class="intro__container">
 			<h1 class="slider__intro">수백만 명에 이르는 아울스 회원의 리뷰어가 되어보세요.</h1>
 
@@ -152,7 +152,7 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 				<</button> <button class="btn next">>
 			</button>
 		</div>
-	</section>
+	</article>
 	<section>
 		<div class="wrapper">
 			<div class="intro__container">

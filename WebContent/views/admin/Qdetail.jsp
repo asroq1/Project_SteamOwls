@@ -14,28 +14,52 @@ String sq = lm.getMemberSq(session);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상세페이지</title>
+<title>문의관리</title>
 <link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/mypage/Qdetail.css">
 </head>
 <body>
 <header>
 		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 </header>
+	<section>
+		<div class="question__container">
+			
+		<div class="container__top">
+			<div class="question__id">
+				<h3>고객ID</h3>
+				<div class="question__text">
+					<%=boardVo.getMember_id()%>
+				</div>
+			</div>
+			<div class="question__date">
+				<h3>작성일</h3>
+				<p class="question__text"><%=boardVo.getBoard_dttm()%></p>
+			</div>
+			
+			<div class="question__title">
+				<h3>제목</h3>
+				<p class="question__text"><%=boardVo.getBoard_subject()%></p>
+			</div>
+		</div>
+		
+		<div class="container__bottom">
+			<div class="question__content">
+				<h3>문의사항</h3>
+				<p class="question__text">
+					<%=boardVo.getBoard_content()%>
+				</p>
+			</div>
+		</div>
 
-<h1>문의 관리</h1>
-<br>
-<h3>문의 번호 : <%=boardVo.getBoard_sq()%></h3>
-<h3>문의 제목 : <%=boardVo.getBoard_subject()%></h3>
-<h3>문의 내용 : <%=boardVo.getBoard_content()%></h3>
-<h3>문의자 : <%=boardVo.getMember_id()%></h3>
-<h3>문의 날짜 : <%=boardVo.getBoard_dttm()%></h3>
-<h3>문의 답변 여부 : <%=answerVo.isAnswer_fl()%></h3>
-<h3>문의 답변 내용 : <%=answerVo.getAnswer_content()%></h3>
-
-
-<a href="/admin/QModify?board_sq=<%=boardVo.getBoard_sq()%>">답변 수정</a>
-<a href="/admine/QDelete?board_sq=<%=boardVo.getBoard_sq()%>">답변 삭제</a>
-
-<a href="/admin/Qmanage">돌아가기</a>
+			<div class="btn__container">
+				<a href="/admin/Qanswer?member_sq=<%=boardVo.getBoard_sq()%>&<%=boardVo.getBoard_sq()%>">답변하기</a>		
+				<a href="/admin/QModify?board_sq=<%=boardVo.getBoard_sq()%>">답변 수정</a>
+				<a href="/admine/QDelete?board_sq=<%=boardVo.getBoard_sq()%>">답변 삭제</a>
+				<a href="/admin/Qmanage">돌아가기</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

@@ -17,14 +17,13 @@
 </head>
 
 <body>
-	<h1>문의 관리</h1>
 	<header>
 		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<form action="/admin/product/PaddProc" method="post" id="editorForm">
+	<form action="/admin/admin/QmanageProc" method="post" id="editorForm">
 		<div>
 			<jsp:include page="/editor/editorSkinForModify.jsp" flush="false" />
 		</div>

@@ -21,6 +21,7 @@ String sq = lm.getMemberSq(session);
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
+	
 
 	<section>
 		<div class="review__container">

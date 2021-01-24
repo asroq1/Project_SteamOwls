@@ -43,6 +43,7 @@ a {
     text-decoration: none;
 }
 
+
 ul,
 li {
     list-style: none;
@@ -245,4 +246,6 @@ li {
 .toggle_btn {
     z-index: 1;
 }
+a:hover{
+	color: #000;
 }

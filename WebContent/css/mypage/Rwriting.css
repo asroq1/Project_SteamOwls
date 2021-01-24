@@ -154,6 +154,7 @@ header {
   color: var(--white--color);
   font-weight: bold;
   border-radius: 6px;
+  margin-top: 2em;
 }
 
 @media screen and (max-width : 768px){
