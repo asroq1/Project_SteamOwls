@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>판매관리</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 </head>
 <body>
-예약관리화면
 <header>
 		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 </header>
@@ -18,7 +18,6 @@
 </nav>
 <h1>매출 관리</h1>
 list1
-<br>
-list2
+
 </body>
 </html>

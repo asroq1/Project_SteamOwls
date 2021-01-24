@@ -18,8 +18,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="/css/picture/icons8_owl.ico" rel="shortcut icon"
-	type="image/x-icon">
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/Bcancel.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">

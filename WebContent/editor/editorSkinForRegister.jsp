@@ -726,7 +726,7 @@
                     <!-- 툴바 - 더보기 끝 -->
                     <!-- 편집영역 시작 -->
                     <!-- 에디터 Start -->
-                    <div id="tx_canvas" class="tx-canvas">
+                    <div id="tx_canvas" class="tx-canvas" value=<% %>>
                         <div id="tx_loading" class="tx-loading">
                             <div><img
                                     src="/editor/images/icon/editor/loading2.png"

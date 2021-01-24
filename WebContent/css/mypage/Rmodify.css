@@ -174,8 +174,7 @@ i{
 	.review__container{
 		padding: 1rem;
 	}
-	
-	.btn__container a{
-		padding: 0.5rem 1rem 0.5rem 1rem;
-	}
+	.btn__container a, #modifyBtn {
+   	padding: 1rem;
+}
 }

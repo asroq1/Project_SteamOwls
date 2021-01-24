@@ -15,11 +15,13 @@ String sq = lm.getMemberSq(session);
 <head>
 <meta charset="UTF-8">
 <title>상세페이지</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <header>
 		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 </header>
+
 <h1>문의 관리</h1>
 <br>
 <h3>문의 번호 : <%=boardVo.getBoard_sq()%></h3>

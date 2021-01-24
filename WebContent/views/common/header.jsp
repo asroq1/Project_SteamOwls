@@ -21,7 +21,6 @@
 		<ul class="header__form">
 			<li><a href="/member/login">로그인</a></li>
 			<li><a href="/member/signup">회원가입</a></li>
-			<li><a href="/admin">관리자</a></li>
 		</ul>
 		</div>
 	
@@ -38,7 +37,6 @@
 			<ul class="toggle_bar">
 				<li><a href="/member/login">로그인</a></li>
 				<li><a href="/member/signup">회원가입</a></li>
-				<li><a href="/admin">관리자</a></li>
 			</ul>
 	</div>
 </body>
