@@ -37,9 +37,10 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<header>
 		  <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
-	<%
+	<section>
+		<%
 		for (int i = 0; i < list.size(); i++) {
-	%> 
+		%> 
 	<article>
 		<div class="booking_container">
 			<div class="form_img">
@@ -73,6 +74,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<%
 		}
 	%>
+	</section>
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
    </footer>

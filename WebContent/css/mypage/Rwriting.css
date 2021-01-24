@@ -99,7 +99,7 @@ header {
 
   width: 35%;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 20vh;
   text-align: center;
 }
 
@@ -154,4 +154,11 @@ header {
   color: var(--white--color);
   font-weight: bold;
   border-radius: 6px;
+  margin-top: 2em;
+}
+
+@media screen and (max-width : 768px){
+	#checkPoint{ 
+		width: 90%;
+	}
 }

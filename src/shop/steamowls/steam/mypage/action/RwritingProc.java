@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -60,8 +61,13 @@ public class RwritingProc implements Action {
 		mypageVo.setReview_subject(review_subject);
 		mypageVo.setReview_content(review_content);
 		mypageVo.setReview_star(Double.parseDouble(review_star));
+		
+		
 
 		MypageService svc = new MypageService();
+		
+		
+		
 		if (!svc.rWriting(mypageVo)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -70,12 +76,9 @@ public class RwritingProc implements Action {
 			return null;
 		}
 		
-		ArrayList<MypageVo> list = svc.rMyReview(mypageVo);
-		
-		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/RmyReview.jsp");
+		forward.setPath("/mypage/RmyReview");
 		return forward;
 	}
 }

@@ -26,11 +26,11 @@ public class QModifyProc implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-		
+
 		String board_sq = request.getParameter("board_sq");
 		String board_subject = request.getParameter("board_subject");
 		String board_content = request.getParameter("content");
-		
+
 		if (board_subject == null || board_subject.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -46,13 +46,13 @@ public class QModifyProc implements Action {
 			out.close();
 			return null;
 		}
-		
+
 		BoardVo boardVo = new BoardVo();
 		boardVo.setMember_sq(Integer.parseInt(sq));
 		boardVo.setBoard_sq(Integer.parseInt(board_sq));
 		boardVo.setBoard_subject(board_subject);
 		boardVo.setBoard_content(board_content);
-		
+
 		MypageService svc = new MypageService();
 		if (!svc.qModifyProc(boardVo)) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -61,7 +61,6 @@ public class QModifyProc implements Action {
 			out.close();
 			return null;
 		}
-		
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/mypage/QDetail");

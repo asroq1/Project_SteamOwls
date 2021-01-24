@@ -15,20 +15,19 @@
 </head>
 <body>
 		<div class="desktop__header">
-			<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
+		<a href="/">
+			<img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 		<ul class="header__form">
 			<li><a href="/member/login">로그인</a></li>
 			<li><a href="/member/signup">회원가입</a></li>
-			<li><a href="/admin">관리자</a></li>
 		</ul>
 		</div>
 	
 	 
 	<div class="mobile__header">
 		<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
+			<img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 			<span class="toggle_btn">
 				<span class="line"></span>
@@ -38,7 +37,6 @@
 			<ul class="toggle_bar">
 				<li><a href="/member/login">로그인</a></li>
 				<li><a href="/member/signup">회원가입</a></li>
-				<li><a href="/admin">관리자</a></li>
 			</ul>
 	</div>
 </body>

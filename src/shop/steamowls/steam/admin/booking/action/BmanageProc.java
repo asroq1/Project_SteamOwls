@@ -29,20 +29,11 @@ public class BmanageProc implements Action {
 		}
 		
 		String booking_date = request.getParameter("booking_date");
-		String booking_start = request.getParameter("booking_start");
-		
+
 		if(booking_date == null || booking_date.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('예약날짜를 선택해주세요.'); history.back();</script>");
-			out.close();
-			return null;
-		}
-		
-		if(booking_start == null || booking_start.equals("")) {
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.print("<script>alert('예약시간을 선택해주세요.'); history.back();</script>");
+			out.print("<script>alert('날짜를 선택하시오.'); location.href='/admin/Bmanage';</script>");
 			out.close();
 			return null;
 		}
@@ -51,7 +42,6 @@ public class BmanageProc implements Action {
 		BookingVo bookingVo = new BookingVo();
 		
 		bookingVo.setBooking_date(booking_date);
-		bookingVo.setBooking_start(booking_start);
 		
 		ArrayList<BookingVo> list = svc.BmanageProc(bookingVo);
 		

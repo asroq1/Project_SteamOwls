@@ -37,5 +37,24 @@ public class QuestionService {
 		close(con);
 		return vo;
 	}
+	
+	public boolean qRegisterAnswer(BoardVo boardVo) {
+
+		QuestionDao questionDao = QuestionDao.getInstance();
+		Connection con = getConnection();
+		questionDao.setConnection(con);
+
+		int count = questionDao.qRegisterAnswer(boardVo);
+		boolean isSuccess = false;
+		if (count > 0) {
+			commit(con);
+			isSuccess = true;
+		} else {
+			rollback(con);
+			isSuccess = false;
+		}
+		close(con);
+		return isSuccess;
+	}
 
 }

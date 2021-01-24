@@ -48,7 +48,7 @@ public class PstopButton implements Action{
 		}
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/admin/gotoAdmin");
+		forward.setPath("/admin/Pmanage");
 		forward.setRedirect(true);
 		return forward;
 	

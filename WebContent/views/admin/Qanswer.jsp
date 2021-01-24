@@ -11,11 +11,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>문의답변</title>
-	<%-- <script type="text/javascript">
-		< % --
-		let content = '<%=vo.getBoard_content()%>';
-		-- % >
-	</script> --%>
+	<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 </head>
@@ -23,7 +19,7 @@
 <body>
 	<h1>문의 관리</h1>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>

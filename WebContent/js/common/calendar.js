@@ -6,7 +6,9 @@ const ckpoint = document.querySelector('#ckpoint');
 date.flatpickr({
     locale: "ko",
     dateFormat: "Y-m-d ",
-    minDate: "today"
+    minDate: "today",
+    disableMobile: "true"
+    
 });
 
 time.flatpickr({
@@ -18,7 +20,9 @@ time.flatpickr({
 	//10시 ~ 7시
 	//월요일
     minTime: "10:00",
-    maxTime: "19:00" 
+    maxTime: "19:00" ,
+    disableMobile: "true"
+   
 });
 
 form_btn.addEventListener('click',(e)=>{
@@ -32,14 +36,4 @@ form_btn.addEventListener('click',(e)=>{
         return;
     }
     ckpoint.submit();
-});
-
-const cancelBtn = document.querySelector('#cancel__btn');
-cancelBtn.addEventListener('click',(e)=>{
-    const confirmBtn = confirm('예약을 취소하시겠습니까?');
-    if(confirmBtn === false){
-        e.preventDefault();
-    }else{
-        alert("예약이 취소되었습니다.");
-    }
 });

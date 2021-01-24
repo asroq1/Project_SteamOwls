@@ -25,16 +25,13 @@
          <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
     </header>
     <section>
+    	
         <form action="/mypage/McheckPwProc" method="post" id="checkPoint" onsubmit="return join()">
+            <h1>비밀번호 확인</h1>
             <input type="password" name="pw" id="pw" maxlength="10" placeholder="비밀번호">
             <button type="submit">확인</button>
         </form>
     </section>
-    <article>
-        <div class="signup__form">
-            <jsp:include page="/views/common/footer-middle.jsp"></jsp:include>
-        </div>
-    </article>
 </body>
 
 </html>

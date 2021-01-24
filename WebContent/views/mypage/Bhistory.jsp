@@ -25,13 +25,26 @@
 	<link rel="stylesheet" href="/css/mypage/Bhistory.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 
 <body>
-	<div id="tt">
 		<header>
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
+		
+		
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>예약하신 상품이  존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
+		
+		
 		<section>
 			<%
 				for (int i = 0; i < list.size(); i++) {
@@ -79,10 +92,11 @@
 				}
 			%>
 		</section>
-	</div>
-	<footer>
+		<% } %>
+		
+		<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
-	</footer>
+		</footer>		
 </body>
 
 </html>

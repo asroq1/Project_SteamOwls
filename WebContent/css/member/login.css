@@ -44,6 +44,7 @@ input {
     border: 1.5px solid var(--grey--dark--color);
     border-radius: 5px;
     background-color: #e8f0fe; 
+    margin-top: 1.5em;
 }
 
 a {
@@ -58,6 +59,11 @@ header {
     width: 100%;
     height: 60px;
   	align-items:center;
+  	margin-top:100px;
+}
+
+header img{
+	width: 50%;
 }
 #id,
 #pw{
@@ -111,6 +117,7 @@ text-weight:bold;
 	background-color: var(--theme-color);
     border-radius: 5px;
     font-weight: bold;
+    margin-top: 2em;
 }
 .forgot__container{
     position: relative;
@@ -125,6 +132,9 @@ text-weight:bold;
 .forgot__form a{
     color: var(--grey--dark--color);
 }
+.forgot__form a:hover{
+    color: #000;
+}
 .forgot__form a:nth-child(1){
     border-right: 1px solid var(--grey--dark--color);
     padding-right: 5px;
@@ -135,11 +145,12 @@ text-weight:bold;
     padding-right: 5px;
 }
 
-.information__bar {
+#information__bar {
     margin-top: 1.5em;
-    font-size: 1.000em;
+    padding: 0;
+    font-size: 1em;
 }
-.information__bar a{
+#information__bar a{
    color: #0071c2;
 }
 

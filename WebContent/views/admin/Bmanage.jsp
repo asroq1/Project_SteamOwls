@@ -19,40 +19,41 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>예약관리</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/Bmanage.css">
 <link rel="stylesheet" href="/css/mypage/Bhistory.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-<script src="/js/common/calendar.js" defer></script>
+<script src="/js/common/calendarForAdmin.js" defer></script>
+<script src="/js/admin/Bdelete.js"></script>
 </head>
 <body>
 	<header>
-		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
+		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
 	</header>
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<h1>예약 관리</h1>
-	<article>
+	<section>
+			<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
-				<input type="text" class="form_input" id="basicDate"
-					placeholder="언제가 편하신가요?" name="booking_date" data-input> <input
-					type="text" class="form_input" id="basicTime" placeholder="예약시간"
-					name="booking_start" data-input>
+				<input type="text" class="form_input" id="basicDate" placeholder="예약날짜" name="booking_date" data-input>
 				<button type="submit" class="form_input form_submit">
 					<i class="fas fa-search"></i>
 				</button>
 			</form>
 		</div>
+	
 	</article>
+	<article>
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
-	<article>
 		<div class="booking__container">
 			<div class="booking__img">
 				<%=list.get(i).getProduct_imagePath()%>
@@ -91,13 +92,15 @@ DecimalFormat won = new DecimalFormat("###,###");
 				</div>
 			</div>
 			<div class="btn__container">
-				<a id="cancel__btn" href="/admin/Bcancel?booking_sq=<%=list.get(i).getBooking_sq()%>">예약취소</a>
+				<button id="cancel__btn" onclick="bookingDelete(<%=list.get(i).getBooking_sq()%>)">예약취소</button>
 			</div>
 		</div>
-	</article>
-	<%
+		<%
 		}
-	%>
+		%>
+	</article>	
+	</section>
+
 	<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
 	</footer>

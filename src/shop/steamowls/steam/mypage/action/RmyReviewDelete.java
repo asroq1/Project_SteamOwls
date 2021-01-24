@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import shop.steamowls.common.Action;
 import shop.steamowls.common.ActionForward;
 import shop.steamowls.common.LoginManager;
+import shop.steamowls.common.Pagenation;
 import shop.steamowls.steam.mypage.service.MypageService;
 import shop.steamowls.steam.mypage.vo.MypageVo;
 
@@ -47,10 +48,6 @@ public class RmyReviewDelete implements Action {
 			out.close();
 			return null;
 		}
-		
-		ArrayList<MypageVo> list = svc.rMyReview(mypageVo);
-		
-		request.setAttribute("list", list);
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("/mypage/RmyReview");

@@ -32,7 +32,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public boolean withdraw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -50,7 +50,7 @@ public class MypageService {
 		close(con);
 		return isSuccess;
 	}
-
+	
 	public MypageVo mCheckPw(MypageVo mypageVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -62,21 +62,29 @@ public class MypageService {
 		return vo;
 	}
 
-	public ArrayList<BookingVo> bDetail(BookingVo bookingVo) {
+	public ArrayList<BookingVo> bHistory(BookingVo bookingVo) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<BookingVo> list = mypageDao.bDetail(bookingVo);
+		ArrayList<BookingVo> list = mypageDao.bHistory(bookingVo);
 		close(con);
 		return list;
 	}
+	public BookingVo bCancel(BookingVo bookingVo) {
+		MypageDao mypageDao = MypageDao.getInstance();
+		Connection con = getConnection();
+		mypageDao.setConnection(con);
+		BookingVo vo = mypageDao.bCancel(bookingVo);
+		close(con);
+		return vo;
+	}
 
-	public boolean bCancel(int booking_sq) {
+	public boolean bCancelProc(int booking_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
 
-		int count = mypageDao.bCancel(booking_sq);
+		int count = mypageDao.bCancelProc(booking_sq);
 		boolean isSuccess = false;
 		if (count > 0) {
 			commit(con);
@@ -89,11 +97,11 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo) {
+	public ArrayList<MypageVo> rMyReview(MypageVo mypageVo, Pagenation pagenation) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
 		mypageDao.setConnection(con);
-		ArrayList<MypageVo> list = mypageDao.rMyReview(mypageVo);
+		ArrayList<MypageVo> list = mypageDao.rMyReview(mypageVo, pagenation);
 		close(con);
 		return list;
 	}
@@ -181,7 +189,7 @@ public class MypageService {
 		close(con);
 		return list;
 	}
-
+	
 	public BoardVo qDetail(String board_sq) {
 		MypageDao mypageDao = MypageDao.getInstance();
 		Connection con = getConnection();
@@ -285,11 +293,20 @@ public class MypageService {
 		return isSuccess;
 	}
 	
-	public int getOrderCount() {
+	public int getReviewCount(int member_sq) {
 		MypageDao dao = MypageDao.getInstance();
 		Connection con = getConnection();
 		dao.setConnection(con);
-		int count = dao.getOrderCount();
+		int count = dao.getReviewCount(member_sq);
+		close(con);
+		return count;
+	}
+	
+	public int getBoardCount() {
+		MypageDao dao = MypageDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		int count = dao.getBoardCount();
 		close(con);
 		return count;
 	}

@@ -16,7 +16,7 @@
 <body>
 	<div class="desktop__header">
 		<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
+			<img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 		<ul class="header__form">
 			<li><a href="/member/logout">로그아웃</a></li>
@@ -25,7 +25,7 @@
 	</div>
 	<div class="mobile__header">
 		<a href="/">
-			<img src="/css/picture/owls.PNG" alt="로고사진">
+			<img src="/css/picture/owlsLogo.png" alt="로고사진">
 		</a>
 			<span class="toggle_btn">
 				<span class="line"></span>

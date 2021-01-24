@@ -22,18 +22,17 @@ public class McheckPwProc implements Action {
 		// 로그인여부 및 잘못된 접근
 		// 세션에 sq 가지고 있기
 		HttpSession session = request.getSession();
-
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
-		
+
 		if (sq == null) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
 			return forward;
 		}
-		
-		//jsp에서 입력한 비밀번호 부르기
+
+		// jsp에서 입력한 비밀번호 부르기
 		String pw = request.getParameter("pw");
 
 		MypageVo mypageVo = new MypageVo();
@@ -52,18 +51,18 @@ public class McheckPwProc implements Action {
 			out.close();
 			return null;
 		}
-		
-		if(!BCrypt.checkpw(pw, vo.getPw())) {
+
+		if (!BCrypt.checkpw(pw, vo.getPw())) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.print("<script>alert('비밀번호가 틀렸습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}
-		
-		//세션에 memberVo넣기
+
+		// 세션에 memberVo넣기
 		request.setAttribute("vo", vo);
-				
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("/views/mypage/Mmodify.jsp");
 		return forward;

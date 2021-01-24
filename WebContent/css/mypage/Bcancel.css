@@ -31,12 +31,13 @@ p{
     color: var(--grey--dark--color);
 }
 section{
-   width: 40%;
+   max-width: 1200px;
    min-height: 100vh;
    margin: 0 auto;
-   margin-top: 6em; 
+   margin-top: 20vh; 
 }
 .bill_container{
+	border-radius : 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.20),
     0 2px 2px rgba(0, 0, 0, 0.20);
 }
@@ -58,12 +59,25 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 20%;
     height: 3em;
     margin: 0 auto;
     margin-top: 2em;
     background: var(--theme-color);
-    border-radius: 1em;
+    border-radius: 6px;
     color: var(--white--color);
     font-weight: bold; 
+}
+
+@media screen and (max-width :768px){
+	
+	.bill_container{
+		width: 90%;
+   		margin: 0 auto;
+	}
+	
+	.bill_submit{
+		width: 30%;
+	}
+		
 }

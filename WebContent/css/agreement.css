@@ -72,3 +72,13 @@ footer{
     margin-right: 1em;
 }
 
+@media screen and (max-width: 768px){
+	.content{
+		width: 90%;
+		padding: 1em;
+	}
+    .modify__form{
+       width: 65%;
+   	   font-size: 0.8em;
+    }
+}

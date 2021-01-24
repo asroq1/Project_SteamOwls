@@ -14,7 +14,8 @@ submitBtn.addEventListener('click', (e) => {
     //     if(rating__star[i].checked) {
     //        alert('성공');
     //     }
-    // }ㄴ
+    // }
+    
     if (!review__subject.value) {
         alert('제목을 입력해주세요');
         return;

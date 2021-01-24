@@ -19,7 +19,7 @@ public class QDetail implements Action{
 		LoginManager lm = LoginManager.getInstance();
 		String sq = lm.getMemberSq(session);
 
-		if (sq == null) {
+		if (sq == null || sq.equals("")) {
 			ActionForward forward = new ActionForward();
 			forward.setPath("/");
 			forward.setRedirect(true);
@@ -40,7 +40,7 @@ public class QDetail implements Action{
 		if (svc.qDetail(board_sq) == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('ìƒì„¸í˜ì´ì§€ ì´ë™ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.'); history.back();</script>");
+			out.print("<script>alert('Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù.'); history.back();</script>");
 			out.close();
 			return null;
 		}

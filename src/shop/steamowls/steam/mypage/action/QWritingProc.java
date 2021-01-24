@@ -47,7 +47,6 @@ public class QWritingProc implements Action {
 			return null;
 		}
 
-		
 		BoardVo boardVo = new BoardVo();
 		boardVo.setMember_sq(Integer.parseInt(sq));
 		boardVo.setBoard_subject(board_subject);

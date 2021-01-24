@@ -35,15 +35,14 @@ public class BookingDao {
 		ResultSet rs = null;
 		ArrayList<BookingVo> list = new ArrayList<>();
 		try {
-			pstmt = con.prepareStatement(
-					"select a.booking_sq, a.member_sq, a.product_sq, c.product_name, c.product_price,"
-					+ " b.id, b.name, b.tel, b.gender, a.booking_date, a.booking_people, a.booking_start"
-					+ "	from owls_booking_tb a"
-					+ "	inner join owls_mber_tb b"
-					+ "	on a.member_sq = b.sq"
-					+ "	inner join owls_product_tb c"
-					+ "	on a.product_sq = c.product_sq"
-					+ "	where booking_fl = 1 order by a.booking_date, a.booking_start asc");
+			pstmt = con
+					.prepareStatement("select * from owls_booking_tb a"
+							+ " left join owls_mber_tb b"
+							+ " on a.member_sq = b.sq"
+							+ " left join owls_product_tb c"
+							+ " on a.product_sq = c.product_sq"
+							+ " where a.booking_fl =1 and b.del_fl = 0 order by a.booking_date, a.booking_start asc");
+					
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -76,12 +75,14 @@ public class BookingDao {
 		ArrayList<BookingVo> list = new ArrayList<>();
 
 		try {
-			pstmt = con.prepareStatement("select *" + "	from owls_booking_tb a" + "	inner join owls_mber_tb b"
-					+ "	on a.member_sq = b.sq" + "	inner join owls_product_tb c" + "	on a.product_sq = c.product_sq"
-					+ "	where b.del_fl = 0 and booking_date = ? and booking_start = ?"
-					+ " order by a.booking_date, a.booking_start asc");
+			pstmt = con.prepareStatement("select * from owls_booking_tb a"
+					+ " INNER JOIN owls_mber_tb b"
+					+ " on a.member_sq = b.sq"
+					+ " INNER  join owls_product_tb c"
+					+ " on a.product_sq = c.product_sq"
+					+ " where b.del_fl = 0 and booking_date = ?"
+					+ " order by a.booking_start asc");
 			pstmt.setString(1, bookingVo.getBooking_date());
-			pstmt.setString(2, bookingVo.getBooking_start());
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

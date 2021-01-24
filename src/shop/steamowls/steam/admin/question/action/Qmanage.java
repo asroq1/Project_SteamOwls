@@ -40,8 +40,7 @@ public class Qmanage implements Action{
 
 		MypageService svc = new MypageService();
 
-		Pagenation pagenation = new Pagenation(page, svc.getOrderCount());
-		// 끝 이상으로 넘어가면 마지막 페이지 표시
+		Pagenation pagenation = new Pagenation(page, svc.getBoardCount());
 		if (page > pagenation.getTotalPageCount()) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();

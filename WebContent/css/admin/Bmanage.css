@@ -1,66 +1,4 @@
-/* 
 @charset "UTF-8";
-:root {
-    Color
-    --white--color: #fff;
-    --black--color: #140a00;
-    --blue--color: #045fd4;
-    --red--color: #ff0000;
-    --grey--dark--color: #909090;
-    --grey--light--color: #e0e0e0;
-    --green--deep--color: #439889;
-    --green--light--color: #e0f2f1;
-    --green--hard-color: #003d33;
-    --theme-color: #ed6174;
-    --background-color:#e9ecea;
-   
-    Size
-    --padding: 12px;
-    --avatar--size: 36px;
-
-    Font Size
-    --font-large: 18px;
-    --font-medium: 14px;
-    --font-small: 12px;
-    --font-micro: 10px;
-
-}
-
-input,
-input::placeholder{
-	color : var(--white--color);
-	font-size: bold;
-}
-#ckpoint{
-    display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-    height : 4em;
-    margin: 0 auto;
-    margin-top: 3em;
-    background-color: var(--theme-color);
-    color : var(--white--color);
-    border-radius: 1.5em;
-    box-shadow: 0 8px 6px -6px black;
-}
-#basicDate,
-#basicTime
-{   
-    width: 100%;
-	text-align : center;
-    font-weight: bold;
-}
-.form_submit{
-    width: 30%;
-}
-.form_input:hover{
-    border-radius: 1.5em;
-   	background-color: #f54269;
-}
- */
- 
- 
- @charset "UTF-8";
 :root {
     /* Color */
     --white--color: #fff;
@@ -82,6 +20,10 @@ input::placeholder{
     --font-medium: 14px;
     --font-small: 12px;
     --font-micro: 10px;
+}
+
+section{
+	height: 100vh;
 }
 input,
 input::placeholder{
@@ -113,4 +55,12 @@ input::placeholder{
 .form_input:hover{
     border-radius: 1.5em;
    	background-color: #F54269;
+}
+
+#cancel__btn{
+	
+	height: 20%;
+    background-color: var(--theme-color);
+    color: var(--white--color);
+    border-radius: 4px;	
 }

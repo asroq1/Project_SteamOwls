@@ -2,29 +2,39 @@
 
 :root {
 	/* Color */
-	- -white--color: #fff;
-	- -black--color: #140a00;
-	- -blue--color: #045fd4;
-	- -red--color: #ff0000;
-	- -grey--dark--color: #909090;
-	- -grey--light--color: #e0e0e0;
-	- -green--deep--color: #439889;
-	- -green--light--color: #e0f2f1;
-	- -green--hard-color: #003d33;
-	- -theme-color: #ed6174;
-	- -background-color: #e9ecea;
+	--black--color: #140a00;
+	--white--color: #fff;
+	--blue--color: #045fd4;
+	--red--color: #ff0000;
+	--grey--dark--color: #909090;
+	--grey--light--color: #e0e0e0;
+	--green--deep--color: #439889;
+	--green--light--color: #e0f2f1;
+	--green--hard-color: #003d33;
+	--theme-color: #ed6174;
+	--background-color: #e9ecea;
+	--text-color: #484848;
 	/* Size */
-	- -padding: 12px;
-	- -avatar--size: 36px;
+	--padding: 12px;
+	--avatar--size: 36px;
 	/* Font Size */
-	- -font-large: 18px;
-	- -font-medium: 14px;
-	- -font-small: 12px;
-	- -font-micro: 10px;
+	--font-large: 18px;
+	--font-medium: 14px;
+	--font-small: 12px;
+	--font-micro: 10px;
 }
 
 body {
 	font-family: 'Nanum Gothic', sans-serif;
+}
+
+i {
+	font-size: 24px;
+}
+
+.star i {
+	font-size: var(--font-large);
+	color: var(--theme-color);
 }
 
 a {
@@ -43,11 +53,12 @@ header {
 	top: 0;
 	background-color: var(--white--color);
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px rgba(0, 0, 0, 0.10);
+	z-index: 112;
 }
 
 section {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 90vh;
 }
 
 input:focus,
@@ -89,7 +100,7 @@ button:focus {
 #ckpoint {
 	display: flex;
 	justify-content: space-evenly;
-	width: 45%;
+	width: 30%;
 	height: 4em;
 	margin: 3em auto;
 	background-color: var(--theme-color);
@@ -173,34 +184,136 @@ button:focus {
 
 .img__container img {
 	width: 100%;
-    height: 100%;
+	height: 100%;
 }
 
 .main__intro {
 	text-align: center;
-    max-width: 1200px;
-    margin: 1em auto;
-    font-size: 1.5em;
+	max-width: 1200px;
+	margin: 1em auto;
+	font-size: 1.5em;
 }
 
 .main__intro h1 {
-	margin: 10px 0 10px 0; 
+	margin: 10px 0 10px 0;
 	color: #484848;
 
 }
 
-/* 섹션 2 */
+/* 섹션2 */
 
-.wrapper{
+#slider {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+	height: 100%;
+}
+
+.slider__item {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1200px;
+	height: 50vh;
+	margin-top: 20vh;
+	color: var(--text-color);
+	top: 0;
+	z-index: 0;
+	opacity: 0;
+	transition: all .5s ease-in-out;
+	transform: scale(0.9);
+	overflow: hidden;
+}
+
+.showing {
+	opacity: 1;
+	z-index: 1;
+}
+
+.review__box {
+	width: 40%;
+	height: 100%;
+	text-align: center;
+}
+
+.review__top {
+	width: 100%;
+	height: 40%;
+	overflow: hidden;
+}
+
+.review__bottom {
+	width: 100%;
+	height: 60%;
+}
+
+.review__title {
+	padding: 12px;
+	font-weight: bold;
+}
+
+
+.review__name {
+	padding: 0 12px 12px 12px;
+	font-weight: bold;
+}
+
+.review__bottom {
+	padding: 12px;
+}
+
+.btn__container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	top: 250px;
+}
+
+.next {
+
+	pointer-events: unset;
+	width: 2rem;
+	height: 2rem;
+	background-color: var(--theme-color);
+	border-radius: 50%;
+	color: var(--white--color);
+	font-weight: bold;
+	z-index: 100;
+}
+
+.prev {
+	pointer-events: unset;
+	width: 2rem;
+	height: 2rem;
+	background-color: var(--theme-color);
+	border-radius: 50%;
+	color: var(--white--color);
+	font-weight: bold;
+	z-index: 100;
+}
+
+.slider__intro {
+	font-size: 1.2em;
+}
+
+/* 섹션 3 */
+
+.wrapper {
 	opacity: 0;
 }
-.wrapper.active{
-    max-width: 1200px;
-    margin: 0 auto;
+
+.wrapper.active {
+	max-width: 1200px;
+	margin: 0 auto;
 	opacity: 1;
 	transition: opacity 2.5s;
-	z-index : 0;
+	z-index: 0;
 }
+
 .info__container {
 	display: flex;
 	justify-content: space-evenly;
@@ -223,7 +336,7 @@ button:focus {
 }
 
 .info__text {
-	padding : 1em;
+	padding: 1em;
 	color: #484848;
 	font-size: 1.5em;
 	font-weight: bold;
@@ -231,9 +344,9 @@ button:focus {
 }
 
 /* 
-        0 ~ 767 gold , 768~1024 lightblue , 1025 ~ lightpink 
-        0 ~ 767 모바일 , 768~1024 태블릿 , 1025 ~ PC 
-     */
+    0 ~ 767 gold , 768~1024 lightblue , 1025 ~ lightpink 
+    0 ~ 767 모바일 , 768~1024 태블릿 , 1025 ~ PC 
+ */
 @media screen and (max-width: 768px) {
 
 	#ckpoint {
@@ -246,6 +359,10 @@ button:focus {
 		background-color: var(--theme-color);
 		box-shadow: 0 8px 6px -6px black;
 		border-radius: 1.5em;
+	}
+
+	.wrapper {
+		opacity: 1;
 	}
 
 	.info__container {
@@ -264,7 +381,7 @@ button:focus {
 	.info__box {
 		width: 100%;
 		height: 20em;
-		padding: 2em; 
+		padding: 2em;
 	}
 
 	.intro__container {
@@ -277,13 +394,23 @@ button:focus {
 	#basicTime {
 		width: 50%;
 	}
+
 	.input__btn {
 		width: 20%;
-    	padding-left: 0;
+		padding-left: 0;
 	}
-	
-	.wrapper.active{
-	opacity: 1;
-	transition: none;
-}
+
+	.wrapper.active {
+		opacity: 1;
+		transition: none;
+	}
+
+	.slider__item {
+		width: 100%;
+
+	}
+
+	.btn__container {
+		width: 95%;
+	}
 }
