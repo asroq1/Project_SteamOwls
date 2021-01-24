@@ -25,7 +25,7 @@ String sq = lm.getMemberSq(session);
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
-	<h1>리뷰 게시판</h1>
+	<h1 id="page__intro">리뷰 게시판</h1>
 	<table>
 
 	

@@ -10,6 +10,7 @@ MemberVo vo = (MemberVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 DecimalFormat won = new DecimalFormat("###,###");
+BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<section>
 		<div class="bill_container">
 			<div class="bill_img">
-				<img src="/css/picture/Spa.png" alt="">
+			<%=productInfoVo.getProduct_imagePath()%>
 			</div>
 			<div class="bill_date">
 				<h3>예약날짜</h3>

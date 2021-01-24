@@ -23,6 +23,7 @@ String sq = lm.getMemberSq(session);
     <header>
         <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
     </header>
+    <h1 id="page__intro">리뷰 작성</h1>
     <form action="/mypage/RwritingProc" method="POST" id="checkPoint">
     
     	 <div class="review__rating">

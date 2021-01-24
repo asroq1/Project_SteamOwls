@@ -43,6 +43,16 @@ section {
 	min-height: 100vh;
 }
 
+#page__intro{
+  width: 100%;
+  padding: 10px 0 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: var(--theme-color);
+}
+
 .booking__container {
 	display: inline-flex;
 	width: 100%;
@@ -188,5 +198,8 @@ section {
 	
 	}
 	
+	 #page__intro{ 
+    font-size: 1.5rem;
+  }
 	
 }
