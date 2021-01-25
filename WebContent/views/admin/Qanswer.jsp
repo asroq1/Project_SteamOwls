@@ -16,6 +16,11 @@
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 </head>
+<script type="text/javascript" defer>
+	function editorForm() {
+		$('#editorForm').submit();
+	}
+</script>
 
 <body>
 	<header>
@@ -24,12 +29,13 @@
 	<nav role="navigation">
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
-	<form action="/admin/admin/QmanageProc" method="post" id="editorForm">
+	<form action="/admin/QanswerProc?board_sq=<%=board_sq%>" method="post" id="editorForm">
 		<div>
-			<jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
+			<input type="text" id="content" name="content">
 		</div>
 	</form>
-	<a href="/admin/QanswerProc?board_sq=<%=board_sq%>">게시</a>	
+	<button onclick="editorForm()">등록</button>
+	<%-- <a href="/admin/QanswerProc?board_sq=<%=board_sq%>">게시</a>	 --%>
 </body>
 
 </html>
