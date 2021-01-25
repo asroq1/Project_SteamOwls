@@ -31,14 +31,14 @@ public class QDelete implements Action{
 		if (!svc.qDelete(board_sq)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('»ó¼¼ÆäÀÌÁö ÀÌµ¿¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.'); history.back();</script>");
+			out.print("<script>alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.'); history.back();</script>");
 			out.close();
 			return null;
 		}
 		
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/QDelete.jsp");
+		forward.setPath("/mypage/question");
 		return forward;
 	}
 }

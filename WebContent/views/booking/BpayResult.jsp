@@ -33,9 +33,9 @@ BookingVo productInfoVo = (BookingVo) request.getAttribute("productInfoVo");
 	</header>
 	<section>
 		<div class="bill_container">
-			<div class="bill_img">
-			<%=productInfoVo.getProduct_imagePath()%>
-			</div>
+			<%-- <div class="bill_img">
+			<%=bookingVo.getProduct_imagePath()%>
+			</div> --%>
 			<div class="bill_date">
 				<h3>예약날짜</h3>
 				<p><%=bookingVo.getBooking_date()%></p>

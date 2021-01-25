@@ -51,10 +51,14 @@ String sq = lm.getMemberSq(session);
 					<%=boardVo.getBoard_content()%>
 				</p>
 			</div>
+			<div>
+				<h3>답변</h3>
+				<p><%=boardVo.getAnswer_content()%></p>
+			</div>
 		</div>
 
 			<div class="btn__container">
-				<a href="/admin/Qanswer?member_sq=<%=boardVo.getBoard_sq()%>&<%=boardVo.getBoard_sq()%>">답변하기</a>		
+				<a href="/admin/Qanswer?board_sq=<%=boardVo.getBoard_sq()%>">답변하기</a>		
 				<a href="/admin/QModify?board_sq=<%=boardVo.getBoard_sq()%>">답변 수정</a>
 				<a href="/admine/QDelete?board_sq=<%=boardVo.getBoard_sq()%>">답변 삭제</a>
 				<a href="/admin/Qmanage">돌아가기</a>

@@ -51,6 +51,9 @@ String sq = lm.getMemberSq(session);
 				<h3>글내용</h3>
 				<p class="question__text">
 					<%=vo.getBoard_content()%></p>
+					<h3>글답변</h3>
+				<p class="question__text">
+					<%=vo.getAnswer_content()%></p>
 			</div>
 		</div>
 
