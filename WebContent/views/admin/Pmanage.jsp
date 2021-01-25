@@ -41,7 +41,6 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<article>
 		<div class="booking_container">
 			<div class="form_img">
-				<img alt="" src="/css/picture/Spa.png">
 				<%=list.get(i). getProduct_imagePath()%>
 			</div>
 			<div class="form_top">

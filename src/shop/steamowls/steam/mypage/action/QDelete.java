@@ -31,7 +31,7 @@ public class QDelete implements Action{
 		if (!svc.qDelete(board_sq)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.print("<script>alert('�������� �̵��� �����Ͽ����ϴ�.'); history.back();</script>");
+			out.print("<script>alert('상세페이지 이동에 실패하였습니다.'); history.back();</script>");
 			out.close();
 			return null;
 		}
