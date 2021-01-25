@@ -19,8 +19,8 @@ public class BoardVo {
 	public BoardVo() {
 
 	}
-
-
+	
+	
 	public int getBoard_sq() {
 		return board_sq;
 	}

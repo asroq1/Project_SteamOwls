@@ -38,7 +38,7 @@ public class QDelete implements Action{
 		
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/mypage/QDelete.jsp");
+		forward.setPath("/mypage/question");
 		return forward;
 	}
 }
