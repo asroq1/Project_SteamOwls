@@ -38,7 +38,7 @@ public class QanswerProc implements Action {
 			return forward;
 		}
 		
-		String answer_content = request.getParameter("content");
+		String answer_content = request.getParameter("answer_content");
 		if(answer_content == null || answer_content.equals("")) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();

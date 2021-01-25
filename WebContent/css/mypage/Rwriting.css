@@ -37,6 +37,15 @@ header {
   background-color: var(--white--color);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 2px 2px rgba(0, 0, 0, 0.10);
 }
+#page__intro{
+  width: 100%;
+  padding: 10px 0 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: var(--theme-color);
+}
 
 .blind {
   position: absolute;
@@ -161,4 +170,8 @@ header {
 	#checkPoint{ 
 		width: 90%;
 	}
+	
+	  #page__intro{ 
+    font-size: 1.5rem;
+  }
 }

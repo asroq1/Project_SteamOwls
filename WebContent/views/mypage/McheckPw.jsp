@@ -24,10 +24,10 @@
     <header>
          <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
     </header>
+    <h1 id="page__intro">회원정보수정</h1>
+		
     <section>
-    	
         <form action="/mypage/McheckPwProc" method="post" id="checkPoint" onsubmit="return join()">
-            <h1>비밀번호 확인</h1>
             <input type="password" name="pw" id="pw" maxlength="10" placeholder="비밀번호">
             <button type="submit">확인</button>
         </form>

@@ -35,68 +35,6 @@ String pn = request.getParameter("pn");
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 
-	<%-- <h1>문의 관리</h1>
-	<br>
-	<div>
-		<tr>
-			<th>문의번호</th>
-			<th>문의제목</th>
-			<th>문의자</th>
-			<th>문의날짜</th>
-			<th>문의답변여부</th>
-		</tr>
-	</div>
-
-
-	<%
-	for (int i = 0; i < list.size(); i++) {
-	%>
-	<div>
-		<tr>
-			<td><%=list.get(i).getBoard_sq()%></td>
-			<td><a
-					href="/admin/Qdetail?board_sq=<%=list.get(i).getBoard_sq()%>"><%=list.get(i).getBoard_subject()%></a>
-			</td>
-			<td><%=list.get(i).getMember_id()%></td>
-			<td><%=list.get(i).getBoard_dttm()%></td>
-			<td><%=list.get(i).isAnswer_fl()%></td>
-		</tr>
-		<a href="/admin/Qanswer">관리자 답변작성</a>
-	</div>
-	<%
-	}
-	%>
-
-	<div>
-		<%
-		if (pagenation.getStartPageNumber() != 1) {
-		%>
-		<a href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
-		<%
-		}
-		%>
-		<%
-		for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
-			if (i != Integer.parseInt(pn)) {
-		%>
-		<a href="/admin/Qmanage?pn=<%=i%>"><%=i%></a>
-		<%
-		} else {
-		%>
-		<%=i%>
-		<%
-		}
-		}
-		%>
-		<%
-		if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
-		%>
-		<a href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
-		<%
-		}
-		%>
-	</div> --%>
-	
 	<table>
 	
 	<tr class="category">
@@ -106,9 +44,6 @@ String pn = request.getParameter("pn");
 		<th class="category__time">문의날짜</th>
 		<th>문의답변여부</th>
 	</tr>
-
-
-
 
 	<%
 		for (int i = 0; i < list.size(); i++) {

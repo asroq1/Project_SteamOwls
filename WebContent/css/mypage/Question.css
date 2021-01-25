@@ -104,7 +104,20 @@ table {
 td {
   padding: 10px 0 10px 0;
 }
+.nothing__container{
+	display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    font-size: 2rem;
+    color: #484848;
+}
 
+.nothing__container i{
+	font-size: 4rem;
+}
+.nothing__container p{
+	padding : 0.5em;
+}
 .category {
   height: 30px;
   background: var(--grey--light--color);
@@ -178,5 +191,21 @@ td {
     margin: 0 auto;
     margin-top: 2rem;
   }
+  
+  
+	.nothing__container{
+   		margin-top: 25vh;
+	}
+	
+	.nothing__container i {
+    font-size: 3rem;
+	}
+
+	.nothing__container p {
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: bold;	
+	}
+
 
 }

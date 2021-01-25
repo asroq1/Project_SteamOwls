@@ -50,7 +50,22 @@ DecimalFormat won = new DecimalFormat("###,###");
 		</div>
 	
 	</article>
+	
+		
 	<article>
+	
+			
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>해당 날자에 예약이   존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
+		
+		
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
@@ -98,6 +113,10 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<%
 		}
 		%>
+		<%
+		}
+		%>
+		
 	</article>	
 	</section>
 

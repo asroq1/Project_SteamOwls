@@ -39,7 +39,6 @@
 			<li><a href="#">문의관리</a>
 				<ul id="sub-menu">
 					<li><a href="/admin/Qmanage" aria-label="subemnu">문의내역</a></li>
-					<li><a href="/admin/Qanswer" aria-label="subemnu">답변하기</a></li>
 				</ul>
 			</li>
 			<li><a href="#">리뷰관리</a>

@@ -51,6 +51,9 @@
                     <li>
                         <a href="/mypage/question">문의내역</a>
                     </li>
+                    <li>
+                    	<a href="/mypage/QWriting">글쓰기</a>
+                    </li>
                 </ul>
            </div>           
            <div class="info-box box-blur">

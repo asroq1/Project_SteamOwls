@@ -35,6 +35,18 @@ String pn = request.getParameter("pn");
 	</header>
 
 	<h1>문의 게시판</h1>
+	
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>등록된 문의가 존재하지 않습니다.</p>
+			</div>
+			
+		</section>
+		
+		<% }else { %> 
+		
 	<div id="boxalign">
 		<h3>
 			아울스 서비스에 대해 <br> 궁금한 점이 있으신 경우 문의해주세요.
@@ -86,14 +98,13 @@ String pn = request.getParameter("pn");
  	if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
  %> <a href="/mypage/question?pn=<%=pagenation.getStartPageNumber()%>">next</a>
 
-			<%
-				}
-			%>
+			<% 	} %>
 		</span> 
 		<span class="btn__container"> <a href="/mypage/QWriting">글쓰기</a>
 			<a href="/mypage/gotoMypage">마이페이지</a>
 		</span>
 	</div>
+		<% 	} %>
 </body>
 
 </html>

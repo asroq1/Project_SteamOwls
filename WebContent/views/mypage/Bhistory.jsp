@@ -32,7 +32,7 @@
 		<header>
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
-		
+		<h1 id="page__intro">리뷰 게시판</h1>
 		
 	<%if(list.size()  == 0) {%>
 		<section>
@@ -52,8 +52,7 @@
 			<article>
 				<div class="booking__container">
 					<div class="booking__img">
-						<%=list.get(i).getProduct_imagePath()%>
-						<img alt="" src="/css/picture/Spa.png">
+						<img alt="상품" src="<%=list.get(i).getProduct_imagePath()%>">
 					</div>
 					<div class="booking__top">
 						<div class="booking__title">

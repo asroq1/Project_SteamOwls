@@ -364,6 +364,7 @@ public class MypageDao {
 			pstmt = con.prepareStatement(
 					"select member_sq, board_sq, board_subject, board_content, board_address, board_dttm"
 							+ " from owls_board_tb where board_sq = ? and board_del_fl = 0");
+//			pstmt.setInt(1, boardVo.getMember_sq());
 			pstmt.setInt(1, boardVo.getBoard_sq());
 
 			rs = pstmt.executeQuery();
