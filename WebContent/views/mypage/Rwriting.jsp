@@ -13,6 +13,7 @@ String sq = lm.getMemberSq(session);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리뷰작성</title>
+	<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="/css/mypage/Rwriting.css">
     <link rel="stylesheet" href="/css/base.css">
     <script src="/js/mypage/Rwriting.js" defer></script>
@@ -22,6 +23,7 @@ String sq = lm.getMemberSq(session);
     <header>
         <jsp:include page="/views/common/header-logout.jsp"></jsp:include>
     </header>
+    <h1 id="page__intro">리뷰 작성</h1>
     <form action="/mypage/RwritingProc" method="POST" id="checkPoint">
     
     	 <div class="review__rating">

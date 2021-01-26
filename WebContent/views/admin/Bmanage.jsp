@@ -19,14 +19,16 @@ DecimalFormat won = new DecimalFormat("###,###");
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>예약관리</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/Bmanage.css">
 <link rel="stylesheet" href="/css/mypage/Bhistory.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-<script src="/js/common/calendar.js" defer></script>
+<script src="/js/common/calendarForAdmin.js" defer></script>
 <script src="/js/admin/Bdelete.js"></script>
 </head>
 <body>
@@ -37,7 +39,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<jsp:include page="/views/common/admin-nav.jsp"></jsp:include>
 	</nav>
 	<section>
-	<article>
+			<article>
 		<div>
 			<form action="/admin/BmanageProc" id="ckpoint" method="get">
 				<input type="text" class="form_input" id="basicDate" placeholder="예약날짜" name="booking_date" data-input>
@@ -48,10 +50,25 @@ DecimalFormat won = new DecimalFormat("###,###");
 		</div>
 	
 	</article>
+	
+		
+	<article>
+	
+			
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>해당 날자에 예약이   존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
+		
+		
 	<%
 		for (int i = 0; i < list.size(); i++) {
 	%>
-	<article>
 		<div class="booking__container">
 			<div class="booking__img">
 				<%=list.get(i).getProduct_imagePath()%>
@@ -96,7 +113,11 @@ DecimalFormat won = new DecimalFormat("###,###");
 		<%
 		}
 		%>
-	</article>
+		<%
+		}
+		%>
+		
+	</article>	
 	</section>
 
 	<footer>

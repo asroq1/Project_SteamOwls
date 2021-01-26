@@ -34,19 +34,29 @@ body {
 }
 
 article {
-	width: 70%;
-	margin: 0 auto;
+	width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
 	min-height: 100vh;
 }
 
+#page__intro{
+  width: 100%;
+  padding: 10px 0 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: var(--theme-color);
+}
+
 .booking__container {
 	display: inline-flex;
 	width: 100%;
 	height: 14em;
-	margin: 2em;
 	margin-top: 2em;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20), 
 	0 2px 2px rgba(0, 0, 0, 0.20);
@@ -89,8 +99,8 @@ section {
 	padding: 0.8em;
 	background-color: var(--theme-color);
 	color: var(--white--color);
-/* 	font-weight: bold; */
-	border-radius: 12px;
+ 	font-weight: bold; 
+	border-radius: 4px;
 }
 
 .booking__title {
@@ -101,6 +111,20 @@ section {
 	margin-top: 0.8em;
 }
 
+.nothing__container{
+	display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    font-size: 2rem;
+    color: #484848;
+}
+
+.nothing__container i{
+	font-size: 4rem;
+}
+.nothing__container p{
+	padding : 0.5em;
+}
 @media screen and (max-width: 768px) {
 	.booking__container {
 		display: block;
@@ -120,7 +144,7 @@ section {
 	/* 추후 삭제 코드 */
 	.booking__img img {
 		width: 100%;
-	}
+	} 
 
 	.booking__top,
 	.booking__bottom {
@@ -152,5 +176,30 @@ section {
 		width: 50%;
 		margin: auto;
 	}
+	
+	article {
+    width: 90%;
+	
+	}
+	
+	
+	.nothing__container{
+   		margin-top: 25vh;
+	}
+	
+	.nothing__container i {
+    font-size: 3rem;
+	}
+
+	.nothing__container p {
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: bold;	
+	
+	}
+	
+	 #page__intro{ 
+    font-size: 1.5rem;
+  }
 	
 }

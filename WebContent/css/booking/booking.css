@@ -4,25 +4,25 @@
 
 :root {
 	/* Color */
-	- -white--color: #fff;
-	- -black--color: #140a00;
-	- -blue--color: #045fd4;
-	- -red--color: #ff0000;
-	- -grey--dark--color: #909090;
-	- -grey--light--color: #e0e0e0;
-	- -green--deep--color: #439889;
-	- -green--light--color: #e0f2f1;
-	- -green--hard-color: #003d33;
-	- -theme-color: #ed6174;
-	- -background-color: #e9ecea;
+	--white--color: #fff;
+	--black--color: #140a00;
+	--blue--color: #045fd4;
+	--red--color: #ff0000;
+	--grey--dark--color: #909090;
+	--grey--light--color: #e0e0e0;
+	--green--deep--color: #439889;
+	--green--light--color: #e0f2f1;
+	--green--hard-color: #003d33;
+	--theme-color: #ed6174;
+	--background-color: #e9ecea;
 	/* Size */
-	- -padding: 12px;
-	- -avatar--size: 36px;
+	--padding: 12px;
+	--avatar--size: 36px;
 	/* Font Size */
-	- -font-large: 18px;
-	- -font-medium: 14px;
-	- -font-small: 12px;
-	- -font-micro: 10px;
+	--font-large: 18px;
+	--font-medium: 14px;
+	--font-small: 12px;
+	--font-micro: 10px;
 }
 	ul{
 	list-style: none;
@@ -37,7 +37,7 @@ header {
 }
 
 section{
-	height: 100vh;
+	height: 100%;
 }
 article {
 	max-width: 1200px;
@@ -107,9 +107,13 @@ article {
 }
 
 @media screen and (max-width: 768px) {
+	section{
+	height: 100%;
+	}
 	.booking_container {
 		display: block;
-		width: 100%;
+		margin: 0 auto;
+		width: 90%;
 		height: 100%;
 		overflow: hidden;
 		margin-top: 48px;

@@ -21,6 +21,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품관리</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 <link rel="stylesheet" href="/css/admin/productManage.css">
@@ -40,8 +41,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<article>
 		<div class="booking_container">
 			<div class="form_img">
-				<img alt="" src="/css/picture/Spa.png">
-				<%=list.get(i). getProduct_imagePath()%>
+				<img src="<%=list.get(i). getProduct_imagePath()%>">
 			</div>
 			<div class="form_top">
 				<h3><%=list.get(i).getProduct_name()%></h3>
@@ -57,48 +57,9 @@ DecimalFormat won = new DecimalFormat("###,###");
 				</div>
 					<button class="confirm__add" type="button"  onclick="selling(<%=list.get(i).getProduct_sq()%>)">상품판매</button>
 				<button class="confirm__delete" type="button" onclick="stopSelling(<%=list.get(i).getProduct_sq()%>)">판매중지</button>
-				</form>
 			</div>
 		</div>
 	</article>
-	<%-- <section>
-		<h1>상품 관리</h1>
-		<form
-			action="/admin/PdeleteProc?product_sq=<%=list.get(i).getProduct_sq()%>"
-			class="form__container" method="post" id="ckpoint">
-			<div class="booking__Form">
-
-				<div class="booking_img">
-					<!-- 로컬환경이라서 임시로 레이아웃 조절을 위해 주석처리 -->
-					<!-- <%=list.get(i).getProduct_image()%> -->
-					<img src="/css/picture/massage-1017255_640.png" alt="">
-				</div>
-				<div class="title__top">
-					<div class="booking__title">
-						<h3>
-							<%=list.get(i).getProduct_name()%>
-						</h3>
-					</div>
-					<div class="booking_bottom">
-						<div class="booking__intro">
-							<p>
-								<%=list.get(i).getProduct_detail()%>
-							</p>
-						</div>
-						<div class="booking_info">
-							<p>
-								<%=won.format(list.get(i).getProduct_price())%>원
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="booking__confirm">
-				<button class="confirm__add" type="button"  onclick="selling(<%=list.get(i).getProduct_sq()%>)">상품판매</button>
-				<button class="confirm__delete" type="button" onclick="stopSelling(<%=list.get(i).getProduct_sq()%>)">판매중지</button>
-			</div>
-		</form>
-	</section> --%>
 	<%
 		}
 	%>

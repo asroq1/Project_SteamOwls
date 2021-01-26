@@ -20,20 +20,23 @@ function slideNext() {
     const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
     if (currentSlide) {
         currentSlide.classList.remove(SHOWING_CLASS);
-        const nextSlide = currentSlide.nextElementSibling;
+        const nextSlide = currentSlide.nextElementSibling; 
+         prevBtn.style.background =  "#ed6174";
         if (nextSlide) {
             nextSlide.classList.add(SHOWING_CLASS);
         } else {
             currentSlide.classList.add(SHOWING_CLASS);
             nextBtn.style.pointerEvents = "none";
+            nextBtn.style.background = "#e0e0e0";   
         }
     } else {
         firstSlide.classList.add(SHOWING_CLASS);
+        
     }
+   	
     if (lastSlide) {
         nextBtn.style.pointerEvents = "unset";
     }
-
 }
 
 function slidePrev() {
@@ -42,17 +45,22 @@ function slidePrev() {
     if (currentSlide) {
         currentSlide.classList.remove(SHOWING_CLASS);
         const prevSlide = currentSlide.previousElementSibling;
+        nextBtn.style.background = "#ed6174";
+       
         prevBtn.style.pointerEvents = "unset";
         if (prevSlide) {
             prevSlide.classList.add(SHOWING_CLASS);
         } else {
             currentSlide.classList.add(SHOWING_CLASS);
             prevBtn.style.pointerEvents = "none";
+            prevBtn.style.background = "#e0e0e0"; 
+
         }
     } else {
-        firstSlide.classList.add(SHOWING_CLASS);
+        firstSlide.classList.add(SHOWING_CLASS); 
+      
     }
-    if(lastSlide){
+    if(firstSlide){
         prevBtn.style.pointerEvents = "unset";
     }
 

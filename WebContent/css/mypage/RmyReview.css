@@ -137,9 +137,46 @@ td{
     margin: 0 auto;
 }
 
+.nothing__container{
+	display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    font-size: 2rem;
+    color: #484848;
+}
+
+.nothing__container i{
+	font-size: 4rem;
+}
+.nothing__container p{
+	padding : 0.5em;
+}
+
 @media screen and (max-width : 768px){
 	table{
 	width: 90%;
+  }
+  tbody{
+    font-size: 0.8em;
+  }
+  h1{ 
+    font-size: 1.2em;
+  }
+  
+  .nothing__container{
+   		margin-top: 25vh;
 	}
+	
+	.nothing__container i {
+    font-size: 3rem;
+	}
+
+	.nothing__container p {
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: bold;	
+	
+	}
+	
 }
 

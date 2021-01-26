@@ -23,13 +23,15 @@
     --font-micro: 10px;
 
 }
+header{
+	margin-top: 100px;
+}
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }
 
 header img{
 	width: 50%;
-    margin-top: 2rem;
 }
 div{
 	padding:0;
@@ -52,6 +54,7 @@ input {
     border: 1.5px solid var(--grey--dark--color);
     border-radius: 5px;
     background-color: #e8f0fe; 
+    margin-top: 1.5em;
 }
 
 a {
@@ -106,5 +109,6 @@ header i{
 	height:2.813em;
 	color: var(--white--color);
 	background-color: var(--theme-color);
-    border-radius: 5px
+    border-radius: 5px;
+    margin-top: 2em;
 }

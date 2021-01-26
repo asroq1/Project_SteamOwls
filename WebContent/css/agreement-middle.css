@@ -81,9 +81,13 @@
 
 @media screen and (max-width: 768px){
 	
-
+	.content{
+		width: 90%;
+		padding: 1em;
+	}
     .modify__form{
-     	width: 90%;
+       width: 65%;
+   	   font-size: 0.8em;
     }
 }
 

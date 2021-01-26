@@ -68,3 +68,16 @@ section{
     color: var(--white--color);
     font-weight: bold; 
 }
+
+@media screen and (max-width :768px){
+	
+	.bill_container{
+		width: 90%;
+   		margin: 0 auto;
+	}
+	
+	.bill_submit{
+		width: 30%;
+	}
+		
+}

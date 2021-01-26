@@ -21,6 +21,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품삭제</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
 <link rel="stylesheet" href="/css/admin/productManage.css">
@@ -49,8 +50,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 	<article>
 		<div class="booking_container">
 			<div class="form_img">
-				<img alt="" src="/css/picture/Spa.png">
-				<%=list.get(i). getProduct_imagePath()%>
+				<img alt="상품" src="<%=list.get(i). getProduct_imagePath()%>">
 			</div>
 			<div class="form_top">
 				<h3><%=list.get(i).getProduct_name()%></h3>

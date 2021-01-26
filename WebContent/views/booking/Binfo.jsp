@@ -71,8 +71,7 @@ DecimalFormat won = new DecimalFormat("###,###");
 				</div>
 			</div>
 			<div class="Binfo_img">
-				<img alt="" src="/css/picture/Spa.png">
-				<%=productInfoVo.getProduct_imagePath()%>
+					<img alt="상품" src="<%=productInfoVo.getProduct_imagePath()%>">
 			</div>
 		</div>
 	</section>

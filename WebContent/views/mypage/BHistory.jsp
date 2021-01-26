@@ -32,7 +32,19 @@
 		<header>
 			<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 		</header>
-	
+		<h1 id="page__intro">리뷰 게시판</h1>
+		
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>예약하신 상품이  존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
+		
+		
 		<section>
 			<%
 				for (int i = 0; i < list.size(); i++) {
@@ -40,8 +52,7 @@
 			<article>
 				<div class="booking__container">
 					<div class="booking__img">
-						<%=list.get(i).getProduct_imagePath()%>
-						<img alt="" src="/css/picture/Spa.png">
+						<img alt="상품" src="<%=list.get(i).getProduct_imagePath()%>">
 					</div>
 					<div class="booking__top">
 						<div class="booking__title">
@@ -80,20 +91,11 @@
 				}
 			%>
 		</section>
+		<% } %>
+		
 		<footer>
 		<jsp:include page="/views/common/footer.jsp"></jsp:include>
-		</footer>
-	
-<%-- 	 <div>
-		<i class="fas fa-calendar-times"></i>
-		<span>예약된 상품이 없습니다.</span>	
-	
-	</div>
-	<footer>
-		<jsp:include page="/views/common/footer.jsp"></jsp:include>
-	</footer>
-	 --%>
-		
+		</footer>		
 </body>
 
 </html>

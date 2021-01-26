@@ -16,6 +16,7 @@ String sq = lm.getMemberSq(session);
 <title>문의관리</title>
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <header>

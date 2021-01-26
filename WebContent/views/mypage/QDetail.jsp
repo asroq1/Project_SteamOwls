@@ -16,6 +16,7 @@ String sq = lm.getMemberSq(session);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상세페이지</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/Qdetail.css">
 </head>
@@ -23,23 +24,6 @@ String sq = lm.getMemberSq(session);
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
-
-	<%--   
-    <h1>Article Detail</h1>
-    <br>
-    <h3>NO : <%=vo.getBoard_sq()%></h3>
-    <h3>SUBJECT : <%=vo.getBoard_subject()%></h3>
-    <h3>CONTENT : <%=vo.getBoard_content()%></h3>
-    <h3>ID : <%=vo.getMember_id()%></h3>
-    <h3>DATE : <%=vo.getBoard_dttm()%></h3>
-
-    <%if(Integer.parseInt(sq) == vo.getMember_sq()){ %>
-    <a href="/mypage/QModify?board_sq=<%=vo.getBoard_sq()%>">글수정</a>
-    <a href="/mypage/QDelete?board_sq=<%=vo.getBoard_sq()%>">글삭제</a>
-    <%} %>
-    <a href="/mypage/question">문의목록으로</a>
-    
-     --%>
 	<section>
 		<div class="question__container">
 			
@@ -67,6 +51,9 @@ String sq = lm.getMemberSq(session);
 				<h3>글내용</h3>
 				<p class="question__text">
 					<%=vo.getBoard_content()%></p>
+					<h3>글답변</h3>
+				<p class="question__text">
+					<%=vo.getAnswer_content()%></p>
 			</div>
 		</div>
 

@@ -15,14 +15,17 @@ String pn = request.getParameter("pn");
 %>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>회원관리</title>
+    <link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/admin/gotoAdmin.css">
     <link rel="stylesheet" href="/css/admin/Bmanage.css">
     <link rel="stylesheet" href="/css/mypage/RmyReview.css">
 </head>
+
 <body>
     <header>
 		<jsp:include page="/views/common/adminHeader.jsp"></jsp:include>
@@ -57,7 +60,7 @@ String pn = request.getParameter("pn");
 	%>
 				<tr class="category__data">
 					<td><%=list.get(i).getSq()%></td>
-					<td><a href="/admin/Mdetail?review_sq=<%=list.get(i).getSq()%>"><%=list.get(i).getId()%></a></td>
+					<td><a href="/admin/Mdetail?member_sq=<%=list.get(i).getSq()%>"><%=list.get(i).getId()%></a></td>
 					<td><%=list.get(i).getName()%></td>
 					<td><%=list.get(i).getTel()%></td>
 					<td><%=list.get(i).getGender()%></td>

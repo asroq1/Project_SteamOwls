@@ -30,6 +30,7 @@ public class QModify implements Action{
 		String board_sq = request.getParameter("board_sq");
 		
 		BoardVo boardVo = new BoardVo();
+		//boardVo.setMember_sq(Integer.parseInt(sq));
 		boardVo.setBoard_sq(Integer.parseInt(board_sq));
 
 		MypageService svc = new MypageService();

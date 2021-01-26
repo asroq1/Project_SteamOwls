@@ -47,6 +47,11 @@ public class PaddProc implements Action {
 		int size = 1024 * 1024 * 10;// 저장가능한 파일 크기
 		String product_image = "";// 업로드한 파일의 이름(이름이 변경될 수 있음)
 		String product_originalImage = "";// 이름이 변경되기 전 실제 파일 이름
+		
+		File file = new File(image_path);
+		if (!file.exists()) {
+			file.mkdir();
+		}
 
 		try {
 			MultipartRequest multi = new MultipartRequest(request, image_path, size, "UTF-8", new DefaultFileRenamePolicy());

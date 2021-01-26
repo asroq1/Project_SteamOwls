@@ -17,6 +17,7 @@ String sq = lm.getMemberSq(session);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>나의 리뷰</title>
+<link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/RmyReview.css">
 </head>
@@ -24,19 +25,25 @@ String sq = lm.getMemberSq(session);
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
-	<h1>리뷰 게시판</h1>
+	<h1 id="page__intro">리뷰 게시판</h1>
+	<%if(list.size()  == 0) {%>
+		<section>
+			<div class="nothing__container">
+				<i class="fab fa-earlybirds"></i>
+				<p>등록된 리뷰가 존재하지 않습니다.</p>
+			</div>
+		</section>
+		
+		<% }else { %> 
 	<table>
 
 	
 	<tr class="category">
-		<th class="category__no">리뷰번호</th>
+		<th class="category__no">No</th>
 		<th class="category__sub">제목</th>
 		<th class="category__id">작성자</th>
 		<th class="category__time">날짜</th>
 	</tr>
-
-
-
 
 	<%
 		for (int i = 0; i < list.size(); i++) {
@@ -86,5 +93,7 @@ String sq = lm.getMemberSq(session);
 			}
 		%>
 		</span>
+		
+		<% } %>
 </body>
 </html>
