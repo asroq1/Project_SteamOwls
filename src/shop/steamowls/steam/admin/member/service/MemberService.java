@@ -32,5 +32,15 @@ public class MemberService {
 		close(con);
 		return count;
 	}
+	
+	public MemberVo mDetail(MemberVo memberVo) {
+		MemberDao dao = MemberDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		
+		MemberVo vo = dao.mDetail(memberVo);
+		close(con);
+		return vo;
+	}
 
 }

@@ -66,7 +66,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getStartPageNumber() != 1) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+			href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
 		<%
 			}
 		%>
@@ -74,7 +74,7 @@ String pn = request.getParameter("pn");
 			for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
 			if (i != Integer.parseInt(pn)) {
 		%>
-		<a href="/mypage/RmyReview?pn=<%=i%>"><%=i%></a>
+		<a href="/admin/Qmanage?pn=<%=i%>"><%=i%></a>
 		<%
 			} else {
 		%>
@@ -87,7 +87,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+			href="/admin/Qmanage?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
 		<%
 			}
 		%>

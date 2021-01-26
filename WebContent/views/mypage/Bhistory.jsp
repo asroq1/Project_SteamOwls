@@ -52,7 +52,7 @@
 			<article>
 				<div class="booking__container">
 					<div class="booking__img">
-						<%=list.get(i).getProduct_imagePath()%>
+						<img alt="상품" src="<%=list.get(i).getProduct_imagePath()%>">
 					</div>
 					<div class="booking__top">
 						<div class="booking__title">

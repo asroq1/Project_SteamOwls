@@ -89,4 +89,37 @@ public class MemberDao {
 		return count;
 	}
 
+	public MemberVo mDetail(MemberVo memberVo) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MemberVo vo = null;
+		
+		try {
+			pstmt = con
+					.prepareStatement("SELECT sq, del_fl, sms_fl, info_fl, date_format(dttm, '%Y-%m-%d') as dttm, id, name, tel, gender"
+							+ " from owls_mber_tb where sq=?");
+			pstmt.setInt(1, memberVo.getSq());
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new MemberVo();
+				vo.setSq(rs.getInt("sq"));
+				vo.setDel_fl(false);
+				vo.setSms_fl(false);
+				vo.setInfo_fl(false);
+				vo.setDttm("dttm");
+				vo.setId(rs.getString("id"));
+				vo.setName("name");
+				vo.setTel("tel");
+				vo.setGender("gender");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return vo;
+	}
 }

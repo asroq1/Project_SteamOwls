@@ -36,6 +36,16 @@ public class ReviewService {
 		return vo;
 	}
 	
+	public ReviewVo mDetail(ReviewVo reviewVo) {
+		ReviewDao reviewDao = ReviewDao.getInstance();
+		Connection con = getConnection();
+		reviewDao.setConnection(con);
+		
+		ReviewVo vo = reviewDao.rDetail(reviewVo);
+		close(con);
+		return vo;
+	}
+	
 	public boolean rDelete(ReviewVo reviewVo) {
 		ReviewDao reviewDao = ReviewDao.getInstance();
 		Connection con = getConnection();
