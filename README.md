@@ -5,5 +5,5 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - 안해씨발좆같음 이미지안올라감
+  - ![와이어프레임](./https://github.com/asroq1/testOwls/blob/master/wireframe.PNG)
   
