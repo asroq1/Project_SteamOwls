@@ -6,9 +6,9 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  -client
+  -client<br>
   ![와이어프레임](./wireframe.PNG)<br>
   
-  -admin
+  -admin<br>
   ![와이어프레임2](./wireframe2.PNG)<br>
   
