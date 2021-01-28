@@ -1,6 +1,6 @@
 ![로고](./owlsLogo.png)   
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>   
-<hr>
+
 
 
 **1. 찜질방 예약 웹사이트**
@@ -30,6 +30,7 @@
    - Question : 문의작성, 내역, 수정, 삭제 , 답변
    - Review : 리뷰작성, 내역, 삭제   
 <br>
+  <br>
   
 **4. IA 링크** : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
 <br>
