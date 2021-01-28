@@ -37,11 +37,11 @@
 <br>
       
 **5. WIRE FRAME** 
-<br>
-   - client
+
+   - client<br>
   ![와이어프레임](./wireframe.PNG)<br>
 
-   - admin
+   - admin<br>
   ![와이어프레임2](./wireframe2.PNG)<br>
 <br>
 
