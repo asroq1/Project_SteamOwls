@@ -1,5 +1,5 @@
 ![로고](./owlsLogo.png)<br><br>
-#🦉🦉OWLS PROJECT🦉🦉
+<h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 <br>
 1. 찜질방 예약 웹사이트
   - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
