@@ -17,7 +17,7 @@
 **2. 개발환경**
 
    - 기술 스택<br>
-         * 프로그래밍 언어 : java/javascript,HTML,CSS<br>
+         * 프로그래밍 언어 : java, javascript, HTML, CSS<br>
          * 데이터베이스 : MariaDB<br>
    - 개발 툴<br>
          * IDE : eclipse<br>
