@@ -1,4 +1,4 @@
-![로고](./owlsLogo.png)      
+![로고](./owlsLogo.png)   
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>   
 
 
