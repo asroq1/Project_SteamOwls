@@ -10,5 +10,5 @@
   ![와이어프레임](./wireframe.PNG)<br>
   
   -admin
-  
+  ![와이어프레임2](./wireframe2.PNG)<br>
   
