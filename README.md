@@ -5,4 +5,4 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - ![wireframe](./D:\owls/wireframe)
+  - <img width="300" src="D:\owls/wireframe.png">
