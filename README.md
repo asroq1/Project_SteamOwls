@@ -48,3 +48,8 @@
 **6. DB-DIAGRAM**
 <br>
     ![다이어그램](./diagram.PNG)
+    
+<br>
+
+**6. TEST CASE** : <https://docs.google.com/spreadsheets/d/1grv4a0jIDa00YWRaqJUOnDjdUeXvXcbnKTMWdGY8KTo/edit#gid=0>
+<br>
