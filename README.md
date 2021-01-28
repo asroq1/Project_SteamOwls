@@ -1,3 +1,4 @@
+![
 #🦉🦉OWLS PROJECT🦉🦉
 
 1. 찜질방 예약 웹사이트
@@ -5,5 +6,5 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - ![와이어프레임](./wireframe.PNG)
+  ![와이어프레임](./wireframe.PNG)
   
