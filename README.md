@@ -13,11 +13,11 @@
   
 2. 개발환경
    - 기술 스택
-         + 프로그래밍 언어 : java/javascript
-         + 데이터베이스 : MariaDB
+         - 프로그래밍 언어 : java/javascript
+         - 데이터베이스 : MariaDB
    - 개발 툴
-         + IDE : eclipse
-         + DB : TOAD
+         - IDE : eclipse
+         - DB : TOAD
 <br>
   
 3. 요구사항
