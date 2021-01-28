@@ -1,12 +1,12 @@
 ![로고](./owlsLogo.png)<br><br>
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 <br>
-1. 찜질방 예약 웹사이트
-  * 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
-  * 정현섭 (front-end developer) : JSP, CSS, Javascript
-  * 서영준 (back-end developer) : 관리자페이지, 마이페이지(예약내역), TEST
-  * 박소윤 (back-end developer) : 회원정보, 마이페이지(문의), DB
-  * 기간 : 2020.12.03 ~ 2021.01.24  
+1. 찜질방 예약 웹사이트<br>
+  - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)<br>
+  - 정현섭 (front-end developer) : JSP, CSS, Javascript<br>
+  - 서영준 (back-end developer) : 관리자페이지, 마이페이지(예약내역), TEST<br>
+  - 박소윤 (back-end developer) : 회원정보, 마이페이지(문의), DB<br>
+  - 기간 : 2020.12.03 ~ 2021.01.24  
   <br>
   
 2. 요구사항
