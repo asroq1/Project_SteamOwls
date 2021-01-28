@@ -5,7 +5,7 @@
   - 이현승 정현섭 서영준 박소윤
   - 기간 : 2020.12.03 ~ 2021.01.25
   
-2. WIRE FRAME
+2. WIRE FRAME<br>
   -client<br>
   ![와이어프레임](./wireframe.PNG)<br>
   
