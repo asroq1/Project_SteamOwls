@@ -2,6 +2,7 @@
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 <br>
 1. 찜질방 예약 웹사이트
+  <br>
   - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
   - 정현섭 (front-end developer) : JSP, CSS, Javascript
   - 서영준 (back-end developer) : 관리자페이지, 마이페이지(예약내역), TEST
