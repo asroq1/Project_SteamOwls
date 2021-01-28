@@ -21,9 +21,7 @@
   <br>
   <br>
   
-3. IA
-  IA링크 : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
-  
+3. IA 링크 : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
   <br>
   <br>
   
