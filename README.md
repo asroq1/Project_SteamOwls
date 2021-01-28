@@ -18,7 +18,7 @@
   <br>
   
 3. IA
-  
+  ![IA](./IA.PNG)<br>
   <br>
   
 3. WIRE FRAME<br>
