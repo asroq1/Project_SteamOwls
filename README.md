@@ -30,9 +30,10 @@
    - Question : 문의작성, 내역, 수정, 삭제 , 답변
    - Review : 리뷰작성, 내역, 삭제   
 <br>
-  <br>
+
   
 **4. IA 링크** : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
+
 <br>
       
 **5. WIRE FRAME** 
