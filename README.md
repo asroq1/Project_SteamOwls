@@ -5,4 +5,5 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - ![wire frame](./D:\owls/wireframe.png)
+  - 안해씨발좆같음 이미지안올라감
+  
