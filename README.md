@@ -7,21 +7,21 @@
 
 **1. 찜질방 예약 웹사이트**
 
-   - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
-   - 정현섭 (front-end developer) : JSP, CSS, Javascript
-   - 서영준 (back-end developer) : 관리자페이지, 마이페이지(예약내역), TEST
-   - 박소윤 (back-end developer) : 회원정보, 마이페이지(문의), DB
-   - 기간 : 2020.12.03 ~ 2021.01.24   
+   - 이현승 &nbsp;(project-leader)&nbsp;: &nbsp;괄검토,&nbsp;상품페이지,&nbsp;마이페이지(리뷰)
+   - 정현섭 &nbsp;(front-end developer)&nbsp;:&nbsp;JSP,&nbsp;CSS,&nbsp;Javascript
+   - 서영준 &nbsp;(back-end developer) &nbsp;: &nbsp;관리자페이지,&nbsp;마이페이지(예약내역),&nbsp;TEST
+   - 박소윤 &nbsp;(back-end developer) &nbsp;: &nbsp;회원정보,&nbsp;마이페이지(문의),&nbsp;DB
+   - 기간 &nbsp;: 2020.12.03 &nbsp;~ &nbsp;2021.01.24   
 <br>
 
 **2. 개발환경**
 
-   - 기술 스택<br>
-         * 프로그래밍 언어 : java, javascript, HTML, CSS<br>
-         * 데이터베이스 : MariaDB<br>
-   - 개발 툴<br>
-         * IDE : eclipse<br>
-         * DB : TOAD   
+   - 기술 &nbsp;스택<br>
+         * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;java, &nbsp;javascript, &nbsp;HTML, &nbsp;CSS<br>
+         * 데이터베이스 &nbsp;: &nbsp;MariaDB<br>
+   - 개발 &nbsp;툴<br>
+         * IDE &nbsp;: &nbsp;eclipse<br>
+         * DB &nbsp;: &nbsp;TOAD   
 <br>
   
 **3. 요구사항**
