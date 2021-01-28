@@ -5,4 +5,4 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - <img width="300" src="D:\owls/wireframe.png" value="와이어프레임">
+  - ![wire frame](./D:\owls/wireframe.png)
