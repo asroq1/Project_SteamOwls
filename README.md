@@ -5,5 +5,5 @@
   - 기간 : 2020.12.03 ~ 2021.01.25
   
 2. WIRE FRAME
-  - ![와이어프레임](./https://github.com/asroq1/testOwls/blob/master/wireframe.PNG)
+  - ![와이어프레임](./wireframe.PNG)
   
