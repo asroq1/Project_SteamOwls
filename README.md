@@ -2,6 +2,7 @@
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 <br>
 <br>
+
 <h3>1. 찜질방 예약 웹사이트</h3>
   - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
   - 정현섭 (front-end developer) : JSP, CSS, Javascript
@@ -20,12 +21,13 @@
   <br>
   <br>
   
-<h3>3. IA</h3><br>
+<h3>3. IA</h3>
   IA링크 : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
+  
   <br>
   <br>
   
-<h3>4. WIRE FRAME</h3><br>
+<h3>4. WIRE FRAME</h3>
   - client<br>
   ![와이어프레임](./wireframe.PNG)<br>
   
