@@ -1,4 +1,4 @@
-![로고](./owlsLogo.png)
+![로고](./owlsLogo.png)<br>
 #🦉🦉OWLS PROJECT🦉🦉
 
 1. 찜질방 예약 웹사이트
