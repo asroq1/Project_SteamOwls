@@ -37,7 +37,7 @@
 <br>
       
 **5. WIRE FRAME** 
-
+<br>
    - client
   ![와이어프레임](./wireframe.PNG)<br>
 
