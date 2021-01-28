@@ -75,7 +75,7 @@ String pn = request.getParameter("pn");
 	<tr>
 		<td><%=list.get(i).getReview_sq()%></td>
 		<td><a
-			href="/mypage/RmyReviewDetail?review_sq=<%=list.get(i).getReview_sq()%>"><%=list.get(i).getReview_subject()%></a></td>
+			href="/admin/Rdetail?review_sq=<%=list.get(i).getReview_sq()%>"><%=list.get(i).getReview_subject()%></a></td>
 		<td><%=list.get(i).getId()%></td>
 		<td><%=list.get(i).getReview_dttm()%></td>
 		
@@ -91,7 +91,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getStartPageNumber() != 1) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
+			href="/admin/Rmanage?pn=<%=pagenation.getStartPageNumber() - 1%>">prev</a>
 		<%
 			}
 		%>
@@ -99,7 +99,7 @@ String pn = request.getParameter("pn");
 			for (int i = pagenation.getStartPageNumber(); i <= pagenation.getEndPageNumber(); i++) {
 			if (i != Integer.parseInt(pn)) {
 		%>
-		<a href="/mypage/RmyReview?pn=<%=i%>"><%=i%></a>
+		<a href="/admin/Rmanage?pn=<%=i%>"><%=i%></a>
 		<%
 			} else {
 		%>
@@ -112,7 +112,7 @@ String pn = request.getParameter("pn");
 			if (pagenation.getEndPageNumber() != pagenation.getTotalPageCount()) {
 		%>
 		<a
-			href="/mypage/RmyReview?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
+			href="/admin/Rmanage?pn=<%=pagenation.getStartPageNumber() + 1%>">next</a>
 		<%
 			}
 		%>

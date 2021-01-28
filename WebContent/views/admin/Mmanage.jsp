@@ -60,7 +60,7 @@ String pn = request.getParameter("pn");
 	%>
 				<tr class="category__data">
 					<td><%=list.get(i).getSq()%></td>
-					<td><a href="/admin/Mdetail?review_sq=<%=list.get(i).getSq()%>"><%=list.get(i).getId()%></a></td>
+					<td><a href="/admin/Mdetail?member_sq=<%=list.get(i).getSq()%>"><%=list.get(i).getId()%></a></td>
 					<td><%=list.get(i).getName()%></td>
 					<td><%=list.get(i).getTel()%></td>
 					<td><%=list.get(i).getGender()%></td>
