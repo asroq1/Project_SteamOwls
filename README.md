@@ -18,7 +18,7 @@
   <br>
   
 3. IA
-  ![IA](./IA.png)<br>
+  IA링크 : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
   <br>
   
 3. WIRE FRAME<br>
