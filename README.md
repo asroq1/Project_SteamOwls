@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<h3>1. 찜질방 예약 웹사이트</h3>
+1. 찜질방 예약 웹사이트
   - 이현승 (project-leader) : 총괄검토, 상품페이지, 마이페이지(리뷰)
   - 정현섭 (front-end developer) : JSP, CSS, Javascript
   - 서영준 (back-end developer) : 관리자페이지, 마이페이지(예약내역), TEST
@@ -12,7 +12,7 @@
   <br>
   <br>
   
-<h3>2. 요구사항</h3>
+2. 요구사항
   - Member : 회원가입/탈퇴, 로그인/로그아웃, 회원관리(내역, 수정)
   - Product : 상품등록, 내역, 조회, 삭제, 판매시작/중지
   - Booking : 상품예약, 내역, 정보, 결제
@@ -21,13 +21,13 @@
   <br>
   <br>
   
-<h3>3. IA</h3>
+3. IA
   IA링크 : <https://docs.google.com/spreadsheets/d/1NPMmqGNuMC9KjnsxFDT3IR555BLsJbVrScdaJsYfEQo/edit?usp=sharing>
   
   <br>
   <br>
   
-<h3>4. WIRE FRAME</h3>
+4. WIRE FRAME
   - client
   ![와이어프레임](./wireframe.PNG)<br>
   
