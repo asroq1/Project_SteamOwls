@@ -148,9 +148,8 @@ ArrayList<MypageVo> list = (ArrayList<MypageVo>) request.getAttribute("list");
 		</div>
 
 		<div class="btn__container">
-			<button class="btn prev">
-				<</button> <button class="btn next">>
-			</button>
+			<button class="btn prev"> < </button>
+			<button class="btn next"> > </button>
 		</div>
 	</article>
 	<section>

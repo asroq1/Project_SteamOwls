@@ -306,16 +306,13 @@ button:focus {
 /* 섹션 3 */
 
 .wrapper {
-	opacity: 0;
-}
-
-.wrapper.active {
 	max-width: 1200px;
 	margin: 0 auto;
 	opacity: 1;
 	transition: opacity 2.5s;
 	z-index: 0;
 }
+
 
 .info__container {
 	display: flex;
@@ -364,9 +361,6 @@ button:focus {
 		border-radius: 1.5em;
 	}
 
-	.wrapper {
-		opacity: 1;
-	}
 
 	.info__container {
 		display: flex;
@@ -403,11 +397,7 @@ button:focus {
 		padding-left: 0;
 	}
 
-	.wrapper.active {
-		opacity: 1;
-		transition: none;
-	}
-
+	
 	.slider__item {
 		width: 100%;
 

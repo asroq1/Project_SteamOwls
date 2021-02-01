@@ -4,11 +4,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	ArrayList<BoardVo> list = (ArrayList<BoardVo>) request.getAttribute("list");
+ArrayList<BoardVo> list = (ArrayList<BoardVo>) request.getAttribute("list");
 BoardVo vo = (BoardVo) request.getAttribute("vo");
 LoginManager lm = LoginManager.getInstance();
 String sq = lm.getMemberSq(session);
 %>
+
 <!DOCTYPE html>
 <html>
 
