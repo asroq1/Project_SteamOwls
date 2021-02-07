@@ -20,13 +20,12 @@ String sq = lm.getMemberSq(session);
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/Qwriting.css">
 <script src="/js/mypage/Qwriting.js"></script>
-<%-- <script>
-	var content = '<%=Parser.chgToHTML(vo.getBoard_content())%>
-	';
-</script>
- --%>
+
 </head>
 <body>
+	<%
+		if (Integer.parseInt(sq) == vo.getMember_sq()) {
+	%>
 	<header>
 		<jsp:include page="/views/common/header-logout.jsp"></jsp:include>
 	</header>
@@ -45,6 +44,10 @@ String sq = lm.getMemberSq(session);
 			<button type="button" onclick="add()" class="addBtn">등록</button>
 		</div>
 	</section>
-
+	<%
+	   }else{ 
+	%>
+		<div>fuck off</div>
+	<% } %>
 </body>
 </html>

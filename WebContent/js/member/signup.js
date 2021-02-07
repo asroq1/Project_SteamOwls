@@ -9,6 +9,7 @@ const text = document.querySelector(".name__text");
 const tel__text = document.querySelector(".tel__text");
 const name__text = document.querySelector(".name__text");
 const signup__btn = document.querySelector("#signup__button");
+
 //정규표현식을 위한 변수 선언
 let isTelChecked = false;
 let isNameChecked = false;
@@ -63,7 +64,7 @@ function join() {
 //init함수는 모두 정규표현식 확인
 function initCheckPwd() {
     const regExp = new RegExp("^[a-zA-Z0-9!@#$%^&*]{4,10}$", "g");
-    if (regExp.exec(pw.value) == null) {
+    if (regExp.exec(pw.value) === null) {
         pw__text.innerText = "최소 4자리부터 최대 10자리까지 가능합니다.";
         pw__text.style.color = "red";
         isPwdChecked = false;
@@ -79,7 +80,7 @@ function initCheckName() {
 
     const regExp = new RegExp("^[가-힣]{2,6}$", "g");
 
-    if (regExp.exec(name.value) == null) {
+    if (regExp.exec(name.value) === null) {
         name__text.innerText = "옳지않은 이름 입니다.";
         name__text.style.color = "red";
         return;
@@ -92,7 +93,7 @@ function initCheckName() {
 function initCheckTel() {
     const regExp = new RegExp("^[01]{2,2}[0-9]{8,9}$", "g");
 
-    if (regExp.exec(tel.value) == null) {
+    if (regExp.exec(tel.value) === null) {
         tel__text.innerText = "휴대전화 번호만 사용가능합니다.";
         tel__text.style.color = "red";
         isPhoneChecked = false;

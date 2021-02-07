@@ -165,6 +165,7 @@ td {
   justify-content: space-evenly;
   width: 120px;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width : 768px) {
@@ -207,5 +208,7 @@ td {
     font-weight: bold;	
 	}
 
-
+	.pagination__container {
+  	margin-top: 1rem;
+}
 }

@@ -14,7 +14,7 @@
 <link href="/css/picture/icons8_owl.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/mypage/Qwriting.css">
-<script src="/js/mypage/Qwriting.js"></script>
+<script src="/js/mypage/Qwriting.js" defer></script>
 </head>
 <body>
 	<header>
@@ -28,6 +28,7 @@
 			<input type="text" id="title" name="board_subject" />
 			</div>
 			<div>
+				<h3 class="question__title">문의내역</h3>
 				<jsp:include page="/editor/editorSkinForRegister.jsp" flush="false" />
 			</div>
 		</form>
