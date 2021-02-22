@@ -17,10 +17,10 @@
 **2. &nbsp;개발환경**
 
    - 기술 &nbsp;스택<br>
-         * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;java, &nbsp;javascript, &nbsp;HTML, &nbsp;CSS<br>
+         * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;JAVA, &nbsp;JAVASCRIPT<br>
          * 데이터베이스 &nbsp;: &nbsp;MariaDB<br>
    - 개발 &nbsp;툴<br>
-         * IDE &nbsp;: &nbsp;eclipse<br>
+         * IDE &nbsp;: &nbsp;eclipse &nbsp;VSCode<br>
          * DB &nbsp;: &nbsp;TOAD   
 <br>
   
