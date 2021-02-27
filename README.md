@@ -2,13 +2,13 @@
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 
 
-**1. &nbsp;찜질방 예약 웹사이트**
+*1. &nbsp;찜질방 예약 웹사이트**
    <http://www.steamowls.shop/>
    
   
 <br>
 
-**2. &nbsp;개발환경**
+*2. &nbsp;개발환경**
 
    - 기술 &nbsp;스택<br>
          * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;JAVA, &nbsp;JAVASCRIPT<br>
@@ -18,7 +18,7 @@
          * DB &nbsp;: &nbsp;TOAD   
 <br>
   
-**3. &nbsp;요구사항**
+*3. &nbsp;요구사항**
 
    - Member &nbsp;: &nbsp;회원가입/탈퇴, &nbsp;로그인/로그아웃, &nbsp;회원관리(내역, &nbsp;수정)
    - Product &nbsp;: &nbsp;상품등록, &nbsp;내역, &nbsp;조회, &nbsp;삭제, &nbsp;판매시작/중지
