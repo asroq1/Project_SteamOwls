@@ -10,6 +10,8 @@
 
 *2. &nbsp;개발환경**
 
+![o3](https://user-images.githubusercontent.com/62472550/109381491-0a141480-791e-11eb-9048-f5eecbe2d54b.PNG)
+
    - 기술 &nbsp;스택<br>
          * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;JAVA, &nbsp;JAVASCRIPT<br>
          * 데이터베이스 &nbsp;: &nbsp;MariaDB<br>
