@@ -2,17 +2,10 @@
 <h1>🦉🦉OWLS PROJECT🦉🦉</h1>
 
 
-
-
-
 **1. &nbsp;찜질방 예약 웹사이트**
    <http://www.steamowls.shop/>
    
-   - 이현승 &nbsp;(project-leader)&nbsp;: &nbsp;총괄검토, &nbsp;상품페이지, &nbsp;마이페이지(리뷰)
-   - 정현섭 &nbsp;(front-end developer) &nbsp;: &nbsp;JSP, &nbsp;CSS, &nbsp;Javascript
-   - 서영준 &nbsp;(back-end developer) &nbsp;: &nbsp;관리자페이지, &nbsp;마이페이지(예약내역), &nbsp;TEST
-   - 박소윤 &nbsp;(back-end developer) &nbsp;: &nbsp;회원정보, &nbsp;마이페이지(문의), &nbsp;DB
-   - 기간 &nbsp;: 2020.12.03 &nbsp;~ &nbsp;2021.01.24   
+  
 <br>
 
 **2. &nbsp;개발환경**
@@ -56,4 +49,11 @@
 <br>
 
 **6. TEST &nbsp;CASE** : <https://docs.google.com/spreadsheets/d/1grv4a0jIDa00YWRaqJUOnDjdUeXvXcbnKTMWdGY8KTo/edit#gid=0>
-<br>
+<br
+
+
+ - 이현승 &nbsp;(project-leader)&nbsp;: &nbsp;총괄검토, &nbsp;상품페이지, &nbsp;마이페이지(리뷰)
+   - 정현섭 &nbsp;(front-end developer) &nbsp;: &nbsp;JSP, &nbsp;CSS, &nbsp;Javascript
+   - 서영준 &nbsp;(back-end developer) &nbsp;: &nbsp;관리자페이지, &nbsp;마이페이지(예약내역), &nbsp;TEST
+   - 박소윤 &nbsp;(back-end developer) &nbsp;: &nbsp;회원정보, &nbsp;마이페이지(문의), &nbsp;DB
+   - 기간 &nbsp;: 2020.12.03 &nbsp;~ &nbsp;2021.01.24   
