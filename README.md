@@ -5,7 +5,8 @@
 *1. &nbsp;찜질방 예약 웹사이트**
    <http://www.steamowls.shop/>
    
-*2. &nbsp;주요기능
+*2. &nbsp;주요기능**
+<br>
 ![o1](https://user-images.githubusercontent.com/62472550/109381497-0e403200-791e-11eb-8622-649c1a8746a7.PNG)
 
 ![o2](https://user-images.githubusercontent.com/62472550/109381499-1304e600-791e-11eb-96e1-4b3d9b334136.PNG)
