@@ -5,13 +5,19 @@
 *1. &nbsp;찜질방 예약 웹사이트**
    <http://www.steamowls.shop/>
    
-  
-<br>
+*2. &nbsp;주요기능
+![o1](https://user-images.githubusercontent.com/62472550/109381497-0e403200-791e-11eb-8622-649c1a8746a7.PNG)
 
-*2. &nbsp;개발환경**
+![o2](https://user-images.githubusercontent.com/62472550/109381499-1304e600-791e-11eb-96e1-4b3d9b334136.PNG)
 
 ![o3](https://user-images.githubusercontent.com/62472550/109381491-0a141480-791e-11eb-9048-f5eecbe2d54b.PNG)
 
+![o4](https://user-images.githubusercontent.com/62472550/109381495-0bddd800-791e-11eb-8409-2e11e92d087c.PNG)
+
+![o5](https://user-images.githubusercontent.com/62472550/109381496-0c766e80-791e-11eb-9b40-d7205b28eb8e.PNG)
+<br>
+
+*2. &nbsp;개발환경**
    - 기술 &nbsp;스택<br>
          * 프로그래밍 &nbsp;언어 &nbsp;: &nbsp;JAVA, &nbsp;JAVASCRIPT<br>
          * 데이터베이스 &nbsp;: &nbsp;MariaDB<br>
