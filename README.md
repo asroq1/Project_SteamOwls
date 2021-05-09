@@ -15,37 +15,6 @@
    |![mypage](https://user-images.githubusercontent.com/62472550/109381495-0bddd800-791e-11eb-8409-2e11e92d087c.PNG)|![mypage-booking](https://user-images.githubusercontent.com/62472550/109381496-0c766e80-791e-11eb-9b40-d7205b28eb8e.PNG)|
    
    
-**1. 메인메뉴**
-
-![o1](https://user-images.githubusercontent.com/62472550/109381497-0e403200-791e-11eb-8622-649c1a8746a7.PNG)
-
-<br />
-
-**2. 예약창**
-
-![o3](https://user-images.githubusercontent.com/62472550/109381491-0a141480-791e-11eb-9048-f5eecbe2d54b.PNG)
-
-
-<br />
-
-**3. 결제수단 선택**
-
-![oPayment](https://user-images.githubusercontent.com/62472550/109381683-24022700-791f-11eb-8f09-4b6c406d9174.PNG)
-
-<br />
-
-**4. 결제후 마이페이지 이동**
-
-![o4](https://user-images.githubusercontent.com/62472550/109381495-0bddd800-791e-11eb-8409-2e11e92d087c.PNG)
-
-<br />
-
-
-**5. 예약내역에서 예약취소**
-
-![o5](https://user-images.githubusercontent.com/62472550/109381496-0c766e80-791e-11eb-9b40-d7205b28eb8e.PNG)
-<br>
-
 ### 3. &nbsp;개발환경
 
 - 기술 &nbsp;스택<br>
