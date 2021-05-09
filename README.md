@@ -10,6 +10,11 @@
 
 <br />
 
+   ![home](https://user-images.githubusercontent.com/62472550/109381497-0e403200-791e-11eb-8622-649c1a8746a7.PNG)|![booking](https://user-images.githubusercontent.com/62472550/109381491-0a141480-791e-11eb-9048-f5eecbe2d54b.PNG)|![pay](https://user-images.githubusercontent.com/62472550/109381683-24022700-791f-11eb-8f09-4b6c406d9174.PNG)
+   :---:|:---:|:---:
+   |![mypage](https://user-images.githubusercontent.com/62472550/109381495-0bddd800-791e-11eb-8409-2e11e92d087c.PNG)|![mypage-booking](https://user-images.githubusercontent.com/62472550/109381496-0c766e80-791e-11eb-9b40-d7205b28eb8e.PNG)|
+   
+   
 **1. 메인메뉴**
 
 ![o1](https://user-images.githubusercontent.com/62472550/109381497-0e403200-791e-11eb-8622-649c1a8746a7.PNG)
